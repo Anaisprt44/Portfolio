@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">  
+    <title>Etape 1 - Projet Python</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <style>
+      /* Style CSS pour la page */
+      body {
+          font-family: Arial, sans-serif;
+          line-height: 1.6;
+          margin: 0;
+          padding: 0;
+          background-color: #e9ecef; /* Fond gris pour la page */
+          color: #333; /* Couleur de texte sombre */
+      }
+  
+      .container {
+          padding: 30px; /* Espace intérieur pour le contenu */
+          max-width: 800px; /* Largeur maximale pour garder le contenu centré */
+          margin: 100px auto; /* 100px en haut et en bas, auto à gauche et à droite pour centrer */
+          background-color: white; /* Fond blanc pour le contenu */
+          border-radius: 8px; /* Coins arrondis */
+          box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Ombre légère pour un effet de profondeur */
+      }
+  
+      h2 {
+          color: black; /* Couleur pour le titre en noir */
+          margin-top: 0; /* Supprimer la marge en haut pour éviter l'espacement inutile */
+      }
+  
+      .button-group {
+          display: flex;
+          justify-content: center; /* Centrer les boutons */
+          margin-top: 20px; /* Espace au-dessus du groupe de boutons */
+      }
+  
+      .button {
+          display: inline-block;
+          padding: 10px 20px;
+          border-radius: 100px;
+          background-color: #1a7a89; /* Couleur de fond des boutons */
+          color: white;
+          text-decoration: none;
+          font-weight: bold;
+          margin: 0 10px; /* Espace entre les boutons */
+      }
+  
+      .button:hover {
+          background-color: #155b60; /* Changement de couleur au survol */
+      }
+  
+      /* Styles pour la barre de navigation */
+      .menu {
+          background-color: #ffffff; /* Fond blanc pour la barre de navigation */
+          box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+  
+      .menu a {
+          color: #333; /* Couleur des liens dans le menu */
+      }
+  
+      .menu a:hover {
+          color: #1a7a89; /* Couleur au survol des liens du menu */
+      }
+    </style>
+</head>
+<body>
+
+    <div data-server-rendered="true" id="__nuxt">
+        <div id="__layout">
+            <div>
+
+                <!-- Code de la barre de navigation -->
+                <div class="menu sticky top-0 z-50">
+                    <div class="w-full text-gray-700 bg-white">
+                        <div class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+                            <img src="documents/logo_anais_vert.png" width="150" height="auto">
+                            <div class="flex flex-row items-center justify-between p-4">
+                                <a href="index.html" class="text-lg font-bold tracking-widest text-gray-900 uppercase rounded-lg">A • P</a>
+                                <button aria-label="Ouvrir menu" class="rounded-lg md:hidden">
+                                    <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+                                        <path d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"></path>
+                                        <path d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" style="display:none"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <nav class="flex-col flex-grow pb-4 md:pb-0 md:flex md:justify-end md:flex-row hidden">
+                                <a href="Formations.html" class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-300 focus:bg-gray-300">Formations</a>
+                                <a href="MesStages.html" class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-300 focus:bg-gray-300">Mes Stages</a>
+                                <a href="#Competences" class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-300 focus:bg-gray-300">Compétences</a>
+                                <a href="btsSioSlam.html" class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-300 focus:bg-gray-300">BTS SIO Option SLAM</a>
+                                <a href="mes_projets_sio.html" class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-300 focus:bg-gray-300">Projets SIO</a>
+                                <a href="passions.html" class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-300 focus:bg-gray-300">Mes passions</a>
+                                <a href="contact.html" class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-300 focus:bg-gray-300">Contact</a>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contenu de l'étape 1 -->
+        <div class="container">
+          <h2>Étape 1 : Préparation des VM et Installation de MariaDB</h2>
+          <p>Cette étape consistait à préparer nos VM et à mettre en service notre serveur MariaDB. Nous devions renommer nos machines et donner le bon adressage IP.</p>
+          <p>Nous devions également installer un environnement de développement comme Spyder.</p>
+          
+          <figure style="text-align: center;">
+              <img src="documents/python/Spyder_logo.png" alt="Spyder Logo" style="width: 235px; height: auto;" />
+          </figure>
+          <figure style="text-align: center;">
+              <img src="documents/python/etape1_adressage.png" alt="Adressage IP" style="width: 100%; height: auto;" />
+          </figure>
+
+          <div class="button-group" style="text-align: center; margin-top: 20px;">
+              <a href="documents/python/pyt24_b26_e01_peixoto_portolleau_v2.pdf" class="button" target="_blank" rel="noreferrer noopener">Compte rendu de l'étape</a>
+          </div>
+          
+          <div class="button-group" style="text-align: center; margin-top: 10px;">
+              <a href="python.html" class="button">Retour</a>
+          </div>
+        </div>
+
+                <!-- Footer -->
+                <div class="bg-white">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:p-12 p-4 md:w-3/12">
+                            <h4 class="pb-2">À propos</h4>
+                            <p class="text-justify"></p>
+                        </div>
+                        <div class="md:p-12 p-4 md:w-3/12">
+                            <h4 class="pb-2">Liens</h4> 
+                            <a href="index.html">→ Accueil</a><br><br>
+                            <a href="passions.html">→ À propos de moi</a><br><br>
+                            <a href="Formations.html">→ Mes Formations </a><br><br>
+                            <a href="MesStages.html">→ Stages</a>
+                        </div>
+                        <div class="md:p-12 p-4 md:w-3/12">
+                            <h4 class="pb-2">Projets</h4> 
+                            <a href="competence.html">→ Mes compétences</a><br><br>
+                            <a href="btsSioSlam.html">→ BTS SIO SLAM</a>
+                        </div>
+                        <div class="md:p-12 p-4 md:w-3/12">
+                            <h4 class="pb-2">Contact</h4>
+                            <div class="flex row items-center justify-start">
+                                <img src="documents/email_icon.de2632c.png" alt="email icon" class="w-6">
+                                <a href="mailto:anais.portolleau44@gmail.com" class="font-medium p-2">anais.portolleau44@gmail.com</a>
+                            </div>
+                            <div class="flex row items-center justify-start">
+                                <img src="documents/phone_icon.a64af40.png" alt="phone icon" class="w-6">
+                                <p class="font-medium p-2">06.52.01.38.39</p>
+                            </div>
+                            <div class="button">
+                                <a href="documents/2SLAM_PORTOLLEAU_Anaïs_CV.pdf" target="_blank">Télécharger CV</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
