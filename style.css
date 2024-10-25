@@ -21,7 +21,21 @@
         
     }
 
-    
+    @media (max-width: 768px) {
+        .media-text, .media-text .text {
+            flex-basis: 100%;
+            text-align: center;
+        }
+
+        .media-text {
+            flex-direction: column-reverse;
+        }
+
+        .media-text img {
+            width: 100%; 
+            height: auto;
+        }
+    }
 
     hr {
         height: 0;
