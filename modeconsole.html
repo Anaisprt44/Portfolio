@@ -1,6 +1,5 @@
 <!doctype html>
 <html data-n-head-ssr lang="fr" data-n-head="%7B%22lang%22:%7B%22ssr%22:%22fr%22%7D%7D">
-
 <head>
   <meta name="robots" content="noindex, nofollow">  
   <title>Portefolio d'Anaïs Portolleau </title>
@@ -11,80 +10,7 @@
   <meta data-n-head="ssr" name="format-detection" content="telephone=no">
   <link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.ico">
   <link href="style.css" rel="stylesheet" type="text/css" />
-  <style>
-    
-    
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        background-color: #f0f0f0;
-    }
-
-    .container {
-        width: 80%;
-        margin: 20px auto;
-    }
-
-    .media-text {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        margin: 20px 0;
-        padding: 15px;
-        background-color: #ffffff;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    /* Alternance des couleurs de fond */
-    .media-text:nth-child(even) {
-        background-color: #f3f6f9;
-    }
-
-    .media-text img {
-        width: 300px; /* largeur fixe */
-        height: 200px; /* hauteur fixe */
-        object-fit: cover; /* ajustement de l'image */
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .media-text .text {
-        flex-basis: 50%;
-        padding: 20px;
-    }
-
-    .text h4 {
-        font-size: 1.5rem;
-        margin-bottom: 10px;
-        font-family: Georgia, serif;
-    }
-
-    .text p {
-        font-size: 1rem;
-        line-height: 1.5;
-        font-family: 'Open Sans', sans-serif;
-    }
-
-    @media (max-width: 768px) {
-        .media-text, .media-text .text {
-            flex-basis: 100%;
-            text-align: center;
-        }
-
-        .media-text {
-            flex-direction: column-reverse;
-        }
-
-        .media-text img {
-            width: 100%; 
-            height: auto;
-        }
-    }
-</style>
-
+  
 </head>
 <body>
 
@@ -100,7 +26,7 @@
                   class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8"
                   data-v-a2c3d1e2>
                   <a href="index.html">
-                    <img src="anais_logo.png" width="75" height="auto">
+                    <img src="images/anais_logo.png" width="75" height="auto">
                   </a>
                   <div class="flex flex-row items-center justify-between p-4" data-v-a2c3d1e2><a href="index.html"
                       class="text-lg font-bold tracking-widest text-gray-900 uppercase rounded-lg dark-mode:text-white"
@@ -171,53 +97,59 @@
             </div>
     
 
-            <div class="container" style="background-color: white;">
+            <div class="container" style="width: 80%; margin: 20px auto; background-color: white;">
 
-              <p class="titre-mes-passions">Mode Console</p>
+              <p class="titre-mes-passions" style="font-family: Arial, sans-serif; margin: 0; padding: 0; box-sizing: border-box; font-size: 1.5rem; text-align: center;">
+                  Mode Console
+              </p>
           
-              <div class="text-lg text-gray-700 mb-8">
-                  <p class="mb-4">
-                      Dans un premier temps, il fallait effectuer le programme en mode console. J’ai créé de multiples fonctions pour tester les URLS des logos. 
-                      J’ai notamment utilisé la technologie WebClient pour ces tests.
-                      J’ai commencé, dans un premier temps, à me concentrer sur une table de la base de données (artisans) et afficher les logs en mode console.
-                  </p>
-                  <!-- Image 1 -->
-                  <img src="Stage1/Console/console-application.png" alt="Console Application" class="w-full max-w-md mx-auto rounded-lg shadow-lg mb-4">  <!-- Ajout de mb-4 pour espace en dessous -->
+              <div class="text-lg text-gray-700 mb-8" style="font-family: 'Open Sans', sans-serif; font-size: 1rem; color: #4a4a4a; margin-bottom: 2rem;">
                   
-                  <p class="mt-6 mb-4">
+                  <p style="margin-bottom: 1rem;">
+                      Dans un premier temps, il fallait effectuer le programme en mode console. J’ai créé de multiples fonctions pour tester les URLS des logos. 
+                      J’ai notamment utilisé la technologie WebClient pour ces tests. J’ai commencé, dans un premier temps, à me concentrer sur une table de la base de données (artisans) 
+                      et afficher les logs en mode console.
+                  </p>
+                  
+                  <img src="Stage1/Console/console-application.png" alt="Console Application" style="width: 100%; max-width: 800px; margin: 0 auto 1rem; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+          
+                  <p style="margin-top: 1.5rem; margin-bottom: 1rem;">
                       J’ai utilisé la même technologie sur toutes les tables. L’application extrait bien les codes erreurs des logos comme on peut voir ci-dessous :
                   </p>
-                  <!-- Image 2 -->
-                  <img src="Stage1/Console/console2.png" alt="Console Output 2" class="w-full max-w-md mx-auto rounded-lg shadow-lg mb-4">  <!-- Ajout de mb-4 pour espace en dessous -->
                   
-                  <p class="mt-6 mb-4">
+                  <img src="Stage1/Console/console2.png" alt="Console Output 2" style="width: 100%; max-width: 800px; margin: 0 auto 1rem; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+          
+                  <p style="margin-top: 1.5rem; margin-bottom: 1rem;">
                       Puis j’ai créé une fonction pour extraire tous ces erreurs dans un fichier pour mieux les répertorier. Par exemple pour une table en particulier cela va afficher ceci dans le terminal 
                       (avec toutes les informations qui comprend les différents attributs des tables avec le résultat du test de l’URL) :
                   </p>
-                  <img src="Stage1/Console/console3.png" alt="Console Output 3" class="w-full max-w-xs mx-auto rounded-lg shadow-lg">
-                  
-                  <p class="mt-6 mb-4">
-                      Toutes ces erreurs s’enregistrent dans un fichier pour pouvoir ensuite être éventuellement envoyées par mail au lieu de l’enregistrer :
-                  </p>
-                  <img src="Stage1/Console/console4.png" alt="Console Output 4" class="w-full max-w-xs mx-auto rounded-lg shadow-lg">
-              </div>
-              
-              <div class="text-center mt-8">
-                  <a href="index.html">
-                      <button class="bg-blue-500 text-white font-semibold py-2 px-4 rounded hover:bg-blue-600 transition duration-300">
-                          Retour
-                      </button>
-                  </a>
-              </div>
-              
-              <!-- Bouton retour -->
-              <div class="flex justify-center py-4">
-                  <a href="Stage1èreannée.html" target="_blank"
-                     class="button-bloc bg-orangeClair text-black px-4 py-2 rounded">
-                      Retour Stage 1ère année
-                  </a>
-              </div>
-          </div>
+          
+                  <img src="Stage1/Console/console3.png" alt="Console Output 3" style="width: 100%; max-width: 800px; margin: 0 auto; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+
+        <p style="margin-top: 1.5rem; margin-bottom: 1rem;">
+            Toutes ces erreurs s’enregistrent dans un fichier pour pouvoir ensuite être éventuellement envoyées par mail au lieu de l’enregistrer :
+        </p>
+        
+        <img src="Stage1/Console/console4.png" alt="Console Output 4" style="width: 100%; max-width: 800px; margin: 0 auto; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+    </div>
+    
+    <div class="text-center" style="text-align: center; margin-top: 2rem;">
+        <a href="index.html">
+            <button style="background-color: #3b82f6; color: white; font-family: Arial, sans-serif; font-weight: 600; padding: 0.5rem 1rem; border-radius: 5px; transition: background-color 0.3s; border: none; cursor: pointer;">
+                Retour
+            </button>
+        </a>
+    </div>
+
+    <div class="flex justify-center py-4" style="display: flex; justify-content: center; padding: 1rem;">
+        <a href="Stage1èreannée.html" target="_blank" style="background-color: #ffa500; color: black; padding: 0.5rem 1rem; border-radius: 5px; text-decoration: none;">
+            Retour Stage 1ère année
+        </a>
+    </div>
+
+</div>
+          
+          
           
 
 
