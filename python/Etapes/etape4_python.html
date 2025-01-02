@@ -87,12 +87,23 @@
         
         
       
-      <div class="container" style="display: flex; justify-content: space-between; align-items: center; padding: 20px; max-width: 800px; margin: 20px auto; background-color: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+      <!-- Contenu de l'étape 4 -->
+      <div class="container-projet">   
         <div style="flex: 1;">
             <h4 style="color: #1a7a89;">Étape 4 - Extraction des utilisateurs de l'annuaire AD</h4>
             <div class="step-description" style="margin-bottom: 20px; text-align: left;">
               <p style="margin: 0; line-height: 1.6; color: #333;">
-                À l’étape 04, nous avons récupéré des données sur certains utilisateurs de l’annuaire Active Directory d’un serveur de domaine Windows. Après, nous avons utilisé le logiciel LDAPBrowser pour accéder à l’annuaire et extraire les informations nécessaires. Après avoir configuré LDAPBrowser pour se connecter au serveur CDSTESIO, nous avons extrait les données des utilisateurs de l’unité d’organisation (OU) Toulouse. Ces données ont été exportées au format CSV, en spécifiant les attributs à inclure (nom et prénom) et en définissant le format de sortie approprié. Ensuite, nous avons transféré le fichier CSV contenant les informations des utilisateurs de votre VM Windows 10 vers votre VM de développement via notre espace réseau personnel. Ce processus nous a permis de collecter les données requises pour créer les comptes utilisateurs et les bases de données dans MariaDB.
+                À l’étape 04, nous avons récupéré des données sur certains utilisateurs de <strong>l’annuaire 
+                Active Directory</strong> d’un serveur de domaine Windows. Après, nous avons utilisé le logiciel 
+                LDAPBrowser pour <strong>accéder à l’annuaire et extraire les informations nécessaires</strong>. Après 
+                avoir <strong>configuré LDAPBrowser</strong> pour se connecter au serveur CDSTESIO, nous avons extrait 
+                les données des utilisateurs de l’unité d’organisation (OU) Toulouse. Ces données ont été exportées au 
+                <strong>format CSV</strong>, en spécifiant les <strong>attributs à inclure</strong> (nom et prénom) et 
+                en définissant le <strong>format de sortie approprié</strong>. Ensuite, nous avons <strong>transféré le fichier 
+                CSV contenant les informations des utilisateurs</strong> de votre VM Windows 10 
+                <strong>vers votre VM de développement</strong> via notre espace réseau personnel. Ce processus nous a 
+                <strong>permis de collecter les données</strong> requises pour créer les comptes utilisateurs et les
+                <strong>bases de données dans MariaDB.</strong>
             </p>
             </div>
         

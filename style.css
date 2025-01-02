@@ -320,6 +320,7 @@ h4 {
     color: #1a7a89; /* Couleur pour les titres */
 }
 
+
 .container {
     padding: 15px; /* Réduit le padding pour moins de zoom */
     max-width: 800px;
@@ -340,9 +341,9 @@ h4 {
 }
 
 .button-group {
-    display: flex;
+    display: flex; /* Affiche les boutons en ligne */
     justify-content: center; /* Centrer les boutons */
-    margin-top: 20px; /* Espace au-dessus du groupe de boutons */
+    margin-top: 0px; /* Espace en haut des boutons */
 }
 
 
