@@ -2147,3 +2147,31 @@ iframe {
     margin-top: 20px; /* Espace au-dessus du conteneur */
 }
 
+
+
+
+/* Style pour page veille 1 */ 
+/* Articles */
+article {
+    background-color: #ffffff;
+    margin: 20px 0;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+article h3 {
+    color: #333;
+    font-size: 1.6em;
+}
+
+article p {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+
+
+
+
+

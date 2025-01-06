@@ -93,26 +93,36 @@
               <h4 style="color: #1a7a89;">Étape 6 - Projet Java</h4>
               <div class="step-description" style="margin-bottom: 20px; text-align: left;">
                 <p style="margin: 0; line-height: 1.6; color: #333;">
-                  Dans cette étape, on devait développer une fonctionnalité de consultation des données relatives à un salarié. Comme on peut voir après avoir sélectionné un 
-                  salarié une fenêtre comme ci-dessous s'affiche : 
+                  Dans cette étape, on devait développer une fonctionnalité de consultation des données relatives à un salarié.   
                 </p>
-                <figure class="result-image" style="margin: 0;">
-                  <img src="../images/java_etape6.png" alt="Utilisateurs de l'OU Toulouse" style="max-width: 80%; height: auto; margin: 20px 0;" />
-              </figure>
-              <p>On a ajouté dans un premier temps l’événement de clic sur celui-ci (MouseClicked est déclenché), c’est à dire que si on clique sur le bouton 
-                consulter cela va déclencher un évènement et la récupération des données. C'est cette méthode qui fait le travail : </p>
-              <figure class="result-image" style="margin: 0;">
-                <img src="../images/java_etape6_n2.png" alt="Utilisateurs de l'OU Toulouse" style="max-width: 100%; height: auto; margin: 20px 0;" />
-              </figure>
-              <p>Puis on a ajouté ce code ci-dessous pour si une ligne a été sélectionnée (jTableSalaries.getSelectedRow()>-1), on récupère le code du salarié à 
-                partir de la ligne sélectionnée.</p>
-              </div>
-              <figure class="result-image" style="margin: 0;">
-                <img src="../images/java_etape6_n3.png" alt="Utilisateurs de l'OU Toulouse" style="max-width: 100%; height: auto; margin: 20px 0;" />
-              </figure>
-              <p>
-                Puis si on lance le programme pour cette fonctionnalité et qu’on choisit un salarié cela nous donnera la capture en haut de la page.
+                
+              
+              <p style="margin: 0; line-height: 1.6; color: #333;">
+                On voit la fonctionnalité de consultation des salariés d’un service. Pour cela on a créer 2 méthodes qui nous permit de remplir 
+                la JComboBox qui nous a permit d’afficher les salariés en fonction du service sélectionné : 
               </p>
+              <figure class="result-image" style="margin: 0;">
+                <img src="../images/java_etape4.png" alt="Utilisateurs de l'OU Toulouse" style="max-width: 100%; height: auto; margin: 20px 0;" />
+              </figure>
+              <p>Capture de la classe DAO Salarié et de sa fonction getOneById</p>
+              <figure class="result-image" style="margin: 0;">
+                <img src="../images/java_etape4_n2.png" alt="Utilisateurs de l'OU Toulouse" style="max-width: 100%; height: auto; margin: 20px 0;" />
+              </figure>
+              <br>
+              <p>Voici les étapes de la consultation d'un salarié. Au début quand on démarre l'application on voit tous les salariés comme on peut le voir ci-dessous : </p>
+              <figure class="result-image" style="margin: 0;">
+                <img src="../captures_java/capture_tous_services.png" alt="Utilisateurs de l'OU Toulouse" style="max-width: 100%; height: auto; margin: 20px 0;" />
+              </figure>
+              <br>
+              <p>Ensuite, on peut sélectionner un salarié puis cliquer sur le bouton <strong>"Consulter" </strong>pour voir les informations du salarié sélectionné : </p>
+              <figure class="result-image" style="margin: 0;">
+                <img src="../captures_java/salarie_selectionne.png" alt="Utilisateurs sélectionné" style="max-width: 100%; height: auto; margin: 20px 0;" />
+              </div>
+              <br>
+              <p>Après avoir cliqué sur le bouton <strong>"Consulter"</strong>cela affiche cette fenêtre ci-dessous avec les différentes données des salariés de la base de données :</p>
+              <figure class="result-image" style="margin: 0;">
+                <img src="../captures_java/infos_salarie.png" alt="Utilisateurs de l'OU Toulouse" style="max-width: 100%; height: auto; margin: 20px 0;" />
+              </figure>
           
           </div>
           
@@ -120,18 +130,24 @@
           
         </div>
         
-        <!-- Boutons pour le compte rendu et le retour -->
-        <div class="button-group" style="display: flex; justify-content: center; margin-top: 20px;">
-          <a href="../CompteRendue/g_nc2b01_augereau_portolleau_e_nc2b006.pdf" target="_blank" rel="noopener noreferrer" class="button" style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; font-weight: bold; margin: 0 10px;">Lien compte rendu</a>
-          <a href="../../java.html" class="button" style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; font-weight: bold; margin: 0 10px;">Retour</a>
-        </div>
-        <br>
-
-
-
-         
+      <!-- Conteneur pour centrer les boutons -->
+<div style="text-align: center;">
+  <!-- Bouton pour le compte rendu -->
+  <a href="../CompteRendue/g_nc2b01_augereau_portolleau_e_nc2b006.pdf" 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; font-weight: bold; margin: 0 10px;">
+    Lien compte rendu
+  </a>
   
-            
+  <!-- Bouton de retour -->
+  <a href="../../java.html" 
+     style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; font-weight: bold; margin: 0 10px;">
+    Retour
+  </a>
+</div>
+
+<br>
   <!-- Footer -->
   <div class="bg-white" data-v-1830edb3>
     <div class="flex flex-col md:flex-row" data-v-1830edb3>
