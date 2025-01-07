@@ -1765,6 +1765,14 @@ h4 {
         font-weight: 700
     }
 
+    h5 {
+        margin-bottom: .75rem;
+        font-size: 1rem; /* Taille légèrement plus grande que 0.875rem mais plus petite que h4 */
+        line-height: 1.5rem;
+        font-weight: 700;
+        color: #1a7a89; /* Même couleur que h4 */
+      }
+
     @media (min-width:768px) {
         h4 {
             font-size: 1.5rem;
@@ -1879,11 +1887,7 @@ h4 {
         }
     }
 
-    .card,
-    body {
-        background-color:#
-    }
-
+    
     .card:hover {
         border-color: #fd9200
     }
@@ -2003,9 +2007,6 @@ h4 {
     margin-left: auto; /* Centre horizontalement */
     margin-right: auto; /* Centre horizontalement */
 }
-
-    
-    
     
 /* Style du bouton page compétence*/
 .boutton-competences {
@@ -2169,6 +2170,20 @@ article p {
     font-size: 1.1em;
     line-height: 1.6;
 }
+
+
+.content-section {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 20px auto;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+    max-width: 1200px;
+  }
 
 
 
