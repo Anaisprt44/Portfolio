@@ -2118,7 +2118,7 @@ h4 {
 
 .project-title {
     padding: 10px; /* Ajoute de l'espace autour du titre */
-    text-align: center; /* Centre le texte du titre */
+    text-align: center; /* Centre le texte du titre */#
     flex-grow: 1; /* Permet au titre de prendre de l'espace restant */
 }
 /* Style pour le titre */
@@ -2133,14 +2133,7 @@ h4 {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre portée */
 }
 
-/* Style pour l'iframe */
-iframe {
-    display: block; /* Élimine les espaces autour de l'iframe */
-    margin: 0 auto; /* Centre l'iframe */
-    border: 1px solid #ccc; /* Bordure autour de l'iframe */
-    border-radius: 5px; /* Coins arrondis */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre portée */
-}
+
 
 /* Style pour le conteneur du bouton */
 .button-container {
@@ -2151,42 +2144,21 @@ iframe {
 
 
 
-/* Style pour page veille 1 */ 
-/* Articles */
-article {
-    background-color: #ffffff;
-    margin: 20px 0;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+
+
+
+
+
+  .blob-prj1, .blob-prj2 {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    margin-right: 12px;
 }
 
-article h3 {
-    color: #333;
-    font-size: 1.6em;
+.blob-prj1 {
+    background-image: url('../images/cyberattaque.png');
 }
-
-article p {
-    font-size: 1.1em;
-    line-height: 1.6;
-}
-
-
-.content-section {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    margin: 20px auto;
-    background-color: #f9f9f9;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-    font-family: 'Arial', sans-serif;
-    padding: 20px;
-    max-width: 1200px;
-  }
-
-
-
-
-
-
