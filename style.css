@@ -2033,43 +2033,72 @@ h4 {
 }
 
 .card {
-    height: 450px; /* Ajuster la hauteur totale de la carte */
-    width: 300px; /* Ajuster la largeur totale de la carte */
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column; /* Alignement vertical */
-    justify-content: center;
-    align-items: center;
-    background-color: white; /* Assure que la carte reste propre */
-    color: orangeClair; /* Couleur du texte */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
-    padding: 10px;
-    transition: transform 0.3s ease; /* Animation légère au survol */
-}
-
-.card {
-    height: 500px; /* Augmenter la hauteur de la carte */
-    width: 350px; /* Augmenter la largeur de la carte */
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: white; /* Couleur de fond */
-    color: orangeClair; /* Couleur du texte */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
-    padding: 10px;
-    transition: transform 0.3s ease;
-}
-
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+    transition: transform 0.2s, box-shadow 0.2s;
+    padding: 10px; /* Ajout d'espace interne */
+    margin-right: 50px; /* Espace à droite des cartes */
+    margin-bottom: 20px; /* Espacement vertical entre les cartes */
+    height: 250px; /* Hauteur automatique pour s'adapter au contenu */
+  }
 .card-image {
-    width: 100%; /* Image prend toute la largeur */
-    height: 65%; /* Augmenter la hauteur de l'image pour ajuster à la nouvelle taille de la carte */
+    
+    height: 250px; /* Augmenter la hauteur de l'image pour ajuster à la nouvelle taille de la carte */
     background-size: cover; /* Image s'adapte à la carte sans être déformée */
     background-position: center;
     border-radius: 15px 15px 0 0; /* Coins arrondis pour le haut de l'image */
 }
 
+.card-img {
+    max-height: 100%; /* L'image prend la hauteur totale de la carte */
+    object-fit: cover; /* L'image remplira l'espace sans déformation */
+    border-radius: 15px 15px 0 0; /* Coins arrondis de l'image */
+    width: 100%; /* L'image occupe toute la largeur de la carte */
+  }
+ /* Ajouter des marges entre les cartes */
+ .card-link {
+    display: inline-block; /* Pour permettre aux éléments de passer à la ligne */
+  }
+
+ /* S'assurer que les cartes se mettent en forme fluide */
+ .card-container {
+    display: flex;
+    flex-wrap: wrap; /* Permet aux cartes de passer à la ligne suivante si nécessaire */
+    gap: 24px; /* Espacement entre les cartes */
+    justify-content: space-between;
+  }
+
+  /* Effet au survol des cartes */
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+   /* Responsive : cartes prennent toute la largeur sur petits écrans */
+   @media (max-width: 768px) {
+    .card {
+      width: calc(50% - 16px); /* Deux cartes par ligne sur les écrans moyens */
+    }
+  }
+
+  @media (max-width: 480px) {
+    .card {
+      width: 100%; /* Une carte par ligne sur les très petits écrans */
+    }
+  }
+
+
+
+
+  /* S'assurer que les cartes se mettent en forme fluide et responsive */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Colonne fluide */
+    gap: 24px; /* Espacement plus large entre les cartes */
+    margin: 20px;
+  }
 h4 {
     font-size: 24px;
     font-weight: bold;
@@ -2118,7 +2147,7 @@ h4 {
 
 .project-title {
     padding: 10px; /* Ajoute de l'espace autour du titre */
-    text-align: center; /* Centre le texte du titre */#
+    text-align: center; /* Centre le texte du titre */
     flex-grow: 1; /* Permet au titre de prendre de l'espace restant */
 }
 /* Style pour le titre */

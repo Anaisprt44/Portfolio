@@ -138,56 +138,82 @@
             </div>
           </div>
         </div>  
-
-        <!-- Bloc Différents sujets -->
+<!-- Bloc Différents sujets -->
 <div class="container mx-auto" style="width: 90%; background-color: #f0f0f0;">
   <h4 class="orangeClair text-center">
     Vous trouverez sur mon blog plusieurs sujets comme :
   </h4>
 
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6 md:p-12">
-    <!-- Première ligne de 3 cartes -->
-    <a href="passions.html" style="text-decoration: none;">
+  <!-- Flexbox pour disposer les cartes et s'ajuster sur plusieurs lignes -->
+  <div class="card-container" style="display: flex; flex-wrap: wrap; gap: 24px; justify-content: space-between; padding: 20px;">
+    
+    <!-- Première carte -->
+    <a href="passions.html" class="card-link" style="text-decoration: none;">
       <div class="card">
-        <div class="card-image" style="background-image: url('images/image_passions.png'); height: 200px;"></div>
+        <div class="card-image">
+          <img src="images/image_passions.png" alt="Mes passions" class="card-img">
+        </div>
         <h4 class="orangeClair text-center mt-2">Mes passions</h4>
+        
       </div>
     </a>
 
-    <a href="MesStages.html" style="text-decoration: none;">
+    <!-- Deuxième carte -->
+    <a href="MesStages.html" class="card-link" style="text-decoration: none;">
       <div class="card">
-        <div class="card-image" style="background-image: url('images/stages_imgae.png'); height: 200px;"></div>
+        <div class="card-image">
+          <img src="images/stages_imgae.png" alt="Mes Stages" class="card-img">
+        </div>
+        
+        
+      </div>
+    </a>
+
+    <!-- Troisième carte -->
+    <a href="btsSioSlam.html" class="card-link" style="text-decoration: none;">
+      <div class="card">
+        <div class="card-image">
+          <img src="images/mes_projets.png" alt="Mes Projets SIO" class="card-img">
+        </div>
         <h4 class="orangeClair text-center mt-2">Mes Stages</h4>
+       
       </div>
     </a>
 
-    <a href="btsSioSlam.html" style="text-decoration: none;">
+    <!-- Quatrième carte -->
+    <a href="VeilleTech.html" class="card-link" style="text-decoration: none;">
       <div class="card">
-        <div class="card-image" style="background-image: url('images/mes_projets.png'); height: 200px;"></div>
-        <h4 class="orangeClair text-center mt-2">Mes Projets SIO</h4>
+        <div class="card-image">
+          <img src="images/veille-technologique.png" alt="Mes Veilles Technologiques" class="card-img">
+        </div>
+        <h4 class="orangeClair text-center mt-2">Mes Veilles</h4>
+       
       </div>
     </a>
 
-    <a href="VeilleTech.html" style="text-decoration: none;">
+    <!-- Cinquième carte -->  
+    <a href="Formations.html" class="card-link" style="text-decoration: none;">
       <div class="card">
-        <div class="card-image" style="background-image: url('images/veille-technologique.png'); height: 200px;"></div>
-        <h4 class="orangeClair text-center mt-2">Mes Veilles Technologiques</h4>
+        <div class="card-image">
+          <img src="images/formations.png" alt="Mes Formations" class="card-img">
+        </div>
+        <h4 class=" text-center ">Mes Formations</h4>
+       
       </div>
     </a>
 
-    <a href="Formations.html" style="text-decoration: none;">
+    <!-- Sixième carte -->
+    <a href="cv/cv.html" class="card-link" style="text-decoration: none;">
       <div class="card">
-        <div class="card-image" style="background-image: url('images/formations.png'); height: 200px;"></div>
-        <h4 class="orangeClair text-center mt-2">Mes Formations</h4>
-      </div>
-    </a>
-
-    <a href="cv/cv.html" style="text-decoration: none;">
-      <div class="card">
-        <div class="card-image" style="background-image: url('images/cv.png'); height: 200px;"></div>
+        <div class="card-image">
+          <img src="images/cv.png" alt="Mon CV" class="card-img">
+        </div>
         <h4 class="orangeClair text-center mt-2">Mon CV</h4>
+        
       </div>
     </a>
+
+    <!-- Ajoutez plus de cartes si nécessaire -->
   </div>
 </div>
 
@@ -220,67 +246,7 @@
         opacity=".5"></path>
     </svg>
   </div>
-
-<!-- Bloc Différents sujets -->
-<div class="container mx-auto" style="width: 90%; background-color: #f0f0f0;">
-  <h4 class="orangeClair text-center">
-    Vous trouverez sur mon blog plusieurs sujets comme :
-  </h4>
-
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-6 md:p-12">
-    <!-- Première carte -->
-    <a href="passions.html" style="text-decoration: none;">
-      <div class="card">
-        <div class="card-image" style="background-image: url('images/image_passions.png'); height: 200px;"></div>
-        <h4 class="orangeClair text-center mt-2">Mes passions</h4>
-      </div>
-    </a>
-
-    <!-- Deuxième carte -->
-    <a href="MesStages.html" style="text-decoration: none;">
-      <div class="card">
-        <div class="card-image" style="background-image: url('images/stages_imgae.png'); height: 200px;"></div>
-        <h4 class="orangeClair text-center mt-2">Mes Stages</h4>
-      </div>
-    </a>
-
-    <!-- Troisième carte -->
-    <a href="btsSioSlam.html" style="text-decoration: none;">
-      <div class="card">
-        <div class="card-image" style="background-image: url('images/mes_projets.png'); height: 200px;"></div>
-        <h4 class="orangeClair text-center mt-2">Mes Projets SIO</h4>
-      </div>
-    </a>
-
-    <!-- Quatrième carte -->
-    <a href="VeilleTech.html" style="text-decoration: none;">
-      <div class="card">
-        <div class="card-image" style="background-image: url('images/veille-technologique.png'); height: 200px;"></div>
-        <h4 class="orangeClair text-center mt-2">Mes Veilles Technologiques</h4>
-      </div>
-    </a>
-
-    <!-- Cinquième carte -->
-    <a href="Formations.html" style="text-decoration: none;">
-      <div class="card">
-        <div class="card-image" style="background-image: url('images/formations.png'); height: 200px;"></div>
-        <h4 class="orangeClair text-center mt-2">Mes Formations</h4>
-      </div>
-    </a>
-
-    <!-- Sixième carte -->
-    <a href="cv/cv.html" style="text-decoration: none;">
-      <div class="card">
-        <div class="card-image" style="background-image: url('images/cv.png'); height: 200px;"></div>
-        <h4 class="orangeClair text-center mt-2">Mon CV</h4>
-      </div>
-    </a>
-  </div>
-</div>
-
-
-
-
+  
     <!-- Footer -->
     <div class="bg-white" data-v-1830edb3>
       <div class="flex flex-col md:flex-row" data-v-1830edb3>
