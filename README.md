@@ -26,6 +26,6 @@ Vous pouvez explorer mes projets réalisés dans le cadre de mon apprentissage e
 Vous pouvez me contacter via les moyens suivants :
 
 - **Email** : anais.portolleau44@gmail.com
-- **LinkedIn** : [https://www.linkedin.com/in/anaisprt](https://www.linkedin.com/in/anaisprt)
-- **GitHub** : [https://github.com/anaisprt44](https://github.com/anaisprt44)
+- **LinkedIn** : https://www.linkedin.com/in/ana%C3%AFs-portolleau-3b376a299/
+- **GitHub** : https://github.com/Anaisprt44
 
