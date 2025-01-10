@@ -2045,7 +2045,8 @@ h4 {
   }
 .card-image {
     
-    height: 250px; /* Augmenter la hauteur de l'image pour ajuster à la nouvelle taille de la carte */
+    height: 250px; /* Augmenter la hauteur de l'image pour ajuster à la nouvelle 
+    taille de la carte */
     background-size: cover; /* Image s'adapte à la carte sans être déformée */
     background-position: center;
     border-radius: 15px 15px 0 0; /* Coins arrondis pour le haut de l'image */
@@ -2065,7 +2066,8 @@ h4 {
  /* S'assurer que les cartes se mettent en forme fluide */
  .card-container {
     display: flex;
-    flex-wrap: wrap; /* Permet aux cartes de passer à la ligne suivante si nécessaire */
+    flex-wrap: wrap; /* Permet aux cartes de passer à la ligne suivante si 
+    nécessaire */
     gap: 24px; /* Espacement entre les cartes */
     justify-content: space-between;
   }
@@ -2088,9 +2090,6 @@ h4 {
       width: 100%; /* Une carte par ligne sur les très petits écrans */
     }
   }
-
-
-
 
   /* S'assurer que les cartes se mettent en forme fluide et responsive */
   .grid {
