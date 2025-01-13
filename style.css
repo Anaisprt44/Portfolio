@@ -374,6 +374,26 @@ h4 {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
+.menu nav {
+    display: none; /* Masquer le menu par défaut */
+  }
+
+  .menu nav.active {
+    display: flex; /* Afficher le menu lorsqu'il est actif */
+    flex-direction: column;
+  }
+
+  @media (min-width: 768px) {
+    .menu nav {
+      display: flex; /* Toujours afficher le menu en mode bureau */
+      flex-direction: row;
+    }
+
+    .menu button {
+      display: none; /* Cacher le bouton hamburger en mode bureau */
+    }
+  }
+
 .menu a {
     color: #333; /* Couleur des liens dans le menu */
 }
