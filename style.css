@@ -316,48 +316,104 @@ h4 {
     color: #1a7a89; /* Couleur pour les titres */
 }
 
-/*Nav bbar */
  /* Menu burger uniquement visible sur mobile */
- #menu-toggle {
+
+/* Hamburger Menu */
+#menu-toggle {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
     width: 30px;
-    height: 24px;
+    height: 30px;
     background: transparent;
     border: none;
     cursor: pointer;
+    position: relative; /* Pour pouvoir manipuler les lignes en position absolue */
   }
 
-  #menu-toggle svg {
-    width: 100%;
-    height: 100%;
-    transition: all 0.3s ease;
-  }
-
+  /* Les lignes du menu burger */
   #menu-toggle .line {
-    width: 100%;
-    height: 4px;
-    background-color: #333;
-    transition: all 0.3s ease;
+    width: 100%; /* Les lignes occupent toute la largeur disponible */
+    height: 4px; /* Épaisseur des lignes */
+    background-color: #333; /* Couleur des lignes */
+    border-radius: 2px; /* Coins arrondis pour un style moderne */
+    transition: all 0.3s ease; /* Animation fluide */
+    position: absolute; /* Nécessaire pour les transformer correctement */
   }
 
-  /* En mode mobile, cacher la barre de navigation par défaut */
-  #nav-links {
-    display: none; /* Cache par défaut en mode mobile */
-    flex-direction: column; /* Affichage vertical des liens */
-    text-align: center;
+  /* Positionnement des lignes de base */
+  #menu-toggle .line1 {
+    top: 0; /* Première ligne en haut */
   }
+
+  #menu-toggle .line2 {
+    top: 50%; /* Ligne du milieu */
+    transform: translateY(-50%); /* Centrage vertical */
+  }
+
+  #menu-toggle .line3 {
+    bottom: 0; /* Troisième ligne en bas */
+  }
+
+  /* Lorsque le menu est ouvert */
+  #menu-toggle.open .line1 {
+    transform: rotate(45deg); /* Première ligne tourne de 45° */
+    top: 50%; /* La première ligne se déplace vers le centre */
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  #menu-toggle.open .line2 {
+    opacity: 0; /* Cache la ligne centrale */
+  }
+
+  #menu-toggle.open .line3 {
+    transform: rotate(-45deg); /* Troisième ligne tourne de -45° */
+    bottom: 50%; /* Se déplace vers le centre */
+    transform: translateY(50%) rotate(-45deg);
+  }
+
+/* Cacher le menu par défaut en mobile */
+#nav-links {
+    display: none;
+    flex-direction: column;
+    text-align: center;
+}
+
+/* Afficher le menu burger en mobile */
+#nav-links.show {
+    display: flex;
+}
+
+
+  
+  
+
+/* Affichage en mode bureau */
+@media (min-width: 768px) {
+    #menu-toggle {
+        display: none; /* Cacher le menu burger */
+    }
+
+    #nav-links {
+        display: flex !important;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+}
+
 
   /* Afficher la barre de navigation en mode mobile lorsque le menu est ouvert */
   #nav-links.show {
     display: flex; /* Affiche le menu en mode mobile */
+    
   }
 
   /* Afficher la barre de navigation en mode bureau */
   @media (min-width: 768px) {
     #menu-toggle {
       display: none; /* Cache le hamburger en mode bureau */
+
     }
 
     /* En mode bureau, on veut que le menu soit toujours visible */
@@ -373,19 +429,14 @@ h4 {
     transform: rotate(45deg);
     position: relative;
     top: 6px;
+    
   }
 
-  #menu-toggle.open .line2 {
-    opacity: 0;
-  }
 
-  #menu-toggle.open .line3 {
-    transform: rotate(-45deg);
-    position: relative;
-    top: -6px;
-  }
+
 
   
+
 
 
 
@@ -2235,16 +2286,6 @@ h4 {
 
 
 
-
-/* Les menus */
-
-
-
-
-
-
-
-
 /*--------------------------------------------------------------------------- Sections ---------------------------------------------------------------------------*/
 section {
     width: 100svw;
@@ -2577,24 +2618,6 @@ progress::-moz-progress-bar {
     backdrop-filter: blur(8px);
 }
 
-/*------------ CARROUSEL ------------*/
-.carousel {
-    position: relative;
-    max-width: 600px;
-    margin-left: 25px;
-    margin-right: 25px;
-    overflow: hidden;
-    z-index: 1;
-}
-
-/* Cartes du carrousel */
-.carousel-cards {
-    display: flex;
-    /* Chaque nouveau ajout dans le HTML place au début du carrousel */
-    flex-direction: row-reverse;
-    justify-content: flex-end;
-    transition: transform 800ms ease; /* Animation entre chaque carte*/
-}
 
 /* Carte */
 .card {
@@ -2619,47 +2642,5 @@ progress::-moz-progress-bar {
 }
 
 
-
-/* Légende d'une image */
-figcaption {
-    font-size: 1rem;
-    margin-bottom: 10px;
-}
-
-/* Lien dans une légende */
-figcaption a {
-    color: white;
-}
-
-/* Titre d'une carte*/
-.card-titre {
-    margin: 10px 0;
-    font-size: 2.5rem;
-    font-weight: 1000;
-    letter-spacing: 3px;
-}
-
-/* Texte d'une carte*/
-.card-paragraphe {
-    font-size: 1.2rem;
-    line-height: 1.5; /*espace entre les lignes*/
-    text-align: justify; /* Le texte prend toute la largeur */
-}
-
-/*------------ CARROUSEL FLECHES ------------*/
-.carousel-arrows {
-    text-align: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-.carousel-arrows .prev-arrow,
-.carousel-arrows .next-arrow {
-    cursor: pointer;
-    display: inline-block;
-    padding: 10px;
-    font-size: 24px;
-    user-select: none;
-}
 
 
