@@ -101,11 +101,6 @@
         text-transform: none
     }
 
-    [type=button],
-    button {
-        -webkit-appearance: button;
-    }
-
     ::-moz-focus-inner {
         border-style: none;
         padding: 0;
@@ -292,7 +287,7 @@
     svg,
     video {
         display: block;
-        vertical-align: middle;
+        
     }
 
     img,
@@ -351,6 +346,7 @@ h4 {
   #nav-links {
     display: none; /* Cache par défaut en mode mobile */
     flex-direction: column; /* Affichage vertical des liens */
+    text-align: center;
   }
 
   /* Afficher la barre de navigation en mode mobile lorsque le menu est ouvert */
@@ -2072,7 +2068,7 @@ h4 {
     background-color: #fff;
     transition: transform 0.2s, box-shadow 0.2s;
     padding: 10px; /* Ajout d'espace interne */
-    margin-right: 50px; /* Espace à droite des cartes */
+  
     margin-bottom: 20px; /* Espacement vertical entre les cartes */
     height: 250px; /* Hauteur automatique pour s'adapter au contenu */
   }
@@ -2111,18 +2107,28 @@ h4 {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   }
 
-   /* Responsive : cartes prennent toute la largeur sur petits écrans */
-   @media (max-width: 768px) {
-    .card {
-      width: calc(50% - 16px); /* Deux cartes par ligne sur les écrans moyens */
+   /* Responsive : ajustements pour les petits écrans */
+@media (max-width: 768px) {
+    .card-container {
+        grid-template-columns: repeat(2, 1fr); /* Deux colonnes sur les écrans moyens */
+        gap: 16px; /* Réduction de l'espacement pour optimiser l'espace */
     }
-  }
+}
 
-  @media (max-width: 480px) {
-    .card {
-      width: 100%; /* Une carte par ligne sur les très petits écrans */
+@media (max-width: 480px) {
+    .card-container {
+        grid-template-columns: 1fr; /* Une seule colonne sur les très petits écrans */
+        gap: 12px; /* Réduction supplémentaire de l'espacement */
     }
-  }
+
+    .card-img {
+        max-height: 150px; /* Réduit la hauteur de l'image sur les petits écrans */
+    }
+
+    .card {
+        padding: 8px; /* Réduction du padding interne pour gagner de la place */
+    }
+}
 
   /* S'assurer que les cartes se mettent en forme fluide et responsive */
   .grid {
@@ -2432,7 +2438,7 @@ section:target {
 }
 
 #flex-box-img-11 {
-    background-image: url(images/Pycharm.webp);
+    background-image: url(images/Android_Studio_Logo_2024.png);
 }
 
 /* Sous-titres */

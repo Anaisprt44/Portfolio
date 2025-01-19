@@ -8,7 +8,32 @@
   <meta name="description" content="Je suis Anaïs Portolleau, étudiante en informatique. Voir le CV, Mes Projets, Contact, Mon parcours, Mes passions">
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
   <link href="style.css" rel="stylesheet" type="text/css" />
+<!-- Styles CSS -->
+<!-- Styles CSS -->
+<style>
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .card-container {
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Plus petites colonnes sur tablettes */
+      gap: 16px;
+    }
 
+    .card h4 {
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .card-container {
+      grid-template-columns: 1fr; /* Une seule colonne sur très petits écrans */
+      gap: 12px;
+    }
+
+    .card h4 {
+      font-size: 0.9rem;
+    }
+  }
+</style>
 </head>
 <body>
 
@@ -125,92 +150,79 @@
             </div>
           </div>
         </div>  
-      <!-- Bloc Différents sujets -->
-      <div class="container mx-auto" style="width: 90%; background-color: #f0f0f0;">
-        <h4 class=" text-center">
-          Vous trouverez sur mon blog plusieurs sujets comme :
-        </h4>
 
-        <!-- Flexbox pour disposer les cartes et s'ajuster sur plusieurs lignes -->
-        <div class="card-container" style="display: flex; flex-wrap: wrap; gap: 24px; justify-content: space-between; padding: 20px;">
-          
-          <!-- Première carte -->
-          <a href="passions.html" class="card-link" style="text-decoration: none;">
-            <div class="card">
-              <div class="card-image">
-                <h4 class="text-center ">Mes Passions</h4>
-                <img src="images/image_passions.png" alt="Mes passions" class="card-img">
-              </div>
-              
-              
-            </div>
-          </a>
 
-          <!-- Deuxième carte -->
-          <a href="MesStages.html" class="card-link" style="text-decoration: none;">
-            <div class="card">
-              <div class="card-image">
-                <h4 class="text-center ">Mes Stages</h4>
-                <img src="images/stages.png" alt="Mes Stages" class="card-img">
-              </div>
-              
-              
-            </div>
-          </a>
+        <!-- Bloc Différents sujets -->
+        <!-- Bloc Différents sujets -->
+<div class="container" style="width: 90%; background-color: #f0f0f0; margin: 0 auto; padding: 20px;">
+  <h4 class="text-center">
+    Vous trouverez sur mon blog plusieurs sujets comme :
+  </h4>
 
-          <!-- Troisième carte -->
-          <a href="btsSioSlam.html" class="card-link" style="text-decoration: none;">
-            <div class="card">
-              <div class="card-image">
-                <h4 class="text-center ">Mes Projets SIO</h4>
-                <img src="images/mes_projets.png" alt="Mes Projets SIO" class="card-img">
-              </div>
-              
-            
-            </div>
-          </a>
-
-          <!-- Quatrième carte -->
-          <a href="VeilleTech.html" class="card-link" style="text-decoration: none;">
-            <div class="card">
-              <div class="card-image">
-                <h4 class="text-center ">Mes Veilles</h4>
-                <img src="images/veille-technologique.png" alt="Mes Veilles Technologiques" class="card-img">
-              </div>
-            
-            
-            </div>
-          </a>
-
-          <!-- Cinquième carte -->  
-          <a href="Formations.html" class="card-link" style="text-decoration: none;">
-            <div class="card">
-              <div class="card-image">
-                <h4 class="text-center ">Mes Formations</h4>
-                <img src="images/formations.png" alt="Mes Formations" class="card-img">
-              </div>
-              
-            
-            </div>
-          </a>
-
-          <!-- Sixième carte -->
-          <a href="cv/cv.html" class="card-link" style="text-decoration: none;">
-            <div class="card">
-              <div class="card-image">
-                <h4 class="text-center ">Mon CV</h4>
-                <img src="images/cv.png" alt="Mon CV" class="card-img">
-              </div>
-              
-              
-            </div>
-          </a>
-
-          
+  <!-- Flexbox pour disposer les cartes et s'ajuster sur plusieurs lignes -->
+  <div class="card-container">
+    
+    <!-- Première carte -->
+    <a href="passions.html" class="card-link">
+      <div class="card">
+        <div class="card-image">
+          <h4 class="text-center">Mes Passions</h4>
+          <img src="images/image_passions.png" alt="Mes passions" class="card-img">
         </div>
-      
       </div>
+    </a>
 
+    <!-- Deuxième carte -->
+    <a href="MesStages.html" class="card-link">
+      <div class="card">
+        <div class="card-image">
+          <h4 class="text-center">Mes Stages</h4>
+          <img src="images/stages.png" alt="Mes Stages" class="card-img">
+        </div>
+      </div>
+    </a>
+
+    <!-- Troisième carte -->
+    <a href="btsSioSlam.html" class="card-link">
+      <div class="card">
+        <div class="card-image">
+          <h4 class="text-center">Mes Projets SIO</h4>
+          <img src="images/mes_projets.png" alt="Mes Projets SIO" class="card-img">
+        </div>
+      </div>
+    </a>
+
+    <!-- Quatrième carte -->
+    <a href="VeilleTech.html" class="card-link">
+      <div class="card">
+        <div class="card-image">
+          <h4 class="text-center">Mes Veilles</h4>
+          <img src="images/veille-technologique.png" alt="Mes Veilles Technologiques" class="card-img">
+        </div>
+      </div>
+    </a>
+
+    <!-- Cinquième carte -->  
+    <a href="Formations.html" class="card-link">
+      <div class="card">
+        <div class="card-image">
+          <h4 class="text-center">Mes Formations</h4>
+          <img src="images/formations.png" alt="Mes Formations" class="card-img">
+        </div>
+      </div>
+    </a>
+
+    <!-- Sixième carte -->
+    <a href="cv/cv.html" class="card-link">
+      <div class="card">
+        <div class="card-image">
+          <h4 class="text-center">Mon CV</h4>
+          <img src="images/cv.png" alt="Mon CV" class="card-img">
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
       <br>       
   
   <!-- Séparation -->
