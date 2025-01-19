@@ -257,7 +257,8 @@
       
     }
     
-    
+
+      
 
 
     a {
@@ -320,6 +321,77 @@ h4 {
     color: #1a7a89; /* Couleur pour les titres */
 }
 
+/*Nav bbar */
+ /* Menu burger uniquement visible sur mobile */
+ #menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  #menu-toggle svg {
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s ease;
+  }
+
+  #menu-toggle .line {
+    width: 100%;
+    height: 4px;
+    background-color: #333;
+    transition: all 0.3s ease;
+  }
+
+  /* En mode mobile, cacher la barre de navigation par défaut */
+  #nav-links {
+    display: none; /* Cache par défaut en mode mobile */
+    flex-direction: column; /* Affichage vertical des liens */
+  }
+
+  /* Afficher la barre de navigation en mode mobile lorsque le menu est ouvert */
+  #nav-links.show {
+    display: flex; /* Affiche le menu en mode mobile */
+  }
+
+  /* Afficher la barre de navigation en mode bureau */
+  @media (min-width: 768px) {
+    #menu-toggle {
+      display: none; /* Cache le hamburger en mode bureau */
+    }
+
+    /* En mode bureau, on veut que le menu soit toujours visible */
+    #nav-links {
+      display: flex !important; /* Affiche le menu de manière horizontale */
+      flex-direction: row;
+      justify-content: flex-end;
+    }
+  }
+
+  /* Animation de l'icône hamburger */
+  #menu-toggle.open .line1 {
+    transform: rotate(45deg);
+    position: relative;
+    top: 6px;
+  }
+
+  #menu-toggle.open .line2 {
+    opacity: 0;
+  }
+
+  #menu-toggle.open .line3 {
+    transform: rotate(-45deg);
+    position: relative;
+    top: -6px;
+  }
+
+  
+
+
 
 .container {
     padding: 15px; /* Réduit le padding pour moins de zoom */
@@ -365,63 +437,6 @@ h4 {
 .button:hover {
     background-color: #155b60; /* Changement de couleur au survol */
 }
-
-.menu nav {
-    display: none; /* Masquer le menu par défaut */
-  }
-
-  .menu nav.active {
-    display: flex; /* Afficher le menu lorsqu'il est actif */
-    flex-direction: column;
-  }
-
-  @media (min-width: 768px) {
-    .menu nav {
-      display: flex; /* Toujours afficher le menu en mode bureau */
-      flex-direction: row;
-    }
-
-    .menu button {
-      display: none; /* Cacher le bouton hamburger en mode bureau */
-    }
-  }
-
-/* Styles pour la barre de navigation */
-.menu {
-    background-color: #ffffff; /* Fond blanc pour la barre de navigation */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.menu a {
-    color: #333; /* Couleur des liens dans le menu */
-}
-
-.menu a:hover {
-    color: #1a7a89; /* Couleur au survol des liens du menu */
-}
-
-
-    /* Styles pour la barre de navigation */
-    .menu {
-        background-color: #ffffff; /* Fond blanc pour la barre de navigation */
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-
-    .menu a {
-        color: #333; /* Couleur des liens dans le menu */
-    }
-
-    .menu a:hover {
-        color: #1a7a89; /* Couleur au survol des liens du menu */
-    }
-
-
-
-
-
-
-
-
 
 
 
@@ -2218,22 +2233,6 @@ h4 {
 /* Les menus */
 
 
-/* Menu mobile (<1300px)*/
-.mobile-menu {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 80px;
-    z-index: 100000001; /* Placer sur la navbar */
-    padding-inline: 30px 10px;
-    /* Effet de flou */
-    background: linear-gradient(to bottom, rgba(46, 45, 45, 0.21) 0%, rgba(46, 45, 45, 0.05) 100%);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
-    backdrop-filter: blur(1.5px);
-    box-sizing: border-box;
-    align-items: center;
-    display: none; /* Masqué par défaut */
-}
 
 
 
