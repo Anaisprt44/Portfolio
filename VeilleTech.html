@@ -61,18 +61,19 @@
         </div>
       </div>
     </div>
+  </div>
 
-
-    
-  <!-- JavaScript pour gérer l'ouverture et la fermeture du menu -->
   <script>
-    const menuToggle = document.getElementById("menu-toggle");
-    const navbar = document.getElementById("navbar");
+    // JavaScript pour ouvrir/fermer le menu en mode mobile
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
 
-    // Lorsqu'on clique sur le bouton du menu
-    menuToggle.addEventListener("click", () => {
-      navbar.classList.toggle("hidden"); // Afficher ou cacher la barre de navigation
-      menuToggle.querySelector("svg").classList.toggle("hidden"); // Alterner l'icône du menu
+    menuToggle.addEventListener('click', () => {
+      // Bascule la visibilité du menu en mode mobile
+      navLinks.classList.toggle('show');
+
+      // Animation du hamburger
+      menuToggle.classList.toggle('open');
     });
   </script>
         <!-- En tête de présentation -->
