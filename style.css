@@ -2268,7 +2268,7 @@ h4 {
 section {
     width: 100svw;
     min-height: 105svh; /* Chaque section prend un peu plus que la hauteur de l'écran */
-    color: #FFF5E1;
+    color: black;
     transition: opacity 0.6s ease-in-out;
     background-attachment: fixed;
 }
