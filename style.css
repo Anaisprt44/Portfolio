@@ -232,30 +232,6 @@
         font-weight: inherit
     }
 
-    .titre-mes-passions {
-        text-align: center;     /* Centre le texte */
-        color: black;           /* Couleur du texte en noir */
-        background-color: #f0f0f0; /* Fond gris clair */
-        padding: 20px;          /* Ajoute de l'espace autour du texte */
-        font-size: 24px;        /* Facultatif : ajustez la taille du texte */
-        font-weight: bold;      /* Facultatif : met le texte en gras */
-        border-radius: 10px;    /* Facultatif : arrondit les coins du bloc */
-       margin-top: 5px;
-    }
-    .titre-formations {
-        text-align: center;     /* Centre le texte */
-        color: black;           /* Couleur du texte en noir */
-        
-        padding: 20px;          /* Ajoute de l'espace autour du texte */
-        font-size: 24px;        /* Facultatif : ajustez la taille du texte */
-        /
-      
-    }
-    
-
-      
-
-
     a {
         color: inherit;
         text-decoration: inherit
@@ -1268,7 +1244,9 @@ h4 {
     }
 
     .font-sans {
-        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"
+        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", 
+        Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", 
+        "Noto Color Emoji"
     }
 
     .text-xs {
@@ -2641,6 +2619,32 @@ progress::-moz-progress-bar {
     border-radius: 16px;
 }
 
+/* Conteneur principal pour les cartes */
+.card-passions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 100px; /* Espace entre les cartes */
+    padding: 20px; /* Marges autour de l'ensemble des cartes */
+    background-color: #f9f9f9;
+  }
+  /* Style des cartes */
+.card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  
+  
+  /* Image des cartes */
+  .card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
 
 
 
