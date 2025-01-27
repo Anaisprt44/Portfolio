@@ -2460,6 +2460,10 @@ section:target {
     background-image: url(images/Android_Studio_Logo_2024.png);
 }
 
+#flex-box-img-12 {
+    background-image: url(images/intejidea.png);
+}
+
 /* Sous-titres */
 #competences .flex-box .flex-box-item p {
     font-weight: 500px;
