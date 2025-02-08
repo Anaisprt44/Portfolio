@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Portefolio d'Anaïs Portolleau - Page Intranet</title>
+  <meta name="description" content="Je suis Anaïs Portolleau, étudiante en informatique. Voir le CV, Mes Projets, Contact, Mon parcours, Mes passions">
+  <link rel="icon" href="../../images/favicon.ico" type="image/x-icon">
+  <link href="../../style.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+
+  <div id="__nuxt">
+    <div id="__layout">
+      <div>
+        <!-- Code de la barre de navigation -->
+        <div class="menu sticky top-0 z-50 bg-white">
+          <div class="w-full text-gray-700">
+            <div class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+              
+              <!-- Logo -->
+              <a href="../../index.html">
+                <img src="../../images/anais_logo.png" width="75" height="auto" alt="Logo">
+              </a>
+              
+              <!-- Titre de la page -->
+              <div class="flex flex-row items-center justify-between p-4">
+                <a href="../../index.html" class="text-lg font-bold tracking-widest text-gray-900 uppercase">A • P</a>
+                
+                <!-- Menu burger (affiché seulement en mode mobile) -->
+                <button id="menu-toggle">
+                  <div class="line line1"></div>
+                  <div class="line line2"></div>
+                  <div class="line line3"></div>
+                </button>
+              </div>
+              
+              <!-- Menu de navigation -->
+              <nav id="nav-links" class="flex-col flex-grow pb-4 md:pb-0 md:flex md:justify-end md:flex-row hidden">
+                <a href="../../Formations.html" class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-300 focus:bg-gray-300"
+                >Formations</a>
+                <a href="../../MesStages.html" class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-300 focus:bg-gray-300"
+                >Mes Stages</a>
+                <a href="../../competence.html" class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-300 focus:bg-gray-300"
+                >Compétences</a>
+                <a href="../../btsSioSlam.html" class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-300 focus:bg-gray-300"
+                >BTS SIO Option SLAM</a>
+                <a href="../../connaissances.html" class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-300 focus:bg-gray-300"
+                >Connaissances</a>
+                <a href="../../VeilleTech.html" class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-300 focus:bg-gray-300"
+                >Mes veilles</a>
+                <a href="../../passions.html" class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-300 focus:bg-gray-300"
+                >Mes passions</a>
+                <a href="../../contact.html" class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-300 focus:bg-gray-300"
+                >Contact</a>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript pour ouvrir/fermer le menu en mode mobile
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    menuToggle.addEventListener('click', () => {
+      // Bascule la visibilité du menu en mode mobile
+      navLinks.classList.toggle('show');
+
+      // Animation du hamburger
+      menuToggle.classList.toggle('open');
+    });
+  </script>
+
+       <!-- Contenu de l'étape 1 -->
+    <div class="container-projet" style="padding: 20px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); background-color: #f9f9f9;">
+      <h4 style="font-size: 1.5rem; margin-bottom: 15px;  color: #1a7a89;">Mission 2 – Projet Intranet</h4>
+
+      <div class="container">
+        
+        <h3>Objectif :</h3>
+        <p><strong>Mission 2 : Mise en place</strong></p>
+        <p>Sur Gitlab, créez un projet « Intranet » pour le groupe et ajoutez les membres. Le projet doit contenir un fichier Readme.md avec une courte description du projet.</p>
+        <p>Le projet a bien été créé comme on peut le voir ci-dessous :</p>
+        <img src="path_to_image/project_created.png" alt="Projet créé" class="img-fluid">
+      
+        <h3>Ajout des membres</h3>
+        <p>Ensuite, nous avons ajouté les membres comme montré ci-dessous :</p>
+        <img src="path_to_image/members_added.png" alt="Membres ajoutés" class="img-fluid">
+      
+        <h3>Mise en forme du Readme</h3>
+        <p>Nous avons bien mis en forme le fichier Readme avec des titres, des liens et des images, comme montré ci-dessous :</p>
+        <img src="path_to_image/readme_formatted.png" alt="Readme formaté" class="img-fluid">
+      
+        <h3>Planification des missions</h3>
+        <p>Sur Gitlab, nous avons cherché l’outil de planification et fait apparaître les missions 1 et 2, en les planifiant pour aujourd’hui. Nous avons également planifié les missions 3, 4, et 5 pour la semaine prochaine. Pour faire les tickets, nous sommes allés dans <strong>Programmation</strong>, puis <strong>Tableau des tickets</strong> :</p>
+        <img src="path_to_image/ticket_board.png" alt="Tableau des tickets" class="img-fluid">
+      
+        <h3>Ajout des tickets</h3>
+        <p>Nous avons ajouté des tickets comme montré ci-dessous :</p>
+        <img src="path_to_image/tickets_added.png" alt="Tickets ajoutés" class="img-fluid">
+      </div>
+      
+    </div>
+    
+    
+    </div>
+    
+    <!-- Boutons pour le compte rendu et le retour -->
+    <div class="button-group" style="display: flex; justify-content: center; margin-top: 20px;">
+        <a href="../../intranet.html" class="button" style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; 
+        text-decoration: none; font-weight: bold; margin: 0 10px;">Retour</a>
+    </div>
+
+        </div>
+        </div>
+        
+        
+        <br>
+  
+
+          <br>
+
+                <!-- Footer -->
+                <div class="bg-white">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:p-12 p-4 md:w-3/12">
+                            <h4 class="pb-2">À propos</h4>
+                            <p class="text-justify"></p>
+                        </div>
+                        <div class="md:p-12 p-4 md:w-3/12">
+                            <h4 class="pb-2">Liens</h4> 
+                            <a href="../../index.html">→ Accueil</a><br><br>
+                            <a href="../../passions.html">→ À propos de moi</a><br><br>
+                            <a href="../../Formations.html">→ Mes Formations </a><br><br>
+                            <a href="../../MesStages.html">→ Stages</a>
+                        </div>
+                        <div class="md:p-12 p-4 md:w-3/12">
+                            <h4 class="pb-2">Projets</h4> 
+                            <a href="../../competence.html">→ Mes compétences</a><br><br>
+                            <a href="../../btsSioSlam.html">→ BTS SIO SLAM</a>
+                        </div>
+                        <div class="md:p-12 p-4 md:w-3/12">
+                            <h4 class="pb-2">Contact</h4>
+                            <div class="flex row items-center justify-start">
+                                <img src="../../images/email_icon.de2632c.png" alt="email icon" class="w-6">
+                                <a href="mailto:anais.portolleau44@gmail.com" class="font-medium p-2">anais.portolleau44@gmail.com</a>
+                            </div>
+                            <div class="flex row items-center justify-start">
+                                <img src="../../images/phone_icon.a64af40.png" alt="phone icon" class="w-6">
+                                <p class="font-medium p-2">06.52.01.38.39</p>
+                            </div>
+                            <div class="button">
+                                <a href="cv/2SLAM_PORTOLLEAU_Anaïs_CV.pdf" target="_blank">Télécharger CV</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
