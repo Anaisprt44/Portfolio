@@ -82,54 +82,60 @@
       <h4 style="font-size: 1.5rem; margin-bottom: 15px;  color: #1a7a89;">Etape 7 – Projet Intranet</h4>
 
       <div style=" margin-top: 20px;">
-        <a href="../CDC/biblio2024-_mission-1.pdf" style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; 
+        <a href="../CDC/projet_intranet_mission_6_7.pdf" style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; 
             font-weight: bold; margin: 0 10px; transition: background-color 0.3s;" 
-            target="_blank">Consigne Etape 1
+            target="_blank">Consigne Etape 7
         </a>
+        <a href="../Compte_Rendue/Mission7_Compte_rendu_PROJET-INTRANET.pdf" style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; 
+            font-weight: bold; margin: 0 10px; transition: background-color 0.3s;" 
+            target="_blank">Voir compte Rendue
+        </a>
+        <br>
       </div>
 
-      <main>
-        <section class="intro">
-            <h2>Objectifs</h2>
-            <p>Ce projet consiste à créer un formulaire HTML pour la création d'utilisateurs dans un espace d'administration, et à intégrer ces utilisateurs dans une base de données.</p>
-        </section>
+      <h4>Objectifs</h4>
+            <p>Ce projet consiste à créer un formulaire HTML pour la création d'utilisateurs dans un espace d'administration, et à intégrer ces utilisateurs dans une base de données.
+              On devait par exemple faire ces tâches : 
+            </p>  
 
-        <section class="table-of-contents">
-            <h2>Table des matières</h2>
-            <ul>
-                <li>1. Créez un formulaire HTML pour la création d’un utilisateur depuis l’espace d’administration</li>
-                <li>2. Ajoutez les groupes 'Administrateur', 'Ressources Humaines', 'Logistique' et 'Informatique' manuellement dans votre base de données</li>
-                <li>3. Ajoutez le code PHP pour récupérer les groupes dans la base de données et les afficher dans la liste du formulaire</li>
-                <li>4. Utilisez PHP pour récupérer les valeurs du formulaire via la méthode POST pour créer l’utilisateur dans la base de données</li>
+            <li>1. Créez un formulaire HTML pour la création d’un utilisateur depuis l’espace d’administration</li>
+            <li>2. Ajoutez les groupes 'Administrateur', 'Ressources Humaines', 'Logistique' et 'Informatique' manuellement dans votre base de données</li>
+            <li>3. Ajoutez le code PHP pour récupérer les groupes dans la base de données et les afficher dans la liste du formulaire</li>
+            <li>4. Utilisez PHP pour récupérer les valeurs du formulaire via la méthode POST pour créer l’utilisateur dans la base de données</li>
             </ul>
-        </section>
-
-        <section class="question">
-            <h2>1. Créez un formulaire HTML pour la création d’un utilisateur depuis l’espace d’administration</h2>
+        
+            <h4>Question 1 - Créez un formulaire HTML pour la création d’un utilisateur depuis l’espace d’administration</h4>        
+            
             <p>Nous avons conçu un formulaire permettant à l’administrateur de créer un utilisateur. Ce formulaire inclut des champs pour le nom, prénom, login, et mot de passe.</p>
             <p>Le formulaire utilise la méthode POST et permet également l'upload de fichiers (comme une photo de profil) grâce à l'attribut `enctype="multipart/form-data"`.</p>
-        </section>
+            
+            <br>
 
-        <section class="question">
-            <h2>2. Ajoutez les groupes 'Administrateur', 'Ressources Humaines', 'Logistique' et 'Informatique' manuellement dans votre base de données</h2>
+            <h4>Question 2 - Ajoutez les groupes 'Administrateur', 'Ressources Humaines', 'Logistique' et 'Informatique' manuellement dans votre base de données</h4>     
+
             <p>Nous avons inséré ces groupes dans la base de données à l'aide de la commande SQL suivante :</p>
             <p><code>INSERT INTO groupes (codeGrp, libelle) VALUES ('1', 'Administrateur'), ('2', 'Ressources Humaines'), ('3', 'Logistique'), ('4', 'Informatique');</code></p>
             <p>Les groupes ont bien été ajoutés à la base de données.</p>
-        </section>
+        
+            <br>
 
-        <section class="question">
-            <h2>3. Ajoutez le code PHP pour récupérer les groupes dans la base de données et les afficher dans la liste du formulaire</h2>
-            <p>Le code PHP permet de récupérer les groupes depuis la base de données et de les afficher dans une liste déroulante dans le formulaire. Si aucun groupe n'est trouvé, un message est affiché.</p>
-            <p>La requête SQL SELECT est utilisée pour récupérer les groupes et les afficher dynamiquement dans des éléments `<option>`.</p>
-        </section>
+            <h4>Question 3 - Ajoutez le code PHP pour récupérer les groupes dans la base de données et les afficher dans la liste du formulaire</h4>     
 
-        <section class="question">
-            <h2>4. Récupérer les valeurs du formulaire et créer l’utilisateur dans la base de données</h2>
+            <p>Le code PHP permet de récupérer les groupes depuis la base de données et de les afficher dans une liste déroulante dans le formulaire. Si aucun groupe n'est trouvé, un 
+              message est affiché.
+            </p>
+            <p>La requête SQL SELECT est utilisée pour récupérer les groupes et les afficher dynamiquement dans des éléments 
+              
+
+            </p>
+        
+            <br>
+
             <p>Les données du formulaire sont récupérées via la méthode POST. Un hachage du mot de passe est effectué pour sécuriser les données avant leur insertion dans la base de données.</p>
             <p>Une requête SQL préparée insère les informations dans la table des utilisateurs. Si l’insertion est réussie, un message de succès est affiché. En cas d'erreur, un message d'erreur est montré.</p>
-        </section>
+        
 
-    </main>
+
     
     <!-- Boutons pour le compte rendu et le retour -->
     <div class="button-group" style="display: flex; justify-content: center; margin-top: 20px;">
