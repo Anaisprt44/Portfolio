@@ -77,63 +77,52 @@
     });
   </script>
 
-       <!-- Contenu de l'étape 5 du projet -->
-  <div class="container-projet" style="padding: 20px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); background-color: #f9f9f9;">
-    <h4 style="font-size: 1.5rem; margin-bottom: 15px; color: #1a7a89;">Etape 5 – Projet Intranet</h4>
-    
-    <a href="../CDC/projet_intranet_missions_4_5.pdf" style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; 
-      font-weight: bold; margin: 0 10px; transition: background-color 0.3s;" target="_blank">Consigne Etape 5
-    </a>
-    <a href="../Compte_Rendue/Mission5_Compte_rendu_PROJET-INTRANET.pdf" style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; 
-      font-weight: bold; margin: 0 10px; transition: background-color 0.3s;" target="_blank">Compte Rendue Etape 5
-    </a>
+       <!-- Contenu de l'étape 1 -->
+    <div class="container-projet" style="padding: 20px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); background-color: #f9f9f9;">
+      <h4 style="font-size: 1.5rem; margin-bottom: 15px;  color: #1a7a89;">Etape 9 – Projet Intranet</h4>
 
-
-    <br>    
-          
-          <h4 id="mission5">Mission 5 :</h4>
-          <p>Tout d'abord dans cette mission nous devions <strong>>Installer un environnement de développement pour PHP</strong> avec une base de données ou utilisez une machine 
-            virtuelle existante. On va utiliser VS Code et Netbeans pour environnement de développement pour utiliser PHP. Également notre base de données s’appellera comme demandé 
-            <strong>« corpany_project_intranet ».</strong> Nous avons installé Netbeans comme on peut le voir ci-dessous :</p>
-          
-          <h4>Figure 1 : Environnement de développement Netbeans</h4>
-          <img src="../images/mission 5/netbeans_setup.png" alt="Environnement de développement Netbeans" class="img-fluid">
-
-          <br>
-
-          <h4>Figure 2 : Environnement de développement VS Code</h4>
-          <img src="../images/mission 5/vscode_setup.png" alt="Environnement de développement VS Code" class="img-fluid">
-          
-          <br>
-          
-         
-          <h4>Figure 3 : Création de la base de données corpany_project_intranet</h4>
-          <p>Ensuite nous devions créer
-             une base de données dans MariaDB avec le nom <strong>"corpany_project_intranet".</strong> Tout d’abord dans le script SQL de la base de données, on supprime la base si 
-             elle existe déjà pour éviter les erreurs de type : la base de données est déjà existante. Puis on créé la base de donnée avec la <strong>commande « CREATE DATABASE nom_table ».</strong> 
-             On donne le nom demandé c’est-à-dire "corpany_project_intranet".</p>          
-          <img src="../images/mission 5/creation_base.png" alt="Création de la base de données" class="img-fluid">
-          <p>Voir compte rendue pour mieux voir la base de données et ces explications</p>       
-         
-          <h4>Tester l'accès à la base de données</h4>
-          <p>Créez un fichier PHP avec du code permettant de tester l’accès à la base de données.</p>
-          <h4>Figure 4 : fichier permettant de tester l’accès à la base de données</h4>
-          <img src="../images/mission 5/connexionBDD_code.png" alt="Fichier de test d'accès à la base" class="img-fluid">
-
-          <br>
-
-          <h4>Configuration du projet</h4>
-          <p>Avant de lancer le projet, on doit bien configurer le projet comme ceci par exemple :</p>
-          <h4>Figure 5 : Configuration du projet</h4>
-          <img src="../images/mission 5/configuration_projet.png" alt="Configuration du projet" class="img-fluid">
-          
-          <h4 style="text-align:center">Conclusion</h4>
-          <p style="text-align:center">Le projet est en bonne voie et est maintenant prêt à être testé mais également on peut commencer à coder tout est prêt.</p>
-        </p>
+      <div style=" margin-top: 20px;">
+        <a href="../CDC/projet_intranet_mission_9.pdf" style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; 
+            font-weight: bold; margin: 0 10px; transition: background-color 0.3s;" 
+            target="_blank">Consigne Etape 9
+        </a>
+        <a href="../Compte_Rendue/Mission9_Compte_rendu_PROJET-INTRANET_v2.pdf" style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; 
+            font-weight: bold; margin: 0 10px; transition: background-color 0.3s;" 
+            target="_blank">Voir compte Rendue
+        </a>
+        <br>
       </div>
-    </div>
-  </div>
 
+      
+        <h5 style="color: #333; margin-top: 15px;">Mise à jour des représentations UML</h5>
+        <ul style="margin-left: 20px;">
+            <li>Ajout des cas d’utilisation pour mieux représenter les interactions entre les groupes et les actualités.</li>
+            <li>Seuls les administrateurs ont accès à l’intégralité des actualités.</li>
+        </ul>
+    
+        <h5 style="color: #333; margin-top: 15px;">Ajout d’une nouvelle table dans la base de données</h5>
+        <ul style="margin-left: 20px;">
+            <li>Création d’une table <strong>actualites</strong> avec les champs : <em>id, titre, description, grp, et creation_date</em>.</li>
+            <li>Mise en place d’une clé primaire et d’un index sur le champ <em>grp</em> pour optimiser les requêtes.</li>
+        </ul>
+    
+        <h5 style="color: #333; margin-top: 15px;">Intégration du code PHP pour l’affichage des actualités</h5>
+        <ul style="margin-left: 20px;">
+            <li>Modification du fichier <code>index.php</code> pour afficher dynamiquement les trois dernières actualités du groupe de l’utilisateur.</li>
+            <li>Utilisation de la fonction <code>affichageActualites()</code> pour récupérer et afficher ces actualités via une requête SQL et <code>fetchAll()</code>.</li>
+            <li>Test réalisé avec le compte <code>aportolleau</code>, qui affiche correctement les actualités du groupe <strong>INF</strong>.</li>
+        </ul>
+    </div>
+    
+
+      
+      
+    
+
+    </div>
+    
+    
+    </div>
     
     <!-- Boutons pour le compte rendu et le retour -->
     <div class="button-group" style="display: flex; justify-content: center; margin-top: 20px;">
