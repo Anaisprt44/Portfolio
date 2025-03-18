@@ -38,6 +38,7 @@
               </div>
               
               <!-- Menu de navigation -->
+              <!-- Menu de navigation -->
               <nav id="nav-links" class="flex-col flex-grow pb-4 md:pb-0 md:flex md:justify-end md:flex-row hidden">
                 <a href="../Formations.html" class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-300 focus:bg-gray-300"
                 >Formations</a>
@@ -47,8 +48,7 @@
                 >Compétences</a>
                 <a href="../btsSioSlam.html" class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-300 focus:bg-gray-300"
                 >BTS SIO Option SLAM</a>
-                <a href="../connaissances.html" class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-300 focus:bg-gray-300"
-                >Connaissances</a>
+                
                 <a href="../VeilleTech.html" class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-300 focus:bg-gray-300"
                 >Mes veilles</a>
                 <a href="../passions.html" class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-300 focus:bg-gray-300"
@@ -545,51 +545,71 @@
 </div>
 
 
-    <br>
+<br>
 
 
     <!-- Bouton retour --> 
     <div style="display: flex; justify-content: center; align-items: center; ">
       <div class="button" style="display: inline-flex; justify-content: center; align-items: center;">
+        
         <a href="../VeilleTech.html" target="_blank" style="text-decoration: none; color: white; border-radius: 5px; text-align: center;">
           Retour à la Veille Tech
         </a>
     </div>
     </div>
 
-
-    <div class="flex flex-col w-full sticky md:top-36 lg:w-1/3 mt-2 md:mt-12 px-8" 
-      data-v-04f5f612 data-v-2fd28016>
-      <h6 data-v-04f5f612>Autres veilles technologiques</h6>
-
-      <div class="flex my-3" data-v-04f5f612>
-        <!-- Affichage de l'image -->
-        <a href="veille_phising.html" data-v-04f5f612>
-          <img src="../images/phishing.png" alt="Logo cybersécurité" class="blob-prj4 w-10 h-10 rounded-full mr-3">
-        </a>
-        <!-- Texte lié -->
-        <div data-v-04f5f612>
-          <p data-v-04f5f612>
-              <a href="Veillecybersécurité.html" class="font-bold" data-v-04f5f612>Veille Phising</a>
-          </p>
-          <div data-v-04f5f612>BTS SIO 2023/2026</div>
+    <br><!-- Contenu de la veille améliorée -->
+    <div class="container" style="width: 1200px; margin: 0 auto; background-color: #f9f9f9; border-radius: 12px; 
+              box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); font-family: 'Arial', sans-serif; padding: 20px;">
+      <h6 class="text-center text-lg font-semibold mb-4">Autres veilles technologiques</h6>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- Veille Phishing -->
+        <div class="flex items-center bg-white p-3 rounded-lg shadow">
+          <a href="veille_phising.html">
+            <img src="../images/phishing.png" alt="Logo cybersécurité" class="w-6 h-6 rounded-full mr-2">
+          </a>
+          <div>
+            <p><a href="veille_phising.html" class="font-bold text-blue-600 hover:underline">Veille Phishing</a></p>
+            <div class="text-gray-600">BTS SIO 2023/2026</div>
+          </div>
         </div>
-      </div>
-
-      <div class="flex my-3" data-v-04f5f612>
-        <!-- Affichage de l'image -->
-        <a href="VeilleFrameworks.html" data-v-04f5f612>
-          <img src="../images/framework.png" alt="Logo cybersécurité" class="blob-prj4 w-10 h-10 rounded-full mr-3">
-        </a>
-        <!-- Texte lié -->
-        <div data-v-04f5f612>
-          <p data-v-04f5f612>
-              <a href="VeilleFrameworks.html" class="font-bold" data-v-04f5f612>Veille Framework</a>
-          </p>
-          <div data-v-04f5f612>BTS SIO 2023/2026</div>
+        
+        <!-- Veille Frameworks -->
+        <div class="flex items-center bg-white p-3 rounded-lg shadow">
+          <a href="VeilleFrameworks.html">
+            <img src="../images/framework.png" alt="Logo framework" class="w-6 h-6 rounded-full mr-2">
+          </a>
+          <div>
+            <p><a href="VeilleFrameworks.html" class="font-bold text-blue-600 hover:underline">Veille Framework</a></p>
+            <div class="text-gray-600">BTS SIO 2023/2026</div>
+          </div>
+        </div>
+        
+        <!-- Veille IA -->
+        <div class="flex items-center bg-white p-3 rounded-lg shadow">
+          <a href="VeilleAI.html">
+            <img src="../images/ia.png" alt="Logo IA" class="w-6 h-6 rounded-full mr-2">
+          </a>
+          <div>
+            <p><a href="VeilleAI.html" class="font-bold text-blue-600 hover:underline">Veille IA</a></p>
+            <div class="text-gray-600">BTS SIO 2023/2026</div>
+          </div>
+        </div>
+    
+        <!-- Veille Cyber-sécurité -->
+        <div class="flex items-center bg-white p-3 rounded-lg shadow">
+          <a href="Veillecybersécurité.html">
+            <img src="../images/cyber-logo.png" alt="Logo cybersécurité" class="w-6 h-6 rounded-full mr-2">
+          </a>
+          <div>
+            <p><a href="Veillecybersécurité.html" class="font-bold text-blue-600 hover:underline">Veille Cyber-sécurité</a></p>
+            <div class="text-gray-600">BTS SIO 2023/2026</div>
+          </div>
         </div>
       </div>
     </div>
+    
     
     
     
