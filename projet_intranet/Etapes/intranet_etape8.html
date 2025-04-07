@@ -76,94 +76,86 @@
     });
   </script>
 
-       <!-- Contenu de l'étape 1 -->
-    <div class="container-projet" style="padding: 20px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); background-color: #f9f9f9;">
-      <h4 style="font-size: 1.5rem; margin-bottom: 15px;  color: #1a7a89;">Etape 8 – Projet Intranet</h4>
+       <!-- Contenu de l'étape 8-->
+  
+<div class="container-projet" style="padding: 20px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); background-color: #f9f9f9;">
+  <h4 style="font-size: 1.5rem; margin-bottom: 15px;  color: #1a7a89;">Etape 8 – Projet Intranet</h4>
 
-      <div style=" margin-top: 20px;">
-        <a href="../CDC/projet_intranet_mission_8.pdf" style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; 
-            font-weight: bold; margin: 0 10px; transition: background-color 0.3s;" 
-            target="_blank">Consigne Etape 8
-        </a>
-        <a href="../Compte_Rendue/Mission8_Compte_rendu_PROJET-INTRANET.pdf" style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; 
-            font-weight: bold; margin: 0 10px; transition: background-color 0.3s;" 
-            target="_blank">Voir compte Rendue
-        </a>
+  <div style=" margin-top: 20px;">
+    <a href="../CDC/projet_intranet_mission_8.pdf" style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; 
+        font-weight: bold; margin: 0 10px; transition: background-color 0.3s;" 
+        target="_blank">Consigne Etape 8
+    </a>
+    <a href="../Compte_Rendue/Mission8_Compte_rendu_PROJET-INTRANET.pdf" style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; 
+        font-weight: bold; margin: 0 10px; transition: background-color 0.3s;" 
+        target="_blank">Voir compte Rendue
+    </a>
+    <br>
+  </div>
+
+  
+  <h4>Objectif</h4>
+  <p>
+    Dans cette mission, nous avons mis en place un système d'authentification pour les utilisateurs, qui comprend la création d'un formulaire de connexion, le hachage des mots de 
+    passe en PHP, la gestion des sessions et la protection du tableau de bord.
+  </p>     
+   
+  
+      <h4>1. Mise à jour de la représentation UML pour l'authentification</h4>
+      <p>Nous avons mis à jour notre diagramme UML pour inclure un cas d’utilisation "Authentification". Le processus implique que le système vérifie les identifiants et le mot 
+        de passe de l'utilisateur dans la base de données avant de lui accorder l'accès à son compte. Cela s'applique à tous les utilisateurs, y compris les administrateurs.
+      </p>
+      <img src="../images/mission8/question1.png" alt="Représentation UML de l'authentification" />
+  
+      <br>
+    
+      <h4>2. Création du formulaire de connexion et gestion de l'authentification avec PHP</h4>
+      <p>Voici un exemple de code HTML pour le formulaire de connexion :</p>
+      <img src="../images/mission8/question2.png" alt="Formulaire de connexion utilisateur" />
+
+      <p>Le code PHP qui gère l'authentification de l'utilisateur et vérifie les identifiants dans la base de données avec le mot de passe haché est le suivant :</p>
+      <img src="../images/mission8/question3.png" alt="Code PHP pour l'authentification" />
+    
+      <br>
+    
+      <h4>3. Redirection vers le tableau de bord après l'authentification</h4>
+      <p>Nous avons ajouté une redirection vers le tableau de bord après la connexion. Si les informations de connexion sont valides, l'utilisateur est redirigé vers la page 
+        d'accueil du tableau de bord :</p>
+      <img src="../images/mission8/question4.png" alt="Redirection vers le tableau de bord" />
+   
+      <br>
+
+      <h4>4. Stockage de l'identifiant de l'utilisateur dans une variable de session</h4>
+      <p>L'identifiant de l'utilisateur est stocké dans une variable de session pour qu'il puisse rester connecté pendant sa navigation :</p>
+      <img src="../images/mission8/question5.png" alt="Stockage de l'identifiant de l'utilisateur en session" />
+   
+      <br>
+    
+        <h4>5. Affichage de l'identifiant de l'utilisateur sur le tableau de bord</h4>
+        <p>Une fois connecté, l'identifiant de l'utilisateur est affiché sur le tableau de bord :</p>
+        <img src="../images/mission8/question6.png" alt="Affichage de l'identifiant sur le tableau de bord" />
+        <img src="../images/mission8/question6.1.png" alt="Affichage de l'identifiant sur le tableau de bord" />
+
         <br>
-      </div>
-
-      
-      <h4>Objectif</h4>
-      <p>
-        Dans cette mission, nous avons mis en place un système d'authentification pour les utilisateurs, qui comprend la création d'un formulaire de connexion, le hachage des mots de 
-        passe en PHP, la gestion des sessions et la protection du tableau de bord.
-      </p>     
-
-      <h4>Voci les différenes</h4>
-      <ul>
-          <li>1. Exercice 1 : Mise à jour de la représentation UML pour l'authentification</li>
-          <li>2. Création du formulaire de connexion et gestion de l'authentification avec PHP</li>
-          <li>3. Redirection vers le tableau de bord après l'authentification</li>
-          <li>4. Stockage de l'identifiant de l'utilisateur dans une variable de session</li>
-          <li>5. Affichage de l'identifiant de l'utilisateur sur le tableau de bord</li>
-          <li>6. Protection du tableau de bord pour les utilisateurs non authentifiés</li>
-      </ul>        
-      
-          <h4>1. Mise à jour de la représentation UML pour l'authentification</h4>
-          <p>Nous avons mis à jour notre diagramme UML pour inclure un cas d’utilisation "Authentification". Le processus implique que le système vérifie les identifiants et le mot 
-            de passe de l'utilisateur dans la base de données avant de lui accorder l'accès à son compte. Cela s'applique à tous les utilisateurs, y compris les administrateurs.
-          </p>
-          <img src="../images/mission8/question1.png" alt="Représentation UML de l'authentification" />
-      
-          <br>
-        
-          <h4>2. Création du formulaire de connexion et gestion de l'authentification avec PHP</h4>
-          <p>Voici un exemple de code HTML pour le formulaire de connexion :</p>
-          <img src="../images/mission8/question2.png" alt="Formulaire de connexion utilisateur" />
-
-          <p>Le code PHP qui gère l'authentification de l'utilisateur et vérifie les identifiants dans la base de données avec le mot de passe haché est le suivant :</p>
-          <img src="../images/mission8/question3.png" alt="Code PHP pour l'authentification" />
-        
-          <br>
-        
-          <h4>3. Redirection vers le tableau de bord après l'authentification</h4>
-          <p>Nous avons ajouté une redirection vers le tableau de bord après la connexion. Si les informations de connexion sont valides, l'utilisateur est redirigé vers la page 
-            d'accueil du tableau de bord :</p>
-          <img src="../images/mission8/question4.png" alt="Redirection vers le tableau de bord" />
-       
-          <br>
-
-          <h4>4. Stockage de l'identifiant de l'utilisateur dans une variable de session</h4>
-          <p>L'identifiant de l'utilisateur est stocké dans une variable de session pour qu'il puisse rester connecté pendant sa navigation :</p>
-          <img src="../images/mission8/question5.png" alt="Stockage de l'identifiant de l'utilisateur en session" />
-       
-          <br>
-        
-            <h4>5. Affichage de l'identifiant de l'utilisateur sur le tableau de bord</h4>
-            <p>Une fois connecté, l'identifiant de l'utilisateur est affiché sur le tableau de bord :</p>
-            <img src="../images/mission8/question6.png" alt="Affichage de l'identifiant sur le tableau de bord" />
-            <img src="../images/mission8/question6.1.png" alt="Affichage de l'identifiant sur le tableau de bord" />
-
-            <br>
-        
-
-            <h4>6. Protection du tableau de bord pour les utilisateurs non authentifiés</h4>
-            <p>Le tableau de bord est protégé pour empêcher l'accès par un utilisateur non authentifié. Si l'utilisateur n'est pas connecté, il est redirigé vers la page de 
-              connexion :</p>
-            <img src="../images/mission8/protection-tableau-de-bord.png" alt="Protection du tableau de bord pour les utilisateurs non authentifiés" />
-        </section>
     
 
-    </div>
-    
-    
-    </div>
-    
-    <!-- Boutons pour le compte rendu et le retour -->
-    <div class="button-group" style="display: flex; justify-content: center; margin-top: 20px;">
-        <a href="../../intranet.html" class="button" style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; 
-        text-decoration: none; font-weight: bold; margin: 0 10px;">Retour</a>
-    </div>
+        <h4>6. Protection du tableau de bord pour les utilisateurs non authentifiés</h4>
+        <p>Le tableau de bord est protégé pour empêcher l'accès par un utilisateur non authentifié. Si l'utilisateur n'est pas connecté, il est redirigé vers la page de 
+          connexion :</p>
+        <img src="../images/mission8/protection-tableau-de-bord.png" alt="Protection du tableau de bord pour les utilisateurs non authentifiés" />
+    </section>
+  
+
+</div>
+
+
+</div>
+
+<!-- Boutons pour le compte rendu et le retour -->
+<div class="button-group" style="display: flex; justify-content: center; margin-top: 20px;">
+    <a href="../../intranet.html" class="button" style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; 
+    text-decoration: none; font-weight: bold; margin: 0 10px;">Retour</a>
+</div>
 
         </div>
         </div>

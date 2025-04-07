@@ -78,11 +78,11 @@
     });
   </script>
 
-       <!-- Contenu de l'étape 1 -->
+      <!-- Contenu de l'étape 6 -->
     <div class="container-projet" style="padding: 20px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); background-color: #f9f9f9;">
       <h4 style="font-size: 1.5rem; margin-bottom: 15px;  color: #1a7a89;">Etape 6 – Projet Intranet</h4>
 
-      <div style=" margin-top: 20px;">
+      <div style="margin-top: 20px;">
         <a href="../CDC/projet_intranet_mission_6_7.pdf" style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; 
             font-weight: bold; margin: 0 10px; transition: background-color 0.3s;" 
             target="_blank">Consigne Etape 6
@@ -92,51 +92,46 @@
             target="_blank">Voir compte Rendue
         </a>
         <br>
-        <p>L'objectif de cette mission était de modéliser et structurer l'accès aux utilisateurs</p>
+        <p>L'objectif de cette mission était de modéliser et structurer l'accès aux utilisateurs.</p>
         
         <h4>1. Modélisation UML des employés et des rôles</h4>
-          <p>Une représentation UML a été réalisée pour détailler les différentes fonctionnalités accessibles en fonction des rôles :</p>
-          <ul>
-              <li><strong>Administrateur :</strong> Gestion complète des utilisateurs et accès à toutes les fonctionnalités.</li>
-              <li><strong>Ressources Humaines :</strong> Accès limité aux fonctionnalités, sans consultation des tickets des autres utilisateurs.</li>
-              <li><strong>Logistique :</strong> Consultation des tickets des autres utilisateurs avec les administrateurs.</li>
-          </ul>         
-      
-          <h4>2. Modélisation UML de la relation Utilisateur-Groupe</h4>
-          <p>Un diagramme UML illustre la relation entre un utilisateur et un groupe :</p>
-          <ul>
-              <li>Chaque utilisateur possède un <strong>identifiant</strong> et un <strong>mot de passe</strong>.</li>
-              <li>Un <strong>CodeGrp</strong> permet d’attribuer un rôle (ex. ADM pour Administrateur).</li>
-              <li>La table des utilisateurs est liée à la table des groupes, qui définit les rôles accessibles.</li>
-          </ul>
-      
-      
-      
-          <h4>3. Création des tables « utilisateur » et « groupe »</h4>
-          <p>Deux tables SQL ont été mises en place :</p>
-          <ul>
-              <li><strong>Table Utilisateur :</strong> Contient les <em>logins, mots de passe et CodeGrp</em> pour attribuer les rôles.</li>
-              <li><strong>Table Groupe :</strong> Contient les <em>identifiants et libellés des rôles</em>.</li>
-          </ul>
-     
+        <p>Une représentation UML a été réalisée pour détailler les différentes fonctionnalités accessibles en fonction des rôles :</p>
+        <ul>
+            <li><strong>Administrateur :</strong> Gestion complète des utilisateurs et accès à toutes les fonctionnalités.</li>
+            <li><strong>Ressources Humaines :</strong> Accès limité aux fonctionnalités, sans consultation des tickets des autres utilisateurs.</li>
+            <li><strong>Logistique :</strong> Consultation des tickets des autres utilisateurs avec les administrateurs.</li>
+        </ul>  
+        <img src="../images/mission6/6-1.png" alt="Modélisation UML" class="img-fluid" style="max-width: 100%; height: auto; margin-top: 10px;">
 
-
-
-
-
-
-
-
+        <h4>2. Modélisation UML de la relation Utilisateur-Groupe</h4>
+        <p>Un diagramme UML illustre la relation entre un utilisateur et un groupe :</p>
+        <ul>
+            <li>Chaque utilisateur possède un <strong>identifiant</strong> et un <strong>mot de passe</strong>.</li>
+            <li>Un <strong>CodeGrp</strong> permet d’attribuer un rôle (ex. ADM pour Administrateur).</li>
+            <li>La table des utilisateurs est liée à la table des groupes, qui définit les rôles accessibles.</li>
+        </ul>
+        <img src="../images/mission6/6-2.png" alt="Modélisation UML" class="img-fluid" style="max-width: 100%; height: auto; margin-top: 10px;">
+        <br>
+        <h4>3. Création des tables « utilisateur » et « groupe »</h4>
+        <p>Deux tables SQL ont été mises en place :</p>
+        <ul>
+            <li><strong>Table Utilisateur :</strong> Contient les <em>logins, mots de passe et CodeGrp</em> pour attribuer les rôles.</li>
+            <li><strong>Table Groupe :</strong> Contient les <em>identifiants et libellés des rôles</em>.</li>
+        </ul>
+        <br>
+        <img src="../images/mission6/6-3.png" alt="Modélisation UML" class="img-fluid" style="max-width: 100%; height: auto; margin-top: 10px;">
+        <br>
+        <p>Puis ajout d'utilisateur:</p>
+        <img src="../images/mission6/6-4.png" alt="Modélisation UML" class="img-fluid" style="max-width: 100%; height: auto; margin-top: 10px;">
       </div>  
     </div>
+
     <!-- Boutons pour le compte rendu et le retour -->
     <div class="button-group" style="display: flex; justify-content: center; margin-top: 20px;">
         <a href="../../intranet.html" class="button" style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; 
         text-decoration: none; font-weight: bold; margin: 0 10px;">Retour</a>
     </div>
-    
-    </div>
-    
+
     
 
         </div>
