@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jeu 2048</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #faf8ef;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      flex-direction: column;
+    }
+    h1 {
+      font-size: 3em;
+      color: #1a7a89;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+    .game-container {
+      width: 400px;
+      height: 400px;
+      background-color: #bbada0;
+      border-radius: 10px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 10px;
+      padding: 10px;
+    }
+    .tile {
+      width: 90%;
+      height: 90%;
+      background-color: #cdc1b4;
+      border-radius: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2em;
+      color: #776e65;
+      font-weight: bold;
+    }
+    .tile-2 { background-color: #eee4da; color: #776e65; }
+    .tile-4 { background-color: #ece0c8; color: #776e65; }
+    .tile-8 { background-color: #f2b179; color: white; }
+    .tile-16 { background-color: #f59563; color: white; }
+    .tile-32 { background-color: #f67c5f; color: white; }
+    .tile-64 { background-color: #f65e3b; color: white; }
+    .tile-128 { background-color: #edcf72; color: white; }
+    .tile-256 { background-color: #edcc61; color: white; }
+    .tile-512 { background-color: #edc850; color: white; }
+    .tile-1024 { background-color: #edc53f; color: white; }
+    .tile-2048 { background-color: #edc22e; color: white; }
+    .game-over {
+      font-size: 2em;
+      color: red;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+    .restart-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 100px;
+      background-color: #1a7a89;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- Titre du jeu -->
+  <h1>Jeu 2048</h1>
+
+  <div class="game-container" id="game-container"></div>
+
+  <!-- Message Game Over -->
+  <div id="game-over-message" class="game-over" style="display: none;">
+    Game Over!
+  </div>
+
+  <!-- Bouton de recommencement -->
+  <div id="restart-btn-container" style="display: none;">
+    <a href="#" class="restart-btn" id="restart-btn">Recommencer</a>
+  </div>
+
+  <script>
+    let board;
+    const gameContainer = document.getElementById("game-container");
+    const gameOverMessage = document.getElementById("game-over-message");
+    const restartBtnContainer = document.getElementById("restart-btn-container");
+    const restartBtn = document.getElementById("restart-btn");
+
+    // Fonction pour réinitialiser le jeu
+    function restartGame() {
+      board = [
+        [0, 0, 0, 0],
+        [0, 0, 0, 0],
+        [0, 0, 0, 0],
+        [0, 0, 0, 0]
+      ];
+      gameOverMessage.style.display = "none";
+      restartBtnContainer.style.display = "none";
+      addTile();
+      addTile();
+      renderBoard();
+    }
+
+    // Fonction pour ajouter une tuile
+    function addTile() {
+      let emptyCells = [];
+      for (let row = 0; row < 4; row++) {
+        for (let col = 0; col < 4; col++) {
+          if (board[row][col] === 0) {
+            emptyCells.push({ row, col });
+          }
+        }
+      }
+      if (emptyCells.length > 0) {
+        let randomCell = emptyCells[Math.floor(Math.random() * emptyCells.length)];
+        board[randomCell.row][randomCell.col] = Math.random() < 0.9 ? 2 : 4;
+        renderBoard();
+      }
+    }
+
+    // Fonction pour rendre le plateau à l'écran
+    function renderBoard() {
+      gameContainer.innerHTML = "";
+      for (let row = 0; row < 4; row++) {
+        for (let col = 0; col < 4; col++) {
+          const tileValue = board[row][col];
+          const tile = document.createElement("div");
+          tile.classList.add("tile");
+          if (tileValue > 0) {
+            tile.classList.add("tile-" + tileValue);
+            tile.textContent = tileValue;
+          }
+          gameContainer.appendChild(tile);
+        }
+      }
+    }
+
+    // Fonction pour gérer les mouvements
+    function slide(rowOrCol, direction) {
+      const arr = [...rowOrCol];
+      if (direction === "left" || direction === "up") {
+        arr.reverse();
+      }
+
+      // Fusion des tuiles
+      for (let i = 0; i < 3; i++) {
+        for (let j = 0; j < 3; j++) {
+          if (arr[j] === arr[j + 1] && arr[j] !== 0) {
+            arr[j] *= 2;
+            arr[j + 1] = 0;
+          }
+        }
+      }
+
+      // Décalage des tuiles
+      let newArr = arr.filter(num => num !== 0);
+      while (newArr.length < 4) {
+        newArr.push(0);
+      }
+
+      if (direction === "left" || direction === "up") {
+        newArr.reverse();
+      }
+
+      return newArr;
+    }
+
+    // Déplacement des lignes et des colonnes
+    function move(direction) {
+      if (direction === "left" || direction === "right") {
+        for (let i = 0; i < 4; i++) {
+          board[i] = slide(board[i], direction);
+        }
+      } else {
+        for (let i = 0; i < 4; i++) {
+          let column = [board[0][i], board[1][i], board[2][i], board[3][i]];
+          column = slide(column, direction);
+          for (let j = 0; j < 4; j++) {
+            board[j][i] = column[j];
+          }
+        }
+      }
+      addTile();
+      checkGameOver(); // Vérification de la fin du jeu
+    }
+
+    // Vérifier si le jeu est terminé
+    function checkGameOver() {
+      // Vérifier si toutes les cases sont remplies
+      let hasEmptyCell = false;
+      let canMerge = false;
+
+      // Vérification de l'existence d'une case vide
+      for (let row = 0; row < 4; row++) {
+        for (let col = 0; col < 4; col++) {
+          if (board[row][col] === 0) {
+            hasEmptyCell = true;
+          }
+          // Vérification de la possibilité de fusionner les tuiles adjacentes
+          if (row < 3 && board[row][col] === board[row + 1][col]) {
+            canMerge = true;
+          }
+          if (col < 3 && board[row][col] === board[row][col + 1]) {
+            canMerge = true;
+          }
+        }
+      }
+
+      // Si il n'y a plus de case vide et pas de fusion possible, game over
+      if (!hasEmptyCell && !canMerge) {
+        gameOverMessage.style.display = "block";
+        restartBtnContainer.style.display = "block";
+      }
+    }
+
+    // Contrôles de clavier
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowUp") {
+        move("up");
+      } else if (e.key === "ArrowDown") {
+        move("down");
+      } else if (e.key === "ArrowLeft") {
+        move("left");
+      } else if (e.key === "ArrowRight") {
+        move("right");
+      }
+    });
+
+    // Initialiser le jeu
+    restartGame();
+
+    // Lier le bouton de recommencement
+    restartBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      restartGame();
+    });
+  </script>
+
+  <br>
+  
+  <!-- Ajout du bouton de retour en bas -->
+  <div class="pt-8 text-center">
+    <a href="../projetsPerso.html" class="rounded-lg p-4 border border-black text-white font-bold text-lg hover:bg-[#1a7a89] transition" style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; font-weight: bold; margin: 0 10px;">
+      Retour
+    </a>
+  </div>
+
+</body>
+</html>
