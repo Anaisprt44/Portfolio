@@ -11,15 +11,26 @@
 </head>
 <body>
   
+  <!-- Header : menu burger + logo + titre -->
   <div id="navbar"></div>
+  <!-- Chargement du header depuis le fichier externe -->
   <script>
     fetch('code/header.html')
       .then(response => response.text())
       .then(data => {
         document.getElementById('navbar').innerHTML = data;
-      });
-  </script>  
 
+        // Important : réattacher les évènements après avoir injecté le header
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        menuToggle.addEventListener('click', () => {
+          navLinks.classList.toggle('show');
+          menuToggle.classList.toggle('open');
+        });
+      });
+  </script>
+ 
   <!-- Mot de bienvenue -->
   <div style="background-color: black;">
     <div class="min-h-50">

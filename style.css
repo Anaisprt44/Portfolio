@@ -292,123 +292,51 @@ h4 {
     color: #1a7a89; /* Couleur pour les titres */
 }
 
- /* Menu burger uniquement visible sur mobile */
+  
 
-/* Hamburger Menu */
-#menu-toggle {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    width: 30px;
-    height: 30px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    position: relative; /* Pour pouvoir manipuler les lignes en position absolue */
-  }
 
-  /* Les lignes du menu burger */
-  #menu-toggle .line {
-    width: 100%; /* Les lignes occupent toute la largeur disponible */
-    height: 4px; /* Épaisseur des lignes */
-    background-color: #333; /* Couleur des lignes */
-    border-radius: 2px; /* Coins arrondis pour un style moderne */
-    transition: all 0.3s ease; /* Animation fluide */
-    position: absolute; /* Nécessaire pour les transformer correctement */
-  }
 
-  /* Positionnement des lignes de base */
-  #menu-toggle .line1 {
-    top: 0; /* Première ligne en haut */
-  }
 
-  #menu-toggle .line2 {
-    top: 50%; /* Ligne du milieu */
-    transform: translateY(-50%); /* Centrage vertical */
-  }
+/* Style du menu burger */
 
-  #menu-toggle .line3 {
-    bottom: 0; /* Troisième ligne en bas */
-  }
+#menu-toggle .line {
+width: 30px;
+height: 3px;
+background-color: black;
+margin: 5px auto;
+transition: all 0.3s ease-in-out;
+}
 
-  /* Lorsque le menu est ouvert */
-  #menu-toggle.open .line1 {
-    transform: rotate(45deg); /* Première ligne tourne de 45° */
-    top: 50%; /* La première ligne se déplace vers le centre */
-    transform: translateY(-50%) rotate(45deg);
-  }
+/* Animation quand on ouvre (c'est-à-dire qu'on transforme le burger en croix) */
+#menu-toggle.open .line1 {
+transform: rotate(45deg) translate(5px, 5px);
+}
 
-  #menu-toggle.open .line2 {
-    opacity: 0; /* Cache la ligne centrale */
-  }
+#menu-toggle.open .line2 {
+opacity: 0;
+}
 
-  #menu-toggle.open .line3 {
-    transform: rotate(-45deg); /* Troisième ligne tourne de -45° */
-    bottom: 50%; /* Se déplace vers le centre */
-    transform: translateY(50%) rotate(-45deg);
-  }
+#menu-toggle.open .line3 {
+transform: rotate(-45deg) translate(5px, -5px);
+}
 
-/* Cacher le menu par défaut en mobile */
+/* Masquer le menu sur mobile par défaut */
 #nav-links {
-    display: none;
-    flex-direction: column;
-    text-align: center;
+display: none;
 }
 
-/* Afficher le menu burger en mobile */
 #nav-links.show {
-    display: flex;
+display: flex;
+flex-direction: column;
 }
 
-
-  
-  
-
-/* Affichage en mode bureau */
+/* Quand écran desktop */
 @media (min-width: 768px) {
-    #menu-toggle {
-        display: none; /* Cacher le menu burger */
-    }
-
-    #nav-links {
-        display: flex !important;
-        flex-direction: row;
-        justify-content: flex-end;
-    }
+#nav-links {
+  display: flex !important;
+  flex-direction: row;
 }
-
-
-  /* Afficher la barre de navigation en mode mobile lorsque le menu est ouvert */
-  #nav-links.show {
-    display: flex; /* Affiche le menu en mode mobile */
-    
-  }
-
-  /* Afficher la barre de navigation en mode bureau */
-  @media (min-width: 768px) {
-    #menu-toggle {
-      display: none; /* Cache le hamburger en mode bureau */
-
-    }
-
-    /* En mode bureau, on veut que le menu soit toujours visible */
-    #nav-links {
-      display: flex !important; /* Affiche le menu de manière horizontale */
-      flex-direction: row;
-      justify-content: flex-end;
-    }
-  }
-
-  /* Animation de l'icône hamburger */
-  #menu-toggle.open .line1 {
-    transform: rotate(45deg);
-    position: relative;
-    top: 6px;
-    
-  }
-
-
+}
 
 
   
