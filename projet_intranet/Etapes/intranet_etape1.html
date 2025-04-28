@@ -117,31 +117,16 @@
 
 
 
-  <!-- Footer -->
-  <div class="bg-white">
-    <div class="flex flex-col md:flex-row">
-      <div class="md:p-12 p-4 md:w-3/12">
-        <h4 class="pb-2">À propos</h4>
-        <p class="text-justify">Développement de solutions intranet et d'autres projets techniques pour l'entreprise.</p>
-      </div>
-      <div class="md:p-12 p-4 md:w-3/12">
-        <h4 class="pb-2">Liens</h4> 
-        <a href="../../index.html">→ Accueil</a><br><br>
-        <a href="../../Formations.html">→ Formations</a><br><br>
-        <a href="../../MesStages.html">→ Mes Stages</a>
-      </div>
-      <div class="md:p-12 p-4 md:w-3/12">
-        <h4 class="pb-2">Projets</h4> 
-        <a href="../../competence.html">→ Mes compétences</a><br><br>
-        <a href="../../btsSioSlam.html">→ BTS SIO Option SLAM</a><br><br>
-        <a href="../../connaissances.html">→ Connaissances</a>
-      </div>
-      <div class="md:p-12 p-4 md:w-3/12">
-        <h4 class="pb-2">Contact</h4>
-        <p>Envoyez un message via la page Contact.</p>
-      </div>
-    </div>
-  </div>
+  <div id="footer-container"></div>
+
+<script>
+  fetch('../../code/footer-projets.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-container').innerHTML = data;
+    });
+</script>
+
 
 </body>
 </html>

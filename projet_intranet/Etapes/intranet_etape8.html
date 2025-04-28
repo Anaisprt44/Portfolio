@@ -167,43 +167,14 @@
           <br>
 
                 <!-- Footer -->
-                <div class="bg-white">
-                    <div class="flex flex-col md:flex-row">
-                        <div class="md:p-12 p-4 md:w-3/12">
-                            <h4 class="pb-2">À propos</h4>
-                            <p class="text-justify"></p>
-                        </div>
-                        <div class="md:p-12 p-4 md:w-3/12">
-                            <h4 class="pb-2">Liens</h4> 
-                            <a href="../../index.html">→ Accueil</a><br><br>
-                            <a href="../../passions.html">→ À propos de moi</a><br><br>
-                            <a href="../../Formations.html">→ Mes Formations </a><br><br>
-                            <a href="../../MesStages.html">→ Stages</a>
-                        </div>
-                        <div class="md:p-12 p-4 md:w-3/12">
-                            <h4 class="pb-2">Projets</h4> 
-                            <a href="../../competence.html">→ Mes compétences</a><br><br>
-                            <a href="../../btsSioSlam.html">→ BTS SIO SLAM</a>
-                        </div>
-                        <div class="md:p-12 p-4 md:w-3/12">
-                            <h4 class="pb-2">Contact</h4>
-                            <div class="flex row items-center justify-start">
-                                <img src="../../images/email_icon.de2632c.png" alt="email icon" class="w-6">
-                                <a href="mailto:anais.portolleau44@gmail.com" class="font-medium p-2">anais.portolleau44@gmail.com</a>
-                            </div>
-                            <div class="flex row items-center justify-start">
-                                <img src="../../images/phone_icon.a64af40.png" alt="phone icon" class="w-6">
-                                <p class="font-medium p-2">06.52.01.38.39</p>
-                            </div>
-                            <div class="button">
-                                <a href="cv/2SLAM_PORTOLLEAU_Anaïs_CV.pdf" target="_blank">Télécharger CV</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+  <div id="footer-container"></div>
 
+  <script>
+    fetch('../../code/footer-projets.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-container').innerHTML = data;
+      });
+  </script>
 </body>
 </html>
