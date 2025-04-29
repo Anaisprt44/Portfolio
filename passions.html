@@ -117,14 +117,10 @@ margin-top: 0; padding: 0; overflow: hidden;">
 
         
 
-    <!-- Footer --><div id="footer"></div>
-<script>
-  fetch('code/footer.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('footer').innerHTML = data;
-    });
-</script>
+    <!-- Footer -->
+    <div id="footer"></div>
+    <!-- Script pour charger le footer -->
+    <script src="js/footer.js"></script>
 </body>
 
 </html>

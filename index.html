@@ -11,25 +11,9 @@
 </head>
 <body>
   
-  <!-- Header : menu burger + logo + titre -->
   <div id="navbar"></div>
-  <!-- Chargement du header depuis le fichier externe -->
-  <script>
-    fetch('code/header.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('navbar').innerHTML = data;
-
-        // Important : réattacher les évènements après avoir injecté le header
-        const menuToggle = document.getElementById('menu-toggle');
-        const navLinks = document.getElementById('nav-links');
-
-        menuToggle.addEventListener('click', () => {
-          navLinks.classList.toggle('show');
-          menuToggle.classList.toggle('open');
-        });
-      });
-  </script>
+  <!-- Chargement des composants -->
+  <script src="js/header.js"></script>
  
   <!-- Mot de bienvenue -->
   <div style="background-color: black;">
@@ -150,12 +134,8 @@
 </div>        
 
 <div id="footer"></div>
-<script>
-  fetch('code/footer.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('footer').innerHTML = data;
-    });
-</script>
+<!-- Script pour charger le footer -->
+<script src="js/footer.js"></script>
+
 </body>
 </html>
