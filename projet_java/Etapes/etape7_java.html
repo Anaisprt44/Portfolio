@@ -12,70 +12,24 @@
 </head>
 <body>
 
-  <div id="__nuxt">
-    <div id="__layout">
-      <div>
-        <!-- Code de la barre de navigation -->
-        <div class="menu sticky top-0 z-50 bg-white">
-          <div class="w-full text-gray-700">
-            <div class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
-              
-              <!-- Logo -->
-              <a href="../../index.html">
-                <img src="../../images/anais_logo.png" width="75" height="auto" alt="Logo">
-              </a>
-              
-              <!-- Titre de la page -->
-              <div class="flex flex-row items-center justify-between p-4">
-                <a href="../../index.html" class="text-lg font-bold tracking-widest text-gray-900 uppercase">A • P</a>
-                
-                <!-- Menu burger (affiché seulement en mode mobile) -->
-                <button id="menu-toggle">
-                  <div class="line line1"></div>
-                  <div class="line line2"></div>
-                  <div class="line line3"></div>
-                </button>
-              </div>
-              
-              <!-- Menu de navigation -->
-              <nav id="nav-links" class="flex-col flex-grow pb-4 md:pb-0 md:flex md:justify-end md:flex-row hidden">
-                <a href="../../Formations.html" class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-300 focus:bg-gray-300"
-                >Formations</a>
-                <a href="../../MesStages.html" class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-300 focus:bg-gray-300"
-                >Mes Stages</a>
-                <a href="../../competence.html" class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-300 focus:bg-gray-300"
-                >Compétences</a>
-                <a href="../../btsSioSlam.html" class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-300 focus:bg-gray-300"
-                >BTS SIO Option SLAM</a>
-                
-                <a href="../../VeilleTech.html" class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-300 focus:bg-gray-300"
-                >Mes veilles</a>
-                <a href="../../passions.html" class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-300 focus:bg-gray-300"
-                >Mes passions</a>
-                <a href="../../contact.html" class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-300 focus:bg-gray-300"
-                >Contact</a>
-              </nav>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <div id="navbar"></div>
 
   <script>
-    // JavaScript pour ouvrir/fermer le menu en mode mobile
-    const menuToggle = document.getElementById('menu-toggle');
-    const navLinks = document.getElementById('nav-links');
+    fetch('../../code/header-projets.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
 
-    menuToggle.addEventListener('click', () => {
-      // Bascule la visibilité du menu en mode mobile
-      navLinks.classList.toggle('show');
+        // Important : réattacher les évènements après avoir injecté le header
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
 
-      // Animation du hamburger
-      menuToggle.classList.toggle('open');
-    });
+        menuToggle.addEventListener('click', () => {
+          navLinks.classList.toggle('show');
+          menuToggle.classList.toggle('open');
+        });
+      });
   </script>
-        
 
              <!-- Contenu de l'étape 7 -->
 <div class="container" style="display: flex; justify-content: space-between; align-items: center; padding: 20px; max-width: 800px; margin: 20px auto; background-color: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
@@ -135,13 +89,29 @@
   <!-- Footer -->
   <div id="footer-container"></div>
 
-  <script>
-    fetch('../../code/footer-projets.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('footer-container').innerHTML = data;
+<script>
+  fetch('../../code/footer-projets.html')
+    .then(response => response.text())
+    .then(data => {
+      // Injecter le footer
+      document.getElementById('footer-container').innerHTML = data;
+
+      // Maintenant corriger les chemins des images dans ce footer injecté
+      const footer = document.getElementById('footer-container');
+
+      // Parcours toutes les images dans le footer
+      footer.querySelectorAll('img').forEach(img => {
+        let src = img.getAttribute('src');
+      
+        if(src.startsWith('../images/')) {
+         
+
+          let newSrc = src.replace('../images/', '../../images/');
+          img.setAttribute('src', newSrc);
+        }
       });
-  </script>
+    });
+</script>
 </body>
 
 </html>
