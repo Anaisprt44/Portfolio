@@ -4,189 +4,249 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
-  <title>Portefolio d'Anaïs Portolleau - Page Accueil</title>
+  <title>Anaïs Portolleau - Veille cyber</title>
   <meta name="description" content="Je suis Anaïs Portolleau, étudiante en informatique. Voir le CV, Mes Projets, Contact, Mon parcours, Mes passions">
   <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
   <link href="../style.css" rel="stylesheet" type="text/css" />
-<style>
-  body{
-    color:black
-  }
-</style>
+
 </head>
 <body>
 
-  <div id="__nuxt">
-    <div id="__layout">
-      <div>
-        <!-- Code de la barre de navigation -->
-        <div class="menu sticky top-0 z-50 bg-white">
-          <div class="w-full text-gray-700">
-            <div class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
-              
-              <!-- Logo -->
-              <a href="../index.html">
-                <img src="../images/anais_logo.png" width="75" height="auto" alt="Logo">
-              </a>
-              
-              <!-- Titre de la page -->
-              <div class="flex flex-row items-center justify-between p-4">
-                <a href="../index.html" class="text-lg font-bold tracking-widest text-gray-900 uppercase">A • P</a>
-                
-                <!-- Menu burger (affiché seulement en mode mobile) -->
-                <button id="menu-toggle">
-                  <div class="line line1"></div>
-                  <div class="line line2"></div>
-                  <div class="line line3"></div>
-                </button>
-              </div>
-              
-              <!-- Menu de navigation -->
-              <!-- Menu de navigation -->
-              <nav id="nav-links" class="flex-col flex-grow pb-4 md:pb-0 md:flex md:justify-end md:flex-row hidden">
-                <a href="../Formations.html" class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-300 focus:bg-gray-300"
-                >Formations</a>
-                <a href="../MesStages.html" class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-300 focus:bg-gray-300"
-                >Mes Stages</a>
-                <a href="../competence.html" class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-300 focus:bg-gray-300"
-                >Compétences</a>
-                <a href="../btsSioSlam.html" class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-300 focus:bg-gray-300"
-                >BTS SIO Option SLAM</a>
-                
-                <a href="../VeilleTech.html" class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-300 focus:bg-gray-300"
-                >Mes veilles</a>
-                <a href="../passions.html" class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-300 focus:bg-gray-300"
-                >Mes passions</a>
-                <a href="../contact.html" class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-300 focus:bg-gray-300"
-                >Contact</a>
-              </nav>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <!-- Conteneur du header -->
+  <div id="navbar"></div>
 
+  <!-- Chargement du header dynamiquement -->
   <script>
-    // JavaScript pour ouvrir/fermer le menu en mode mobile
-    const menuToggle = document.getElementById('menu-toggle');
-    const navLinks = document.getElementById('nav-links');
+    fetch('../code/header-veilles.html')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Erreur lors du chargement du header : ' + response.statusText);
+        }
+        return response.text();
+      })
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
 
-    menuToggle.addEventListener('click', () => {
-      // Bascule la visibilité du menu en mode mobile
-      navLinks.classList.toggle('show');
+        // Re-attacher les événements après injection
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
 
-      // Animation du hamburger
-      menuToggle.classList.toggle('open');
-    });
+        if (menuToggle && navLinks) {
+          menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+            menuToggle.classList.toggle('open');
+          });
+        }
+      })
+      .catch(error => {
+        console.error('Erreur fetch header:', error);
+      });
   </script>
 
         <!-- En tête de présentation -->
-        <div data-v-2fd28016 style="overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 20vh; margin: 0; padding: 0;">
-            <div class="bg-cover flex items-center justify-center" style="background-image: url(../images/background5.jpg); background-size: cover; background-position: center; width: 100%; height: 100%; margin: 0; padding: 0;" data-v-ae88d4ae data-v-2fd28016>
-                <h1 class="text-shadow text-center" style="margin: 0; color: white;">Veille technologique</h1>
-            </div>
-        </div>     
+        <div data-v-2fd28016 style="overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; 
+        height: 20vh; margin: 0; padding: 0;">
+          <div class="bg-cover flex items-center justify-center" style="background-image: url(../images/background5.jpg); background-size: cover; 
+          background-position: center; width: 100%; height: 100%; margin: 0; padding: 0;" data-v-ae88d4ae data-v-2fd28016>
+              <h1 class="text-shadow text-center" style="margin: 0; color: white;">Veille technologique</h1>
+          </div>
+        </div>        
+      
+
+        <!-- Titre -->
+        <div class="md:h-100 h-64 bg-cover -mt-16 flex flex-col justify-center items-center" style="background-image: url(../images/frameworks_banner.jpg);">          
+          <h2 style="color:black"><strong>L’augmentation cyberattaques</strong></h2>                
+        </div>   
+               
+
+        <!-- Contenu de la veille améliorée -->
+        <div class="container" style="width: 1200px; margin: 0 auto; background-color: #f9f9f9; border-radius: 12px; 
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); font-family: 'Arial', sans-serif;">
+
+        <h4 style="text-align: center;" >Veille : Cyberattaques et Hôpitaux en France</h4> 
         
-        <div class="md:h-100 h-64 bg-cover -mt-16 flex flex-col justify-center items-center" style="background-image: url(documents/background4.jpg);">
-          <h1 class="text-center text-shadow" style="font-size: 2.5rem; color: white; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); margin: 0;">
-              Veille technologique 1 : <strong>L’augmentation inquiétante des cyberattaques sur les entreprises
-          </h1>
+        <br>
+
+        <!-- Section Problématique et Objectifs -->        
+        <div style="display: flex; align-items: flex-start; flex-wrap: wrap; margin: 20px auto; background-color: #f9f9f9; border-radius: 12px; 
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); font-family: 'Arial', sans-serif; padding: 20px; max-width: 1200px;">
+
+          <!-- Colonne Texte -->
+          <div style="flex: 1 1 60%; padding: 20px;">
+            <h4>Problématique :</h4>
+            <p>
+              Malgré des efforts croissants en cybersécurité, les hôpitaux français restent des cibles vulnérables face aux cyberattaques.
+              La numérisation rapide, la valeur des données médicales et le manque de moyens techniques rendent ces établissements
+              particulièrement exposés.
+            </p>
+
+            <p>
+              Cette veille vise à mieux comprendre les types d'attaques les plus fréquents, les vulnérabilités spécifiques au secteur hospitalier,
+              et à situer ces enjeux par rapport à d'autres domaines comme l’éducation ou l’industrie.
+            </p>
+
+            <h4 style="margin-top: 20px;">Objectifs de la veille :</h4>
+            <ul style="list-style-type: disc; padding-left: 20px;">
+              <li>Suivre l'évolution des cybermenaces dans les hôpitaux français.</li>
+              <li>Repérer les failles les plus critiques dans les systèmes hospitaliers.</li>
+              <li>Proposer des pistes concrètes d’amélioration en cybersécurité.</li>
+            </ul>
+          </div>
+
+        <!-- Colonne Image -->
+        <div style="flex: 1 1 40%; padding: 10px; text-align: center;">
+        <img src="../images/cyber-logo.png" 
+            alt="Frameworks" 
+            style="width: 100%; max-width: 400px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+        </div>
+        </div>
+
+        <br>
+
+        <!-- Section Définitions et Besoins -->
+        <div style="display: flex; align-items: center; flex-wrap: wrap; margin: 20px auto; background-color: #f9f9f9; border-radius: 12px; 
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); font-family: 'Arial', sans-serif; padding: 20px; max-width: 1200px;">
+          <!-- Colonne Texte -->
+          <div style="flex: 1 1 60%; padding: 10px;">
+
+            <h4>Définition des mots clés :</h4>
+            <ul style="list-style-type: disc; padding-left: 20px;">
+              <li>
+                <strong>Ransomware (rançongiciel) :</strong> logiciel malveillant qui chiffre ou bloque l'accès à des fichiers ou systèmes, pour exiger une rançon.
+                <a href="https://www.cybermalveillance.gouv.fr/tous-nos-contenus/actualites/ransomware-rancongiciel-definition" target="_blank" rel="noopener noreferrer">(Source)</a>
+              </li>
+              <li>
+                <strong>Phishing (hameçonnage) :</strong> technique de fraude par email ou site imitant une source fiable, afin de soutirer des données personnelles.
+                <a href="https://www.cybermalveillance.gouv.fr/tous-nos-contenus/fiches-reflexes/hameconnage-phishing" target="_blank" rel="noopener noreferrer">(Source)</a>
+              </li>
+              <li>
+                <strong>Faille de sécurité :</strong> vulnérabilité dans un système informatique exploitable par un attaquant pour compromettre l’intégrité ou la confidentialité.
+                <a href="https://www.cybermalveillance.gouv.fr/tous-nos-contenus/actualites/alerte-cyber-failles-de-securite-critiques-dans-les-produits-microsoft-202501" target="_blank" rel="noopener noreferrer">(Source)</a>
+              </li>
+            </ul>
+          
+
+
+            <br>
+
+          <h4>Identification du besoin :</h4>
+          <p>Les développeurs cherchent des solutions pour :</p>
+          <ul style="list-style-type: disc; padding-left: 20px;">
+            <li>Renforcer les protocoles de sécurité informatique dans les hôpitaux.</li>
+            <li>Former le personnel aux pratiques de cybersécurité essentielles.</li>
+            <li>Mettre en place des outils de détection et de réponse aux incidents plus efficaces.</li>
+          </ul>
+
+        </div>
+
+        <!-- Colonne Image -->
+        <div style="flex: 1 1 40%; padding: 10px; text-align: center;">
+          <img src="../images/interrogation.png " 
+              alt="Frameworks" 
+              style="width: 100%; max-width: 400px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+        </div>
+        </div>
+
+        <br>
+
+       <!-- Section Contexte et Statistiques -->
+      <div style="display: flex; align-items: flex-start; flex-wrap: wrap; margin: 20px auto; background-color: #f9f9f9; border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); font-family: 'Arial', sans-serif; padding: 20px; max-width: 1200px;">
+
+        <!-- Colonne Texte -->
+        <div style="flex: 1 1 60%; padding: 20px;">
+          <h4 style="margin-top: 0;">Contexte et Statistiques :</h4>
+          <p>
+            Les rapports des autorités françaises révèlent une recrudescence des cyberattaques visant les établissements de santé,
+            notamment par <strong>ransomware</strong>, <strong>phishing</strong> et <strong>exploitation de failles logicielles</strong>.
+            En 2024, plus de <strong>30 % des hôpitaux français</strong> ont subi une attaque informatique, menaçant gravement
+            la continuité des soins.
+          </p>
+          <ul style="list-style-type: disc; margin-left: 20px; padding-left: 20px;">
+            <li>
+              <strong>+40 % de ransomwares :</strong> D’après l’<a href="https://www.ssi.gouv.fr/" target="_blank">ANSSI</a>, les attaques
+              par rançongiciels ont augmenté de 40 % dans le secteur hospitalier entre 2023 et 2024.
+            </li>
+            <li>
+              <strong>Phishing en hausse :</strong> Les campagnes de hameçonnage ciblant les professionnels de santé ont connu
+              une croissance de 35 %, profitant d’un manque de formation en cybersécurité.
+            </li>
+            <li>
+              <strong>Failles logicielles :</strong> Environ 25 % des incidents sont dus à des systèmes non mis à jour ou mal configurés.
+            </li>
+          </ul>
+          <p>
+            Par comparaison, les secteurs de <strong>l’éducation</strong> et de <strong>l’industrie</strong> ont enregistré des hausses
+            de ransomware de <strong>25 %</strong> et <strong>18 %</strong> respectivement. Les hôpitaux apparaissent donc
+            comme des cibles particulièrement vulnérables.
+          </p>
+          <p style="font-size: 0.9em;">
+            Source : <a href="https://www.vie-publique.fr/en-bref/296776-securite-informatique-des-hopitaux-une-strategie-renforcer" target="_blank" rel="noopener noreferrer">
+              vie-publique.fr</a>
+          </p>
+        </div>
+
+        <!-- Colonne Image -->
+        <div style="flex: 1 1 40%; padding: 20px; text-align: center;">
+          <img src="../images/cyber-santé.png" alt="Illustration cybersécurité hôpital"
+              style="width: 100%; max-width: 360px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+        </div>
+
       </div>
 
-      <div class="container" style="max-width: 95%; display: flex; flex-wrap: wrap; gap: 20px; margin-left: 2px auto; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); font-family: 'Arial', sans-serif;">
-    
-        <!-- Section de veilles technologiques (à gauche) -->
-        <div style="flex: 1 1 48%; ">
-          
-          <main>
-            <header>
-              <h4 style="text-align:center">Veille : Cyberattaques et Hôpitaux en France</h4>
-            </header>
-            <div class="container" style="max-width: 95%; display: flex; flex-wrap: wrap; gap: 20px; margin-left: 2px auto; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); font-family: 'Arial', sans-serif;">
-    
-            <!-- Section Problématique -->
-            <div class="content-section">
-              <div class="text-column">
-                <h4>Problématique :</h4>
-                <p>Les cyberattaques ciblant les hôpitaux augmentent chaque année, mettant en danger la confidentialité des données des patients et 
-                  l'intégrité des systèmes de santé. Cependant, malgré des améliorations dans les protocoles de cybersécurité, les établissements de santé 
-                  restent des cibles privilégiées pour les cybercriminels en raison de la valeur élevée des informations personnelles et de la faiblesse des 
-                  défenses en raison de la numérisation rapide.</p>
-                  <br>
-                <p>Cette veille se concentre sur les tendances actuelles des cyberattaques dans les hôpitaux français, en mettant en lumière les attaques les 
-                  plus courantes, les failles de sécurité spécifiques aux hôpitaux et les comparaisons avec d'autres secteurs comme l'éducation et l'industrie.</p>
-              </div>
-            </div>
-          </main>
-          
-        
-          <div class="container" style="max-width: 95%; display: flex; flex-wrap: wrap; gap: 20px; margin-left: 2px auto; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); font-family: 'Arial', sans-serif;">
-    
-              <!-- Section Contexte et Statistiques -->
-              <div class="content-section">
-                <div class="text-column">
-                  <h4>Contexte et Statistiques :</h4>
-                  <p>Les rapports des autorités françaises sur la cybersécurité des hôpitaux indiquent une recrudescence des attaques par ransomware, de phishing et 
-                    d'exploitation de vulnérabilités des systèmes. En 2024, plus de 30 % des hôpitaux français ont subi des attaques informatiques, avec des 
-                    conséquences graves sur la continuité des soins.</p>
-                  <ul>
-                    <li><strong>Augmentation des ransomwares :</strong> Selon une étude menée par l'ANSSI (Agence Nationale de la Sécurité des Systèmes d'Information),
-                      les attaques par ransomwares ont <strong>augmenté de 40 % entre 2023 et 2024</strong> dans le secteur hospitalier.</li>
-                    <li><strong>Phishing ciblé :</strong> Les campagnes de phishing visant le personnel hospitalier ont connu <strong>une hausse de 35 %</strong>, 
-                      exploitant des vulnérabilités humaines telles que l'absence de formation continue.</li>
-                    <li><strong>Exploitation des failles logicielles :</strong> En 2024, <strong>25 % des incidents</strong> de cybersécurité hospitalière ont été 
-                      liés à l'exploitation de <strong>systèmes non mis à jour.</strong></li>
-                  </ul>
-                  <p>En comparaison, dans d'autres secteurs comme l'<strong>éducation</strong> et l'<strong>industrie</strong>, les attaques de ransomware ont 
-                    <strong>augmenté de 25 % et 18 %</strong> respectivement, montrant ainsi que les <strong>hôpitaux sont plus vulnérables</strong>.</p>
-                </div>
-                <img src="../Veilles/cyber-santé/stats.png" alt="Hôpital" style="width: 50%; margin-top: 20px;">
-                <a href="https://www.vie-publique.fr/en-bref/296776-securite-informatique-des-hopitaux-une-strategie-renforcer">Sources </a>
-              </div>
-            </div>
-            
-        
-        <div class="container" style="max-width: 95%; display: flex; flex-wrap: wrap; gap: 20px; margin-left: 2px auto; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); font-family: 'Arial', sans-serif;">
-    
-          <!-- Section Comparaison avec d'autres secteurs -->
-          <div class="content-section">
-            <div class="text-column">
-              <h4>Comparaison avec d'autres secteurs :</h4>
-              <p>Les hôpitaux connaissent des niveaux de vulnérabilité bien plus élevés que d'autres secteurs, notamment en raison des spécificités de leur infrastructure informatique et de la gestion des données sensibles des patients. En voici quelques chiffres comparatifs :</p>
-              <ul>
-                <li><strong>Ransomwares :</strong> 30 % des attaques dans le secteur hospitalier, contre 15 % dans l'éducation et 10 % dans l'industrie.</li>
-                <li><strong>Phishing :</strong> 35 % des attaques dans le secteur hospitalier, comparé à 25 % dans l'industrie et 20 % dans l'éducation.</li>
-                <li><strong>Exploitation des vulnérabilités :</strong> 25 % des attaques dans les hôpitaux, contre 18 % dans l'éducation et 12 % dans l'industrie.</li>
-              </ul>
-              <p>Ces chiffres soulignent la nécessité d'une stratégie de cybersécurité renforcée et spécialisée pour les hôpitaux.</p>
-            </div>
-          </div>
-      
-          <!-- Section Tendances des Cyberattaques -->
-          <div class="content-section">
-            <div class="text-column">
-              <h4>Tendances des Cyberattaques sur les Hôpitaux :</h4>
-              <ul>
-                <li><strong>Ransomwares ciblés :</strong> L'attaque par <strong>ransomware reste la menace principale</strong>, les cybercriminels visant à 
-                  perturber les services et <strong>obtenir des rançons en échange de la restitution des données</strong>.</li>
-                <li><strong>Phishing ciblé :</strong> Les attaques de phishing sont de plus en plus sophistiquées, souvent présentées <strong>sous forme de messages</strong> 
-                  provenant de <strong>sources médicales</strong> ou d'<strong>associations professionnelles.</strong></li>
-                <li><strong>Exploitation des systèmes obsolètes :</strong> L'utilisation de logiciels ou <strong>systèmes non sécurisés</strong> dans de nombreux 
-                  hôpitaux rend ces derniers vulnérables aux intrusions informatiques.</li>
-                <li><strong>Attaques sur la chaîne d'approvisionnement :</strong> Les attaques ne ciblent pas seulement les hôpitaux, mais aussi leurs 
-                  fournisseurs de services numériques, provoquant des risques indirects.</li>
-              </ul>
-            </div>
-          </div>
-          
-       
 
-        <div class="container" style="max-width: 90%; display: flex; flex-wrap: wrap; gap: 20px; margin-left: 2px auto; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); font-family: 'Arial', sans-serif;">
-          <!-- Section Recommandations -->
-          <div class="content-section">
-            <div class="text-column">
-              <h4>Recommandations :</h4>
+
+        <br>
+
+        <!-- Section Comparaisons et Tendances -->
+<div style="display: flex; flex-wrap: wrap; margin: 20px auto; background-color: #f9f9f9; border-radius: 12px; 
+box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); font-family: 'Arial', sans-serif; padding: 20px; max-width: 1200px; gap: 20px;">
+
+  <!-- Colonne Texte -->
+  <div style="flex: 1 1 58%; padding: 10px;">
+
+    <!-- Comparaison avec d'autres secteurs -->
+    <h4>Comparaison avec d'autres secteurs :</h4>
+    <p>
+      Les hôpitaux présentent un niveau de vulnérabilité supérieur à celui d’autres secteurs, en raison de la complexité de leur SI et de la sensibilité des données traitées.
+    </p>
+    <ul style="list-style-type: disc; padding-left: 20px;">
+      <li><strong>Ransomwares :</strong> 30 % des attaques dans le secteur hospitalier, contre 15 % dans l’éducation et 10 % dans l’industrie.</li>
+      <li><strong>Phishing :</strong> 35 % des attaques hospitalières, comparé à 25 % dans l’industrie et 20 % dans l’éducation.</li>
+      <li><strong>Failles exploitées :</strong> 25 % des incidents en milieu hospitalier, contre 18 % dans l’éducation et 12 % dans l’industrie.</li>
+    </ul>
+    <p>
+      Ces chiffres soulignent l’urgence de renforcer les dispositifs de cybersécurité dans le domaine de la santé.
+    </p>
+
+    <!-- Tendances des Cyberattaques -->
+    <h4 style="margin-top: 30px;">Tendances des cyberattaques sur les hôpitaux :</h4>
+    <ul style="list-style-type: disc; padding-left: 20px;">
+      <li><strong>Ransomwares ciblés :</strong> Toujours en tête des menaces, ces attaques bloquent les systèmes vitaux jusqu’au paiement d’une rançon.</li>
+      <li><strong>Phishing sophistiqué :</strong> Déguisé en communications médicales ou administratives, il piège le personnel via des emails trompeurs.</li>
+      <li><strong>Systèmes obsolètes :</strong> De nombreux hôpitaux utilisent encore des logiciels non mis à jour, vulnérables aux intrusions.</li>
+      <li><strong>Chaîne d’approvisionnement visée :</strong> Les prestataires numériques des hôpitaux sont également ciblés, amplifiant les risques.</li>
+    </ul>
+  </div>
+
+  <!-- Colonne Image -->
+  <div style="flex: 1 1 38%; padding: 10px; text-align: center;">
+    <img src="cyber-santé/comparaison.jpg" 
+         alt="Comparaison cyberattaques" 
+         style="width: 100%; max-width: 400px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+  </div>
+
+</div>
+
+
+      <br>
+
+      <!-- Section Tendances et Perspectives -->
+      <div style="display: flex; align-items: center; flex-wrap: wrap; margin: 20px auto; background-color: #f9f9f9; border-radius: 12px; 
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); font-family: 'Arial', sans-serif; padding: 20px; max-width: 1200px;">
+      <!-- Colonne Texte -->
+      <div style="flex: 1 1 60%; padding: 10px;">
+        <h4>Recommandations :</h4>
               <ul>
                 <li><strong>Renforcer la formation :</strong> Des sessions de formation <strong>régulières pour le personnel</strong> hospitalier afin de les 
                   <strong>sensibiliser aux risques</strong> de phishing et autres attaques.</li>
@@ -199,45 +259,60 @@
                 <li><strong>Plan de continuité des activités :</strong> Mise en place de plans de reprise après sinistre (DRP) pour assurer la continuité des 
                   soins en cas d'incident majeur.</li>
               </ul>
-            </div>
-          </div>
-        </div>
-        
-
-        <div class="container" style="max-width: 90%; display: flex; flex-wrap: wrap; gap: 20px; margin-left: 2px auto; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); font-family: 'Arial', sans-serif;">
-          <!-- Section Ressources -->
-          <div class="content-section">
-            <div class="text-column">
-              <h4>Ressources :</h4>
-              <ul>
-                <!-- Lien vers le CERT-FR, page générale sur les alertes en cybersécurité -->
-                <li><a href="https://www.cert.ssi.gouv.fr/" target="_blank">Centre de réponse aux incidents de sécurité informatique (CERT-FR) - Site officiel</a></li>
-
-                <!-- Lien vers l'ANSSI, section sur la cybersécurité des établissements de santé -->
-                <li><a href="https://www.ssi.gouv.fr/entreprise/secteurs-dactivite/sante/" target="_blank">ANSSI - Cybersécurité dans le secteur de la santé</a></li>
-
-                <!-- Lien vers Cybermalveillance.gouv.fr, page des risques cybersécurité -->
-                <li><a href="https://cybermalveillance.gouv.fr/" target="_blank">Cybermalveillance.gouv.fr - Site officiel sur les menaces informatiques</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        </div>
-        </div>
-        
       </div>
-    
-  
+
+      <!-- Colonne Image -->
+      <div style="flex: 1 1 40%; padding: 10px; text-align: center;">
+        <img src="../images/tendances.png" 
+            alt="Tendances Frameworks" 
+            style="width: 100%; max-width: 400px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+      </div>
+      </div>
+      
+
+      
+      
+
+      <!-- Section Conclusion -->
+      <div style="display: flex; align-items: center; flex-wrap: wrap; margin: 20px auto; background-color: #f9f9f9; border-radius: 12px; 
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); font-family: 'Arial', sans-serif; padding: 20px; max-width: 1200px;">
+      <div style="flex: 1 1 100%; padding: 10px; text-align: center;">
+        <h4>Conclusion :</h4>
+        <p>
+          Les cyberattaques visant les hôpitaux sont en forte croissance et représentent une menace critique pour le bon fonctionnement du système de santé. 
+          Cette veille démontre l’urgence de renforcer la sécurité des systèmes d'information hospitaliers, tant au niveau technique qu'humain. 
+          Grâce à une stratégie proactive basée sur la prévention, la sensibilisation et la collaboration avec des acteurs spécialisés, il est possible de 
+          limiter considérablement les impacts de ces attaques sur les infrastructures médicales et les données sensibles des patients.
+        </p>
+
+      </div>
+      </div>
+      
+      <br>
+
+      
+          <h4>Ressources :</h4>
+          <ul>
+            <!-- Lien vers le CERT-FR, page générale sur les alertes en cybersécurité -->
+            <li><a href="https://www.cert.ssi.gouv.fr/" target="_blank">Centre de réponse aux incidents de sécurité informatique (CERT-FR) - Site officiel</a></li>
+
+            <!-- Lien vers l'ANSSI, section sur la cybersécurité des établissements de santé -->
+            <li><a href="https://www.ssi.gouv.fr/entreprise/secteurs-dactivite/sante/" target="_blank">ANSSI - Cybersécurité dans le secteur de la santé</a></li>
+
+            <!-- Lien vers Cybermalveillance.gouv.fr, page des risques cybersécurité -->
+            <li><a href="https://cybermalveillance.gouv.fr/" target="_blank">Cybermalveillance.gouv.fr - Site officiel sur les menaces informatiques</a></li>
+          </ul>
         
-       
-   
-
-      <div style="display: flex; align-items: flex-start; justify-content: center; flex-wrap: wrap; margin: 20px auto; background-color: #f9f9f9; 
-      border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); font-family: 'Arial', sans-serif; padding: 20px; max-width: 1200px; text-align: center;">
+        <br>
       
-      
+      <p><strong>Rédigé le 27/10/2024</strong></p>
+    </div>
 
-
+  
+    <div style="display: flex; align-items: flex-start; justify-content: center; flex-wrap: wrap; margin: 20px auto; background-color: #f9f9f9; 
+    border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); font-family: 'Arial', sans-serif; padding: 20px; max-width: 1200px; text-align: center;">
+    
+   <!-- Titre centré -->
       <!-- Titre centré -->
       <h4 style="width: 100%; text-align: center; margin-bottom: 30px;">Articles intéressants :</h4> 
 
@@ -847,100 +922,99 @@
           </a>
       </div>
     </div>
- 
 
-   
-        
+    <br><!-- Contenu de la veille améliorée -->
+    <div class="container" style="width: 1200px; margin: 0 auto; background-color: #f9f9f9; border-radius: 12px; 
+              box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); font-family: 'Arial', sans-serif; padding: 20px;">
+      <h6 class="text-center text-lg font-semibold mb-4">Autres veilles technologiques</h6>
       
-      <br></div>
-
-      
-
-            <!-- Footer -->
-            <div class="bg-white" data-v-1830edb3>
-              <div class="flex flex-col md:flex-row" data-v-1830edb3>
-              <div class="md:p-12 p-4 md:w-3/12" data-v-1830edb3>
-                  <h4 class="pb-2" data-v-1830edb3>
-                  À propos
-                  </h4>
-                  <a href="../btsSioSlam.html.html" aria-current="page" class="nuxt-link-exact-active nuxt-link-active"
-                  data-v-1830edb3>
-                  → Mes Projets SIO
-                  </a>
-                  <br data-v-1830edb3><br data-v-1830edb3>
-                  <a href="../contact.html" aria-current="page" class="nuxt-link-exact-active nuxt-link-active"
-                  data-v-1830edb3>
-                  → Mon Contact
-                  </a>
-                  <br data-v-1830edb3><br data-v-1830edb3>
-                  <a href="../passions.html" data-v-1830edb3>
-                    → À propos de moi
-                  </a>           
-              </div>
-              <div class="md:p-12 p-4 md:w-3/12" data-v-1830edb3>
-                  <h4 class="pb-2" data-v-1830edb3>
-                  Liens
-                  </h4> <a href="../index.html" aria-current="page" class="nuxt-link-exact-active nuxt-link-active"
-                  data-v-1830edb3>
-                  → Accueil
-                  </a>
-                  <br data-v-1830edb3><br data-v-1830edb3>               
-                  
-                  <a href="../Formations.html" data-v-1830edb3>
-                  → Mes Formations 
-                  </a>
-                  <br data-v-1830edb3><br data-v-1830edb3> 
-                  <a href="../MesStages.html" data-v-1830edb3>
-                  → Stages
-                  </a>
-              </div>
-              <div class="md:p-12 p-4 md:w-3/12" data-v-1830edb3>
-                  <h4 class="pb-2" data-v-1830edb3>
-                  Projets
-                  </h4> 
-                  <a href="../competence.html" data-v-1830edb3>
-                  → Mes compétences
-                  </a>
-                  <br data-v-1830edb3>
-                  <br data-v-1830edb3> 
-                  <a href="../btsSioSlam.html" data-v-1830edb3>
-                  → BTS SIO SLAM
-                  </a>
-                  <br data-v-1830edb3>
-                  <br data-v-1830edb3> 
-                  <a href="./VeilleTech.html" data-v-1830edb3>
-                  → Mes veilles
-                  </a>
-              </div>
-              <div class="md:p-12 p-4 md:w-3/12" data-v-1830edb3>
-                  <h4 class="pb-2" data-v-1830edb3>
-                  Contact
-                  </h4>
-                  <div class="flex row items-center justify-start" data-v-1830edb3><img
-                      src="../images/email_icon.de2632c.png" alt="email icon" class="w-6" data-v-1830edb3>
-                      <p class="font-medium p-2" data-v-1830edb3>
-                        <a href="mailto:anais.portolleau44@gmail.com">anais.portolleau44@gmail.com</a>
-                    </p>
-                    
-                  </div>
-                  <div class="flex row items-center justify-start" data-v-1830edb3><img
-                      src="../images/phone_icon.a64af40.png" alt="phone icon" class="w-6" data-v-1830edb3>
-                  <p class="font-medium p-2" data-v-1830edb3>
-                      06.52.01.38.39
-                  </p>
-                  </div>
-                  <div data-v-1830edb3><a href="../cv/2SLAM_PORTOLLEAU_Anaïs_CV.pdf" target="_blank"
-                    class="button-bloc bg-orangeClair" data-v-1830edb3>
-                    Télécharger CV
-                  </a>
-                </div>
-              </div>
-              </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- Veille Phishing -->
+        <div class="flex items-center bg-white p-3 rounded-lg shadow">
+          <a href="veille_phising.html">
+            <img src="../images/phishing.png" alt="Logo cybersécurité" class="w-6 h-6 rounded-full mr-2">
+          </a>
+          <div>
+            <p><a href="veille_phising.html" class="font-bold text-blue-600 hover:underline">Veille Phishing</a></p>
+            <div class="text-gray-600">BTS SIO 2023/2026</div>
           </div>
+        </div>
+        
+        <!-- Veille Frameworks -->
+        <div class="flex items-center bg-white p-3 rounded-lg shadow">
+          <a href="VeilleFrameworks.html">
+            <img src="../images/framework.png" alt="Logo framework" class="w-6 h-6 rounded-full mr-2">
+          </a>
+          <div>
+            <p><a href="VeilleFrameworks.html" class="font-bold text-blue-600 hover:underline">Veille Framework</a></p>
+            <div class="text-gray-600">BTS SIO 2023/2026</div>
+          </div>
+        </div>
+        
+        <!-- Veille IA -->
+        <div class="flex items-center bg-white p-3 rounded-lg shadow">
+          <a href="VeilleAI.html">
+            <img src="../images/ia.png" alt="Logo IA" class="w-6 h-6 rounded-full mr-2">
+          </a>
+          <div>
+            <p><a href="VeilleAI.html" class="font-bold text-blue-600 hover:underline">Veille IA</a></p>
+            <div class="text-gray-600">BTS SIO 2023/2026</div>
+          </div>
+        </div>
+    
+        <!-- Veille Cyber-sécurité -->
+        <div class="flex items-center bg-white p-3 rounded-lg shadow">
+          <a href="Veillecybersécurité.html">
+            <img src="../images/cyber-logo.png" alt="Logo cybersécurité" class="w-6 h-6 rounded-full mr-2">
+          </a>
+          <div>
+            <p><a href="Veillecybersécurité.html" class="font-bold text-blue-600 hover:underline">Veille Cyber-sécurité</a></p>
+            <div class="text-gray-600">BTS SIO 2023/2026</div>
+          </div>
+        </div>
       </div>
     </div>
-    </div>
     
-    </body>
     
-    </html>
+    
+    
+    <br>
+    <br>
+    
+    <!-- Footer -->
+<div id="footer-container"></div>
+
+<script>
+  fetch('../code/footer-veilles.html')
+    .then(response => {
+      if (!response.ok) throw new Error("Fichier footer introuvable !");
+      return response.text();
+    })
+    .then(data => {
+      const container = document.getElementById('footer-container');
+      container.innerHTML = data;
+
+      // Corriger les chemins <img src="../images/xxx.png"> vers "../../images/xxx.png"
+      container.querySelectorAll('img').forEach(img => {
+        const src = img.getAttribute('src');
+        if (src && src.startsWith('../images/')) {
+          img.src = '../' + src; // ../ + ../images/... = ../../images/...
+        }
+      });
+
+      // Corriger les liens <a href="../...">
+      container.querySelectorAll('a').forEach(a => {
+        const href = a.getAttribute('href');
+        if (href && href.startsWith('../')) {
+          a.href = '../' + href; // ../../xxx
+        }
+      });
+    })
+    .catch(error => {
+      console.error('Erreur lors du chargement du footer :', error);
+    });
+</script>
+
+
+</body>
+</html>

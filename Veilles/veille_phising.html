@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
-  <title>Portefolio d'Anaïs Portolleau - Page Accueil</title>
+  <title>Anaïs Portolleau - Veille Phishing</title>
   <meta name="description" content="Je suis Anaïs Portolleau, étudiante en informatique. Voir le CV, Mes Projets, Contact, Mon parcours, Mes passions">
   <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
   <link href="../style.css" rel="stylesheet" type="text/css" />
@@ -12,83 +12,49 @@
 </head>
 <body>
 
-  <div id="__nuxt">
-    <div id="__layout">
-      <div>
-        <!-- Code de la barre de navigation -->
-        <div class="menu sticky top-0 z-50 bg-white">
-          <div class="w-full text-gray-700">
-            <div class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
-              
-              <!-- Logo -->
-              <a href="../index.html">
-                <img src="../images/anais_logo.png" width="75" height="auto" alt="Logo">
-              </a>
-              
-              <!-- Titre de la page -->
-              <div class="flex flex-row items-center justify-between p-4">
-                <a href="../index.html" class="text-lg font-bold tracking-widest text-gray-900 uppercase">A • P</a>
-                
-                <!-- Menu burger (affiché seulement en mode mobile) -->
-                <button id="menu-toggle">
-                  <div class="line line1"></div>
-                  <div class="line line2"></div>
-                  <div class="line line3"></div>
-                </button>
-              </div>
-              
-              <!-- Menu de navigation -->
-              <!-- Menu de navigation -->
-              <nav id="nav-links" class="flex-col flex-grow pb-4 md:pb-0 md:flex md:justify-end md:flex-row hidden">
-                <a href="../Formations.html" class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-300 focus:bg-gray-300"
-                >Formations</a>
-                <a href="../MesStages.html" class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-300 focus:bg-gray-300"
-                >Mes Stages</a>
-                <a href="../competence.html" class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-300 focus:bg-gray-300"
-                >Compétences</a>
-                <a href="../btsSioSlam.html" class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-300 focus:bg-gray-300"
-                >BTS SIO Option SLAM</a>
-                
-                <a href="../VeilleTech.html" class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-300 focus:bg-gray-300"
-                >Mes veilles</a>
-                <a href="../passions.html" class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-300 focus:bg-gray-300"
-                >Mes passions</a>
-                <a href="../contact.html" class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-300 focus:bg-gray-300"
-                >Contact</a>
-              </nav>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <!-- Conteneur du header -->
+  <div id="navbar"></div>
 
+  <!-- Chargement du header dynamiquement -->
   <script>
-    // JavaScript pour ouvrir/fermer le menu en mode mobile
-    const menuToggle = document.getElementById('menu-toggle');
-    const navLinks = document.getElementById('nav-links');
+    fetch('../code/header-veilles.html')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Erreur lors du chargement du header : ' + response.statusText);
+        }
+        return response.text();
+      })
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
 
-    menuToggle.addEventListener('click', () => {
-      // Bascule la visibilité du menu en mode mobile
-      navLinks.classList.toggle('show');
+        // Re-attacher les événements après injection
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
 
-      // Animation du hamburger
-      menuToggle.classList.toggle('open');
-    });
+        if (menuToggle && navLinks) {
+          menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+            menuToggle.classList.toggle('open');
+          });
+        }
+      })
+      .catch(error => {
+        console.error('Erreur fetch header:', error);
+      });
   </script>
 
-        <!-- En tête de présentation -->
-        <div data-v-2fd28016 style="overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; 
-        height: 20vh; margin: 0; padding: 0;">
-          <div class="bg-cover flex items-center justify-center" style="background-image: url(../images/background5.jpg); background-size: cover; 
-          background-position: center; width: 100%; height: 100%; margin: 0; padding: 0;" data-v-ae88d4ae data-v-2fd28016>
-              <h1 class="text-shadow text-center" style="margin: 0; color: white;">Veille technologique</h1>
-          </div>
-        </div>  
+  <!-- En tête de présentation -->
+  <div data-v-2fd28016 style="overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; 
+  height: 20vh; margin: 0; padding: 0;">
+    <div class="bg-cover flex items-center justify-center" style="background-image: url(../images/background5.jpg); background-size: cover; 
+    background-position: center; width: 100%; height: 100%; margin: 0; padding: 0;" data-v-ae88d4ae data-v-2fd28016>
+        <h1 class="text-shadow text-center" style="margin: 0; color: white;">Veille technologique</h1>
+    </div>
+  </div>  
 
         <!-- Titre -->
         <div class="md:h-100 h-64 bg-cover -mt-16 flex flex-col justify-center items-center" style="background-image: url(../images/frameworks_banner.jpg);">          
-          <h2 style="color:black"><strong>Le Phishing</strong></h2>          
+          <h2 style="color:black"><strong>Le Phishing</strong></h2>                
         </div>   
 
         <!-- Contenu de la veille améliorée -->
@@ -115,82 +81,68 @@
               <li>Assurer la <strong>protection des données sensibles</strong> et la résistance des systèmes informatiques.</li>
               <li><strong>Proposer des meilleures pratiques</strong> pour améliorer la sécurité dans les environnements professionnels.</li>
           </ul>
-      </div>
+        </div>
 
         <!-- Colonne Image -->
         <div style="flex: 1 1 40%; padding: 10px; text-align: center;">
-          <img src="../images/phishing.png" alt="Phishing" style="width: 100%; max-width: 400px; border-radius: 8px; 
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
-      </div>
-      </div>
+        <img src="../images/phishing.png" alt="Phishing" style="width: 100%; max-width: 400px; border-radius: 8px; 
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);"> 
+        </div>
+        </div>
 
-    
+        <br>
 
-     <!-- Section Problématique et Objectifs -->
-     <div style="display: flex; align-items: center; flex-wrap: wrap; margin: 20px auto; background-color: #f9f9f9; border-radius: 12px; 
-     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); font-family: 'Arial', sans-serif; padding: 20px; max-width: 1200px;">
-      <!-- Colonne Texte -->
-    <div style="flex: 1 1 60%; padding: 10px;">
-      <h4>Définition des mots clés :</h4>
-      <ul>
-        <li><strong>Cyberattaques</strong> : Actions malveillantes visant à perturber, voler ou détruire des données et systèmes 
-          informatiques.
-        </li>
-        <li><strong>Phishing</strong> : Technique d'attaque qui consiste à tromper les utilisateurs pour qu'ils divulguent des informations 
-          sensibles (identifiants, informations bancaires, etc.).
-        </li>
-        <li><strong>Sécurité des données</strong> : Ensemble des pratiques visant à protéger les données contre les risques de perte, vol ou 
-          altération.
-        </li>
-        <li><strong>Résilience des systèmes</strong> : Capacité d'un système informatique à résister aux perturbations et à se rétablir rapidement après une
-          attaque ou une panne.
-        </li>
-        <li><strong>Authentification multi-facteurs (MFA)</strong> : Processus de sécurité nécessitant plusieurs preuves d'identité avant 
-          d'accorder l'accès.
-        </li>
-        <li><strong>Détection et prévention des intrusions (IDS/IPS)</strong> : Systèmes permettant de détecter et de prévenir les attaques 
-          sur les réseaux informatiques.
-        </li>
-    </ul>
+        <!-- Section Définitions et Besoins -->
+        <div style="display: flex; align-items: center; flex-wrap: wrap; margin: 20px auto; background-color: #f9f9f9; border-radius: 12px; 
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); font-family: 'Arial', sans-serif; padding: 20px; max-width: 1200px;">
+            <!-- Colonne Texte -->
+            <div style="flex: 1 1 60%; padding: 10px;">
+            <h4>Définition des mots clés :</h4>
 
+            <ul>
+                <li><strong>Cyberattaques</strong> : Actions malveillantes visant à perturber, voler ou détruire des données et systèmes 
+                informatiques.
+                </li>
+                <li><strong>Phishing</strong> : Technique d'attaque qui consiste à tromper les utilisateurs pour qu'ils divulguent des informations 
+                sensibles (identifiants, informations bancaires, etc.).
+                </li>
+                <li><strong>Sécurité des données</strong> : Ensemble des pratiques visant à protéger les données contre les risques de perte, vol ou 
+                altération.
+                </li>
+                <li><strong>Résilience des systèmes</strong> : Capacité d'un système informatique à résister aux perturbations et à se rétablir rapidement après une
+                attaque ou une panne.
+                </li>
+                <li><strong>Authentification multi-facteurs (MFA)</strong> : Processus de sécurité nécessitant plusieurs preuves d'identité avant 
+                d'accorder l'accès.
+                </li>
+                <li><strong>Détection et prévention des intrusions (IDS/IPS)</strong> : Systèmes permettant de détecter et de prévenir les attaques 
+                sur les réseaux informatiques.
+                </li>
+            </ul>
 
+            <h4>Identification du besoin :</h4>
+            <p>Les entreprises ont besoin de solutions globales pour :</p>
+            <ul>
+                <li>Se protéger contre toutes sortes d'attaques, en particulier celles liées au phishing.</li>
+                <li>Garantir la sécurité des données sensibles (personnelles, financières, etc.).</li>
+                <li>Assurer la continuité des opérations en cas de cyberattaque (résilience).</li>
+                <li>Former les employés et sensibiliser aux bonnes pratiques de cybersécurité.</li>
+            </ul>
 
-    <h4>Identification du besoin :</h4>
-    <p>Les entreprises ont besoin de solutions globales pour :</p>
-    <ul>
-        <li>Se protéger contre toutes sortes d'attaques, en particulier celles liées au phishing.</li>
-        <li>Garantir la sécurité des données sensibles (personnelles, financières, etc.).</li>
-        <li>Assurer la continuité des opérations en cas de cyberattaque (résilience).</li>
-        <li>Former les employés et sensibiliser aux bonnes pratiques de cybersécurité.</li>
-    </ul>
-  </div>
+        </div>
 
-    <!-- Colonne Image -->
-    <div style="flex: 1 1 40%; padding: 10px; text-align: center;">
-      <img src="../images/interrogation.png " 
-          alt="interrogation" 
-          style="width: 100%; max-width: 400px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
-    </div>
-  </div>
+        <!-- Colonne Image -->
+        <div style="flex: 1 1 40%; padding: 10px; text-align: center;">
+          <img src="../images/interrogation.png " 
+              alt="Frameworks" 
+              style="width: 100%; max-width: 400px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+        </div>
+        </div>
 
-
-   
-   
-   
-  
-  
-
-
-        
-  
-
-       
-
-       <!-- Section Problématique et Objectifs -->
-       <div style="display: flex; align-items: center; flex-wrap: wrap; margin: 20px auto; background-color: #f9f9f9; border-radius: 12px; 
-       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); font-family: 'Arial', sans-serif; padding: 20px; max-width: 1200px;">
-          
-        <!-- Colonne Texte -->
+        <!-- Section Définitions et Besoins -->
+        <div style="display: flex; align-items: center; flex-wrap: wrap; margin: 20px auto; background-color: #f9f9f9; border-radius: 12px; 
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); font-family: 'Arial', sans-serif; padding: 20px; max-width: 1200px;">
+           <!-- Colonne Texte -->
     <div style="flex: 1 1 60%; padding: 10px;">
       <h4>Statistiques sur le phishing :</h4>
       <ul>
@@ -216,19 +168,16 @@
       <img src="../images/classement.png" alt="Statistiques sur le phishing" style="width: 100%; max-width: 600px; margin: 20px 0;">
       <p>Source : <a href="https://www.helpnetsecurity.com/2018/01/24/industry-phishing-risk/" target="_blank">HelpNetSecurity</a></p>
     </div>
-    
-        
-
-          
         </div>
+       
+        <br>
 
-        
-
-        <!-- Section Avantages et Inconvénients -->
-        <div style="display: flex; flex-direction: column;  margin: 20px auto; background-color: #f9f9f9; border-radius: 12px; 
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); font-family: 'Arial', sans-serif; padding: 20px; max-width: 95%; text-align: left;  max-width: 1200px;">
-            <!-- Identification du besoin -->
-  <!-- Identification du besoin -->
+        <!-- Section Comparaison des Frameworks Frontend -->
+        <div style="display: flex; align-items: center; flex-wrap: wrap; margin: 20px auto; background-color: #f9f9f9; border-radius: 12px; 
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); font-family: 'Arial', sans-serif; padding: 20px; max-width: 1200px;">
+          <!-- Colonne Texte -->
+          <div style="flex: 1 1 60%; padding: 10px;">
+           <!-- Identification du besoin -->
   <h4>Identification du besoin :</h4>
   <p>Une étude de KnowBe4 sur les statistiques de phishing révèle que :</p>
   <ul>
@@ -274,55 +223,47 @@
   <p>L'adoption de technologies comme <strong>l'intelligence artificielle (IA)</strong> et les <strong>systèmes de détection d'intrusion</strong> (IDS/IPS) permet de renforcer la détection 
     d'attaques et d'<strong>améliorer la force des systèmes</strong> face aux menaces avancées.</p>
   <p><strong>Source :</strong> Trend Micro - Sécurité des entreprises et résilience des systèmes</p>
-
-      </div>
-
       
 
-     <!-- Section Tendances et Perspectives -->
-<div style="display: flex; flex-direction: column; align-items: center; margin: 20px auto; background-color: #f9f9f9; border-radius: 12px; 
-box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); font-family: 'Arial', sans-serif; padding: 20px; max-width: 1200px; text-align: center;">
-    
-    <!-- Titre -->
-    <h4 style="margin-bottom: 15px;">Conclusion :</h4>
-    
-    <!-- Texte -->
-    <p style="margin: 0 20px; max-width: 1000px;">Une stratégie complète combinant <strong>technologies avancées</strong>, 
-        <strong>formation</strong> continue et <strong>sensibilisation des employés</strong> est essentielle pour 
-        <strong>minimiser les risques d'attaques</strong> et <strong>renforcer la résilience des entreprises</strong> face aux cybermenaces.
-    </p>
-
-</div>
+          
+        </div>
+        </div>
 
 
-    <br>
+      <!-- Section Conclusion -->
+      <div style="display: flex; align-items: center; flex-wrap: wrap; margin: 20px auto; background-color: #f9f9f9; border-radius: 12px; 
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); font-family: 'Arial', sans-serif; padding: 20px; max-width: 1200px;">
+      <div style="flex: 1 1 100%; padding: 10px; text-align: center;">
+        <h4 style="margin-bottom: 15px;">Conclusion :</h4>
+        
+        <!-- Texte -->
+        <p style="margin: 0 20px; max-width: 1000px;">Une stratégie complète combinant <strong>technologies avancées</strong>, 
+            <strong>formation</strong> continue et <strong>sensibilisation des employés</strong> est essentielle pour 
+            <strong>minimiser les risques d'attaques</strong> et <strong>renforcer la résilience des entreprises</strong> face aux cybermenaces.
+        </p>
+        </div>
+      </div>
+      
+      <br>
 
-    <!-- Section Tendances et Perspectives -->
-    <div style="display: flex; flex-direction: column; align-items: center; margin: 20px auto; background-color: #f9f9f9; border-radius: 12px; 
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); font-family: 'Arial', sans-serif; padding: 20px; max-width: 1200px; text-align: center;">
-              <h4>Sources utilisées :</h4>
-    <ul>
-        <li><a href="https://www.broadcom.com/products/cybersecurity/email/phishing-readiness" target="_blank"><strong>Symantec</strong> - Guide sur la prévention du phishing</a></li>
-        <li><a href="https://www.kaspersky.fr/enterprise-security" target="_blank"><strong>Kaspersky</strong> - La sécurité des entreprises face aux cybermenaces</a></li>
-        <li><a href="https://www.microsoft.com/en-us/security/business/identity-access/microsoft-entra-mfa-multi-factor-authentication" target="_blank"><strong>Microsoft </strong>
-          - Pourquoi l'authentification multi-facteurs est importante</a></li>
-        <li><a href="https://www.cisco.com/c/fr_ca/products/security/what-is-cybersecurity.html" target="_blank"><strong>CISCO</strong> - Sensibilisation à la cybersécurité</a></li>
-        <li><a href="https://www.trendmicro.com/en_us/business.html"target="_blank"><strong>Trend Micro </strong>- Sécurité des entreprises et résilience des systèmes</a></li>
-        <li><a href="https://www.helpnetsecurity.com/2018/01/24/industry-phishing-risk/" target="_blank"><strong>KnowBe4</strong> - Statistiques sur le phishing par secteur</a></li>
-    </ul>
-    <br>
-    <p><strong>Rédigé le 06/01/2025</strong></p>
-      </div>   
+      <h4>Sources utilisées :</h4>
+      <ul>
+          <li><a href="https://reactjs.org" target="_blank">React - Documentation officielle</a></li>
+          <li><a href="https://vuejs.org" target="_blank">Vue.js - Documentation officielle</a></li>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Understanding_client-side_frameworks" target="_blank">MDN Web Docs - Frameworks</a></li>
+          <li><a href="https://stackoverflow.com/survey/2023" target="_blank">Stack Overflow - Developer Survey 2023</a></li>
+      </ul>
+      <br>
+      <p><strong>Rédigé le 27/10/2024</strong></p>
+    </div>
 
   
     <div style="display: flex; align-items: flex-start; justify-content: center; flex-wrap: wrap; margin: 20px auto; background-color: #f9f9f9; 
     border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); font-family: 'Arial', sans-serif; padding: 20px; max-width: 1200px; text-align: center;">
     
-    
     <!-- Titre centré -->
     <h4 style="width: 100%; text-align: center; margin-bottom: 30px;">Articles intéressants :</h4>
-
-      <!-- Bloc Article 3 -->
+<!-- Bloc Article 3 -->
 <div style="flex: 1 1 calc(50% - 40px); margin: 20px; border: 1px solid #ccc; padding: 15px; border-radius: 8px; background-color:white;">
   <article>
     <header>
@@ -1164,7 +1105,9 @@ box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); font-family: 'Arial', sans-serif; pa
     </div>
     </div>
 
-    <br><!-- Contenu de la veille améliorée -->
+    <br>
+    
+    <!-- Contenu de la veille améliorée -->
     <div class="container" style="width: 1200px; margin: 0 auto; background-color: #f9f9f9; border-radius: 12px; 
               box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); font-family: 'Arial', sans-serif; padding: 20px;">
       <h6 class="text-center text-lg font-semibold mb-4">Autres veilles technologiques</h6>
@@ -1221,91 +1164,40 @@ box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); font-family: 'Arial', sans-serif; pa
     
     <br>
     <br>
+
    <!-- Footer -->
-    <div class="bg-white" data-v-1830edb3>
-      <div class="flex flex-col md:flex-row" data-v-1830edb3>
-      <div class="md:p-12 p-4 md:w-3/12" data-v-1830edb3>
-          <h4 class="pb-2" data-v-1830edb3>
-          À propos
-          </h4>
-          <a href="../btsSioSlam.html.html" aria-current="page" class="nuxt-link-exact-active nuxt-link-active"
-          data-v-1830edb3>
-          → Mes Projets SIO
-          </a>
-          <br data-v-1830edb3><br data-v-1830edb3>
-          <a href="../contact.html" aria-current="page" class="nuxt-link-exact-active nuxt-link-active"
-          data-v-1830edb3>
-          → Mon Contact
-          </a>
-          <br data-v-1830edb3><br data-v-1830edb3>
-          <a href="../passions.html" data-v-1830edb3>
-            → À propos de moi
-          </a>           
-      </div>
-      <div class="md:p-12 p-4 md:w-3/12" data-v-1830edb3>
-          <h4 class="pb-2" data-v-1830edb3>
-          Liens
-          </h4> <a href="../index.html" aria-current="page" class="nuxt-link-exact-active nuxt-link-active"
-          data-v-1830edb3>
-          → Accueil
-          </a>
-          <br data-v-1830edb3><br data-v-1830edb3>               
-          
-          <a href="../Formations.html" data-v-1830edb3>
-          → Mes Formations 
-          </a>
-          <br data-v-1830edb3><br data-v-1830edb3> 
-          <a href="../MesStages.html" data-v-1830edb3>
-          → Stages
-          </a>
-      </div>
-      <div class="md:p-12 p-4 md:w-3/12" data-v-1830edb3>
-          <h4 class="pb-2" data-v-1830edb3>
-          Projets
-          </h4> 
-          <a href="../competence.html" data-v-1830edb3>
-          → Mes compétences
-          </a>
-          <br data-v-1830edb3>
-          <br data-v-1830edb3> 
-          <a href="../btsSioSlam.html" data-v-1830edb3>
-          → BTS SIO SLAM
-          </a>
-          <br data-v-1830edb3>
-          <br data-v-1830edb3> 
-          <a href="./VeilleTech.html" data-v-1830edb3>
-          → Mes veilles
-          </a>
-      </div>
-      <div class="md:p-12 p-4 md:w-3/12" data-v-1830edb3>
-          <h4 class="pb-2" data-v-1830edb3>
-          Contact
-          </h4>
-          <div class="flex row items-center justify-start" data-v-1830edb3><img
-              src="../images/email_icon.de2632c.png" alt="email icon" class="w-6" data-v-1830edb3>
-              <p class="font-medium p-2" data-v-1830edb3>
-                <a href="mailto:anais.portolleau44@gmail.com">anais.portolleau44@gmail.com</a>
-            </p>
-            
-          </div>
-          <div class="flex row items-center justify-start" data-v-1830edb3><img
-              src="../images/phone_icon.a64af40.png" alt="phone icon" class="w-6" data-v-1830edb3>
-          <p class="font-medium p-2" data-v-1830edb3>
-              06.52.01.38.39
-          </p>
-          </div>
-          <div data-v-1830edb3><a href="../cv/2SLAM_PORTOLLEAU_Anaïs_CV.pdf" target="_blank"
-            class="button-bloc bg-orangeClair" data-v-1830edb3>
-            Télécharger CV
-          </a>
-        </div>
-      </div>
-      </div>
-  </div>
-</div>
-</div>
-</div>
+<div id="footer-container"></div>
+
+<script>
+  fetch('../code/footer-veilles.html')
+    .then(response => {
+      if (!response.ok) throw new Error("Fichier footer introuvable !");
+      return response.text();
+    })
+    .then(data => {
+      const container = document.getElementById('footer-container');
+      container.innerHTML = data;
+
+      // Corriger les chemins <img src="../images/xxx.png"> vers "../../images/xxx.png"
+      container.querySelectorAll('img').forEach(img => {
+        const src = img.getAttribute('src');
+        if (src && src.startsWith('../images/')) {
+          img.src = '../' + src; // ../ + ../images/... = ../../images/...
+        }
+      });
+
+      // Corriger les liens <a href="../...">
+      container.querySelectorAll('a').forEach(a => {
+        const href = a.getAttribute('href');
+        if (href && href.startsWith('../')) {
+          a.href = '../' + href; // ../../xxx
+        }
+      });
+    })
+    .catch(error => {
+      console.error('Erreur lors du chargement du footer :', error);
+    });
+</script>
 
 </body>
-
 </html>
