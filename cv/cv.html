@@ -8,176 +8,135 @@
   <meta name="description" content="Je suis Anaïs Portolleau, étudiante en informatique. Voir le CV, Mes Projets, Contact, Mon parcours, Mes passions">
   <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
   <link href="../style.css" rel="stylesheet" type="text/css" />
+  <style>
+    .fond {
+      padding: 40px 20px;
+      background-color: #f9f9f9;
+    }
 
+    .cv-iframe {
+      width: 100%;
+      height: 1000px;
+      border: none;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      margin-bottom: 30px;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+    }
+
+    .button-bloc {
+      background-color: #ffc100;
+      font-size: 14px;
+      padding: 10px 20px;
+      text-decoration: none;
+      color: black;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .button-bloc:hover {
+      background-color: #e6ac00;
+      transform: translateY(-2px);
+    }
+  </style>
 </head>
 <body>
 
-  <div id="__nuxt">
-    <div id="__layout">
-      <div>
-        <!-- Code de la barre de navigation -->
-        <div class="menu sticky top-0 z-50 bg-white">
-          <div class="w-full text-gray-700">
-            <div class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
-              
-              <!-- Logo -->
-              <a href="../index.html">
-                <img src="../images/anais_logo.png" width="75" height="auto" alt="Logo">
-              </a>
-              
-              <!-- Titre de la page -->
-              <div class="flex flex-row items-center justify-between p-4">
-                <a href="../index.html" class="text-lg font-bold tracking-widest text-gray-900 uppercase">A • P</a>
-                
-                <!-- Menu burger (affiché seulement en mode mobile) -->
-                <button id="menu-toggle">
-                  <div class="line line1"></div>
-                  <div class="line line2"></div>
-                  <div class="line line3"></div>
-                </button>
-              </div>
-              
-              <!-- Menu de navigation -->
-              <nav id="nav-links" class="flex-col flex-grow pb-4 md:pb-0 md:flex md:justify-end md:flex-row hidden">
-                <a href="../Formations.html" class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-300 focus:bg-gray-300"
-                >Formations</a>
-                <a href="../MesStages.html" class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-300 focus:bg-gray-300"
-                >Mes Stages</a>
-                <a href="../competence.html" class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-300 focus:bg-gray-300"
-                >Compétences</a>
-                <a href="../btsSioSlam.html" class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-300 focus:bg-gray-300"
-                >BTS SIO Option SLAM</a>
-                <a href="../connaissances.html" class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-300 focus:bg-gray-300"
-                >Connaissances</a>
-                <a href="../VeilleTech.html" class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-300 focus:bg-gray-300"
-                >Mes veilles</a>
-                <a href="../passions.html" class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-300 focus:bg-gray-300"
-                >Mes passions</a>
-                <a href="../contact.html" class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-300 focus:bg-gray-300"
-                >Contact</a>
-              </nav>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+<!-- Conteneur du header -->
+<div id="navbar"></div>
+
+<!-- Chargement du header dynamiquement -->
+<script>
+  fetch('../code/header-veilles.html')
+    .then(response => {
+      if (!response.ok) throw new Error('Erreur lors du chargement du header : ' + response.statusText);
+      return response.text();
+    })
+    .then(data => {
+      document.getElementById('navbar').innerHTML = data;
+
+      const menuToggle = document.getElementById('menu-toggle');
+      const navLinks = document.getElementById('nav-links');
+
+      if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => {
+          navLinks.classList.toggle('show');
+          menuToggle.classList.toggle('open');
+        });
+      }
+    })
+    .catch(error => console.error('Erreur fetch header:', error));
+</script>
+
+ 
+  <!-- En tête de présentation -->
+<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 30vh; 
+margin-top: 0; padding: 0; overflow: hidden;">
+  <div style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(images/cv.png); 
+  background-size: cover; background-position: center; width: 100%; height: 100%; margin: 0; padding: 0; display: flex; align-items: center; justify-content: center;">
+    <h1 style="color: white; font-size: 3rem; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); margin: 0;">Mon CV</h1>
   </div>
-
-  <script>
-    // JavaScript pour ouvrir/fermer le menu en mode mobile
-    const menuToggle = document.getElementById('menu-toggle');
-    const navLinks = document.getElementById('nav-links');
-
-    menuToggle.addEventListener('click', () => {
-      // Bascule la visibilité du menu en mode mobile
-      navLinks.classList.toggle('show');
-
-      // Animation du hamburger
-      menuToggle.classList.toggle('open');
-    });
-  </script>
-            
-        <div class="fond">
-          <iframe src="../cv/2SLAM_PORTOLLEAU_Anaïs_CV.pdf" width="100%" height="1000px">
-              Votre navigateur ne supporte pas l'affichage des PDF.
-              <a href="../cv/2SLAM_PORTOLLEAU_Anaïs_CV.pdf" download>Téléchargez le PDF ici.</a>
-          </iframe>
-          <div class="button-container" style="justify-content: center; align-items: center;  background-color: #ffc100;   border-radius: 10px; max-width: 200px; margin-left: auto; margin-right: auto;">
-            <a href="../cv/2SLAM_PORTOLLEAU_Anaïs_CV.pdf" target="_blank" class="button-bloc" style="font-size: 14px; padding: 5px 10px; display: inline-block; text-decoration: none; color: black; border-radius: 10px; transition: background-color 0.3s ease;">
-                Cliquer pour télécharger mon CV
-            </a>                   
-          </div>     
-        </div>
-      </div>
-    </div>
-  </div>
+</div>
         
-            
-    <!-- Footer -->
-    <div class="bg-white" data-v-1830edb3>
-      <div class="flex flex-col md:flex-row" data-v-1830edb3>
-      <div class="md:p-12 p-4 md:w-3/12" data-v-1830edb3>
-          <h4 class="pb-2" data-v-1830edb3>
-          À propos
-          </h4>
-          <a href="../btsSioSlam.html" aria-current="page" class="nuxt-link-exact-active nuxt-link-active"
-          data-v-1830edb3>
-          → Mes Projets SIO
-          </a>
-          <br data-v-1830edb3><br data-v-1830edb3>
-          <a href="../contact.html" aria-current="page" class="nuxt-link-exact-active nuxt-link-active"
-          data-v-1830edb3>
-          → Mon Contact
-          </a>
-          <br data-v-1830edb3><br data-v-1830edb3>
-          <a href="../passions.html" data-v-1830edb3>
-            → À propos de moi
-          </a>           
-      </div>
-      <div class="md:p-12 p-4 md:w-3/12" data-v-1830edb3>
-          <h4 class="pb-2" data-v-1830edb3>
-          Liens
-          </h4> <a href="../index.html" aria-current="page" class="nuxt-link-exact-active nuxt-link-active"
-          data-v-1830edb3>
-          → Accueil
-          </a>
-          <br data-v-1830edb3><br data-v-1830edb3>               
-          
-          <a href="../Formations.html" data-v-1830edb3>
-          → Mes Formations 
-          </a>
-          <br data-v-1830edb3><br data-v-1830edb3> 
-          <a href="../MesStages.html" data-v-1830edb3>
-          → Stages
-          </a>
-      </div>
-      <div class="md:p-12 p-4 md:w-3/12" data-v-1830edb3>
-          <h4 class="pb-2" data-v-1830edb3>
-          Projets
-          </h4> 
-          <a href="../competence.html" data-v-1830edb3>
-          → Mes compétences
-          </a>
-          <br data-v-1830edb3>
-          <br data-v-1830edb3> 
-          <a href="../btsSioSlam.html" data-v-1830edb3>
-          → BTS SIO SLAM
-          </a>
-          <br data-v-1830edb3>
-          <br data-v-1830edb3> 
-          <a href="../VeilleTech.html" data-v-1830edb3>
-          → Mes veilles
-          </a>
-      </div>
-      <div class="md:p-12 p-4 md:w-3/12" data-v-1830edb3>
-          <h4 class="pb-2" data-v-1830edb3>
-          Contact
-          </h4>
-          <div class="flex row items-center justify-start" data-v-1830edb3><img
-              src="../images/email_icon.de2632c.png" alt="email icon" class="w-6" data-v-1830edb3>
-              <p class="font-medium p-2" data-v-1830edb3>
-                <a href="mailto:anais.portolleau44@gmail.com">anais.portolleau44@gmail.com</a>
-            </p>
-            
-          </div>
-          <div class="flex row items-center justify-start" data-v-1830edb3><img
-              src="../images/phone_icon.a64af40.png" alt="phone icon" class="w-6" data-v-1830edb3>
-          <p class="font-medium p-2" data-v-1830edb3>
-              06.52.01.38.39
-          </p>
-          </div>
-          <div data-v-1830edb3><a href="../cv/2SLAM_PORTOLLEAU_Anaïs_CV.pdf" target="_blank"
-            class="button-bloc bg-orangeClair" data-v-1830edb3>
-            Télécharger CV
-          </a>
-        </div>
-      </div>
-      </div>
+
+<!-- Contenu principal -->
+<div class="fond">
+  <iframe class="cv-iframe" src="../cv/2SLAM_PORTOLLEAU_Anaïs_CV.pdf">
+    Votre navigateur ne supporte pas l'affichage des PDF.
+    <a href="../cv/2SLAM_PORTOLLEAU_Anaïs_CV.pdf" download>Téléchargez le PDF ici.</a>
+  </iframe>
+
+  <div>
+    <a href="../cv/2SLAM_PORTOLLEAU_Anaïs_CV.pdf" target="_blank" class="button-bloc">
+      📄 Télécharger mon CV
+    </a>
   </div>
 </div>
-</div>
-</div>
+
+<!-- Séparation SVG décorative -->
+<svg viewBox="0 0 35.28 2.17" preserveAspectRatio="none" class="st0 margin-bottom-negative-1 neg-index-1">
+  <path d="M35.28 1.67c-3.07-.55-9.27.41-16.15 0-6.87-.4-13.74-.58-19.13.1v.4h35.28z"></path>
+  <path d="M35.28 1.16c-3.17-.8-7.3.4-10.04.56-2.76.17-9.25-1.47-12.68-1.3-3.42.16-4.64.84-7.04.86C3.12 1.31 0 .4 0 .4v1.77h35.28z" opacity=".5"></path>
+  <path d="M35.28.31c-2.57.84-7.68.3-11.8.43-4.1.12-6.85.61-9.57.28C11.18.69 8.3-.16 5.3.02 2.3.22.57.85 0 .87v1.2h35.28z" opacity=".5"></path>
+</svg>
+
+<!-- Conteneur du footer -->
+<div id="footer-container"></div>
+
+<script>
+  fetch('../code/footer-veilles.html')
+    .then(response => {
+      if (!response.ok) throw new Error("Fichier footer introuvable !");
+      return response.text();
+    })
+    .then(data => {
+      const container = document.getElementById('footer-container');
+      container.innerHTML = data;
+
+      container.querySelectorAll('img').forEach(img => {
+        const src = img.getAttribute('src');
+        if (src && src.startsWith('../images/')) {
+          img.src = '../' + src;
+        }
+      });
+
+      container.querySelectorAll('a').forEach(a => {
+        const href = a.getAttribute('href');
+        if (href && href.startsWith('../')) {
+          a.href = '../' + href;
+        }
+      });
+    })
+    .catch(error => {
+      console.error('Erreur lors du chargement du footer :', error);
+    });
+</script>
 
 </body>
-
 </html>
