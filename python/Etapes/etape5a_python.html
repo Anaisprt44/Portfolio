@@ -1,15 +1,18 @@
 <!doctype html>
 <html lang="fr">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
   <title>Portefolio d'Anaïs Portolleau - Page Accueil</title>
-  <meta name="description" content="Je suis Anaïs Portolleau, étudiante en informatique. Voir le CV, Mes Projets, Contact, Mon parcours, Mes passions">
+  <meta name="description"
+    content="Je suis Anaïs Portolleau, étudiante en informatique. Voir le CV, Mes Projets, Contact, Mon parcours, Mes passions">
   <link rel="icon" href="../../images/favicon.ico" type="image/x-icon">
   <link href="../../style.css" rel="stylesheet" type="text/css" />
 
 </head>
+
 <body>
 
   <div id="navbar"></div>
@@ -30,72 +33,82 @@
         });
       });
   </script>
-        
-        
-        <!-- Contenu de l'étape 5a -->
-        <div class="container-projet">   
-          <div style="flex: 1;">
+
+
+  <!-- Contenu de l'étape 5a -->
+  <div class="container-projet">
+    <div style="flex: 1;">
       <h4 style="color: #1a7a89;">Étape 5a - Projet Python Création de mots de passe robustes</h4>
       <div class="step-description" style="margin-bottom: 20px; text-align: left;">
-          <p style="margin: 0; line-height: 1.6; color: #333;">
-              Pour renforcer la politique de mots de passe chez STESIO, nous avons utilisé un tableur pour générer des mots de passe répondant à des critères de sécurité. Chaque utilisateur extrait du fichier <strong>usersToulouse.csv</strong> a reçu un mot de passe respectant les critères, comme une combinaison aléatoire de lettres majuscules et minuscules ainsi que de chiffres. Nous avons exporté ces mots de passe dans un fichier CSV, prêts à être utilisés.
-          </p>
+        <p style="margin: 0; line-height: 1.6; color: #333;">
+          Pour renforcer la politique de mots de passe chez STESIO, nous avons utilisé un tableur pour générer des mots
+          de passe répondant à des critères de sécurité. Chaque utilisateur extrait du fichier
+          <strong>usersToulouse.csv</strong> a reçu un mot de passe respectant les critères, comme une combinaison
+          aléatoire de lettres majuscules et minuscules ainsi que de chiffres. Nous avons exporté ces mots de passe dans
+          un fichier CSV, prêts à être utilisés.
+        </p>
       </div>
 
       <!-- Image des mots de passe générés -->
       <figure class="result-image" style="margin: 0;">
-          <img src="../images/etape5a.png" alt="Générateur de mots de passe" style="max-width: 100%; height: auto; margin: 20px 0;" />
+        <img src="../images/etape5a.png" alt="Générateur de mots de passe"
+          style="max-width: 100%; height: auto; margin: 20px 0;" />
       </figure>
       <figure class="result-image" style="margin: 0;">
-        <img src="../images/etape5a-2.png" alt="Générateur de mots de passe" style="max-width: 100%; height: auto; margin: 20px 0;" />
-    </figure>
+        <img src="../images/etape5a-2.png" alt="Générateur de mots de passe"
+          style="max-width: 100%; height: auto; margin: 20px 0;" />
+      </figure>
 
-      
 
+
+
+    </div>
 
   </div>
 
-</div>
+  <!-- Boutons pour le compte rendu et le retour -->
+  <div class="button-group" style="display: flex; justify-content: center; margin-top: 20px;">
+    <a href="../CompteRendue/groupe_26_peixoto_portolleau_etape_05a_v2.pdf" target="_blank" rel="noopener noreferrer"
+      class="button"
+      style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; font-weight: bold; margin: 0 10px;">Lien
+      compte rendu</a>
+    <a href="../../python.html" class="button"
+      style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; font-weight: bold; margin: 0 10px;">Retour</a>
+  </div>
+  <br>
 
-<!-- Boutons pour le compte rendu et le retour -->
-<div class="button-group" style="display: flex; justify-content: center; margin-top: 20px;">
-  <a href="../CompteRendue/groupe_26_peixoto_portolleau_etape_05a_v2.pdf" target="_blank" rel="noopener noreferrer" class="button" style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; font-weight: bold; margin: 0 10px;">Lien compte rendu</a>
-  <a href="../../python.html" class="button" style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; font-weight: bold; margin: 0 10px;">Retour</a>
-</div>
-<br>
 
 
 
-         
-  
-            
 
-        <!-- Footer -->
- <div id="footer-container"></div>
 
-<script>
-  fetch('../../code/footer-projets.html')
-    .then(response => response.text())
-    .then(data => {
-      // Injecter le footer
-      document.getElementById('footer-container').innerHTML = data;
 
-      // Maintenant corriger les chemins des images dans ce footer injecté
-      const footer = document.getElementById('footer-container');
+  <!-- Footer -->
+  <div id="footer-container"></div>
 
-      // Parcours toutes les images dans le footer
-      footer.querySelectorAll('img').forEach(img => {
-        let src = img.getAttribute('src');
-      
-        if(src.startsWith('../images/')) {
-         
+  <script>
+    fetch('../../code/footer-projets.html')
+      .then(response => response.text())
+      .then(data => {
+        // Injecter le footer
+        document.getElementById('footer-container').innerHTML = data;
 
-          let newSrc = src.replace('../images/', '../../images/');
-          img.setAttribute('src', newSrc);
-        }
+        // Maintenant corriger les chemins des images dans ce footer injecté
+        const footer = document.getElementById('footer-container');
+
+        // Parcours toutes les images dans le footer
+        footer.querySelectorAll('img').forEach(img => {
+          let src = img.getAttribute('src');
+
+          if (src.startsWith('../images/')) {
+
+
+            let newSrc = src.replace('../images/', '../../images/');
+            img.setAttribute('src', newSrc);
+          }
+        });
       });
-    });
-</script>
+  </script>
 </body>
 
 </html>

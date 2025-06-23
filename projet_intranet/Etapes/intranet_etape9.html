@@ -1,15 +1,18 @@
 <!doctype html>
 <html lang="fr">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
   <title>Portefolio d'Anaïs Portolleau - Page Intranet</title>
-  <meta name="description" content="Je suis Anaïs Portolleau, étudiante en informatique. Voir le CV, Mes Projets, Contact, Mon parcours, Mes passions">
+  <meta name="description"
+    content="Je suis Anaïs Portolleau, étudiante en informatique. Voir le CV, Mes Projets, Contact, Mon parcours, Mes passions">
   <link rel="icon" href="../../images/favicon.ico" type="image/x-icon">
   <link href="../../style.css" rel="stylesheet" type="text/css" />
 
 </head>
+
 <body>
 
   <div id="navbar"></div>
@@ -30,105 +33,113 @@
         });
       });
   </script>
-       <!-- Contenu de l'étape 9 -->
-      <div class="container-projet" style="padding: 20px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); background-color: #f9f9f9;">
-        <h4 style="font-size: 1.5rem; margin-bottom: 15px;  color: #1a7a89;">Etape 9 – Projet Intranet</h4>
+  <!-- Contenu de l'étape 9 -->
+  <div class="container-projet"
+    style="padding: 20px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); background-color: #f9f9f9;">
+    <h4 style="font-size: 1.5rem; margin-bottom: 15px;  color: #1a7a89;">Etape 9 – Projet Intranet</h4>
 
-        <div style=" margin-top: 20px;">
-          <a href="../CDC/projet_intranet_mission_9.pdf" style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; 
-              font-weight: bold; margin: 0 10px; transition: background-color 0.3s;" 
-              target="_blank">Consigne Etape 9
-          </a>
-          <a href="../Compte_Rendue/Mission9_Compte_rendu_PROJET-INTRANET_v2.pdf" style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; 
-              font-weight: bold; margin: 0 10px; transition: background-color 0.3s;" 
-              target="_blank">Voir compte Rendue
-          </a>
-          <br>
-        </div>
+    <div style=" margin-top: 20px;">
+      <a href="../CDC/projet_intranet_mission_9.pdf" style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; 
+              font-weight: bold; margin: 0 10px; transition: background-color 0.3s;" target="_blank">Consigne Etape 9
+      </a>
+      <a href="../Compte_Rendue/Mission9_Compte_rendu_PROJET-INTRANET_v2.pdf" style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; 
+              font-weight: bold; margin: 0 10px; transition: background-color 0.3s;" target="_blank">Voir compte Rendue
+      </a>
+      <br>
+    </div>
 
-        
-        <h4>Objectif</h4>
-        <p>
-          Dans cette mission, nous avons mis à jour notre diagramme UML pour intégrer les nouveaux cas d'utilisation concernant les actualités et les groupes 
-          d'utilisateurs.
-        </p>     
 
-        <h4>Voici les différentes étapes</h4>
-        <ul>
-            <li>1. Question 1 : Mise à jour du diagramme UML pour l'ajout des cas d'utilisation et de la table des actualités</li>
-        </ul>        
-        
-            <h4>1. Mise à jour du diagramme UML pour l'ajout des cas d'utilisation et de la table des actualités</h4>
-            <p>Nous avons mis à jour notre diagramme UML pour inclure les interactions des différents groupes d'utilisateurs avec la nouvelle table des actualités. 
-              Les informations varient selon les actualités propres à chaque groupe et les plus importantes. Seuls les administrateurs peuvent consulter toutes les actualités.</p>
-            <img src="../images/mission9/question1.png" alt="Diagramme UML de l'actualités" />
-        
-            <br>
+    <h4>Objectif</h4>
+    <p>
+      Dans cette mission, nous avons mis à jour notre diagramme UML pour intégrer les nouveaux cas d'utilisation
+      concernant les actualités et les groupes
+      d'utilisateurs.
+    </p>
 
-            <h4>2. Ajout de la nouvelle table « actualités » dans la base de données</h4>
-            <p>Voici la requête SQL pour créer la table « actualites » dans la base de données :</p>
-            <img src="../images/mission9/question2.png" alt="Requête SQL pour créer la table actualites" />
-            <p>Cette requête crée une table « actualites » avec les colonnes nécessaires, notamment : id (clé primaire et auto-incrémentée), titre, description, 
-              grp (groupe de l'utilisateur) et creation_date (date et heure de la création).</p>
-        
-            <br>
-      
-            <h4>3. Intégration du code PHP pour afficher les actualités sur le tableau de bord</h4>
-            <p>Dans le fichier « index.php », la section concernant les actualités est située entre les lignes 273 et 286. Nous avons ajouté une fonction pour 
-              afficher les 3 dernières actualités en fonction du groupe de l’utilisateur :</p>
-            <img src="../images/mission9/question3.png" alt="Code PHP pour afficher les actualités" />
-            <p>Cette fonction récupère les 3 dernières actualités associées au groupe de l'utilisateur, puis les affiche en utilisant une boucle <strong>
-              FOREACH</strong>.</p>
-            
-            <br>
-      
-            <h4>Résultat sur la session "aportolleau"</h4>
-            <p>Voici à quoi ressemble l'affichage des actualités pour un utilisateur du groupe « INF » (informatique) :</p>
-            <img src="../images/mission9/question3-2.png" alt="Affichage des actualités pour le groupe INF" />
-      
+    <h4>Voici les différentes étapes</h4>
+    <ul>
+      <li>1. Question 1 : Mise à jour du diagramme UML pour l'ajout des cas d'utilisation et de la table des actualités
+      </li>
+    </ul>
 
-      </div>
+    <h4>1. Mise à jour du diagramme UML pour l'ajout des cas d'utilisation et de la table des actualités</h4>
+    <p>Nous avons mis à jour notre diagramme UML pour inclure les interactions des différents groupes d'utilisateurs
+      avec la nouvelle table des actualités.
+      Les informations varient selon les actualités propres à chaque groupe et les plus importantes. Seuls les
+      administrateurs peuvent consulter toutes les actualités.</p>
+    <img src="../images/mission9/question1.png" alt="Diagramme UML de l'actualités" />
 
-      <!-- Boutons pour le compte rendu et le retour -->
-      <div class="button-group" style="display: flex; justify-content: center; margin-top: 20px;">
-          <a href="../../intranet.html" class="button" style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; 
+    <br>
+
+    <h4>2. Ajout de la nouvelle table « actualités » dans la base de données</h4>
+    <p>Voici la requête SQL pour créer la table « actualites » dans la base de données :</p>
+    <img src="../images/mission9/question2.png" alt="Requête SQL pour créer la table actualites" />
+    <p>Cette requête crée une table « actualites » avec les colonnes nécessaires, notamment : id (clé primaire et
+      auto-incrémentée), titre, description,
+      grp (groupe de l'utilisateur) et creation_date (date et heure de la création).</p>
+
+    <br>
+
+    <h4>3. Intégration du code PHP pour afficher les actualités sur le tableau de bord</h4>
+    <p>Dans le fichier « index.php », la section concernant les actualités est située entre les lignes 273 et 286. Nous
+      avons ajouté une fonction pour
+      afficher les 3 dernières actualités en fonction du groupe de l’utilisateur :</p>
+    <img src="../images/mission9/question3.png" alt="Code PHP pour afficher les actualités" />
+    <p>Cette fonction récupère les 3 dernières actualités associées au groupe de l'utilisateur, puis les affiche en
+      utilisant une boucle <strong>
+        FOREACH</strong>.</p>
+
+    <br>
+
+    <h4>Résultat sur la session "aportolleau"</h4>
+    <p>Voici à quoi ressemble l'affichage des actualités pour un utilisateur du groupe « INF » (informatique) :</p>
+    <img src="../images/mission9/question3-2.png" alt="Affichage des actualités pour le groupe INF" />
+
+
+  </div>
+
+  <!-- Boutons pour le compte rendu et le retour -->
+  <div class="button-group" style="display: flex; justify-content: center; margin-top: 20px;">
+    <a href="../../intranet.html" class="button" style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; 
           text-decoration: none; font-weight: bold; margin: 0 10px;">Retour</a>
-      </div>
+  </div>
 
 
-        </div>
-        </div>
-        
-        
-        <br>
-  
+  </div>
+  </div>
 
-          <br>
 
-<!-- Footer --><div id="footer-container"></div>
+  <br>
 
-<script>
-  fetch('../../code/footer-projets.html')
-    .then(response => response.text())
-    .then(data => {
-      // Injecter le footer
-      document.getElementById('footer-container').innerHTML = data;
 
-      // Maintenant corriger les chemins des images dans ce footer injecté
-      const footer = document.getElementById('footer-container');
+  <br>
 
-      // Parcours toutes les images dans le footer
-      footer.querySelectorAll('img').forEach(img => {
-        let src = img.getAttribute('src');
-      
-        if(src.startsWith('../images/')) {
-         
+  <!-- Footer -->
+  <div id="footer-container"></div>
 
-          let newSrc = src.replace('../images/', '../../images/');
-          img.setAttribute('src', newSrc);
-        }
+  <script>
+    fetch('../../code/footer-projets.html')
+      .then(response => response.text())
+      .then(data => {
+        // Injecter le footer
+        document.getElementById('footer-container').innerHTML = data;
+
+        // Maintenant corriger les chemins des images dans ce footer injecté
+        const footer = document.getElementById('footer-container');
+
+        // Parcours toutes les images dans le footer
+        footer.querySelectorAll('img').forEach(img => {
+          let src = img.getAttribute('src');
+
+          if (src.startsWith('../images/')) {
+
+
+            let newSrc = src.replace('../images/', '../../images/');
+            img.setAttribute('src', newSrc);
+          }
+        });
       });
-    });
-</script>
+  </script>
 </body>
+
 </html>

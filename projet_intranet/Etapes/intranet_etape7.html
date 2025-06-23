@@ -1,15 +1,18 @@
 <!doctype html>
 <html lang="fr">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
   <title>Portefolio d'Anaïs Portolleau - Page Intranet</title>
-  <meta name="description" content="Je suis Anaïs Portolleau, étudiante en informatique. Voir le CV, Mes Projets, Contact, Mon parcours, Mes passions">
+  <meta name="description"
+    content="Je suis Anaïs Portolleau, étudiante en informatique. Voir le CV, Mes Projets, Contact, Mon parcours, Mes passions">
   <link rel="icon" href="../../images/favicon.ico" type="image/x-icon">
   <link href="../../style.css" rel="stylesheet" type="text/css" />
 
 </head>
+
 <body>
 
   <div id="navbar"></div>
@@ -31,26 +34,26 @@
       });
   </script>
 
-       <!-- Contenu de l'étape 7 -->
-<div class="container-projet" style="padding: 20px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); background-color: #f9f9f9;">
-  <h4 style="font-size: 1.5rem; margin-bottom: 15px;  color: #1a7a89;">Etape 7 – Projet Intranet</h4>
+  <!-- Contenu de l'étape 7 -->
+  <div class="container-projet"
+    style="padding: 20px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); background-color: #f9f9f9;">
+    <h4 style="font-size: 1.5rem; margin-bottom: 15px;  color: #1a7a89;">Etape 7 – Projet Intranet</h4>
 
-  <div style="margin-top: 20px;">
-    <a href="../CDC/projet_intranet_mission_7.pdf" style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; 
-        font-weight: bold; margin: 0 10px; transition: background-color 0.3s;" 
-        target="_blank">Consigne Etape 7
-    </a>
-    <a href="../Compte_Rendue/Mission_7_Compte_rendu_PROJET-INTRANET.pdf" style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; 
-        font-weight: bold; margin: 0 10px; transition: background-color 0.3s;" 
-        target="_blank">Voir compte Rendue
-    </a>
-    <br>
-    <p>L'objectif de cette mission était de créer un formulaire HTML pour la création d'un utilisateur depuis l'espace d'administration et d'intégrer le processus côté serveur avec PHP.</p>
-    
-    <h4>1. Création du formulaire HTML pour la création d'un utilisateur</h4>
-    <p>Le formulaire permet à un administrateur de créer un nouvel utilisateur. Voici la structure HTML :</p>
-    
-    <pre>
+    <div style="margin-top: 20px;">
+      <a href="../CDC/projet_intranet_mission_7.pdf" style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; 
+        font-weight: bold; margin: 0 10px; transition: background-color 0.3s;" target="_blank">Consigne Etape 7
+      </a>
+      <a href="../Compte_Rendue/Mission_7_Compte_rendu_PROJET-INTRANET.pdf" style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; 
+        font-weight: bold; margin: 0 10px; transition: background-color 0.3s;" target="_blank">Voir compte Rendue
+      </a>
+      <br>
+      <p>L'objectif de cette mission était de créer un formulaire HTML pour la création d'un utilisateur depuis l'espace
+        d'administration et d'intégrer le processus côté serveur avec PHP.</p>
+
+      <h4>1. Création du formulaire HTML pour la création d'un utilisateur</h4>
+      <p>Le formulaire permet à un administrateur de créer un nouvel utilisateur. Voici la structure HTML :</p>
+
+      <pre>
     &lt;form method="POST" action="" enctype="multipart/form-data"&gt;
         &lt;div class="form-group"&gt;
             &lt;label for="nom"&gt;Nom&lt;/label&gt;
@@ -81,9 +84,10 @@
     &lt;/form&gt;
     </pre>
 
-    <h4>2. Ajout des groupes dans la base de données</h4>
-    <p>Les groupes 'Administrateur', 'Ressources Humaines', 'Logistique' et 'Informatique' ont été ajoutés manuellement dans la base de données avec la commande SQL suivante :</p>
-    <pre>
+      <h4>2. Ajout des groupes dans la base de données</h4>
+      <p>Les groupes 'Administrateur', 'Ressources Humaines', 'Logistique' et 'Informatique' ont été ajoutés
+        manuellement dans la base de données avec la commande SQL suivante :</p>
+      <pre>
     INSERT INTO groupes (codeGrp, libelle)
     VALUES
         ('ADM', 'Administrateur'),
@@ -91,22 +95,25 @@
         ('LOG', 'Logistique'),
         ('INF', 'Informatique');
     </pre>
-    <p>Cette commande a permis l'insertion de ces quatre groupes dans la table des groupes.</p>
-    
-    <h4>3. Récupération des groupes avec PHP</h4>
-    <p>Voici le code PHP utilisé pour récupérer les groupes depuis la base de données et les afficher dans la liste déroulante du formulaire :</p>
-    <pre>
+      <p>Cette commande a permis l'insertion de ces quatre groupes dans la table des groupes.</p>
+
+      <h4>3. Récupération des groupes avec PHP</h4>
+      <p>Voici le code PHP utilisé pour récupérer les groupes depuis la base de données et les afficher dans la liste
+        déroulante du formulaire :</p>
+      <pre>
     $sql = "SELECT codeGrp, libelle FROM groupes";
     $stmt = $pdo->query($sql);
     while ($row = $stmt->fetch()) {
         echo '&lt;option value="' . $row['codeGrp'] . '"&gt;' . $row['libelle'] . '&lt;/option&gt;';
     }
     </pre>
-    <p>Ce code effectue une requête SQL pour récupérer tous les groupes et les afficher dans un menu déroulant sous forme d'éléments `<option>`.</p>
+      <p>Ce code effectue une requête SQL pour récupérer tous les groupes et les afficher dans un menu déroulant sous
+        forme d'éléments `<option>`.</p>
 
-    <h4>4. Traitement du formulaire avec PHP</h4>
-    <p>Voici le code PHP qui permet de récupérer les données soumises par le formulaire via la méthode POST et de les insérer dans la base de données :</p>
-    <pre>
+      <h4>4. Traitement du formulaire avec PHP</h4>
+      <p>Voici le code PHP qui permet de récupérer les données soumises par le formulaire via la méthode POST et de les
+        insérer dans la base de données :</p>
+      <pre>
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $nom = htmlspecialchars($_POST['nom']);
         $prenom = htmlspecialchars($_POST['prenom']);
@@ -122,54 +129,60 @@
         echo "Utilisateur créé avec succès!";
     }
     </pre>
-    <p>Ce code prend les valeurs envoyées par le formulaire, sécurise les données, puis insère un nouvel utilisateur dans la base de données. Le mot de passe est haché pour des raisons de sécurité.</p>
+      <p>Ce code prend les valeurs envoyées par le formulaire, sécurise les données, puis insère un nouvel utilisateur
+        dans la base de données. Le mot de passe est haché pour des raisons de sécurité.</p>
 
-    <h4>5. Résultat et vérification</h4>
-    <p>Une fois le formulaire soumis, l'utilisateur est ajouté à la base de données et son mot de passe est correctement haché. Le processus est vérifié en accédant à la base de données et en confirmant l'ajout de l'utilisateur.</p>
-    <img src="../images/hachage.png" alt="Hachage du mot de passe" class="img-fluid" style="max-width: 100%; height: auto; margin-top: 10px;">
-  </div>  
-</div>
+      <h4>5. Résultat et vérification</h4>
+      <p>Une fois le formulaire soumis, l'utilisateur est ajouté à la base de données et son mot de passe est
+        correctement haché. Le processus est vérifié en accédant à la base de données et en confirmant l'ajout de
+        l'utilisateur.</p>
+      <img src="../images/hachage.png" alt="Hachage du mot de passe" class="img-fluid"
+        style="max-width: 100%; height: auto; margin-top: 10px;">
+    </div>
+  </div>
 
-<!-- Boutons pour le compte rendu et le retour -->
-<div class="button-group" style="display: flex; justify-content: center; margin-top: 20px;">
+  <!-- Boutons pour le compte rendu et le retour -->
+  <div class="button-group" style="display: flex; justify-content: center; margin-top: 20px;">
     <a href="../../intranet.html" class="button" style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; 
     text-decoration: none; font-weight: bold; margin: 0 10px;">Retour</a>
-</div>
+  </div>
 
 
-        </div>
-        </div>
-        
-        
-        <br>
-  
+  </div>
+  </div>
 
-          <br>
 
-<!-- Footer --><div id="footer-container"></div>
+  <br>
 
-<script>
-  fetch('../../code/footer-projets.html')
-    .then(response => response.text())
-    .then(data => {
-      // Injecter le footer
-      document.getElementById('footer-container').innerHTML = data;
 
-      // Maintenant corriger les chemins des images dans ce footer injecté
-      const footer = document.getElementById('footer-container');
+  <br>
 
-      // Parcours toutes les images dans le footer
-      footer.querySelectorAll('img').forEach(img => {
-        let src = img.getAttribute('src');
-      
-        if(src.startsWith('../images/')) {
-         
+  <!-- Footer -->
+  <div id="footer-container"></div>
 
-          let newSrc = src.replace('../images/', '../../images/');
-          img.setAttribute('src', newSrc);
-        }
+  <script>
+    fetch('../../code/footer-projets.html')
+      .then(response => response.text())
+      .then(data => {
+        // Injecter le footer
+        document.getElementById('footer-container').innerHTML = data;
+
+        // Maintenant corriger les chemins des images dans ce footer injecté
+        const footer = document.getElementById('footer-container');
+
+        // Parcours toutes les images dans le footer
+        footer.querySelectorAll('img').forEach(img => {
+          let src = img.getAttribute('src');
+
+          if (src.startsWith('../images/')) {
+
+
+            let newSrc = src.replace('../images/', '../../images/');
+            img.setAttribute('src', newSrc);
+          }
+        });
       });
-    });
-</script>
+  </script>
 </body>
+
 </html>

@@ -1,197 +1,244 @@
 <!doctype html>
 <html lang="fr">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex, nofollow">
-  <title>Portefolio d'Anaïs Portolleau - Page Accueil</title>
-  <meta name="description" content="Je suis Anaïs Portolleau, étudiante en informatique. Voir le CV, Mes Projets, Contact, Mon parcours, Mes passions">
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-  <link href="style.css" rel="stylesheet" type="text/css" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Portefolio d'Anaïs Portolleau - Page Accueil</title>
+    <meta name="description"
+        content="Je suis Anaïs Portolleau, étudiante en informatique. Voir le CV, Mes Projets, Contact, Mon parcours, Mes passions">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link href="style.css" rel="stylesheet" type="text/css" />
 
 </head>
+
 <body>
-    
+
     <!-- Header : menu burger + logo + titre -->
     <div id="navbar"></div>
     <!-- Chargement du header depuis le fichier externe -->
     <script>
-    fetch('code/header.html')
-        .then(response => response.text())
-        .then(data => {
-        document.getElementById('navbar').innerHTML = data;
+        fetch('code/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
 
-        // Important : réattacher les évènements après avoir injecté le header
-        const menuToggle = document.getElementById('menu-toggle');
-        const navLinks = document.getElementById('nav-links');
+                // Important : réattacher les évènements après avoir injecté le header
+                const menuToggle = document.getElementById('menu-toggle');
+                const navLinks = document.getElementById('nav-links');
 
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('show');
-            menuToggle.classList.toggle('open');
-        });
-        });
+                menuToggle.addEventListener('click', () => {
+                    navLinks.classList.toggle('show');
+                    menuToggle.classList.toggle('open');
+                });
+            });
     </script>
-    
-        <div data-v-6534e546>
-            <div class="md:h-96 h-64 bg-cover -mt-8 flex flex-col justify-end"
-                    style="background-image:url(projet_intranet/images/banniere.png)" data-v-ae88d4ae data-v-6534e546>
-                <h1 class="pl-5 pb-12 text-shadow" data-v-ae88d4ae>
-                    Projet Intranet
-                </h1> <svg viewBox="0 0 35.28 2.17" preserveAspectRatio="none"
-                    class="st1 margin-bottom-negative-1" data-v-ae88d4ae>
-                    <path d="M35.28 1.67c-3.07-.55-9.27.41-16.15 0-6.87-.4-13.74-.58-19.13.1v.4h35.28z"
-                        data-v-ae88d4ae></path>
-                    <path
-                        d="M35.28 1.16c-3.17-.8-7.3.4-10.04.56-2.76.17-9.25-1.47-12.68-1.3-3.42.16-4.64.84-7.04.86C3.12 1.31 0 .4 0 .4v1.77h35.28z"
-                        opacity=".5" data-v-ae88d4ae></path>
-                    
-                </svg>
+
+    <div data-v-6534e546>
+        <div class="md:h-96 h-64 bg-cover -mt-8 flex flex-col justify-end"
+            style="background-image:url(projet_intranet/images/banniere.png)" data-v-ae88d4ae data-v-6534e546>
+            <h1 class="pl-5 pb-12 text-shadow" data-v-ae88d4ae>
+                Projet Intranet
+            </h1> <svg viewBox="0 0 35.28 2.17" preserveAspectRatio="none" class="st1 margin-bottom-negative-1"
+                data-v-ae88d4ae>
+                <path d="M35.28 1.67c-3.07-.55-9.27.41-16.15 0-6.87-.4-13.74-.58-19.13.1v.4h35.28z" data-v-ae88d4ae>
+                </path>
+                <path
+                    d="M35.28 1.16c-3.17-.8-7.3.4-10.04.56-2.76.17-9.25-1.47-12.68-1.3-3.42.16-4.64.84-7.04.86C3.12 1.31 0 .4 0 .4v1.77h35.28z"
+                    opacity=".5" data-v-ae88d4ae></path>
+
+            </svg>
+        </div>
+
+        <div class="container mx-auto my-12 px-8 py-6 bg-white shadow-lg rounded-lg ">
+            <!-- Titre du projet -->
+            <h4 class="text-3xl font-bold mb-6 text-center">Projet Intranet (Année 2025)</h4>
+
+            <!-- Container for the image -->
+            <div class="flex justify-center items-center" style="margin-top: 30px;">
+                <img src="projet_intranet/images/illustration.png" alt="WebLogo"
+                    style="width: 250px; height: auto; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); border-radius: 50%; transition: transform 0.3s;"
+                    onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
             </div>
+            <br>
+            <!-- Texte explicatif -->
+            <div class="col-span-2 ">
+                <p class="text-lg center">
+                    <strong>Bienvenue dans ce projet de première année en BTS SIO. Nous devions travailler par 3 sur un
+                        projet WEB et créer un intranet </strong><br><br>
+                    </strong>
+                </p>
 
-            <div class="container mx-auto my-12 px-8 py-6 bg-white shadow-lg rounded-lg ">
-                <!-- Titre du projet -->
-                <h4 class="text-3xl font-bold mb-6 text-center">Projet Intranet (Année 2025)</h4>
-            
-                <!-- Container for the image -->
-                <div class="flex justify-center items-center" style="margin-top: 30px;">
-                    <img src="projet_intranet/images/illustration.png" alt="WebLogo" style="width: 250px; height: auto; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); border-radius: 50%; transition: transform 0.3s;" 
-                        onmouseover="this.style.transform='scale(1.05)'" 
-                        onmouseout="this.style.transform='scale(1)'">
-                </div>
+                <h6 style="text-align:center"><strong>CONTEXE : </strong></h6>
+                <p class="text-justify my-4  md:leading-relaxed" style="text-align:center">
+                    Dans ce projet, nous étions 3 et nous avions pour mission de développer un intranet d'entreprise
+                    pour Corpany, afin d'améliorer la communication et la
+                    collaboration au sein de l’organisation. Ce nouvel outil centralisera les informations, facilitera
+                    l'accès aux ressources et simplifiera les processus internes.
+                    L'intranet visera à répondre aux besoins spécifiques de nos équipes tout en intégrant des solutions
+                    technologiques modernes pour soutenir l'innovation et la
+                    productivité. Ce projet représente une opportunité pour renforcer nos compétences et mieux connecter
+                    nos collaborateurs à travers le monde.
+
+
+                </p>
+                </p>
+
+
                 <br>
-                <!-- Texte explicatif -->
-                <div class="col-span-2 ">
-                    <p class="text-lg center">
-                        <strong>Bienvenue dans ce projet de première année en BTS SIO. Nous devions travailler par 3 sur un projet WEB et créer un intranet </strong><br><br>
-                        </strong> 
-                    </p>
+                <p style="text-align: center;">Le projet se déroulait au fur et à mesure des différentes étapes
+                    ci-dessous: </p>
+                <br>
 
-                    <h6 style="text-align:center"><strong>CONTEXE : </strong></h6>
-                    <p class="text-justify my-4  md:leading-relaxed" style="text-align:center">
-                        Dans ce projet, nous étions 3 et nous avions pour mission de développer un intranet d'entreprise pour Corpany, afin d'améliorer la communication et la 
-                        collaboration au sein de l’organisation. Ce nouvel outil centralisera les informations, facilitera l'accès aux ressources et simplifiera les processus internes. 
-                        L'intranet visera à répondre aux besoins spécifiques de nos équipes tout en intégrant des solutions technologiques modernes pour soutenir l'innovation et la 
-                        productivité. Ce projet représente une opportunité pour renforcer nos compétences et mieux connecter nos collaborateurs à travers le monde.
-                    
-                    
-                    </p>
-                    </p>
-
-
-                    <br>
-              <p style="text-align: center;">Le projet se déroulait au fur et à mesure des différentes étapes ci-dessous: </p>
-              <br>
-              
-                 <!-- Liste des missions transformée en boutons -->
+                <!-- Liste des missions transformée en boutons -->
                 <div style="text-align: center; margin-top: 20px;">
                     <a href="projet_intranet/Etapes/intranet_etape1.html" style="text-decoration: none;">
-                        <button class="button bg-white text-black border border-gray-300 rounded-full px-4 py-2 text-sm sm:text-base shadow-md hover:bg-blue-500 hover:text-white hover:shadow-lg transform hover:scale-105 transition duration-300" style="margin: 5px;">
+                        <button
+                            class="button bg-white text-black border border-gray-300 rounded-full px-4 py-2 text-sm sm:text-base shadow-md hover:bg-blue-500 hover:text-white hover:shadow-lg transform hover:scale-105 transition duration-300"
+                            style="margin: 5px;">
                             Mission 1
                         </button>
                     </a>
                     <a href="projet_intranet/Etapes/intranet_etape2.html" style="text-decoration: none;">
-                        <button class="button bg-white text-black border border-gray-300 rounded-full px-4 py-2 text-sm sm:text-base shadow-md hover:bg-blue-500 hover:text-white hover:shadow-lg transform hover:scale-105 transition duration-300" style="margin: 5px;">
+                        <button
+                            class="button bg-white text-black border border-gray-300 rounded-full px-4 py-2 text-sm sm:text-base shadow-md hover:bg-blue-500 hover:text-white hover:shadow-lg transform hover:scale-105 transition duration-300"
+                            style="margin: 5px;">
                             Mission 2
                         </button>
                     </a>
                     <a href="projet_intranet/Etapes/intranet_etape3.html" style="text-decoration: none;">
-                        <button class="button bg-white text-black border border-gray-300 rounded-full px-4 py-2 text-sm sm:text-base shadow-md hover:bg-blue-500 hover:text-white hover:shadow-lg transform hover:scale-105 transition duration-300" style="margin: 5px;">
+                        <button
+                            class="button bg-white text-black border border-gray-300 rounded-full px-4 py-2 text-sm sm:text-base shadow-md hover:bg-blue-500 hover:text-white hover:shadow-lg transform hover:scale-105 transition duration-300"
+                            style="margin: 5px;">
                             Mission 3
                         </button>
                     </a>
                     <a href="projet_intranet/Etapes/intranet_etape4.html" style="text-decoration: none;">
-                        <button class="button bg-white text-black border border-gray-300 rounded-full px-4 py-2 text-sm sm:text-base shadow-md hover:bg-blue-500 hover:text-white hover:shadow-lg transform hover:scale-105 transition duration-300" style="margin: 5px;">
+                        <button
+                            class="button bg-white text-black border border-gray-300 rounded-full px-4 py-2 text-sm sm:text-base shadow-md hover:bg-blue-500 hover:text-white hover:shadow-lg transform hover:scale-105 transition duration-300"
+                            style="margin: 5px;">
                             Mission 4
                         </button>
                     </a>
                     <a href="projet_intranet/Etapes/intranet_etape5.html" style="text-decoration: none;">
-                        <button class="button bg-white text-black border border-gray-300 rounded-full px-4 py-2 text-sm sm:text-base shadow-md hover:bg-blue-500 hover:text-white hover:shadow-lg transform hover:scale-105 transition duration-300" style="margin: 5px;">
+                        <button
+                            class="button bg-white text-black border border-gray-300 rounded-full px-4 py-2 text-sm sm:text-base shadow-md hover:bg-blue-500 hover:text-white hover:shadow-lg transform hover:scale-105 transition duration-300"
+                            style="margin: 5px;">
                             Mission 5
                         </button>
                     </a>
                     <a href="projet_intranet/Etapes/intranet_etape6.html" style="text-decoration: none;">
-                        <button class="button bg-white text-black border border-gray-300 rounded-full px-4 py-2 text-sm sm:text-base shadow-md hover:bg-blue-500 hover:text-white hover:shadow-lg transform hover:scale-105 transition duration-300" style="margin: 5px;">
+                        <button
+                            class="button bg-white text-black border border-gray-300 rounded-full px-4 py-2 text-sm sm:text-base shadow-md hover:bg-blue-500 hover:text-white hover:shadow-lg transform hover:scale-105 transition duration-300"
+                            style="margin: 5px;">
                             Mission 6
                         </button>
                     </a>
                     <a href="projet_intranet/Etapes/intranet_etape7.html" style="text-decoration: none;">
-                        <button class="button bg-white text-black border border-gray-300 rounded-full px-4 py-2 text-sm sm:text-base shadow-md hover:bg-blue-500 hover:text-white hover:shadow-lg transform hover:scale-105 transition duration-300" style="margin: 5px;">
+                        <button
+                            class="button bg-white text-black border border-gray-300 rounded-full px-4 py-2 text-sm sm:text-base shadow-md hover:bg-blue-500 hover:text-white hover:shadow-lg transform hover:scale-105 transition duration-300"
+                            style="margin: 5px;">
                             Mission 7
                         </button>
                     </a>
                     <a href="projet_intranet/Etapes/intranet_etape8.html" style="text-decoration: none;">
-                        <button class="button bg-white text-black border border-gray-300 rounded-full px-4 py-2 text-sm sm:text-base shadow-md hover:bg-blue-500 hover:text-white hover:shadow-lg transform hover:scale-105 transition duration-300" style="margin: 5px;">
+                        <button
+                            class="button bg-white text-black border border-gray-300 rounded-full px-4 py-2 text-sm sm:text-base shadow-md hover:bg-blue-500 hover:text-white hover:shadow-lg transform hover:scale-105 transition duration-300"
+                            style="margin: 5px;">
                             Mission 8
                         </button>
                     </a>
                     <a href="projet_intranet/Etapes/intranet_etape9.html" style="text-decoration: none;">
-                        <button class="button bg-white text-black border border-gray-300 rounded-full px-4 py-2 text-sm sm:text-base shadow-md hover:bg-blue-500 hover:text-white hover:shadow-lg transform hover:scale-105 transition duration-300" style="margin: 5px;">
+                        <button
+                            class="button bg-white text-black border border-gray-300 rounded-full px-4 py-2 text-sm sm:text-base shadow-md hover:bg-blue-500 hover:text-white hover:shadow-lg transform hover:scale-105 transition duration-300"
+                            style="margin: 5px;">
                             Mission 9
                         </button>
                     </a>
                     <a href="projet_intranet/Etapes/intranet_etape10.html" style="text-decoration: none;">
-                        <button class="button bg-white text-black border border-gray-300 rounded-full px-4 py-2 text-sm sm:text-base shadow-md hover:bg-blue-500 hover:text-white hover:shadow-lg transform hover:scale-105 transition duration-300" style="margin: 5px;">
+                        <button
+                            class="button bg-white text-black border border-gray-300 rounded-full px-4 py-2 text-sm sm:text-base shadow-md hover:bg-blue-500 hover:text-white hover:shadow-lg transform hover:scale-105 transition duration-300"
+                            style="margin: 5px;">
                             Mission 10
                         </button>
                     </a>
                     <a href="projet_intranet/Etapes/intranet_etape11.html" style="text-decoration: none;">
-                        <button class="button bg-white text-black border border-gray-300 rounded-full px-4 py-2 text-sm sm:text-base shadow-md hover:bg-blue-500 hover:text-white hover:shadow-lg transform hover:scale-105 transition duration-300" style="margin: 5px;">
+                        <button
+                            class="button bg-white text-black border border-gray-300 rounded-full px-4 py-2 text-sm sm:text-base shadow-md hover:bg-blue-500 hover:text-white hover:shadow-lg transform hover:scale-105 transition duration-300"
+                            style="margin: 5px;">
                             Mission 11
                         </button>
                     </a>
                     <a href="projet_intranet/Etapes/intranet_etape_sup.html" style="text-decoration: none;">
-                        <button class="button bg-white text-black border border-gray-300 rounded-full px-4 py-2 text-sm sm:text-base shadow-md hover:bg-blue-500 hover:text-white hover:shadow-lg transform hover:scale-105 transition duration-300" style="margin: 5px;">
+                        <button
+                            class="button bg-white text-black border border-gray-300 rounded-full px-4 py-2 text-sm sm:text-base shadow-md hover:bg-blue-500 hover:text-white hover:shadow-lg transform hover:scale-105 transition duration-300"
+                            style="margin: 5px;">
                             Mission Améliorer le site
                         </button>
                     </a>
-                </div>   
+                </div>
 
                 <div class="flex mt-10">
                     <div class="text-black">
-                        <a href="https://gitlab.com/AnaisPrt/projet-intranet" target="_blank" class="button-bloc bg-orangeClair">
+                        <a href="https://gitlab.com/AnaisPrt/projet-intranet" target="_blank"
+                            class="button-bloc bg-orangeClair">
                             Lien vers GIT
                         </a>
                     </div>
                 </div>
                 <br>
                 <h6><strong>TECHNOLOGIES UTILISÉES :</strong></h6>
-                
+
                 <p class="text-justify my-4  md:leading-relaxed">
                     <strong>Langages utilisés :</strong> HTML/CSS, PHP, JavaScript et SQL
                 </p>
                 <p class="text-justify my-4  md:leading-relaxed">
-                <strong>Logiciel de développement :</strong> NetBeans
+                    <strong>Logiciel de développement :</strong> NetBeans
                 </p>
                 <p class="text-justify my-4 9 md:leading-relaxed">
-                <strong>Serveur Web :</strong> Wamp
+                    <strong>Serveur Web :</strong> Wamp
                 </p>
                 <br>
 
-                  
+
                 <div style="text-align:left">
-                                 
+
                     <h6><strong>Compétences Tableau de Compétences :</strong></h6>
 
                     <div class="mb-4">
                         <h4 class="font-bold">Gérer le patrimoine informatique</h4>
                         <ul class="list-disc list-inside">
-                            <a href="projet_intranet/Etapes/intranet_etape1.html"><li>Comprendre et identifier les données qu'un intranet peut contenir</li>
-                            <strong><p>(Recenser et identifier les ressources numériques)</p></strong></a>                           
+                            <a href="projet_intranet/Etapes/intranet_etape1.html">
+                                <li>Comprendre et identifier les données qu'un intranet peut contenir</li>
+                                <strong>
+                                    <p>(Recenser et identifier les ressources numériques)</p>
+                                </strong>
+                            </a>
                         </ul>
                         <ul class="list-disc list-inside">
-                            <a href="https://gitlab.com/AnaisPrt/projet-intranet/activity"><li>Utilisation de GitHub/Gitlab en cas de problème sur la version locale, création de copie à chaque étape en local </li>
-                            <strong><p>(Gérer des sauvegardes)</p></strong></a>                           
+                            <a href="https://gitlab.com/AnaisPrt/projet-intranet/activity">
+                                <li>Utilisation de GitHub/Gitlab en cas de problème sur la version locale, création de
+                                    copie à chaque étape en local </li>
+                                <strong>
+                                    <p>(Gérer des sauvegardes)</p>
+                                </strong>
+                            </a>
                         </ul>
-                    </div>                   
+                    </div>
 
-                    
+
                     <div class="mb-4">
                         <h4 class="font-bold">Travailler en mode projet :</h4>
                         <ul class="list-disc list-inside">
-                            <a href="projet_intranet/Etapes/intranet_etape2.html" target="_blank"><li>Répartition et analyse des différentes tâches à effectuer</li></a>
-                           <strong><p>(Planifier les activités)</p></strong>
+                            <a href="projet_intranet/Etapes/intranet_etape2.html" target="_blank">
+                                <li>Répartition et analyse des différentes tâches à effectuer</li>
+                            </a>
+                            <strong>
+                                <p>(Planifier les activités)</p>
+                            </strong>
                         </ul>
-                    </div> 
+                    </div>
                 </div>
 
 
@@ -207,30 +254,30 @@
 
 
 
-                        <!-- Section Autres Projets avec effet hover -->
-                    <div class="flex flex-col w-full sticky md:top-36 lg:w-1/3 mt-2 md:mt-12 px-8"
-                        data-v-04f5f612 data-v-6534e546>
-                        <h6 data-v-04f5f612>
-                            Autre projets
-                        </h6>
-                        <div class="flex my-3" data-v-04f5f612>
-                            <a href="java.html" class="blob-prj1 bg-cover w-10 h-10 rounded-full mr-3" data-v-04f5f612 
-                                style="background-image: url('projet_java/images/javaLogo.jpg'); background-size: cover; background-position: center;">
-                            </a>                               
+                <!-- Section Autres Projets avec effet hover -->
+                <div class="flex flex-col w-full sticky md:top-36 lg:w-1/3 mt-2 md:mt-12 px-8" data-v-04f5f612
+                    data-v-6534e546>
+                    <h6 data-v-04f5f612>
+                        Autre projets
+                    </h6>
+                    <div class="flex my-3" data-v-04f5f612>
+                        <a href="java.html" class="blob-prj1 bg-cover w-10 h-10 rounded-full mr-3" data-v-04f5f612
+                            style="background-image: url('projet_java/images/javaLogo.jpg'); background-size: cover; background-position: center;">
+                        </a>
+                        <div data-v-04f5f612>
+                            <p data-v-04f5f612><a href="java.html" class="font-bold" data-v-04f5f612>
+                                    Projet Java
+                                </a></p>
                             <div data-v-04f5f612>
-                                <p data-v-04f5f612><a href="java.html" class="font-bold" data-v-04f5f612>
-                                        Projet Java
-                                    </a></p>
-                                <div data-v-04f5f612>
-                                    BTS SIO 2023/2026
-                                </div>
+                                BTS SIO 2023/2026
                             </div>
                         </div>
+                    </div>
 
-                        <div class="flex my-3" data-v-04f5f612>
-                        <a href="web.html" class="blob-prj1 bg-cover w-10 h-10 rounded-full mr-3" data-v-04f5f612 
+                    <div class="flex my-3" data-v-04f5f612>
+                        <a href="web.html" class="blob-prj1 bg-cover w-10 h-10 rounded-full mr-3" data-v-04f5f612
                             style="background-image: url('projet_web/images/projet_web_logo.png'); background-size: cover; background-position: center;">
-                        </a>                               
+                        </a>
                         <div data-v-04f5f612>
                             <p data-v-04f5f612><a href="web.html" class="font-bold" data-v-04f5f612>
                                     Projet Web
@@ -240,15 +287,15 @@
                             </div>
                         </div>
                     </div>
-    
+
                     <div class="flex my-3" data-v-04f5f612>
-                        <!-- Logo en fond d'image -->                      
+                        <!-- Logo en fond d'image -->
                         <div class="flex py-3" data-v-04f5f612>
                             <!-- Logo dans une autre balise (affichage avec image) -->
                             <a href="python.html" class="blob-prj2 bg-cover w-10 h-10 rounded-full mr-3" data-v-04f5f612
                                 style="background-image: url('python/images/pythonLogo.png'); background-size: cover; background-position: center;">
-                            </a>                                      
-                    
+                            </a>
+
                             <!-- Texte du projet et détails -->
                             <div data-v-04f5f612>
                                 <p data-v-04f5f612>
@@ -260,26 +307,26 @@
                             </div>
                         </div>
                     </div>
-                    
-                </div>
-
-
 
                 </div>
+
+
+
+            </div>
 
             <!-- Bouton de retour -->
             <div class="flex justify-center mt-8">
-                <a class="button bg-blue-500 text-white rounded-full px-6 py-2 shadow-md hover:shadow-lg transform hover:scale-105 transition duration-300" href="btsSioSlam.html">
+                <a class="button bg-blue-500 text-white rounded-full px-6 py-2 shadow-md hover:shadow-lg transform hover:scale-105 transition duration-300"
+                    href="btsSioSlam.html">
                     Retour
                 </a>
             </div>
 
-                    
-                                
-            </div> <svg viewBox="0 0 35.28 2.17" preserveAspectRatio="none"
-            class="st0 margin-bottom-negative-1 neg-index-1" data-v-6534e546>
-            <path d="M35.28 1.67c-3.07-.55-9.27.41-16.15 0-6.87-.4-13.74-.58-19.13.1v.4h35.28z"
-                data-v-6534e546></path>
+
+
+        </div> <svg viewBox="0 0 35.28 2.17" preserveAspectRatio="none" class="st0 margin-bottom-negative-1 neg-index-1"
+            data-v-6534e546>
+            <path d="M35.28 1.67c-3.07-.55-9.27.41-16.15 0-6.87-.4-13.74-.58-19.13.1v.4h35.28z" data-v-6534e546></path>
             <path
                 d="M35.28 1.16c-3.17-.8-7.3.4-10.04.56-2.76.17-9.25-1.47-12.68-1.3-3.42.16-4.64.84-7.04.86C3.12 1.31 0 .4 0 .4v1.77h35.28z"
                 opacity=".5" data-v-6534e546></path>
@@ -292,10 +339,10 @@
 
 
 
-       <!-- Footer -->
-       <div id="footer"></div>
-       <!-- Script pour charger le footer -->
-       <script src="js/footer.js"></script>
+    <!-- Footer -->
+    <div id="footer"></div>
+    <!-- Script pour charger le footer -->
+    <script src="js/footer.js"></script>
 </body>
 
 </html>

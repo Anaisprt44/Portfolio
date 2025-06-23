@@ -1,18 +1,21 @@
 <!doctype html>
 <html lang="fr">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
   <title>Portefolio d'Anaïs Portolleau - Page Accueil</title>
-  <meta name="description" content="Je suis Anaïs Portolleau, étudiante en informatique. Voir le CV, Mes Projets, Contact, Mon parcours, Mes passions">
+  <meta name="description"
+    content="Je suis Anaïs Portolleau, étudiante en informatique. Voir le CV, Mes Projets, Contact, Mon parcours, Mes passions">
   <link rel="icon" href="../../images/favicon.ico" type="image/x-icon">
   <link href="../../style.css" rel="stylesheet" type="text/css" />
 
 </head>
+
 <body>
 
- <div id="navbar"></div>
+  <div id="navbar"></div>
 
   <script>
     fetch('../../code/header-projets.html')
@@ -30,76 +33,82 @@
         });
       });
   </script>
-        
-        
 
-             <!-- Contenu de l'étape 7 -->
-             <div class="container-projet">  
-                <!-- Étape 7 Description -->
-  <div style="flex: 1;">
+
+
+  <!-- Contenu de l'étape 7 -->
+  <div class="container-projet">
+    <!-- Étape 7 Description -->
+    <div style="flex: 1;">
       <h4 style="color: #1a7a89;">Étape 7 - Projet Python - Test script</h4>
       <div class="step-description" style="margin-bottom: 20px; text-align: left;">
-          <p style="margin: 0; line-height: 1.6; color: #333;">
-              À l'étape 07, nous avons exécuté le script SQL généré <strong>"creerUsersBddAcces.sql"</strong> sur notre serveur MariaDB local (VM Centos8) et effectué les tests suivants pour 2 utilisateurs sélectionnés aléatoirement :
-          </p>
-          <ul style="margin: 10px 0; padding-left: 20px; color: #333;">
-              <li>Connexion à leur base de données.</li>
-              <li>Création d'une table, ajout de colonnes et d'enregistrements.</li>
-              <li>Interrogation de la table.</li>
-              <li>Modification et suppression d'enregistrements.</li>
-              <li>Ajout et suppression de colonnes.</li>
-              <li>Suppression de la table.</li>
-          </ul>
-          <p style="margin: 0; line-height: 1.6; color: #333;">
-              Nous avons documenté ces tests avec des captures d'écran annotées des résultats obtenus.
-          </p>
+        <p style="margin: 0; line-height: 1.6; color: #333;">
+          À l'étape 07, nous avons exécuté le script SQL généré <strong>"creerUsersBddAcces.sql"</strong> sur notre
+          serveur MariaDB local (VM Centos8) et effectué les tests suivants pour 2 utilisateurs sélectionnés
+          aléatoirement :
+        </p>
+        <ul style="margin: 10px 0; padding-left: 20px; color: #333;">
+          <li>Connexion à leur base de données.</li>
+          <li>Création d'une table, ajout de colonnes et d'enregistrements.</li>
+          <li>Interrogation de la table.</li>
+          <li>Modification et suppression d'enregistrements.</li>
+          <li>Ajout et suppression de colonnes.</li>
+          <li>Suppression de la table.</li>
+        </ul>
+        <p style="margin: 0; line-height: 1.6; color: #333;">
+          Nous avons documenté ces tests avec des captures d'écran annotées des résultats obtenus.
+        </p>
       </div>
 
       <p>Voir capture dans Compte rendue</p>
+    </div>
   </div>
-</div>
 
-<!-- Boutons pour le compte rendu et le retour -->
-<div class="button-group" style="display: flex; justify-content: center; margin-top: 20px;">
-  <a href="../CompteRendue/groupe_26_peixoto_portolleau_etape_07_v2.pdf" target="_blank" rel="noopener noreferrer" class="button" style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; font-weight: bold; margin: 0 10px;">Lien compte rendu</a>
-  <a href="../../python.html" class="button" style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; font-weight: bold; margin: 0 10px;">Retour</a>
-</div>
-<br>
+  <!-- Boutons pour le compte rendu et le retour -->
+  <div class="button-group" style="display: flex; justify-content: center; margin-top: 20px;">
+    <a href="../CompteRendue/groupe_26_peixoto_portolleau_etape_07_v2.pdf" target="_blank" rel="noopener noreferrer"
+      class="button"
+      style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; font-weight: bold; margin: 0 10px;">Lien
+      compte rendu</a>
+    <a href="../../python.html" class="button"
+      style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; font-weight: bold; margin: 0 10px;">Retour</a>
+  </div>
+  <br>
 
 
-         
-  
-            
 
-               
-  
-            
+
+
+
+
+
+
   <!-- Footer -->
   <div id="footer-container"></div>
 
-<script>
-  fetch('../../code/footer-projets.html')
-    .then(response => response.text())
-    .then(data => {
-      // Injecter le footer
-      document.getElementById('footer-container').innerHTML = data;
+  <script>
+    fetch('../../code/footer-projets.html')
+      .then(response => response.text())
+      .then(data => {
+        // Injecter le footer
+        document.getElementById('footer-container').innerHTML = data;
 
-      // Maintenant corriger les chemins des images dans ce footer injecté
-      const footer = document.getElementById('footer-container');
+        // Maintenant corriger les chemins des images dans ce footer injecté
+        const footer = document.getElementById('footer-container');
 
-      // Parcours toutes les images dans le footer
-      footer.querySelectorAll('img').forEach(img => {
-        let src = img.getAttribute('src');
-      
-        if(src.startsWith('../images/')) {
-         
+        // Parcours toutes les images dans le footer
+        footer.querySelectorAll('img').forEach(img => {
+          let src = img.getAttribute('src');
 
-          let newSrc = src.replace('../images/', '../../images/');
-          img.setAttribute('src', newSrc);
-        }
+          if (src.startsWith('../images/')) {
+
+
+            let newSrc = src.replace('../images/', '../../images/');
+            img.setAttribute('src', newSrc);
+          }
+        });
       });
-    });
-</script>
+  </script>
 </body>
 
 </html>

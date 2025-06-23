@@ -1,18 +1,21 @@
 <!doctype html>
 <html lang="fr">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
   <title>Portefolio d'Anaïs Portolleau - Page Accueil</title>
-  <meta name="description" content="Je suis Anaïs Portolleau, étudiante en informatique. Voir le CV, Mes Projets, Contact, Mon parcours, Mes passions">
+  <meta name="description"
+    content="Je suis Anaïs Portolleau, étudiante en informatique. Voir le CV, Mes Projets, Contact, Mon parcours, Mes passions">
   <link rel="icon" href="../../images/favicon.ico" type="image/x-icon">
   <link href="../../style.css" rel="stylesheet" type="text/css" />
 
 </head>
+
 <body>
 
- <div id="navbar"></div>
+  <div id="navbar"></div>
 
   <script>
     fetch('../../code/header-projets.html')
@@ -30,92 +33,101 @@
         });
       });
   </script>
-        
-        
-
-        
-            
-        <!-- Contenu de l'étape 3 -->
-        
-         <div class="container-projet">  <div style="flex: 1;">
-              <h4 style="color: #1a7a89;">Étape 3 - Création d’une base de données et d'un utilisateur</h4>
-              <div class="step-description" style="margin-bottom: 20px; text-align: left;">
-                  <p style="margin: 0; line-height: 1.6; color: #333;">
-                      À cette étape, nous avons configuré une base de données et un <strong>utilisateur</strong> dans MariaDB 
-                      en utilisant des commandes SQL. 
-                      <br><br>
-                      Tout d’abord, nous avons créé une base de données portant votre nom
-                       d’utilisateur à l’aide de la commande SQL <code><strong>CREATE DATABASE</strong></code>.
-                        Ensuite, nous avons créé un utilisateur MariaDB avec votre nom d’utilisateur et lui avons attribué 
-                        un mot de passe à l’aide de la commande <code><strong>CREATE USER</strong></code>. 
-                        <br><br>
-                        Pour garantir que 
-                        cet utilisateur dispose des autorisations nécessaires, nous lui avons donné les privilèges appropriés 
-                        à l’aide de la commande SQL <code>GRANT</code>, lui permettant de créer, modifier et supprimer des tables 
-                        et des colonnes, d’insérer, modifier et supprimer des données, ainsi que d’<strong>interroger sa base de données</strong>. 
-                        <br><br>
-                        Enfin, nous avons testé ces commandes pour vérifier que l’utilisateur puisse bien effectuer les actions 
-                        requises tout en garantissant qu’il ne puisse pas accéder à d’autres bases de données.
-                  </p>
-              </div> 
-
-            <!-- Image de l'utilisateur configuré -->
-            <figure class="result-image" style="margin: 0;">
-                <img src="../images/etape3.png" alt="Configuration de l'utilisateur" style="max-width: 100%; height: auto; margin: 20px 0;" />
-            </figure>
-
-            <p style="margin: 0; line-height: 1.6; color: #333;">
-              Et on peut vérifier le résulat en utilsant la commande <strong>SHOW GRANTS</strong> comme on peut le vori ci-dessous: 
-            </p>
-              <!-- Image de l'utilisateur configuré -->
-              <figure class="result-image" style="margin: 0;">
-                <img src="../images/etape3-2.png" alt="vérif show grants" style="max-width: 100%; height: auto; margin: 20px 0;" />
-            </figure>
-
-          </div>
-        </div>
-
-        <!-- Boutons pour le compte rendu et le retour -->
-        <div class="button-group" style="display: flex; justify-content: center; ">
-          <a href="../CompteRendue/portolleau_peixoto_1siob_projetpython_etape-3_v2.pdf" target="_blank" rel="noopener noreferrer" class="button" style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; font-weight: bold; margin: 0 10px;">Compte rendu de l'étape</a>
-          <a href="../../python.html" class="button" style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; font-weight: bold; margin: 0 10px;">Retour</a>
-        </div> 
-        <br>
 
 
 
 
-         
-  
-            
-      
 
-          <!-- Footer -->
- <div id="footer-container"></div>
+  <!-- Contenu de l'étape 3 -->
 
-<script>
-  fetch('../../code/footer-projets.html')
-    .then(response => response.text())
-    .then(data => {
-      // Injecter le footer
-      document.getElementById('footer-container').innerHTML = data;
+  <div class="container-projet">
+    <div style="flex: 1;">
+      <h4 style="color: #1a7a89;">Étape 3 - Création d’une base de données et d'un utilisateur</h4>
+      <div class="step-description" style="margin-bottom: 20px; text-align: left;">
+        <p style="margin: 0; line-height: 1.6; color: #333;">
+          À cette étape, nous avons configuré une base de données et un <strong>utilisateur</strong> dans MariaDB
+          en utilisant des commandes SQL.
+          <br><br>
+          Tout d’abord, nous avons créé une base de données portant votre nom
+          d’utilisateur à l’aide de la commande SQL <code><strong>CREATE DATABASE</strong></code>.
+          Ensuite, nous avons créé un utilisateur MariaDB avec votre nom d’utilisateur et lui avons attribué
+          un mot de passe à l’aide de la commande <code><strong>CREATE USER</strong></code>.
+          <br><br>
+          Pour garantir que
+          cet utilisateur dispose des autorisations nécessaires, nous lui avons donné les privilèges appropriés
+          à l’aide de la commande SQL <code>GRANT</code>, lui permettant de créer, modifier et supprimer des tables
+          et des colonnes, d’insérer, modifier et supprimer des données, ainsi que d’<strong>interroger sa base de
+            données</strong>.
+          <br><br>
+          Enfin, nous avons testé ces commandes pour vérifier que l’utilisateur puisse bien effectuer les actions
+          requises tout en garantissant qu’il ne puisse pas accéder à d’autres bases de données.
+        </p>
+      </div>
 
-      // Maintenant corriger les chemins des images dans ce footer injecté
-      const footer = document.getElementById('footer-container');
+      <!-- Image de l'utilisateur configuré -->
+      <figure class="result-image" style="margin: 0;">
+        <img src="../images/etape3.png" alt="Configuration de l'utilisateur"
+          style="max-width: 100%; height: auto; margin: 20px 0;" />
+      </figure>
 
-      // Parcours toutes les images dans le footer
-      footer.querySelectorAll('img').forEach(img => {
-        let src = img.getAttribute('src');
-      
-        if(src.startsWith('../images/')) {
-         
+      <p style="margin: 0; line-height: 1.6; color: #333;">
+        Et on peut vérifier le résulat en utilsant la commande <strong>SHOW GRANTS</strong> comme on peut le vori
+        ci-dessous:
+      </p>
+      <!-- Image de l'utilisateur configuré -->
+      <figure class="result-image" style="margin: 0;">
+        <img src="../images/etape3-2.png" alt="vérif show grants"
+          style="max-width: 100%; height: auto; margin: 20px 0;" />
+      </figure>
 
-          let newSrc = src.replace('../images/', '../../images/');
-          img.setAttribute('src', newSrc);
-        }
+    </div>
+  </div>
+
+  <!-- Boutons pour le compte rendu et le retour -->
+  <div class="button-group" style="display: flex; justify-content: center; ">
+    <a href="../CompteRendue/portolleau_peixoto_1siob_projetpython_etape-3_v2.pdf" target="_blank"
+      rel="noopener noreferrer" class="button"
+      style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; font-weight: bold; margin: 0 10px;">Compte
+      rendu de l'étape</a>
+    <a href="../../python.html" class="button"
+      style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; font-weight: bold; margin: 0 10px;">Retour</a>
+  </div>
+  <br>
+
+
+
+
+
+
+
+
+
+  <!-- Footer -->
+  <div id="footer-container"></div>
+
+  <script>
+    fetch('../../code/footer-projets.html')
+      .then(response => response.text())
+      .then(data => {
+        // Injecter le footer
+        document.getElementById('footer-container').innerHTML = data;
+
+        // Maintenant corriger les chemins des images dans ce footer injecté
+        const footer = document.getElementById('footer-container');
+
+        // Parcours toutes les images dans le footer
+        footer.querySelectorAll('img').forEach(img => {
+          let src = img.getAttribute('src');
+
+          if (src.startsWith('../images/')) {
+
+
+            let newSrc = src.replace('../images/', '../../images/');
+            img.setAttribute('src', newSrc);
+          }
+        });
       });
-    });
-</script>
+  </script>
 </body>
 
 </html>

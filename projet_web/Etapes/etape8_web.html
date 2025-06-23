@@ -1,15 +1,18 @@
 <!doctype html>
 <html lang="fr">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
   <title>Portefolio d'Anaïs Portolleau - Page Accueil</title>
-  <meta name="description" content="Je suis Anaïs Portolleau, étudiante en informatique. Voir le CV, Mes Projets, Contact, Mon parcours, Mes passions">
+  <meta name="description"
+    content="Je suis Anaïs Portolleau, étudiante en informatique. Voir le CV, Mes Projets, Contact, Mon parcours, Mes passions">
   <link rel="icon" href="../../images/favicon.ico" type="image/x-icon">
   <link href="../../style.css" rel="stylesheet" type="text/css" />
 
 </head>
+
 <body>
 
   <div id="navbar"></div>
@@ -30,78 +33,88 @@
         });
       });
   </script>
-        
-<!-- Contenu de l'étape 8 -->
-<div class="container" style="display: flex; justify-content: space-between; align-items: center; padding: 20px; max-width: 800px; margin: 20px auto; background-color: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-  <!-- Étape 8 Description -->
-  <div style="flex: 1;">
+
+  <!-- Contenu de l'étape 8 -->
+  <div class="container"
+    style="display: flex; justify-content: space-between; align-items: center; padding: 20px; max-width: 800px; margin: 20px auto; background-color: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <!-- Étape 8 Description -->
+    <div style="flex: 1;">
       <h4 style="color: #1a7a89;">Étape 8 - Projet Web</h4>
       <div class="step-description" style="margin-bottom: 20px; text-align: left;">
-          <p style="margin: 0; line-height: 1.6; color: #333;">
-            Pour cette dernière mission, on devait sécuriser l’accès au back office c’est à dire qu’il ne faut pas qu’un simple utilisateur puisse y 
-            accéder outre le compte administrateur. Pour cela dans la nav-bar, on a créer un bouton supprimer session lorsque le compte administrateur a 
-            fini il doit fermer la session pour éviter que d’autre y accède avec le lien de la page.
-          </p>
+        <p style="margin: 0; line-height: 1.6; color: #333;">
+          Pour cette dernière mission, on devait sécuriser l’accès au back office c’est à dire qu’il ne faut pas qu’un
+          simple utilisateur puisse y
+          accéder outre le compte administrateur. Pour cela dans la nav-bar, on a créer un bouton supprimer session
+          lorsque le compte administrateur a
+          fini il doit fermer la session pour éviter que d’autre y accède avec le lien de la page.
+        </p>
       </div>
       <p>
-        Quand le compte administrateur aura fini, il cliquera dessus et il ne sera plus possible d’y accéder que si on est compte admin. 
-        Pour cela on a également rajouté des vérifications dans le code php avec des session_start() et session_destroy() et en vérifiant 
-        leurs identifiants pour s’assurer qu’ils ont bien le bon login pour accéder ou non aux différentes pages. Comme on peut voir 
+        Quand le compte administrateur aura fini, il cliquera dessus et il ne sera plus possible d’y accéder que si on
+        est compte admin.
+        Pour cela on a également rajouté des vérifications dans le code php avec des session_start() et
+        session_destroy() et en vérifiant
+        leurs identifiants pour s’assurer qu’ils ont bien le bon login pour accéder ou non aux différentes pages. Comme
+        on peut voir
         ci-dessous un simple utilisateur n’a pas accès au Back-Office.
-     </p>
-     <figure class="script-image" style="margin: 0;">
-      <img src="../images/etape8.png" alt="Illustration de l'étape 8 " style="max-width: 100%; height: auto; margin: 20px 0;" />
-  </figure>
+      </p>
+      <figure class="script-image" style="margin: 0;">
+        <img src="../images/etape8.png" alt="Illustration de l'étape 8 "
+          style="max-width: 100%; height: auto; margin: 20px 0;" />
+      </figure>
 
 
 
       <!-- Image du script ou autre illustration -->
       <figure class="script-image" style="margin: 0;">
-          <img src="../images/etape8-2.png" alt="Illustration de l'étape 8 " style="max-width: 100%; height: auto; margin: 20px 0;" />
+        <img src="../images/etape8-2.png" alt="Illustration de l'étape 8 "
+          style="max-width: 100%; height: auto; margin: 20px 0;" />
       </figure>
-      
+
+    </div>
   </div>
-</div>
 
-<!-- Boutons pour le compte rendu et le retour -->
-<div class="button-group" style="display: flex; justify-content: center; margin-top: 20px;">
-  <a href="../../web.html" button style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; font-weight: bold; margin: 0 10px;">Retour</a>
-</div>
-<br>
+  <!-- Boutons pour le compte rendu et le retour -->
+  <div class="button-group" style="display: flex; justify-content: center; margin-top: 20px;">
+    <a href="../../web.html" button
+      style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; font-weight: bold; margin: 0 10px;">Retour</a>
+  </div>
+  <br>
 
 
-         
-  
-            
-          
-  
-            
+
+
+
+
+
+
   <!-- Footer -->
-  <<div id="footer-container"></div>
+  <<div id="footer-container">
+    </div>
 
-<script>
-  fetch('../../code/footer-projets.html')
-    .then(response => response.text())
-    .then(data => {
-      // Injecter le footer
-      document.getElementById('footer-container').innerHTML = data;
+    <script>
+      fetch('../../code/footer-projets.html')
+        .then(response => response.text())
+        .then(data => {
+          // Injecter le footer
+          document.getElementById('footer-container').innerHTML = data;
 
-      // Maintenant corriger les chemins des images dans ce footer injecté
-      const footer = document.getElementById('footer-container');
+          // Maintenant corriger les chemins des images dans ce footer injecté
+          const footer = document.getElementById('footer-container');
 
-      // Parcours toutes les images dans le footer
-      footer.querySelectorAll('img').forEach(img => {
-        let src = img.getAttribute('src');
-      
-        if(src.startsWith('../images/')) {
-         
+          // Parcours toutes les images dans le footer
+          footer.querySelectorAll('img').forEach(img => {
+            let src = img.getAttribute('src');
 
-          let newSrc = src.replace('../images/', '../../images/');
-          img.setAttribute('src', newSrc);
-        }
-      });
-    });
-</script>
+            if (src.startsWith('../images/')) {
+
+
+              let newSrc = src.replace('../images/', '../../images/');
+              img.setAttribute('src', newSrc);
+            }
+          });
+        });
+    </script>
 
 </body>
 

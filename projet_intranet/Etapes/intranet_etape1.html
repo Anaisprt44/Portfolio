@@ -1,14 +1,17 @@
 <!doctype html>
 <html lang="fr">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
   <title>Projet Intranet - Mission 1</title>
-  <meta name="description" content="Développement du projet Intranet pour l'entreprise. Objectifs, fonctionnalités, estimations des coûts, et plus.">
+  <meta name="description"
+    content="Développement du projet Intranet pour l'entreprise. Objectifs, fonctionnalités, estimations des coûts, et plus.">
   <link rel="icon" href="../../images/favicon.ico" type="image/x-icon">
   <link href="../../style.css" rel="stylesheet" type="text/css" />
 </head>
+
 <body>
 
   <div id="navbar"></div>
@@ -33,48 +36,55 @@
 
 
   <!-- Contenu de la Mission 1 -->
-  <div class="container-projet" style="padding: 20px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); background-color: #f9f9f9;">
+  <div class="container-projet"
+    style="padding: 20px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); background-color: #f9f9f9;">
     <h4 style="font-size: 1.5rem; margin-bottom: 15px; color: #1a7a89;">Etape 1 – Projet Intranet</h4>
-    <p style="font-size: 1rem; color: #555; text-align: justify;">Nous devions dans un premier temps faire des recherches sur ce qu'est un Intranet, ce que contient celui-ci 
+    <p style="font-size: 1rem; color: #555; text-align: justify;">Nous devions dans un premier temps faire des
+      recherches sur ce qu'est un Intranet, ce que contient celui-ci
       et etc ...
     </p>
-     <!-- Boutons pour consulter le document complet -->
-     <div style="margin-top: 20px;">
+    <!-- Boutons pour consulter le document complet -->
+    <div style="margin-top: 20px;">
       <a href="../Compte_Rendue/Mission1_Compte_rendu_PROJET-INTRANET.pdf" style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; font-weight: bold; 
       margin: 0 10px;" target="_blank">Consulter la mission complète
       </a>
       <a href="../CDC/projet_intranet.pdf" class="button" style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; 
         text-decoration: none; font-weight: bold; margin: 0 10px;">Voir cahier des charges
-        </a>
+      </a>
     </div>
 
     <br>
 
     <!-- Question 1: Recherche des acteurs du marché -->
     <h5 style="font-size: 1.25rem; color: #1a7a89;">1. Question 1 : Recherche des acteurs du marché</h5>
-    <p style="font-size: 1rem; color: #555; text-align: justify;">Les acteurs dominants du marché des solutions intranet incluent des géants comme Microsoft SharePoint, IBM, et des 
-        entreprises plus spécialisées comme Powell Software et LumApps. Ces solutions sont utilisées par des milliers d'entreprises à travers le monde.
+    <p style="font-size: 1rem; color: #555; text-align: justify;">Les acteurs dominants du marché des solutions intranet
+      incluent des géants comme Microsoft SharePoint, IBM, et des
+      entreprises plus spécialisées comme Powell Software et LumApps. Ces solutions sont utilisées par des milliers
+      d'entreprises à travers le monde.
     </p>
 
     <br>
 
     <!-- Question 2: Liste des fonctionnalités -->
     <h5 style="font-size: 1.25rem; color: #1a7a89;">2. Question 2 : Fonctionnalités de l'intranet</h5>
-    <p style="font-size: 1rem; color: #555; text-align: justify;">Les fonctionnalités possibles incluent des comptes utilisateurs avec différents niveaux de privilèges, un système 
-        de gestion des tickets pour le support technique, et une interface permettant aux administrateurs de gérer les utilisateurs et les permissions et pleins d'autres encore ...
+    <p style="font-size: 1rem; color: #555; text-align: justify;">Les fonctionnalités possibles incluent des comptes
+      utilisateurs avec différents niveaux de privilèges, un système
+      de gestion des tickets pour le support technique, et une interface permettant aux administrateurs de gérer les
+      utilisateurs et les permissions et pleins d'autres encore ...
     </p>
 
     <br>
-    
+
     <!-- Question 3: Estimation des coûts et de la charge -->
     <h5 style="font-size: 1.25rem; color: #1a7a89;">3. Question 3 : Estimation des coûts et de la charge</h5>
-    <p style="font-size: 1rem; color: #555; text-align: justify;">Dans cette question on devait estimer le coût qu'un Intranet pourrait coôuter en fonction des exigences du client
-      et du temps que cela pourrait prendre. 
+    <p style="font-size: 1rem; color: #555; text-align: justify;">Dans cette question on devait estimer le coût qu'un
+      Intranet pourrait coôuter en fonction des exigences du client
+      et du temps que cela pourrait prendre.
     </p>
 
     <br>
 
-   
+
 
     <!-- Boutons pour revenir -->
     <div class="button-group" style="display: flex; justify-content: center; margin-top: 20px;">
@@ -89,32 +99,34 @@
 
 
 
-<!-- Footer --><div id="footer-container"></div>
+  <!-- Footer -->
+  <div id="footer-container"></div>
 
-<script>
-  fetch('../../code/footer-projets.html')
-    .then(response => response.text())
-    .then(data => {
-      // Injecter le footer
-      document.getElementById('footer-container').innerHTML = data;
+  <script>
+    fetch('../../code/footer-projets.html')
+      .then(response => response.text())
+      .then(data => {
+        // Injecter le footer
+        document.getElementById('footer-container').innerHTML = data;
 
-      // Maintenant corriger les chemins des images dans ce footer injecté
-      const footer = document.getElementById('footer-container');
+        // Maintenant corriger les chemins des images dans ce footer injecté
+        const footer = document.getElementById('footer-container');
 
-      // Parcours toutes les images dans le footer
-      footer.querySelectorAll('img').forEach(img => {
-        let src = img.getAttribute('src');
-      
-        if(src.startsWith('../images/')) {
-         
+        // Parcours toutes les images dans le footer
+        footer.querySelectorAll('img').forEach(img => {
+          let src = img.getAttribute('src');
 
-          let newSrc = src.replace('../images/', '../../images/');
-          img.setAttribute('src', newSrc);
-        }
+          if (src.startsWith('../images/')) {
+
+
+            let newSrc = src.replace('../images/', '../../images/');
+            img.setAttribute('src', newSrc);
+          }
+        });
       });
-    });
-</script>
+  </script>
 
 
 </body>
+
 </html>

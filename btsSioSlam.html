@@ -1,130 +1,156 @@
 <!doctype html>
 <html lang="fr">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex, nofollow">
-  <title>Portefolio d'Anaïs Portolleau - Page Accueil</title>
-  <meta name="description" content="Je suis Anaïs Portolleau, étudiante en informatique. Voir le CV, Mes Projets, Contact, Mon parcours, Mes passions">
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-  <link href="style.css" rel="stylesheet" type="text/css" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Portefolio d'Anaïs Portolleau - Page Accueil</title>
+    <meta name="description"
+        content="Je suis Anaïs Portolleau, étudiante en informatique. Voir le CV, Mes Projets, Contact, Mon parcours, Mes passions">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link href="style.css" rel="stylesheet" type="text/css" />
 
 </head>
+
 <body>
 
- <!-- Header : menu burger + logo + titre -->
- <div id="navbar"></div>
- <!-- Chargement du header depuis le fichier externe -->
- <script>
-   fetch('code/header.html')
-     .then(response => response.text())
-     .then(data => {
-       document.getElementById('navbar').innerHTML = data;
+    <!-- Header : menu burger + logo + titre -->
+    <div id="navbar"></div>
+    <!-- Chargement du header depuis le fichier externe -->
+    <script>
+        fetch('code/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
 
-       // Important : réattacher les évènements après avoir injecté le header
-       const menuToggle = document.getElementById('menu-toggle');
-       const navLinks = document.getElementById('nav-links');
+                // Important : réattacher les évènements après avoir injecté le header
+                const menuToggle = document.getElementById('menu-toggle');
+                const navLinks = document.getElementById('nav-links');
 
-       menuToggle.addEventListener('click', () => {
-         navLinks.classList.toggle('show');
-         menuToggle.classList.toggle('open');
-       });
-     });
- </script>
-  
+                menuToggle.addEventListener('click', () => {
+                    navLinks.classList.toggle('show');
+                    menuToggle.classList.toggle('open');
+                });
+            });
+    </script>
 
-        <div class="fond">
-          <!-- Section Présentation -->
-            <div>
-                <div data-v-6534e546>
-                    <div class="md:h-64 h-64 bg-cover -mt-8 flex flex-col justify-end"
-                            style="background-image:url(images/background-btssio.png)" data-v-ae88d4ae data-v-6534e546>
-                        <h1 class="pl-5 pb-12 text-shadow" data-v-ae88d4ae>
-                            MON BTS SIO
-                        </h1> <svg viewBox="0 0 35.28 2.17" preserveAspectRatio="none"
-                            class="st1 margin-bottom-negative-1" data-v-ae88d4ae>
-                            <path d="M35.28 1.67c-3.07-.55-9.27.41-16.15 0-6.87-.4-13.74-.58-19.13.1v.4h35.28z"
-                                data-v-ae88d4ae></path>
-                            <path
-                                d="M35.28 1.16c-3.17-.8-7.3.4-10.04.56-2.76.17-9.25-1.47-12.68-1.3-3.42.16-4.64.84-7.04.86C3.12 1.31 0 .4 0 .4v1.77h35.28z"
-                                opacity=".5" data-v-ae88d4ae></path>
-                            
-                        </svg>
-                    </div> 
-          
+
+    <div class="fond">
+        <!-- Section Présentation -->
+        <div>
+            <div data-v-6534e546>
+                <div class="md:h-64 h-64 bg-cover -mt-8 flex flex-col justify-end"
+                    style="background-image:url(images/background-btssio.png)" data-v-ae88d4ae data-v-6534e546>
+                    <h1 class="pl-5 pb-12 text-shadow" data-v-ae88d4ae>
+                        MON BTS SIO
+                    </h1> <svg viewBox="0 0 35.28 2.17" preserveAspectRatio="none" class="st1 margin-bottom-negative-1"
+                        data-v-ae88d4ae>
+                        <path d="M35.28 1.67c-3.07-.55-9.27.41-16.15 0-6.87-.4-13.74-.58-19.13.1v.4h35.28z"
+                            data-v-ae88d4ae></path>
+                        <path
+                            d="M35.28 1.16c-3.17-.8-7.3.4-10.04.56-2.76.17-9.25-1.47-12.68-1.3-3.42.16-4.64.84-7.04.86C3.12 1.31 0 .4 0 .4v1.77h35.28z"
+                            opacity=".5" data-v-ae88d4ae></path>
+
+                    </svg>
+                </div>
+
                 <h6 class="text-black md:p-11 p-8" data-v-0cac64ae>
                     Projets réalisés durant les trois années :
-                </h6>     
+                </h6>
 
                 <div class="flex flex-wrap justify-around md:p-11 p-8" data-v-0cac64ae>
-                        
+
                     <!-- Section Projet Python -->
                     <div class="py-4" data-v-1adef156 data-v-0cac64ae>
                         <div class="shadow-lg group container rounded-md bg-white max-w-sm flex justify-center items-center mx-auto content-div"
                             style="background-image: url('python/images/pythonLogo.png'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 400px; height: 500px; position: relative; overflow: hidden;"
                             data-v-1adef156>
-                            
+
                             <!-- Contenu principal -->
                             <div data-v-1adef156>
                                 <div class="w-full image-cover rounded-t-md" data-v-1adef156>
                                     <div class="p-2 m-4 w-16 h-16 text-center bg-gray-700 rounded-full text-white float-right fd-cl group-hover:opacity-25"
                                         data-v-1adef156>
-                                        <span class="text-base tracking-wide font-bold border-b border-white font-sans" data-v-1adef156>1st</span> 
-                                        <span class="text-xs tracking-wide font-bold uppercase block font-sans" data-v-1adef156>Projet</span>
+                                        <span class="text-base tracking-wide font-bold border-b border-white font-sans"
+                                            data-v-1adef156>1st</span>
+                                        <span class="text-xs tracking-wide font-bold uppercase block font-sans"
+                                            data-v-1adef156>Projet</span>
                                     </div>
                                 </div>
-                
+
                                 <div class="py-8 px-4 bg-white rounded-b-md fd-cl group-hover:opacity-25"
                                     data-v-1adef156>
-                                    <span class="block text-lg text-gray-800 font-bold tracking-wide" data-v-1adef156>Projet Python</span> 
-                                    <span class="block text-gray-600 text-sm" data-v-1adef156>La société STESIO dispose d’un contrôleur de domaine CDSTESIO et d’un serveur de base 
-                                        de données WEB-BD-STESIO. Le client souhaite que chaque utilisateur d’un de ses sites ayant un compte dans la société STESIO dispose de sa propre 
+                                    <span class="block text-lg text-gray-800 font-bold tracking-wide"
+                                        data-v-1adef156>Projet Python</span>
+                                    <span class="block text-gray-600 text-sm" data-v-1adef156>La société STESIO dispose
+                                        d’un contrôleur de domaine CDSTESIO et d’un serveur de base
+                                        de données WEB-BD-STESIO. Le client souhaite que chaque utilisateur d’un de ses
+                                        sites ayant un compte dans la société STESIO dispose de sa propre
                                         base de données sur le serveur de base de données avec son propre accès..
                                     </span>
                                 </div>
                             </div>
-                
+
                             <!-- Overlay visible au survol -->
-                            <div class="absolute opacity-0 fd-sh group-hover:opacity-100" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); display: flex; flex-direction: column; justify-content: center; align-items: center; transition: opacity 0.3s ease-in-out; z-index: 10;" data-v-1adef156>
-                                <span class="text-3xl font-bold text-white tracking-wider leading-relaxed font-sans" data-v-1adef156>Projet Python</span>
+                            <div class="absolute opacity-0 fd-sh group-hover:opacity-100"
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); display: flex; flex-direction: column; justify-content: center; align-items: center; transition: opacity 0.3s ease-in-out; z-index: 10;"
+                                data-v-1adef156>
+                                <span class="text-3xl font-bold text-white tracking-wider leading-relaxed font-sans"
+                                    data-v-1adef156>Projet Python</span>
                                 <div class="pt-8 text-center" data-v-1adef156>
-                                    <a href="python.html" class="text-center rounded-lg p-4 border border-black text-black font-bold text-lg hover:bg-gray-100 transition" style="background-color: white; color: black; text-decoration: none;" data-v-1adef156>
+                                    <a href="python.html"
+                                        class="text-center rounded-lg p-4 border border-black text-black font-bold text-lg hover:bg-gray-100 transition"
+                                        style="background-color: white; color: black; text-decoration: none;"
+                                        data-v-1adef156>
                                         Voir
                                     </a>
                                 </div>
                             </div>
-                
+
                         </div>
                     </div>
-                
+
                     <!-- Section Projet Java -->
                     <div class="py-4" data-v-1adef156 data-v-0cac64ae>
                         <div class="shadow-lg group container rounded-md bg-white max-w-sm flex justify-center items-center mx-auto content-div"
-                            style="background-image: url('projet_java/images/javaLogo.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 400px; height: 500px; position: relative; overflow: hidden;" data-v-1adef156>
-                            
+                            style="background-image: url('projet_java/images/javaLogo.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 400px; height: 500px; position: relative; overflow: hidden;"
+                            data-v-1adef156>
+
                             <div data-v-1adef156>
                                 <div class="w-full image-cover rounded-t-md" data-v-1adef156>
                                     <div class="p-2 m-4 w-16 h-16 text-center bg-gray-700 rounded-full text-white float-right fd-cl group-hover:opacity-25"
                                         data-v-1adef156>
-                                        <span class="text-base tracking-wide font-bold border-b border-white font-sans" data-v-1adef156>2nd</span> 
-                                        <span class="text-xs tracking-wide font-bold uppercase block font-sans" data-v-1adef156>Projet</span>
+                                        <span class="text-base tracking-wide font-bold border-b border-white font-sans"
+                                            data-v-1adef156>2nd</span>
+                                        <span class="text-xs tracking-wide font-bold uppercase block font-sans"
+                                            data-v-1adef156>Projet</span>
                                     </div>
                                 </div>
-                
+
                                 <div class="py-8 px-4 bg-white rounded-b-md fd-cl group-hover:opacity-25"
                                     data-v-1adef156>
-                                    <span class="block text-lg text-gray-800 font-bold tracking-wide" data-v-1adef156>Projet Java</span> 
-                                    <span class="block text-gray-600 text-sm" data-v-1adef156>INFOWARE-SIRH est la future application de gestion des ressources humaines de l’entreprise INFOWARE. Elle reposera sur une 
+                                    <span class="block text-lg text-gray-800 font-bold tracking-wide"
+                                        data-v-1adef156>Projet Java</span>
+                                    <span class="block text-gray-600 text-sm" data-v-1adef156>INFOWARE-SIRH est la
+                                        future application de gestion des ressources humaines de l’entreprise INFOWARE.
+                                        Elle reposera sur une
                                         base de données existante implantée sur un serveur MariaDB.
-                                        INFOWARE souhaite initier ce projet en développant une fonctionnalité de gestion des données relatives aux salariés sous la forme d’un CRUD.
+                                        INFOWARE souhaite initier ce projet en développant une fonctionnalité de gestion
+                                        des données relatives aux salariés sous la forme d’un CRUD.
                                     </span>
                                 </div>
                             </div>
-                
-                            <div class="absolute opacity-0 fd-sh group-hover:opacity-100" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); display: flex; flex-direction: column; justify-content: center; align-items: center; transition: opacity 0.3s ease-in-out; z-index: 10;" data-v-1adef156>
-                                <span class="text-3xl font-bold text-white tracking-wider leading-relaxed font-sans" data-v-1adef156>Projet Java</span>
+
+                            <div class="absolute opacity-0 fd-sh group-hover:opacity-100"
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); display: flex; flex-direction: column; justify-content: center; align-items: center; transition: opacity 0.3s ease-in-out; z-index: 10;"
+                                data-v-1adef156>
+                                <span class="text-3xl font-bold text-white tracking-wider leading-relaxed font-sans"
+                                    data-v-1adef156>Projet Java</span>
                                 <div class="pt-8 text-center" data-v-1adef156>
-                                    <a href="java.html" class="text-center rounded-lg p-4 border border-black text-black font-bold text-lg hover:bg-gray-100 transition" style="
+                                    <a href="java.html"
+                                        class="text-center rounded-lg p-4 border border-black text-black font-bold text-lg hover:bg-gray-100 transition"
+                                        style="
                                     background-color: white; color: black; text-decoration: none;" data-v-1adef156>
                                         Voir
                                     </a>
@@ -132,204 +158,215 @@
                             </div>
                         </div>
                     </div>
-                
+
                     <!-- Section Projet Web -->
                     <div class="py-4" data-v-1adef156 data-v-0cac64ae>
                         <div class="shadow-lg group container rounded-md bg-white max-w-sm flex justify-center items-center mx-auto content-div"
                             style="background-image: url('projet_web/images/projet_web_logo.png'); background-size: cover; background-position: center; background-repeat: no-repeat; 
                             width: 400px; height: 500px; position: relative; overflow: hidden;" data-v-1adef156>
-                            
-                            
+
+
                             <div data-v-1adef156>
                                 <div class="w-full image-cover rounded-t-md" data-v-1adef156>
                                     <div class="p-2 m-4 w-16 h-16 text-center bg-gray-700 rounded-full text-white float-right fd-cl group-hover:opacity-25"
                                         data-v-1adef156>
-                                        <span class="text-base tracking-wide font-bold border-b border-white font-sans" data-v-1adef156>3rd</span> 
-                                        <span class="text-xs tracking-wide font-bold uppercase block font-sans" data-v-1adef156>Projet</span>
+                                        <span class="text-base tracking-wide font-bold border-b border-white font-sans"
+                                            data-v-1adef156>3rd</span>
+                                        <span class="text-xs tracking-wide font-bold uppercase block font-sans"
+                                            data-v-1adef156>Projet</span>
                                     </div>
                                 </div>
                                 <div class="py-8 px-4 bg-white rounded-b-md fd-cl group-hover:opacity-25"
                                     data-v-1adef156>
-                                    <span class="block text-lg text-gray-800 font-bold tracking-wide" data-v-1adef156>Projet Web</span> 
-                                    <span class="block text-gray-600 text-sm" data-v-1adef156>Pour une bibliothèque associative, nous avons conçu un site internet. Développé avec HTML5 et 
-                                        CSS3, utilisant un fichier CSS unique pour assurer 
-                                        une présentation cohérente et une maintenance simplifiée. Ce site permet différentes actions que l'utilisateur peut utiliser pour rechercher/reserver 
+                                    <span class="block text-lg text-gray-800 font-bold tracking-wide"
+                                        data-v-1adef156>Projet Web</span>
+                                    <span class="block text-gray-600 text-sm" data-v-1adef156>Pour une bibliothèque
+                                        associative, nous avons conçu un site internet. Développé avec HTML5 et
+                                        CSS3, utilisant un fichier CSS unique pour assurer
+                                        une présentation cohérente et une maintenance simplifiée. Ce site permet
+                                        différentes actions que l'utilisateur peut utiliser pour rechercher/reserver
                                         des livres et pleins d'autres fonctionnalités encore.
                                     </span>
-                                </div>                                   
+                                </div>
                             </div>
 
-                            <div class="absolute opacity-0 fd-sh group-hover:opacity-100" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); display: flex; flex-direction: column; justify-content: center; align-items: center; transition: opacity 0.3s ease-in-out; z-index: 10;" data-v-1adef156>
-                                <span class="text-3xl font-bold text-white tracking-wider leading-relaxed font-sans" data-v-1adef156>Projet Web</span>
+                            <div class="absolute opacity-0 fd-sh group-hover:opacity-100"
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); display: flex; flex-direction: column; justify-content: center; align-items: center; transition: opacity 0.3s ease-in-out; z-index: 10;"
+                                data-v-1adef156>
+                                <span class="text-3xl font-bold text-white tracking-wider leading-relaxed font-sans"
+                                    data-v-1adef156>Projet Web</span>
                                 <div class="pt-8 text-center" data-v-1adef156>
-                                    <a href="web.html" class="text-center rounded-lg p-4 border border-black text-black font-bold text-lg hover:bg-gray-100 transition" style="
+                                    <a href="web.html"
+                                        class="text-center rounded-lg p-4 border border-black text-black font-bold text-lg hover:bg-gray-100 transition"
+                                        style="
                                     background-color: white; color: black; text-decoration: none;" data-v-1adef156>
                                         Voir
                                     </a>
                                 </div>
-                            </div>                          
+                            </div>
 
-                           
+
                         </div>
                     </div>
 
-                    
+
                     <!-- Section Projet Intranet -->
                     <div class="py-4" data-v-1adef156 data-v-0cac64ae>
                         <div class="shadow-lg group container rounded-md bg-white max-w-sm flex justify-center items-center mx-auto content-div"
                             style="background-image: url('projet_intranet/images/illustration.png'); background-size: cover; background-position: center; background-repeat: no-repeat; 
                             width: 400px; height: 500px; position: relative; overflow: hidden;" data-v-1adef156>
-                            
-                            
+
+
                             <div data-v-1adef156>
                                 <div class="w-full image-cover rounded-t-md" data-v-1adef156>
                                     <div class="p-2 m-4 w-16 h-16 text-center bg-gray-700 rounded-full text-white float-right fd-cl group-hover:opacity-25"
                                         data-v-1adef156>
-                                        <span class="text-base tracking-wide font-bold border-b border-white font-sans" data-v-1adef156>4rd</span> 
-                                        <span class="text-xs tracking-wide font-bold uppercase block font-sans" data-v-1adef156>Projet</span>
+                                        <span class="text-base tracking-wide font-bold border-b border-white font-sans"
+                                            data-v-1adef156>4rd</span>
+                                        <span class="text-xs tracking-wide font-bold uppercase block font-sans"
+                                            data-v-1adef156>Projet</span>
                                     </div>
                                 </div>
                                 <div class="py-8 px-4 bg-white rounded-b-md fd-cl group-hover:opacity-25"
                                     data-v-1adef156>
-                                    <span class="block text-lg text-gray-800 font-bold tracking-wide" data-v-1adef156>Projet Intranet</span> 
+                                    <span class="block text-lg text-gray-800 font-bold tracking-wide"
+                                        data-v-1adef156>Projet Intranet</span>
                                     <span class="block text-gray-600 text-sm" data-v-1adef156>
-                                       Pour une entreprise, nous avons conçu un intranet collaboratif.
-                                        Développé avec GitLab et des outils de maquettage, il centralise la communication, l'accès aux ressources et la gestion des utilisateurs.
-                                        Avec un tableau de bord interactif et un système d'authentification sécurisé, il optimise l'organisation interne.
+                                        Pour une entreprise, nous avons conçu un intranet collaboratif.
+                                        Développé avec GitLab et des outils de maquettage, il centralise la
+                                        communication, l'accès aux ressources et la gestion des utilisateurs.
+                                        Avec un tableau de bord interactif et un système d'authentification sécurisé, il
+                                        optimise l'organisation interne.
                                     </span>
-                                </div>                                   
+                                </div>
                             </div>
 
-                            <div class="absolute opacity-0 fd-sh group-hover:opacity-100" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); display: flex; flex-direction: column; justify-content: center; align-items: center; transition: opacity 0.3s ease-in-out; z-index: 10;" data-v-1adef156>
-                                <span class="text-3xl font-bold text-white tracking-wider leading-relaxed font-sans" data-v-1adef156>Projet Intranet</span>
+                            <div class="absolute opacity-0 fd-sh group-hover:opacity-100"
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); display: flex; flex-direction: column; justify-content: center; align-items: center; transition: opacity 0.3s ease-in-out; z-index: 10;"
+                                data-v-1adef156>
+                                <span class="text-3xl font-bold text-white tracking-wider leading-relaxed font-sans"
+                                    data-v-1adef156>Projet Intranet</span>
                                 <div class="pt-8 text-center" data-v-1adef156>
-                                    <a href="intranet.html" class="text-center rounded-lg p-4 border border-black text-black font-bold text-lg hover:bg-gray-100 transition" style="
+                                    <a href="intranet.html"
+                                        class="text-center rounded-lg p-4 border border-black text-black font-bold text-lg hover:bg-gray-100 transition"
+                                        style="
                                     background-color: white; color: black; text-decoration: none;" data-v-1adef156>
                                         Voir
                                     </a>
                                 </div>
-                            </div>                          
+                            </div>
 
-                           
+
                         </div>
                     </div>
 
 
 
                 </div>
-                
 
+                <!-- Bouton retour -->
+                <div style="text-align: center;">
+                    <div class="button text-black  rounded-lg ">
+                        <a href="index.html" target="_blank"
+                            style="text-decoration: none; color: black; font-size: 16px;">
+                            Retour accueil
+                        </a>
+                    </div>
 
+                </div>
 
-
-
-
-        
-  
-
-
-        
-
-
-       <!-- Bouton retour -->
-<div style="text-align: center;">
-    <div class="button text-black  rounded-lg ">
-        <a href="index.html" target="_blank" style="text-decoration: none; color: black; font-size: 16px;">
-            Retour accueil
-        </a>
-    </div>
-    
-</div>
-
-<br>
+                <br>
 
             </div>
         </div>
     </div>
-        
-        
-        
 
     <!-- Footer -->
     <div id="footer"></div>
     <!-- Script pour charger le footer -->
     <script src="js/footer.js"></script>
 
-<!-- STYLES SUPPLÉMENTAIRES -->
-<style>
-    .nav-link {
-      padding: 0.5rem 1rem;
-      margin-top: 0.5rem;
-      font-weight: 600;
-      border-radius: 0.5rem;
-      display: block;
-      text-decoration: none;
-      color: #1f2937;
-    }
-    .nav-link:hover {
-      background-color: #e5e7eb;
-    }
-    .project-card {
-      width: 400px;
-      height: 500px;
-      background-size: cover;
-      background-position: center;
-      position: relative;
-      border-radius: 0.5rem;
-      overflow: hidden;
-      box-shadow: 0 10px 15px rgba(0,0,0,0.1);
-    }
-    .badge {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      background: #374151;
-      color: white;
-      width: 64px;
-      height: 64px;
-      border-radius: 50%;
-      text-align: center;
-      font-size: 0.75rem;
-      font-weight: bold;
-      padding: 0.5rem;
-      z-index: 2;
-    }
-    .project-content {
-      position: absolute;
-      bottom: 0;
-      background: white;
-      padding: 1rem;
-      opacity: 0.9;
-    }
-    .overlay {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(0,0,0,0.5);
-      color: white;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-    .project-card:hover .overlay {
-      opacity: 1;
-    }
-    .btn {
-      margin-top: 1rem;
-      padding: 0.5rem 1rem;
-      background: white;
-      color: black;
-      border: 1px solid black;
-      border-radius: 0.5rem;
-      font-weight: bold;
-      text-decoration: none;
-    }
-  </style>
-  
+    <!-- STYLES SUPPLÉMENTAIRES -->
+    <style>
+        .nav-link {
+            padding: 0.5rem 1rem;
+            margin-top: 0.5rem;
+            font-weight: 600;
+            border-radius: 0.5rem;
+            display: block;
+            text-decoration: none;
+            color: #1f2937;
+        }
 
+        .nav-link:hover {
+            background-color: #e5e7eb;
+        }
+
+        .project-card {
+            width: 400px;
+            height: 500px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: #374151;
+            color: white;
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 0.75rem;
+            font-weight: bold;
+            padding: 0.5rem;
+            z-index: 2;
+        }
+
+        .project-content {
+            position: absolute;
+            bottom: 0;
+            background: white;
+            padding: 1rem;
+            opacity: 0.9;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-card:hover .overlay {
+            opacity: 1;
+        }
+
+        .btn {
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: white;
+            color: black;
+            border: 1px solid black;
+            border-radius: 0.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+    </style>
 </body>
-
 </html>

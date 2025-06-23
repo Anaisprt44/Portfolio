@@ -1,15 +1,18 @@
 <!doctype html>
 <html lang="fr">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
   <title>Portefolio d'Anaïs Portolleau - Page Accueil</title>
-  <meta name="description" content="Je suis Anaïs Portolleau, étudiante en informatique. Voir le CV, Mes Projets, Contact, Mon parcours, Mes passions">
+  <meta name="description"
+    content="Je suis Anaïs Portolleau, étudiante en informatique. Voir le CV, Mes Projets, Contact, Mon parcours, Mes passions">
   <link rel="icon" href="../../images/favicon.ico" type="image/x-icon">
   <link href="../../style.css" rel="stylesheet" type="text/css" />
 
 </head>
+
 <body>
 
   <div id="navbar"></div>
@@ -30,74 +33,83 @@
         });
       });
   </script>
-        
 
-         <!-- Contenu de l'étape 2 -->
-        <div class="container" style="display: flex; justify-content: space-between; align-items: center; padding: 20px; max-width: 800px; margin: 20px auto; background-color: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-          <div>
-              <div>
-                <h4 style="color: #1a7a89;">Étape 1 - Projet Java</h4>
-                <p style="font-size: 1rem; line-height: 1.6; color: #555; text-align: justify; margin-right: 20px;">
-                    Dans cette étape, nous avons appris à créer la base de données sur notre serveur local MariaDB en exécutant le script de création fourni via Netbeans. 
-                    L'utilisation directe de l'interface phpMyAdmin était déconseillée, nous devions exécuter le script SQL directement depuis Netbeans.
-                </p>
-              
 
-          <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-              <figure style="margin: 0; text-align: center;">
-                  <img src="../../projet_java/images/phpMyAdmin.png" alt="phpMyAdmin Screenshot" style="width: 250px; height: auto; border-radius: 8px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);" />
-                  <figcaption style="font-size: 0.9rem; color: #666; margin-top: 8px;">phpMyAdmin Logo</figcaption>
-              </figure>
-              
-              <figure style="margin: 0; text-align: center;">
-                  <img src="../../projet_java/images/netbeans.png" alt="Netbeans Screenshot" style="width: 250px; height: auto; border-radius: 8px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);" />
-                  <figcaption style="font-size: 0.9rem; color: #666; margin-top: 8px;">Netbeans IDE</figcaption>
-              </figure>
-          </div>
+  <!-- Contenu de l'étape 2 -->
+  <div class="container"
+    style="display: flex; justify-content: space-between; align-items: center; padding: 20px; max-width: 800px; margin: 20px auto; background-color: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <div>
+      <div>
+        <h4 style="color: #1a7a89;">Étape 1 - Projet Java</h4>
+        <p style="font-size: 1rem; line-height: 1.6; color: #555; text-align: justify; margin-right: 20px;">
+          Dans cette étape, nous avons appris à créer la base de données sur notre serveur local MariaDB en exécutant le
+          script de création fourni via Netbeans.
+          L'utilisation directe de l'interface phpMyAdmin était déconseillée, nous devions exécuter le script SQL
+          directement depuis Netbeans.
+        </p>
+
+
+        <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+          <figure style="margin: 0; text-align: center;">
+            <img src="../../projet_java/images/phpMyAdmin.png" alt="phpMyAdmin Screenshot"
+              style="width: 250px; height: auto; border-radius: 8px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);" />
+            <figcaption style="font-size: 0.9rem; color: #666; margin-top: 8px;">phpMyAdmin Logo</figcaption>
+          </figure>
+
+          <figure style="margin: 0; text-align: center;">
+            <img src="../../projet_java/images/netbeans.png" alt="Netbeans Screenshot"
+              style="width: 250px; height: auto; border-radius: 8px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);" />
+            <figcaption style="font-size: 0.9rem; color: #666; margin-top: 8px;">Netbeans IDE</figcaption>
+          </figure>
         </div>
+      </div>
 
-          </div>     
-                  
+    </div>
 
-          
-        </div>
-        <div>
-        
-        <!-- Boutons pour le compte rendu et le retour -->
-        <div class="button-group" style="display: flex; justify-content: center; margin-top: 20px;">
-          <a href="../CompteRendue/g_nc2b01_augereau_portolleau_e_nc2b001.pdf" target="_blank" rel="noopener noreferrer" class="button" style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; font-weight: bold; margin: 0 10px;">Compte rendu de l'étape</a>
-          <a href="../../java.html" class="button" style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; font-weight: bold; margin: 0 10px;">Retour</a>
-        </div> 
-        
-        <br>
-  
 
-          <br>
 
- <div id="footer-container"></div>
+  </div>
+  <div>
 
-<script>
-  fetch('../../code/footer-projets.html')
-    .then(response => response.text())
-    .then(data => {
-      // Injecter le footer
-      document.getElementById('footer-container').innerHTML = data;
+    <!-- Boutons pour le compte rendu et le retour -->
+    <div class="button-group" style="display: flex; justify-content: center; margin-top: 20px;">
+      <a href="../CompteRendue/g_nc2b01_augereau_portolleau_e_nc2b001.pdf" target="_blank" rel="noopener noreferrer"
+        class="button"
+        style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; font-weight: bold; margin: 0 10px;">Compte
+        rendu de l'étape</a>
+      <a href="../../java.html" class="button"
+        style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; font-weight: bold; margin: 0 10px;">Retour</a>
+    </div>
 
-      // Maintenant corriger les chemins des images dans ce footer injecté
-      const footer = document.getElementById('footer-container');
+    <br>
 
-      // Parcours toutes les images dans le footer
-      footer.querySelectorAll('img').forEach(img => {
-        let src = img.getAttribute('src');
-      
-        if(src.startsWith('../images/')) {
-         
 
-          let newSrc = src.replace('../images/', '../../images/');
-          img.setAttribute('src', newSrc);
-        }
-      });
-    });
-</script>
+    <br>
+
+    <div id="footer-container"></div>
+
+    <script>
+      fetch('../../code/footer-projets.html')
+        .then(response => response.text())
+        .then(data => {
+          // Injecter le footer
+          document.getElementById('footer-container').innerHTML = data;
+
+          // Maintenant corriger les chemins des images dans ce footer injecté
+          const footer = document.getElementById('footer-container');
+
+          // Parcours toutes les images dans le footer
+          footer.querySelectorAll('img').forEach(img => {
+            let src = img.getAttribute('src');
+
+            if (src.startsWith('../images/')) {
+
+
+              let newSrc = src.replace('../images/', '../../images/');
+              img.setAttribute('src', newSrc);
+            }
+          });
+        });
+    </script>
 
 </html>

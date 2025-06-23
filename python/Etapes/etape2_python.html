@@ -1,15 +1,18 @@
 <!doctype html>
 <html lang="fr">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
   <title>Portefolio d'Anaïs Portolleau - Page Accueil</title>
-  <meta name="description" content="Je suis Anaïs Portolleau, étudiante en informatique. Voir le CV, Mes Projets, Contact, Mon parcours, Mes passions">
+  <meta name="description"
+    content="Je suis Anaïs Portolleau, étudiante en informatique. Voir le CV, Mes Projets, Contact, Mon parcours, Mes passions">
   <link rel="icon" href="../../images/favicon.ico" type="image/x-icon">
   <link href="../../style.css" rel="stylesheet" type="text/css" />
 
 </head>
+
 <body>
 
   <div id="navbar"></div>
@@ -30,73 +33,77 @@
         });
       });
   </script>
-        
-         <!-- Contenu de l'étape 1 -->
-        <div class="container-projet">
-          <div style="flex: 1;">
-            <h4 style="color: #1a7a89;">Étape 2 - Lecture et écriture dans un fichier CSV en Python</h4>   
-              <div class="step-description" style="margin-bottom: 20px; text-align: left;">
-                
-                  <p style="margin: 0; line-height: 1.6; color: #333;">
-                      Dans cette étape, nous devions, dans un premier temps, <strong>ouvrir un fichier CSV </strong>et 
-                      <strong>entrer des informations</strong> et, dans un second temps, <strong>réaliser un programme qui 
-                      permet d’ouvrir le fichier</strong> <code>testEntree.csv</code> en lecture et un fichier 
-                      <code>testSortie.csv</code> en écriture. Pour chaque ligne du fichier <code> testEntree.csv</code>,
-                      nous devions <strong>créer un login</strong> en extrayant la <strong>première lettre du 
-                      prénom</strong> et le <strong>nom</strong>, puis les <strong>concaténer.</strong> Ensuite, nous devions 
-                      <strong>convertir la chaîne obtenue en minuscules </strong> et enfin écrire cette chaîne dans le 
-                      <strong>fichier</strong> <code>testSortie.csv</code>. La première ligne du fichier contiendra le titre de la 
-                      colonne, comme tous les fichiers CSV, c’est-à-dire <strong>le login.</strong> Voici ci-dessous les identifiants 
-                      générés grâce au programme.
-                  </p>
-              
-              <!-- Image des identifiants générés -->
-              <figure class="result-image" style="margin: 0;">
-                <img src="../images/etape2.png" alt="Identifiants générés" style="max-width: 100%; height: auto; margin: 20px 0;" />
-              </figure></div>
-          </div>
-        </div>
-      
-      
-      <!-- Boutons pour le compte rendu et le retour -->
-      <div class="button-group" style="margin-top: 20px;">
-          <a href="../CompteRendue/portolleau_peixoto_1siob_projet-1sio-janv-2024-etape-02_v2.pdf" target="_blank" rel="noopener noreferrer" class="button">Compte Rendu de l'étape</a>
-          <a href="../../python.html" class="button">Retour</a>
+
+  <!-- Contenu de l'étape 1 -->
+  <div class="container-projet">
+    <div style="flex: 1;">
+      <h4 style="color: #1a7a89;">Étape 2 - Lecture et écriture dans un fichier CSV en Python</h4>
+      <div class="step-description" style="margin-bottom: 20px; text-align: left;">
+
+        <p style="margin: 0; line-height: 1.6; color: #333;">
+          Dans cette étape, nous devions, dans un premier temps, <strong>ouvrir un fichier CSV </strong>et
+          <strong>entrer des informations</strong> et, dans un second temps, <strong>réaliser un programme qui
+            permet d’ouvrir le fichier</strong> <code>testEntree.csv</code> en lecture et un fichier
+          <code>testSortie.csv</code> en écriture. Pour chaque ligne du fichier <code> testEntree.csv</code>,
+          nous devions <strong>créer un login</strong> en extrayant la <strong>première lettre du
+            prénom</strong> et le <strong>nom</strong>, puis les <strong>concaténer.</strong> Ensuite, nous devions
+          <strong>convertir la chaîne obtenue en minuscules </strong> et enfin écrire cette chaîne dans le
+          <strong>fichier</strong> <code>testSortie.csv</code>. La première ligne du fichier contiendra le titre de la
+          colonne, comme tous les fichiers CSV, c’est-à-dire <strong>le login.</strong> Voici ci-dessous les
+          identifiants
+          générés grâce au programme.
+        </p>
+
+        <!-- Image des identifiants générés -->
+        <figure class="result-image" style="margin: 0;">
+          <img src="../images/etape2.png" alt="Identifiants générés"
+            style="max-width: 100%; height: auto; margin: 20px 0;" />
+        </figure>
       </div>
-      <br>
-      
+    </div>
+  </div>
 
 
-         
-  
-            
+  <!-- Boutons pour le compte rendu et le retour -->
+  <div class="button-group" style="margin-top: 20px;">
+    <a href="../CompteRendue/portolleau_peixoto_1siob_projet-1sio-janv-2024-etape-02_v2.pdf" target="_blank"
+      rel="noopener noreferrer" class="button">Compte Rendu de l'étape</a>
+    <a href="../../python.html" class="button">Retour</a>
+  </div>
+  <br>
 
-          <!-- Footer -->
- <div id="footer-container"></div>
 
-<script>
-  fetch('../../code/footer-projets.html')
-    .then(response => response.text())
-    .then(data => {
-      // Injecter le footer
-      document.getElementById('footer-container').innerHTML = data;
 
-      // Maintenant corriger les chemins des images dans ce footer injecté
-      const footer = document.getElementById('footer-container');
 
-      // Parcours toutes les images dans le footer
-      footer.querySelectorAll('img').forEach(img => {
-        let src = img.getAttribute('src');
-      
-        if(src.startsWith('../images/')) {
-         
 
-          let newSrc = src.replace('../images/', '../../images/');
-          img.setAttribute('src', newSrc);
-        }
+
+
+  <!-- Footer -->
+  <div id="footer-container"></div>
+
+  <script>
+    fetch('../../code/footer-projets.html')
+      .then(response => response.text())
+      .then(data => {
+        // Injecter le footer
+        document.getElementById('footer-container').innerHTML = data;
+
+        // Maintenant corriger les chemins des images dans ce footer injecté
+        const footer = document.getElementById('footer-container');
+
+        // Parcours toutes les images dans le footer
+        footer.querySelectorAll('img').forEach(img => {
+          let src = img.getAttribute('src');
+
+          if (src.startsWith('../images/')) {
+
+
+            let newSrc = src.replace('../images/', '../../images/');
+            img.setAttribute('src', newSrc);
+          }
+        });
       });
-    });
-</script>
+  </script>
 </body>
 
 </html>

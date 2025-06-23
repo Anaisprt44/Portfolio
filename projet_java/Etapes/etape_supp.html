@@ -1,15 +1,18 @@
 <!doctype html>
 <html lang="fr">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
   <title>Portefolio d'Anaïs Portolleau - Page Accueil</title>
-  <meta name="description" content="Je suis Anaïs Portolleau, étudiante en informatique. Voir le CV, Mes Projets, Contact, Mon parcours, Mes passions">
+  <meta name="description"
+    content="Je suis Anaïs Portolleau, étudiante en informatique. Voir le CV, Mes Projets, Contact, Mon parcours, Mes passions">
   <link rel="icon" href="../../images/favicon.ico" type="image/x-icon">
   <link href="../../style.css" rel="stylesheet" type="text/css" />
 
 </head>
+
 <body>
 
   <div id="navbar"></div>
@@ -30,72 +33,91 @@
         });
       });
   </script>
-        
-<!-- Contenu de l'étape supplémentaire -->
-<div class="container" style="display: flex; justify-content: space-between; align-items: center; padding: 20px; max-width: 800px; margin: 20px auto; background-color: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-  
-  <!-- Étape 8 Description -->
-  <div style="flex: 1;">
-    <h4 style="color: #1a7a89;">Étape supplémentaire - Projet Java</h4>
-    <div class="step-description" style="margin-bottom: 20px; text-align: left;">
-      <p style="margin: 0; line-height: 1.6; color: #333;">
-        Cette étape supplémentaire consiste à consulter une vue d'ensemble de tous les salariés, puis à sélectionner un salarié en particulier. Pour cet exemple, nous avons choisi le salarié **S01 (Bernard Céline)**. Une fois que le salarié est sélectionné, une liste déroulante est affichée, contenant toutes les formations disponibles dans le système.
+
+  <!-- Contenu de l'étape supplémentaire -->
+  <div class="container"
+    style="display: flex; justify-content: space-between; align-items: center; padding: 20px; max-width: 800px; margin: 20px auto; background-color: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+
+    <!-- Étape 8 Description -->
+    <div style="flex: 1;">
+      <h4 style="color: #1a7a89;">Étape supplémentaire - Projet Java</h4>
+      <div class="step-description" style="margin-bottom: 20px; text-align: left;">
+        <p style="margin: 0; line-height: 1.6; color: #333;">
+          Cette étape supplémentaire consiste à consulter une vue d'ensemble de tous les salariés, puis à sélectionner
+          un salarié en particulier. Pour cet exemple, nous avons choisi le salarié **S01 (Bernard Céline)**. Une fois
+          que le salarié est sélectionné, une liste déroulante est affichée, contenant toutes les formations disponibles
+          dans le système.
+        </p>
+      </div>
+
+      <p>
+        Dans cet exemple, nous avons sélectionné la formation intitulée **"Administration d'un réseau local sous
+        Linux"**. Une fois la formation choisie, il suffit de cliquer sur le bouton <strong>"Ajouter"</strong> pour
+        l'associer au salarié sélectionné. Cette action permet d'ajouter la formation dans le profil du salarié.
       </p>
+
+      <!-- Image du script ou autre illustration -->
+      <figure class="script-image" style="margin: 0;">
+        <img src="../captures_java/formations_ajout1.png" alt="Illustration de l'étape 8"
+          style="max-width: 100%; height: auto; margin: 20px 0;" />
+      </figure>
+
+      <p>
+        Après l'ajout de la formation, vous pouvez voir qu'elle a bien été ajoutée à la liste des formations du salarié.
+        Cela permet de garantir que le salarié possède bien cette compétence.
+      </p>
+
+      <p>
+        Il est également possible de vérifier l'ajout dans la base de données SQL. En accédant à la table associée aux
+        formations et en filtrant par le numéro du salarié, vous pourrez confirmer que la formation a bien été
+        enregistrée.
+      </p>
+
+      <!-- Vérification SQL -->
+      <figure class="script-image" style="margin: 0;">
+        <img src="../captures_java/formations_ajout2.png" alt="Vérification dans la base de données"
+          style="max-width: 100%; height: auto; margin: 20px 0;" />
+      </figure>
+
+      <figure class="script-image" style="margin: 0;">
+        <img src="../captures_java/formations_ajout3.png" alt="Vérification SQL des données"
+          style="max-width: 100%; height: auto; margin: 20px 0;" />
+      </figure>
+
+      <figure class="script-image" style="margin: 0;">
+        <img src="../captures_java/formations_ajout4.png" alt="Données vérifiées dans la base"
+          style="max-width: 100%; height: auto; margin: 20px 0;" />
+      </figure>
+
+      <p>
+        À la fin de ce processus, en suivant les liens entre les tables et le numéro du salarié, nous pouvons confirmer
+        que la formation a bien été ajoutée au profil du salarié dans la base de données. Cette vérification garantit la
+        cohérence des données et l'intégrité du système de gestion des formations.
+      </p>
+
     </div>
-    
-    <p>
-      Dans cet exemple, nous avons sélectionné la formation intitulée **"Administration d'un réseau local sous Linux"**. Une fois la formation choisie, il suffit de cliquer sur le bouton <strong>"Ajouter"</strong> pour l'associer au salarié sélectionné. Cette action permet d'ajouter la formation dans le profil du salarié.
-    </p>
-
-    <!-- Image du script ou autre illustration -->
-    <figure class="script-image" style="margin: 0;">
-      <img src="../captures_java/formations_ajout1.png" alt="Illustration de l'étape 8" style="max-width: 100%; height: auto; margin: 20px 0;" />
-    </figure>
-
-    <p>
-      Après l'ajout de la formation, vous pouvez voir qu'elle a bien été ajoutée à la liste des formations du salarié. Cela permet de garantir que le salarié possède bien cette compétence.
-    </p>
-
-    <p>
-      Il est également possible de vérifier l'ajout dans la base de données SQL. En accédant à la table associée aux formations et en filtrant par le numéro du salarié, vous pourrez confirmer que la formation a bien été enregistrée.
-    </p>
-
-    <!-- Vérification SQL -->
-    <figure class="script-image" style="margin: 0;">
-      <img src="../captures_java/formations_ajout2.png" alt="Vérification dans la base de données" style="max-width: 100%; height: auto; margin: 20px 0;" />
-    </figure>
-    
-    <figure class="script-image" style="margin: 0;">
-      <img src="../captures_java/formations_ajout3.png" alt="Vérification SQL des données" style="max-width: 100%; height: auto; margin: 20px 0;" />
-    </figure>
-
-    <figure class="script-image" style="margin: 0;">
-      <img src="../captures_java/formations_ajout4.png" alt="Données vérifiées dans la base" style="max-width: 100%; height: auto; margin: 20px 0;" />
-    </figure>
-
-    <p>
-      À la fin de ce processus, en suivant les liens entre les tables et le numéro du salarié, nous pouvons confirmer que la formation a bien été ajoutée au profil du salarié dans la base de données. Cette vérification garantit la cohérence des données et l'intégrité du système de gestion des formations.
-    </p>
 
   </div>
- 
-</div>
 
 
-<!-- Boutons pour le compte rendu et le retour -->
-<div class="button-group" style="display: flex; justify-content: center; margin-top: 20px;">
-  <a href="../CompteRendue/PORTOLLEAU_Anaïs_2SLAM_AP_Projet_Septembre.pdf" target="_blank" rel="noopener noreferrer" class="button" style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; font-weight: bold; margin: 0 10px;">Lien compte rendu</a>
-  <a href="../../java.html" button style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; font-weight: bold; margin: 0 10px;">Retour</a>
-</div>
-<br>
+  <!-- Boutons pour le compte rendu et le retour -->
+  <div class="button-group" style="display: flex; justify-content: center; margin-top: 20px;">
+    <a href="../CompteRendue/PORTOLLEAU_Anaïs_2SLAM_AP_Projet_Septembre.pdf" target="_blank" rel="noopener noreferrer"
+      class="button"
+      style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; font-weight: bold; margin: 0 10px;">Lien
+      compte rendu</a>
+    <a href="../../java.html" button
+      style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; font-weight: bold; margin: 0 10px;">Retour</a>
+  </div>
+  <br>
 
 
-         
-  
-            
-          
-  
-            
+
+
+
+
+
+
   <!-- Footer -->
   <div id="footer-container"></div>
 

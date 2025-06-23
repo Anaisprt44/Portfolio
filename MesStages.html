@@ -1,80 +1,87 @@
 <!doctype html>
 <html lang="fr">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex, nofollow">
-  <title>Portefolio d'Anaïs Portolleau - Page Accueil</title>
-  <meta name="description" content="Je suis Anaïs Portolleau, étudiante en informatique. Voir le CV, Mes Projets, Contact, Mon parcours, Mes passions">
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-  <link href="style.css" rel="stylesheet" type="text/css" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Portefolio d'Anaïs Portolleau - Page Accueil</title>
+    <meta name="description"
+        content="Je suis Anaïs Portolleau, étudiante en informatique. Voir le CV, Mes Projets, Contact, Mon parcours, Mes passions">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link href="style.css" rel="stylesheet" type="text/css" />
 
 </head>
+
 <body>
-  
-  <!-- Header : menu burger + logo + titre -->
-  <div id="navbar"></div>
-  <!-- Chargement du header depuis le fichier externe -->
-  <script>
-    fetch('code/header.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('navbar').innerHTML = data;
 
-        // Important : réattacher les évènements après avoir injecté le header
-        const menuToggle = document.getElementById('menu-toggle');
-        const navLinks = document.getElementById('nav-links');
+    <!-- Header : menu burger + logo + titre -->
+    <div id="navbar"></div>
+    <!-- Chargement du header depuis le fichier externe -->
+    <script>
+        fetch('code/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
 
-        menuToggle.addEventListener('click', () => {
-          navLinks.classList.toggle('show');
-          menuToggle.classList.toggle('open');
-        });
-      });
-  </script>
+                // Important : réattacher les évènements après avoir injecté le header
+                const menuToggle = document.getElementById('menu-toggle');
+                const navLinks = document.getElementById('nav-links');
 
-      <div>
-        <div class="md:h-50 h-64 bg-cover -mt-16 flex flex-col justify-end" style="background-image:url(images/stages_imgae.png)">
-            <h1 class="pl-5 pb-12 text-shadow text-center">Mes expériences et Stages</h1>                         
+                menuToggle.addEventListener('click', () => {
+                    navLinks.classList.toggle('show');
+                    menuToggle.classList.toggle('open');
+                });
+            });
+    </script>
+
+    <div>
+        <div class="md:h-50 h-64 bg-cover -mt-16 flex flex-col justify-end"
+            style="background-image:url(images/stages_imgae.png)">
+            <h1 class="pl-5 pb-12 text-shadow text-center">Mes expériences et Stages</h1>
         </div>
-    
+
         <div class=" text-white mt-10">
             <!-- Conteneur avec largeur maximale centrée -->
-            <div class="flex flex-col max-w-screen-2xl mx-auto px-4 md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
-              <div class="flex flex-col items-center my-8 md:my-16 w-full"> <!-- Ajuste my-12 à my-8 ou my-16 selon besoin -->
-                <p style="text-align: center; color: black; font-size: 36px; font-weight: bold;">
-                    Jobs étudiants et Stages
-                </p>
-            
+            <div
+                class="flex flex-col max-w-screen-2xl mx-auto px-4 md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+                <div class="flex flex-col items-center my-8 md:my-16 w-full">
+                    <!-- Ajuste my-12 à my-8 ou my-16 selon besoin -->
+                    <p style="text-align: center; color: black; font-size: 36px; font-weight: bold;">
+                        Jobs étudiants et Stages
+                    </p>
+
                     <div class="container mx-auto w-full h-full">
-                        
-                      <div class="relative wrap overflow-hidden md:p-10 h-full">
-                            
-                        <div class="border-2-2 border-yellow-555 absolute h-full border bar-left"></div>
-    
+
+                        <div class="relative wrap overflow-hidden md:p-10 h-full">
+
+                            <div class="border-2-2 border-yellow-555 absolute h-full border bar-left"></div>
+
                             <!-- Expérience 1 à gauche -->
                             <div class="flex justify-between items-center w-full right-timeline">
-                              <div class="order-1 w-5/12"></div>
-                              <div class="order-1 w-5/12 px-1 py-4 text-left">
-                                  <p class="mb-3 text-base text-yellow-300">Mai - Juin 2024</p>
-                                  <h4>
-                                      <span>🔴</span> Stage en développement objet C#
-                                      <span class="orange">Orcab - Artisans Artipole</span>
-                                      <br>
-                                      <div data-v-1830edb3>
-                                          <a href="Stage1èreannée.html" target="_blank" class="button-bloc bg-orangeClair text-black" data-v-1830edb3>
-                                              Voir le stage
-                                          </a>
-                                      </div>                    
-                                  </h4>
-                                  <p style="color: black;">
-                                      Création d'une application pour contrôler les urls saisies par les coopératives
-                                  </p>
-                                  <p style="color: black;">
-                                      Compétences travaillés : veille technologique pour C#
-                                  </p>
-                              </div>
-                          </div>
-                           
+                                <div class="order-1 w-5/12"></div>
+                                <div class="order-1 w-5/12 px-1 py-4 text-left">
+                                    <p class="mb-3 text-base text-yellow-300">Mai - Juin 2024</p>
+                                    <h4>
+                                        <span>🔴</span> Stage en développement objet C#
+                                        <span class="orange">Orcab - Artisans Artipole</span>
+                                        <br>
+                                        <div data-v-1830edb3>
+                                            <a href="Stage1èreannée.html" target="_blank"
+                                                class="button-bloc bg-orangeClair text-black" data-v-1830edb3>
+                                                Voir le stage
+                                            </a>
+                                        </div>
+                                    </h4>
+                                    <p style="color: black;">
+                                        Création d'une application pour contrôler les urls saisies par les coopératives
+                                    </p>
+                                    <p style="color: black;">
+                                        Compétences travaillés : veille technologique pour C#
+                                    </p>
+                                </div>
+                            </div>
+
                             <!-- Expérience 2 à droite -->
                             <div class="flex justify-between flex-row-reverse items-center w-full left-timeline">
                                 <div class="order-1 w-5/12"></div>
@@ -88,42 +95,45 @@
                                         <strong>Découverte du montage vidéo et la découverte du monde de la TV</strong>
                                     </p>
                                     <p style="color:black">
-                                        Télévision locale, reportages sur l’actualité sur Clisson et des villes aux alentours.                   
+                                        Télévision locale, reportages sur l’actualité sur Clisson et des villes aux
+                                        alentours.
                                     </p>
                                     <p style="color:black">
                                         Compétences travaillées : montage, tournage,…
                                     </p>
                                 </div>
                             </div>
-    
+
                             <!-- Expérience 3 à gauche -->
                             <div class="flex justify-between items-center w-full right-timeline">
-                              <div class="order-1 w-5/12"></div>
-                              <div class="order-1 w-5/12 px-1 py-4 text-left">
-                                  <p class="mb-3 text-base text-yellow-300">Janvier 2019</p>
-                                  <h4>
-                                      <span>🔴</span> Stages en 3ème de découverte  chez
-                                      <span class="orange"><span class="orange">Fourage CTI</span> à La Haie-Fouassière
-                                  </h4>
-                                  <p style="color: black;">
-                                      <strong>Céation de catalogues pour l'entreprise </strong>
-                                  </p>
-                                  <p style="color:black">
-                                      Concepteur – Fabricant – Distributeur de matériels, produits, emballages pour la boisson (vin, bière, jus de fruits…)                     
-                                  </p>
-                                  <p style="color:black">
-                                      Compétences travaillées : création de catalogues produits
-                                  </p>
-                              </div>
-                          </div>
+                                <div class="order-1 w-5/12"></div>
+                                <div class="order-1 w-5/12 px-1 py-4 text-left">
+                                    <p class="mb-3 text-base text-yellow-300">Janvier 2019</p>
+                                    <h4>
+                                        <span>🔴</span> Stages en 3ème de découverte chez
+                                        <span class="orange"><span class="orange">Fourage CTI</span> à La
+                                            Haie-Fouassière
+                                    </h4>
+                                    <p style="color: black;">
+                                        <strong>Céation de catalogues pour l'entreprise </strong>
+                                    </p>
+                                    <p style="color:black">
+                                        Concepteur – Fabricant – Distributeur de matériels, produits, emballages pour la
+                                        boisson (vin, bière, jus de fruits…)
+                                    </p>
+                                    <p style="color:black">
+                                        Compétences travaillées : création de catalogues produits
+                                    </p>
+                                </div>
+                            </div>
 
 
 
 
-                            
+
                         </div>
                     </div>
-    
+
                     <!-- Bouton retour -->
                     <div>
                         <div class="button" data-v-1830edb3>
@@ -136,12 +146,12 @@
             </div>
         </div>
     </div>
-    
-    
 
 
 
-        
+
+
+
     <!-- Footer -->
     <div id="footer"></div>
     <!-- Script pour charger le footer -->
