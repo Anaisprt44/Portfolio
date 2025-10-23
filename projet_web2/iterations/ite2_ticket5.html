@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Projet R3st0.fr - Ticket 5</title>
+  <meta name="description" content="Compte rendu Ticket 0 du projet R3st0.fr, mise en place initiale de l'équipe et du dépôt GitLab.">
+  <link rel="icon" href="../../images/favicon.ico" type="image/x-icon">
+  <link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+  <div id="navbar"></div>
+
+  <script>
+    fetch('../../code/header-projets.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+        menuToggle.addEventListener('click', () => {
+          navLinks.classList.toggle('show');
+          menuToggle.classList.toggle('open');
+        });
+      });
+  </script>
+
+ <!-- Contenu du Ticket 5 -->
+<div class="container" style="padding: 20px; max-width: 800px; margin: 20px auto; background-color: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); text-align: left;">
+
+  <h4 style="color: #1a7a89;">Ticket 5 - Amélioration du chiffrement de mot de passe</h4>
+
+  <p style="line-height: 1.6; color: #333;">
+    L'objectif de ce ticket était de sécuriser la gestion des mots de passe des utilisateurs sur le site R3st0.fr en remplaçant les anciens systèmes de chiffrement par une méthode plus robuste avec <code>password_hash()</code> et <code>password_verify()</code>.
+  </p>
+
+  <h5 style="color: #1a7a89;">Tâches réalisées :</h5>
+  <ul style="line-height: 1.6; color: #555; list-style-type: disc; padding-left: 20px;">
+    <li>Modification de la méthode <code>insert()</code> dans <code>UtilisateurDao.class.php</code> pour hacher les mots de passe avant insertion.</li>
+    <li>Adaptation de la méthode <code>updateMdp()</code> pour utiliser <code>password_hash()</code>.</li>
+    <li>Modification de la fonction <code>login()</code> dans <code>authentification.inc.php</code> pour vérifier les mots de passe avec <code>password_verify()</code>.</li>
+    <li>Reformatage du code et ajout de commentaires pour plus de clarté.</li>
+    <li>Tests d’inscription et de connexion pour vérifier le bon fonctionnement.</li>
+  </ul>
+
+  <h5 style="color: #1a7a89;">Résultats et illustrations :</h5>
+ 
+  <figure style="margin: 20px 0;">
+    <img src="ite2/ticket5-insert" alt="Méthode insert() nouvelle version" style="max-width: 100%; height: auto;">
+    <figcaption>Méthode <code>insert()</code> : nouvelle version avec mot de passe haché</figcaption>
+  </figure>
+
+  <figure style="margin: 20px 0;">
+    <img src="ite2/ticket5-update.png" alt="Méthode update()" style="max-width: 100%; height: auto;">
+    <figcaption>Méthode <code>update()</code> : modifications pour hachage du mot de passe</figcaption>
+  </figure>
+
+  <figure style="margin: 20px 0;">
+    <img src="ite2/ticket5-updateMdp.png" alt="Méthode updateMdp()" style="max-width: 100%; height: auto;">
+    <figcaption>Méthode <code>updateMdp()</code> : nouvelle version</figcaption>
+  </figure>
+
+   <figure style="margin: 20px 0;">
+    <img src="ite2/ticket5-auth.png" alt="Méthode updateMdp()" style="max-width: 100%; height: auto;">
+    <figcaption>fichier authentification </figcaption>
+  </figure>
+
+ 
+
+  <figure style="margin: 20px 0;">
+    <img src="ite2/test_inscription.png" alt="Test inscription" style="max-width: 100%; height: auto;">
+    <figcaption>Test d’inscription d’un nouvel utilisateur</figcaption>
+  </figure>
+
+  <figure style="margin: 20px 0;">
+    <img src="ite2/test_inscription_verif.png.png" alt="Test connexion" style="max-width: 100%; height: auto;">
+    <figcaption>Test vérif</figcaption>
+  </figure>
+
+   <figure style="margin: 20px 0;">
+    <img src="ite2/testconnexion" alt="Test connexion" style="max-width: 100%; height: auto;">
+    <figcaption>Test de connexion</figcaption>
+  </figure>
+
+</div>
+
+
+
+
+
+  <!-- Boutons pour le compte rendu et le retour -->
+  <div class="button-group" style="display: flex; justify-content: center; margin-top: 20px;">
+    <a href="../CompteRendue/Ite2/P1_IT2_T3_identification_G3.pdf" target="_blank" rel="noopener noreferrer"
+      style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; font-weight: bold; margin: 0 10px;">Lien compte rendu</a>
+    <a href="../iterations/ite2.html" style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; font-weight: bold; margin: 0 10px;">Retour</a>
+  </div>
+  <br>
+
+  <!-- Footer -->
+  <div id="footer-container"></div>
+  <script>
+    fetch('../../code/footer-projets.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-container').innerHTML = data;
+      });
+  </script>
+
+</body>
+</html>

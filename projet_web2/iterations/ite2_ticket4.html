@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Projet R3st0.fr - Ticket 4</title>
+  <meta name="description" content="Compte rendu Ticket 0 du projet R3st0.fr, mise en place initiale de l'équipe et du dépôt GitLab.">
+  <link rel="icon" href="../../images/favicon.ico" type="image/x-icon">
+  <link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+  <div id="navbar"></div>
+
+  <script>
+    fetch('../../code/header-projets.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+        menuToggle.addEventListener('click', () => {
+          navLinks.classList.toggle('show');
+          menuToggle.classList.toggle('open');
+        });
+      });
+  </script>
+
+  <!-- Contenu du Ticket 4 -->
+  <div class="container" style="padding: 20px; max-width: 800px; margin: 20px auto; background-color: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); text-align: left;">
+
+    <h4 style="color: #1a7a89;">Ticket 4 - Détecter une requête d'action inexistante</h4>
+
+    <p style="line-height: 1.6; color: #333;">
+      L'objectif de ce ticket était de gérer les actions passées dans l'URL et de renvoyer la page correcte. 
+      La fonction <code>controleurPrincipal()</code> reçoit une action en paramètre, vérifie si elle existe dans le tableau des actions et renvoie le fichier PHP correspondant. 
+      Si l'action n'existe pas, un message d'erreur est ajouté et la page par défaut (<code>accueil.php</code>) est chargée. Cela permet de contrôler facilement la navigation selon les actions des utilisateurs.
+    </p>
+
+    <h5 style="color: #1a7a89;">Tâches réalisées :</h5>
+    <ul style="line-height: 1.6; color: #555; list-style-type: disc; padding-left: 20px;">
+      <li>Création d'une liste associant chaque action à un fichier PHP correspondant.</li>
+      <li>Implémentation de l'action par défaut <code>defaut</code> redirigeant vers <code>accueil.php</code>.</li>
+      <li>Ajout d'un message d'erreur pour les actions inexistantes.</li>
+      <li>Tests pour vérifier que les pages se chargent correctement selon l'action passée dans l'URL.</li>
+    </ul>
+
+    <!-- Images illustratives -->
+    <figure style="margin: 20px 0;">
+      <img src="ite2/ticket4.png" alt="Exemple action existante" style="max-width: 100%; height: auto;">
+    </figure>
+
+    <figure style="margin: 20px 0;">
+      <img src="ite2/ticket4-2.png" alt="Exemple action inexistante" style="max-width: 100%; height: auto;">
+    </figure>
+
+  </div>
+
+
+
+
+  <!-- Boutons pour le compte rendu et le retour -->
+  <div class="button-group" style="display: flex; justify-content: center; margin-top: 20px;">
+    <a href="../CompteRendue/Ite2/P1_IT2_T4_action_inexistante.pdf" target="_blank" rel="noopener noreferrer"
+      style="display: inline-block; padding: 10px 20px; border-radius: 100px; 
+      background-color: #1a7a89; color: white; text-decoration: none; font-weight: bold; margin: 0 10px;">Lien compte rendu</a>
+    <a href="../iterations/ite2.html" style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; font-weight: bold; margin: 0 10px;">Retour</a>
+  </div>
+  <br>
+
+  <!-- Footer -->
+  <div id="footer-container"></div>
+  <script>
+    fetch('../../code/footer-projets.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-container').innerHTML = data;
+      });
+  </script>
+
+</body>
+</html>
