@@ -1,0 +1,80 @@
+ID,IID,Title,Description,Type,URL,State,Confidential,Locked,Milestone,Labels,Author,Author Username,Assignee,Assignee Username,Created At (UTC),Updated At (UTC),Closed At (UTC),Due Date,Start Date,Parent ID,Parent IID,Parent Title,Time Estimate,Time Spent,Weight
+173670694,3,Ticket n°3 identification de l’équipe de développement en pied de page,"Je désire que le numéro de l'équipe apparaisse sur la page d'accueil sous la forme du texte suivant : mise à jour par équipe X dans le pied de page
+[Exemple de rendu](https://lajoliverie.sharepoint.com/:i:/s/SIO-PROF-INFO/EYItqYunpq9Onmiv7IH5cVkBQj9AKbogTJZLvK_ktDkDEA?e=xOR
+![T3](/uploads/f4ccc866aff42692b9f8292730e9bd13/T3.png)",Issue,https://gitlab.com/nbourgeois/siteresto2025/-/issues/3,Open,No,No,Itération n°2,"peu complexe, peu prioritaire",Bourgeois,nbourgeois,,,2025-09-19 13:58:10,2025-09-19 14:37:37,,2025-09-29,2025-09-22,,,,,,
+173677640,4,Ticket n°4  - détecter une requête d’action inexistante,"Actuellement, si une action inexistante est demandée, 
+    exemple : index.php?action=blob
+aucun message d'erreur ne le signale, on retourne automatiquement sur la page d'accueil.
+
+Je demande qu’un message s’affiche sur la page d'accueil pour informer l’utilisateur que la page blob n’existe pas.
+
+![image](/uploads/2cdf89000e36bf13be618804892f4024/image.png)",Issue,https://gitlab.com/nbourgeois/siteresto2025/-/issues/4,Open,No,No,Itération n°2,"complexité moyenne, peu prioritaire",Bourgeois,nbourgeois,,,2025-09-19 15:32:36,2025-09-19 16:31:22,,2025-09-29,2025-09-22,,,,,,
+173677840,5,Ticket n°5 - amélioration du chiffrement des mots de passe,"Par souci de renforcer la sécurité de l’application, les maîtres d’œuvre souhaitent faire évoluer le traitement des mots de passe des utilisateurs (authentification, nouvelle inscription) pour respecter les préconisations de PHP en la matière. Actuellement, le chiffrement des mots de passe utilise la fonction crypt() avec un sel simpliste (=""sel""). PHP conseille l’usage du couple de fonctions password_hash / password_verify avec l’algorithme de hachage par défaut BCRYPT.
+
+**Références** :
+
+ • password_hash https://www.php.net/manual/fr/function.password-hash.php
+
+ • crypt https://www.php.net/manual/fr/function.crypt.php
+
+**Avantages de l’utilisation de password_hash** : • meilleur algorithme de hachage par défaut (BCRYPT) • évolutive (adaptation automatique aux améliorations des algorithmes) • salage efficace • compatibilité avec crypt, donc les anciens mots de passe resteront utilisables, même s’il sera préférable de les modifier pour générer une meilleure empreinte.
+
+**Lexique** fonction de hachage : calcule une empreinte numérique non réversible. salage : renforce la sécurité du hachage en y ajoutant une donnée supplémentaire (le sel) afin d’empêcher que deux informations identiques conduisent à la même empreinte =\> protège des attaques par force brute et par table arc-en-ciel. coût : rend l’algorithme arbitrairement lent et contribue à dissuader les attaques par table arc-en-ciel et par force brute. table arc-en-ciel : table comportant un grand nombre d’empreintes connues, permettant de retrouver un mot de passe à partir de son empreinte.",Incident,https://gitlab.com/nbourgeois/siteresto2025/-/issues/5,Open,No,No,Itération n°2,"complexe, prioritaire",Bourgeois,nbourgeois,,,2025-09-19 15:40:10,2025-09-19 15:47:29,,,,,,,,,
+173678219,6,Ticket n°6  - erreur dans l’affichage du classement des quatre restaurants les mieux notés,"Après consultation des données enregistrées dans la base de données, on constate que le classement des des quatre restaurants obtenant les meilleures critiques est faux :
+
+Actuellement, sur la page d’accueil, les restaurants suivants s’affichent :
+
+![image.png](/uploads/25f62b5a147688cfc364ff18bc2bec54/image.png)
+
+alors qu’on devrait avoir :
+
+![T6_apres.png](/uploads/b74505ab4af204af19243a871ee72f71/T6_apres.png){width=872 height=270}
+
+car ces restaurants offrent les meilleurs moyennes générales dans la table critiquer.",Incident,https://gitlab.com/nbourgeois/siteresto2025/-/issues/6,Open,No,No,Itération n°2,"complexité moyenne, peu prioritaire",Bourgeois,nbourgeois,,,2025-09-19 15:56:55,2025-09-19 16:18:44,,,,,,,,,
+173679852,7,Ticket n° 7 - affichage de la valeur numérique de la note moyenne d’un restaurant,"Modifier l'affichage du détail d'un restaurant en rajoutant la note moyenne **non arrondie** devant les têtes de bonhommes.
+
+Par exemple pour le détail du restaurant La petite auberge, on aurait ceci :
+
+![image.png](/uploads/82ecbd14a11511f8ef522b3ba6f0f04f/image.png){width=590 height=270}",Issue,https://gitlab.com/nbourgeois/siteresto2025/-/issues/7,Open,No,No,Itération n°2,"peu complexe, priorité normale",Bourgeois,nbourgeois,,,2025-09-19 16:24:29,2025-09-19 16:30:59,,2025-09-29,2025-09-22,,,,,,
+173680917,8,Ticket n° 8  - contrôle du format de saisie du code postal,"Je désire avoir des contrôles sur la zone de saisie du code postal dans la recherche d'un restaurant ainsi que dans la recherche en multicritères. Le format devra être de 5 chiffres.
+
+**Il faudra utiliser une expression régulière _(Cf. documentation fournie)_.**
+
+![T8_recherche.png](/uploads/3ac8f9b1a0dca1b42d8a7d02b48d799d/T8_recherche.png){width=294 height=192}
+
+![T8_message.png](/uploads/93e9667d44113ae9beb99fba25c9ddfb/T8_message.png)",Issue,https://gitlab.com/nbourgeois/siteresto2025/-/issues/8,Open,No,No,Itération n°2,"peu complexe, peu prioritaire",Bourgeois,nbourgeois,,,2025-09-19 16:38:23,2025-09-19 16:49:29,,2025-09-29,,,,,,,
+173683623,9,Ticket n° 9 - détection d’un compte déjà existant lors de l’inscription,"L’application doit vérifier que le mail saisi n'existe pas déjà lors d'une nouvelle inscription au lieu de provoquer une erreur SQL (afficher un message explicite à l’utilisateur)
+
+Actuellement, l’erreur suivante qui s’affiche :
+
+![image.png](/uploads/d467279567a0d2974d12d29378d11e22/image.png){width=""182"" height=""100""}
+
+![image.png](/uploads/2c0d4c799724cca62c89473877fe873f/image.png)
+
+Il serait préférable d’avoir ceci
+
+![image.png](/uploads/b9e946a03cca61ea0bedb1be1af90af7/image.png){width=489 height=285}",Incident,https://gitlab.com/nbourgeois/siteresto2025/-/issues/9,Open,No,No,Itération n°2,"complexité moyenne, prioritaire",Bourgeois,nbourgeois,,,2025-09-19 17:11:51,2025-09-19 17:12:58,,,,,,,,,
+173685108,10,Ticket n°10 - faille de sécurité sur la page d’authentification,"On m’a signalé qu’une attaque par injection SQL est possible sur la page de connexion.
+
+**Scénario** : l’utilisateur saisit la chaîne de caractères suivante dans le champ de saisie de l’email : zzz' OR 1 = 1 ; DELETE FROM photo WHERE '1' = '1
+
+et une valeur quelconque dans le mot de passe. L’application refuse l’authentification en affichant le message d’erreur suivant :
+
+![image.png](/uploads/daa4c38efcf238cc03d07358d23df5e9/image.png){width=725 height=98}Mais, ensuite, on peut constater que l’attaque a réussi, car **les photos des restaurants ne sont plus affichées** sur la page d’accueil (ni ailleurs) : les données de la table photo ont été supprimées !
+
+**Avant :**
+
+![image.png](/uploads/fce2123962e967ae44acc5d73e3ccaff/image.png){width=""336"" height=""129""}
+
+**Après :**
+
+![T10_3_new.png](/uploads/61e197abd5727cf7022ce8890c2ea17a/T10_3_new.png){width=""477"" height=""98""}
+
+On souhaite donc rendre impossibles les attaques par injection SQL sur ce formulaire.",Incident,https://gitlab.com/nbourgeois/siteresto2025/-/issues/10,Open,No,No,Itération n°2,"complexité moyenne, prioritaire",Bourgeois,nbourgeois,,,2025-09-19 17:28:00,2025-09-19 17:31:03,,,,,,,,,
+173685821,11,Ticket n°11 - recherche multiple non fonctionnelle,"Une recherche multi-critères est proposée, mais n'est pas fonctionnelle : la liste obtenue est vide. 
+
+![T11_1.png](/uploads/5bd228b60583a66c894cb6f813558750/T11_1.png)
+
+![T11_2.png](/uploads/ecebaec2472429dcd200d05604126ac8/T11_2.png)
+
+Vous devez trouver pourquoi et corriger le problème.",Issue,https://gitlab.com/nbourgeois/siteresto2025/-/issues/11,Open,No,No,Itération n°2,"complexité moyenne, priorité normale",Bourgeois,nbourgeois,,,2025-09-19 17:37:29,2025-09-19 17:41:53,,2025-09-29,2025-09-22,,,,,,

@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Projet R3st0.fr - Ticket 2</title>
+  <meta name="description" content="Itération 1 - Ticket 2 : Étude de l'existant et analyse de l'architecture MVC du site R3st0.fr.">
+  <link rel="icon" href="../../images/favicon.ico" type="image/x-icon">
+  <link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+  <div id="navbar"></div>
+
+  <script>
+    fetch('../../code/header-projets.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+        menuToggle.addEventListener('click', () => {
+          navLinks.classList.toggle('show');
+          menuToggle.classList.toggle('open');
+        });
+      });
+  </script>
+
+  <!-- Contenu du Ticket 2 -->
+  <div class="container" style="display: flex; justify-content: space-between; align-items: flex-start; padding: 20px; max-width: 900px; margin: 20px auto; background-color: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+
+    <div style="flex: 1;">
+      <h4 style="color: #1a7a89;">Ticket 2 – Étude de l’existant</h4>
+
+      <h5 style="color: #1a7a89;">I - Rappel du contexte :</h5>
+      <p style="line-height: 1.6; color: #333; text-align: justify;">
+        R3st0.fr est un site web de critique de restaurants développé en PHP suivant le pattern MVC. 
+        Le site permet de centraliser les avis des consommateurs et de les diffuser aux visiteurs.
+      </p>
+
+      <br>
+
+      <h5 style="color: #1a7a89;">II - Étude des fonctionnalités existantes :</h5>
+      <ul style="line-height: 1.6; color: #555; list-style-type: disc; padding-left: 20px;">
+        <li>Paramétrage du projet sur serveur local (WAMP). Voir <strong>ci-dessous 2</strong>.</li>
+        <!-- Images illustratives -->
+        <figure style="margin: 20px 0;">
+          <img src="ite1/ticket2.png" alt="Base après modification - 1" style="max-width: 100%; height: auto;">
+        </figure>
+
+
+        <li>Création de la base de données <strong>resto2</strong> et exécution des scripts SQL. </li>
+        <figure style="margin: 20px 0;">
+          <img src="ite1/ticket2-1.png" alt="Base après modification - 1" style="max-width: 100%; height: auto;">
+        </figure>
+
+        <li>Configuration de l’accès à la base via <em>modele/dao/Bdd.class.php</em>. </li>
+        <figure style="margin: 20px 0;">
+          <img src="ite1/ticket2-2.png" alt="Base après modification - 1" style="max-width: 100%; height: auto;">
+        </figure>
+        <li>Tests unitaires de connexion et des méthodes DAO avec <em>testRestoDAO.php</em>. .</li>
+        <li>Diagramme des cas d’utilisation des fonctionnalités existantes. .</li>
+        <figure style="margin: 20px 0;">
+          <img src="ite1/ticket2-3.png" alt="Base après modification - 1" style="max-width: 100%; height: auto;">
+        </figure>
+      </ul>
+
+      <br>
+
+     <h5 style="color: #1a7a89;">Architecture MVC en PHP</h5>
+    <p style="line-height: 1.6; color: #333; text-align: justify;">
+      Le site R3st0.fr suit le patron Modèle-Vue-Contrôleur (MVC). Les contrôleurs récupèrent les données via les DAO, le modèle représente les entités, et la vue affiche les informations.
+    </p>
+
+    <p style="line-height: 1.6; color: #333; text-align: justify;">
+      Les fichiers PHP utilisent <code>include</code>, <code>require</code> et <code>use</code> pour gérer les inclusions et namespaces, et la variable <code>$fichier</code> dans <code>index.php</code> détermine le contrôleur actif selon le paramètre <code>action</code>.
+    </p>
+
+    <p style="line-height: 1.6; color: #333; text-align: justify;">
+      Le script <code>testRestoDAO.php</code> vérifie que les méthodes de <code>RestoDAO</code> fonctionnent correctement. Le dossier <code>modele/dao</code> contient les requêtes SQL, <code>modele/metier</code> les entités, et <code>vue</code> le code HTML.
+    </p>
+
+    <p style="line-height: 1.6; color: #333; text-align: justify;">
+      Les contrôleurs appellent les DAO pour récupérer les données et les transmettent aux vues pour affichage. Cette architecture assure la séparation des responsabilités, facilite le test, la maintenance et le travail en équipe.
+    </p>
+
+      
+
+
+    </div>
+
+  </div>
+
+  <!-- Boutons pour le compte rendu et le retour -->
+  <div class="button-group" style="display: flex; justify-content: center; margin-top: 20px;">
+    <a href="../CompteRendue/Ite1/2SLAM_AP_Projet1_Ite1_Ticket2_TAILLE_DELAUNAY_GUITTON_PORTOLLEAU.pdf" target="_blank" rel="noopener noreferrer"
+      style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; font-weight: bold; margin: 0 10px;">Lien compte rendu</a>
+    <a href="../iterations/ite1.html" style="display: inline-block; padding: 10px 20px; border-radius: 100px; 
+    background-color: #1a7a89; color: white; text-decoration: none; font-weight: bold; margin: 0 10px;">Retour</a>
+  </div>
+  <br>
+
+  <!-- Footer -->
+  <div id="footer-container"></div>
+  <script>
+    fetch('../../code/footer-projets.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-container').innerHTML = data;
+      });
+  </script>
+
+</body>
+</html>

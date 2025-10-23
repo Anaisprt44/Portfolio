@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Projet R3st0.fr - Ticket 1</title>
+  <meta name="description" content="Itération 1 - Ticket 1 : Ré-ingénierie de la base de données du projet R3st0.fr.">
+  <link rel="icon" href="../../images/favicon.ico" type="image/x-icon">
+  <link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+  <div id="navbar"></div>
+
+  <script>
+    fetch('../../code/header-projets.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+        menuToggle.addEventListener('click', () => {
+          navLinks.classList.toggle('show');
+          menuToggle.classList.toggle('open');
+        });
+      });
+  </script>
+
+  <!-- Contenu du Ticket 1 -->
+  <div class="container" style="display: flex; justify-content: space-between; align-items: flex-start; padding: 20px; max-width: 800px; margin: 20px auto; background-color: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+
+    <div style="flex: 1;">
+      <h4 style="color: #1a7a89;">Ticket 1 - Ré-ingénierie de la base de données</h4>
+
+      <h5 style="color: #1a7a89;">Contexte :</h5>
+      <p style="line-height: 1.6; color: #333; text-align: justify;">
+        Une première base de données a été conçue par un précédent stagiaire. Les scripts de création de la base initiale sont à télécharger depuis Moodle.
+      </p>
+
+      <h5 style="color: #1a7a89;">Travail à faire :</h5>
+      <ul style="line-height: 1.6; color: #555; list-style-type: disc; padding-left: 20px;">
+        <li>Créer la base de données <strong>resto1</strong> et l'utilisateur <strong>resto_util</strong> avec droits spécifiques à l'aide des scripts SQL fournis.</li>
+        <li>Importer la base et constater que la table <strong>Utilisateur</strong> a comme clé primaire l'e-mail.</li>
+
+        <figure style="margin: 20px 0;">
+          <img src="ite1/ticket1_1.png" alt="Base après modification - 1" style="max-width: 100%; height: auto;">
+        </figure>
+
+        <li>Formuler et tester une requête SQL pour afficher le nom du restaurant et la note attribuée par l'utilisateur <strong>jj.soueix@gmail.com</strong>.</li>
+        <figure style="margin: 20px 0;">
+          <img src="ite1/ticket1_note.png" alt="Base après modification - 1" style="max-width: 100%; height: auto;">
+        </figure>
+
+
+        <li>Expliquer pourquoi utiliser l'email comme clé primaire n’est pas judicieux :
+          <ul style="list-style-type: disc; padding-left: 20px;">
+            <li>Peut changer dans le temps.</li>
+            <li>Long à indexer et moins performant.</li>
+            <li>Risque de doublons à cause des variantes d’écriture.</li>
+            <li>Donnée sensible exposée dans toutes les jointures.</li>
+          </ul>
+          Il vaut mieux utiliser un identifiant unique.
+        </li>
+        <li>Mettre au point un script SQL pour modifier la base existante :
+          <ul style="list-style-type: disc; padding-left: 20px;">
+            <li>Créer une clé primaire <strong>idU</strong> auto-incrémentée pour <strong>Utilisateur</strong> et conserver <strong>mailU</strong> avec contrainte d’unicité.</li>
+            <li>Dans les tables où mailU est utilisé comme clé étrangère, le remplacer par <strong>idU</strong> sans altérer les jointures.</li>
+            <li>Supprimer les clés étrangères sur <strong>aimer</strong> et <strong>critiquer</strong> pour permettre les modifications.</li>
+            <li>Supprimer les index liés à mailU et les clés primaires existantes sur les tables dépendantes.</li>
+            <li>Ajouter idU aux tables dépendantes et remplir selon mailU, puis supprimer mailU dans ces tables.</li>
+            <li>Redéfinir les clés primaires sur (idR, idU) dans <strong>aimer</strong> et <strong>critiquer</strong>.</li>
+            <li>Recréer les clés étrangères liant idU à <strong>Utilisateur</strong> et idR à <strong>Resto</strong>.</li>
+          </ul>
+        </li>
+        <li>Tester la base modifiée en reformulant la requête de l’étape 2 et vérifier que les résultats sont identiques.</li>
+      </ul>
+      <figure style="margin: 20px 0;">
+        <img src="ite1/ticket1_2.png" alt="Base après modification - 2" style="max-width: 100%; height: auto;">
+      </figure>
+       <figure style="margin: 20px 0;">
+        <img src="ite1/ticket1_3.png" alt="Base après modification - 3" style="max-width: 100%; height: auto;">
+      </figure>
+
+      <h5 style="color: #1a7a89;">Résultat :</h5>
+      <p style="line-height: 1.6; color: #333; text-align: justify;">
+        La base a été correctement modifiée. <strong>idU</strong> est maintenant la clé primaire et toutes les relations et intégrités référentielles sont respectées. La requête test renvoie les mêmes résultats qu’avant la modification.
+      </p>
+
+      <!-- Images illustratives -->
+      <figure style="margin: 20px 0;">
+        <img src="ite1/ticket1_result.png" alt="Base après modification - 1" style="max-width: 100%; height: auto;">
+      </figure>
+
+      
+
+     
+
+
+    </div>
+
+  </div>
+
+  <!-- Boutons pour le compte rendu et le retour -->
+  <div class="button-group" style="display: flex; justify-content: center; margin-top: 20px;">
+    <a href="../CompteRendue/Ite1/2SLAM_AP_Iteration1_Ticket1_TAILLE_JADE_DELAUNAY_GUITTON_BENJAMIN_PORTOLLEAU_Anaïs.pdf" target="_blank" rel="noopener noreferrer"
+      style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; font-weight: bold; margin: 0 10px;">Lien compte rendu</a>
+    <a href="../iterations/ite1.html" style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; font-weight: bold; margin: 0 10px;">Retour</a>
+  </div>
+  <br>
+
+  <!-- Footer -->
+  <div id="footer-container"></div>
+  <script>
+    fetch('../../code/footer-projets.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-container').innerHTML = data;
+      });
+  </script>
+
+</body>
+</html>
