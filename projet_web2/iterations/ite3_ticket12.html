@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Portefolio d'Anaïs Portolleau - Page Accueil</title>
+  <meta name="description"
+    content="Je suis Anaïs Portolleau, étudiante en informatique. Voir le CV, Mes Projets, Contact, Mon parcours, Mes passions">
+  <link rel="icon" href="../../images/favicon.ico" type="image/x-icon">
+  <link href="../../style.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+
+  <div id="navbar"></div>
+
+  <script>
+    fetch('../../code/header-projets.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+
+        // Important : réattacher les évènements après avoir injecté le header
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        menuToggle.addEventListener('click', () => {
+          navLinks.classList.toggle('show');
+          menuToggle.classList.toggle('open');
+        });
+      });
+  </script>
+
+  <!-- Contenu de l'itération 3-->
+ 
+<!-- Contenu de l'itération 3 -->
+<div class="container-projet"
+     style="padding: 20px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); background-color: #f9f9f9;">
+
+  <h4 style="font-size: 1.5rem; margin-bottom: 15px; color: #1a7a89;">Itération 3 – Projet Web 2</h4>
+
+  <div style="margin-top: 20px;">
+    <a href="../CompteRendue/Ite3/2SLAM_AP_Projet1_Iteration3_cahier_des_charges_v2.pdf" 
+       style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; font-weight: bold; margin: 0 10px; transition: background-color 0.3s;" 
+       target="_blank">
+       Compte rendu de l'Itération 3
+    </a>
+  </div>
+
+  <br>
+
+  <div style="display: flex; flex-direction: column; gap: 20px; margin-bottom: 20px;">
+
+    <!-- Étape 1 -->
+    <div style="padding: 15px; border: 1px solid #ddd; border-radius: 8px; background-color: #fff; box-shadow: 0px 4px 12px rgba(0,0,0,0.05); text-align: left;">
+      <h5 style="margin: 0 0 5px; color: #1a7a89;">Création des tables TYPECUISINE et TYPERESTO</h5>
+      <p style="margin: 0; color: #555;">
+        Mise en place des tables pour gérer les types de cuisine des restaurants et leurs relations, avec clés primaires et étrangères correctement définies.
+      </p>
+      <img src="ite3/ite3_bdd.png" alt="BDD" >
+    </div>
+
+    <!-- Étape 2 -->
+    <div style="padding: 15px; border: 1px solid #ddd; border-radius: 8px; background-color: #fff; box-shadow: 0px 4px 12px rgba(0,0,0,0.05); text-align: left;">
+      <h5 style="margin: 0 0 5px; color: #1a7a89;">Création des classes métiers et DAO</h5>
+      <p style="margin: 0; color: #555;">
+        Ajout des classes <code>TypeCuisine</code> et <code>TypeResto</code> ainsi que leurs DAO pour gérer les opérations CRUD sur la base de données.
+      </p>      
+
+      <!-- Figures des tests et classes -->
+      <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px;">
+        <img src="ite3/typeresto.png" alt="Typeresto" >
+        <img src="ite3/typerestodao.png" alt="TyperestoDAO" >
+        <img src="ite3/typecusine.png" alt="TypeCuisine" >
+        <img src="ite3/typecuisinedao.png" alt="TypeCuisineDAO" >
+      </div>
+    </div>
+
+    <!-- Étape 3 -->
+    <div style="padding: 15px; border: 1px solid #ddd; border-radius: 8px; background-color: #fff; box-shadow: 0px 4px 12px rgba(0,0,0,0.05); text-align: left;">
+      <h5 style="margin: 0 0 5px; color: #1a7a89;">Tests des DAO</h5>
+      <p style="margin: 0; color: #555;">
+        Exécution de fichiers de test (<code>testTypeCuisineDAO.php</code> et <code>testTypeRestoDAO.php</code>) pour vérifier que toutes les méthodes CRUD fonctionnent correctement.
+      </p>
+       <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px;"></div>
+       <img src="ite3/testtyperesto.png" alt="testTypeResto">
+        <img src="ite3/testtyperestodao.png" alt="testTypeRestoDAO" >
+      <img src="ite3/testypecuisine.png" alt="testTypeResto">
+        <img src="ite3/typecuisinedao.png" alt="testTypeRestoDAO" >
+        
+    </div>
+    </div>
+
+  
+
+    <!-- Étape 4 -->
+    <div style="padding: 15px; border: 1px solid #ddd; border-radius: 8px; background-color: #fff; box-shadow: 0px 4px 12px rgba(0,0,0,0.05); text-align: left;">
+      <h5 style="margin: 0 0 5px; color: #1a7a89;">Modification des vues</h5>
+      <p style="margin: 0; color: #555;">
+        Intégration de l'affichage des types de cuisine sur 
+        <code>vueDetailResto.php</code>, <code>vueListeRestos.php</code> et <code>vueAccueil.php</code> 
+        sous forme de tags visuels.
+      </p>
+      <img src="ite3/etape2_code.png" alt="Vue" >
+      <img src="ite3/etape4.png" alt="Vue" >
+    </div>
+
+    <br>
+
+    <!-- Étape 5 -->
+    <div style="padding: 15px; border: 1px solid #ddd; border-radius: 8px; background-color: #fff; box-shadow: 0px 4px 12px rgba(0,0,0,0.05); text-align: left;">
+      <h5 style="margin: 0 0 5px; color: #1a7a89;">Déploiement sur serveur</h5>
+      <p style="margin: 0; color: #555;">
+        Mise en ligne de la version finale sur le serveur de production avec configuration FTP et base de données, tests complets utilisateurs et vérification de la navigation.
+      </p>
+      <img src="ite3/ite3_depoiement.png" alt="Déploiement" >
+      <img src="ite3/deploiement2.png" alt="Déploiement" >
+    </div>
+
+  </div>
+</div>
+
+
+
+    
+      
+    
+    
+      
+    </div>
+
+    <!-- Boutons pour le compte rendu et le retour -->
+    <div class="button-group" style="display: flex; justify-content: center; margin-top: 20px;">
+      <a href="ite3.html" class="button" style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; 
+        text-decoration: none; font-weight: bold; margin: 0 10px;">Retour</a>
+    </div>
+
+  </div>
+  </div>
+
+
+  <br>
+
+
+  <br>
+
+  <!-- Footer -->
+  <div id="footer-container"></div>
+
+  <script>
+    fetch('../../code/footer-projets.html')
+      .then(response => response.text())
+      .then(data => {
+        // Injecter le footer
+        document.getElementById('footer-container').innerHTML = data;
+
+        // Maintenant corriger les chemins des images dans ce footer injecté
+        const footer = document.getElementById('footer-container');
+
+        // Parcours toutes les images dans le footer
+        footer.querySelectorAll('img').forEach(img => {
+          let src = img.getAttribute('src');
+
+          if (src.startsWith('../images/')) {
+
+
+            let newSrc = src.replace('../images/', '../../images/');
+            img.setAttribute('src', newSrc);
+          }
+        });
+      });
+  </script>
+</body>
+
+</html>
