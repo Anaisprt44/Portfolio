@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
-  <title>Projet R3st0.fr - Ticket 0</title>
+  <title>Projet R3st0.fr - Ticket 8</title>
   <meta name="description" content="Compte rendu Ticket 0 du projet R3st0.fr, mise en place initiale de l'équipe et du dépôt GitLab.">
   <link rel="icon" href="../../images/favicon.ico" type="image/x-icon">
   <link href="../../style.css" rel="stylesheet" type="text/css" />
@@ -29,37 +29,65 @@
       });
   </script>
 
- <!-- Contenu du Ticket 3 -->
+ <!-- Contenu du Ticket 8 -->
 
 <div class="container" style="padding: 20px; max-width: 800px; margin: 20px auto; background-color: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); text-align: left;">
 
-  <h4 style="color: #1a7a89;">Ticket 3 - Identification du groupe</h4>
+  <h4 style="color: #1a7a89;">Ticket 8 - Validation du code postal dans vueRechercheResto.php</h4>
 
   <p style="line-height: 1.6; color: #333;">
-    L'objectif de ce ticket était d'afficher le nom du groupe sur le site web R3st0.fr pour identifier clairement l’équipe de développement sur toutes les pages.
+    L'objectif de ce ticket était de sécuriser et contrôler les entrées du code postal dans le formulaire de recherche de restaurants.
   </p>
 
-  <h5 style="color: #1a7a89;">Tâches réalisées :</h5>
+  <h5 style="color: #1a7a89;">Modifications réalisées :</h5>
   <ul style="line-height: 1.6; color: #555; list-style-type: disc; padding-left: 20px;">
-    <li>Ajout du nom du groupe <strong>G3</strong> sur la page d'accueil et sur toutes les pages principales.</li>
-    <li>Création du style CSS pour que l’affichage soit visible et uniforme.</li>
-    <li>Vérification que le texte s’adapte correctement à différentes résolutions.</li>
-    <br>
+    <li>Modification de l'input <code>cpR</code> dans <code>vueRechercheResto.php</code> : ajout des propriétés <code>pattern</code>, <code>maxLength</code> 
+      et <code>onInput</code> pour limiter le champ à 5 chiffres.</li>
+    <li>
+      Illustrations des modifications :
+      <figure style="margin: 20px 0;">
+        <p style="margin-bottom: 5px; font-style: italic; color: #666;">Code avant modification :</p>
+        <img src="ite2/ticket8-1.png" alt="Code original" style="max-width: 100%; height: auto; margin-bottom: 10px;">
+
+        <p style="margin-bottom: 5px; font-style: italic; color: #666;">Code après modification :</p>
+        <img src="ite2/ticket8-2.png" alt="Code modifié" style="max-width: 100%; height: auto;">
+      </figure>
+    </li>
+
+    <li>Ajout d'une vérification côté serveur avec <code>preg_match()</code> dans <code>rechercheResto.php</code> pour garantir que le code postal contient exactement 5 caractères.</li>
+    <img src="ite2/appelserveur.png" alt="appel serveur" style="max-width: 100%; height: auto; margin-bottom: 10px;">
+
+
+    <li>Appel de <code>entete.html.php</code> pour afficher les messages d'erreur si nécessaire.</li>
+    <img src="ite2/appelentete.png" alt="apel entete" style="max-width: 100%; height: auto; margin-bottom: 10px;">
+
+    
   </ul>
-  <img src="ite2/image_ticket3.png" alt="Déploiement" >
-  <img src="ite2/image_ticket3-2.png" alt="Déploiement" >
 
+  <h5 style="color: #1a7a89;">Tests réalisés :</h5>
+  <ul style="line-height: 1.6; color: #555; list-style-type: disc; padding-left: 20px;">
+    <li>Code postal avec caractères alphabétiques :</li>
+      <img src="ite2/ticket8_alpha.png" alt="Test caractères alphabétiques" style="max-width: 100%; height: auto; margin-bottom: 10px;">
 
-  
+    <li>Code postal inférieur à 5 caractères :</li>
+      <img src="ite2/ticket8-test.png" alt="Test code postal <5" style="max-width: 100%; height: auto; margin-bottom: 10px;">
+
+    <li>Code postal existant :</li>
+      <img src="ite2/ticket8-test_existant.png" alt="Test code postal existant" style="max-width: 100%; height: auto; margin-bottom: 10px;">
+
+    <li>Code postal non existant :</li>
+      <img src="ite2/ticket8-test__non_existant.png" alt="Test code postal non existant" style="max-width: 100%; height: auto;">
+  </ul>
 
 </div>
 
 
 
 
+
   <!-- Boutons pour le compte rendu et le retour -->
   <div class="button-group" style="display: flex; justify-content: center; margin-top: 20px;">
-    <a href="../CompteRendue/Ite2/P1_IT2_T3_identification_G3.pdf" target="_blank" rel="noopener noreferrer"
+    <a href="../CompteRendue/Ite2/P1_IT2_T8_format_cdp.pdf" target="_blank" rel="noopener noreferrer"
       style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; font-weight: bold; margin: 0 10px;">Lien compte rendu</a>
     <a href="../iterations/ite2.html" style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; font-weight: bold; margin: 0 10px;">Retour</a>
   </div>

@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
-  <title>Projet R3st0.fr - Ticket 0</title>
+  <title>Projet R3st0.fr - Ticket 10</title>
   <meta name="description" content="Compte rendu Ticket 0 du projet R3st0.fr, mise en place initiale de l'équipe et du dépôt GitLab.">
   <link rel="icon" href="../../images/favicon.ico" type="image/x-icon">
   <link href="../../style.css" rel="stylesheet" type="text/css" />
@@ -29,37 +29,46 @@
       });
   </script>
 
- <!-- Contenu du Ticket 3 -->
+  <!-- Contenu du Ticket 10 -->
 
-<div class="container" style="padding: 20px; max-width: 800px; margin: 20px auto; background-color: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); text-align: left;">
+  <div class="container" style="padding: 20px; max-width: 800px; margin: 20px auto; background-color: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); text-align: left;">
 
-  <h4 style="color: #1a7a89;">Ticket 3 - Identification du groupe</h4>
+    <h4 style="color: #1a7a89;">Ticket 10 - Faille de sécurité sur la page d'authentification</h4>
 
-  <p style="line-height: 1.6; color: #333;">
-    L'objectif de ce ticket était d'afficher le nom du groupe sur le site web R3st0.fr pour identifier clairement l’équipe de développement sur toutes les pages.
-  </p>
+    <p style="line-height: 1.6; color: #333;">
+      L'objectif de ce ticket était de sécuriser la page d'authentification afin d'empêcher toute injection SQL ou tentative d'accès non autorisé.
+    </p>
 
-  <h5 style="color: #1a7a89;">Tâches réalisées :</h5>
-  <ul style="line-height: 1.6; color: #555; list-style-type: disc; padding-left: 20px;">
-    <li>Ajout du nom du groupe <strong>G3</strong> sur la page d'accueil et sur toutes les pages principales.</li>
-    <li>Création du style CSS pour que l’affichage soit visible et uniforme.</li>
-    <li>Vérification que le texte s’adapte correctement à différentes résolutions.</li>
-    <br>
-  </ul>
-  <img src="ite2/image_ticket3.png" alt="Déploiement" >
-  <img src="ite2/image_ticket3-2.png" alt="Déploiement" >
+    <h5 style="color: #1a7a89;">Modifications réalisées :</h5>
+      <ul style="line-height: 1.6; color: #555; list-style-type: disc; padding-left: 20px;">
+        <li>Ajout du code PDO pour sécuriser la connexion à la base de données et préparer la requête :</li>
+      </ul>
 
+      <pre style="background-color: #f9f9f9; padding: 10px; border-radius: 5px; overflow-x: auto;">
+    $pdo = new PDO('mysql:host=localhost;dbname=root', $mailU, $mdpU);
+    $stmt = $pdo->prepare('SELECT * FROM utilisateur WHERE mailU = :mailU');
+    $stmt->bindParam(':mailU', $mailU);
+    $stmt->execute();
+      </pre>
 
-  
+    <h5 style="color: #1a7a89;">Illustrations :</h5>
+    <figure style="margin: 20px 0;">
+      <p style="margin-bottom: 5px; font-style: italic; color: #666;">Code modifié pour sécuriser la connexion :</p>
+      <img src="ite2/ticket10-code.png" alt="Code sécurité login" style="max-width: 100%; height: auto; margin-bottom: 10px;">
 
-</div>
+      <p style="margin-bottom: 5px; font-style: italic; color: #666;">Message d'erreur affiché à l'utilisateur :</p>
+      <img src="ite2/test_ticket10.png" alt="Message erreur login" style="max-width: 100%; height: auto;">
+    </figure>
+
+  </div>
+
 
 
 
 
   <!-- Boutons pour le compte rendu et le retour -->
   <div class="button-group" style="display: flex; justify-content: center; margin-top: 20px;">
-    <a href="../CompteRendue/Ite2/P1_IT2_T3_identification_G3.pdf" target="_blank" rel="noopener noreferrer"
+    <a href="../CompteRendue/Ite2/P1_IT2_T10_injection_SQL.pdf" target="_blank" rel="noopener noreferrer"
       style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; font-weight: bold; margin: 0 10px;">Lien compte rendu</a>
     <a href="../iterations/ite2.html" style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; font-weight: bold; margin: 0 10px;">Retour</a>
   </div>

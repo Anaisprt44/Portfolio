@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
-  <title>Projet R3st0.fr - Ticket 0</title>
+  <title>Projet R3st0.fr - Ticket 11</title>
   <meta name="description" content="Compte rendu Ticket 0 du projet R3st0.fr, mise en place initiale de l'équipe et du dépôt GitLab.">
   <link rel="icon" href="../../images/favicon.ico" type="image/x-icon">
   <link href="../../style.css" rel="stylesheet" type="text/css" />
@@ -29,37 +29,64 @@
       });
   </script>
 
- <!-- Contenu du Ticket 3 -->
+ <!-- Contenu du Ticket 11 -->
 
-<div class="container" style="padding: 20px; max-width: 800px; margin: 20px auto; background-color: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); text-align: left;">
+  <div class="container" style="padding: 20px; max-width: 800px; margin: 20px auto; background-color: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); text-align: left;">
 
-  <h4 style="color: #1a7a89;">Ticket 3 - Identification du groupe</h4>
+    <h4 style="color: #1a7a89;">Ticket 11 - Recherche multiple non fonctionnelle</h4>
 
-  <p style="line-height: 1.6; color: #333;">
-    L'objectif de ce ticket était d'afficher le nom du groupe sur le site web R3st0.fr pour identifier clairement l’équipe de développement sur toutes les pages.
-  </p>
+    <p style="line-height: 1.6; color: #333;">
+      L'objectif de ce ticket était de corriger la recherche multi-critères des restaurants afin que tous les filtres soient pris en compte correctement.
+    </p>
 
-  <h5 style="color: #1a7a89;">Tâches réalisées :</h5>
-  <ul style="line-height: 1.6; color: #555; list-style-type: disc; padding-left: 20px;">
-    <li>Ajout du nom du groupe <strong>G3</strong> sur la page d'accueil et sur toutes les pages principales.</li>
-    <li>Création du style CSS pour que l’affichage soit visible et uniforme.</li>
-    <li>Vérification que le texte s’adapte correctement à différentes résolutions.</li>
-    <br>
-  </ul>
-  <img src="ite2/image_ticket3.png" alt="Déploiement" >
-  <img src="ite2/image_ticket3-2.png" alt="Déploiement" >
+    <h5 style="color: #1a7a89;">Modifications réalisées :</h5>
+    <ul style="line-height: 1.6; color: #555; list-style-type: disc; padding-left: 20px;">
+      <li>Modification de la méthode <code>getAllMultiCriteres</code> pour gérer simultanément les critères texte (nomR, voieAdrR, cpR, villeR) et les types de cuisine.</li>
+      <figure style="margin: 20px 0;">
+      <img src="ite2/ticket11-1.png" alt="Test recherche multi-critères" style="max-width: 100%; height: auto;">  
+      <img src="ite2/ticket11-2.png" alt="Test recherche multi-critères" style="max-width: 100%; height: auto;">      
+    </figure>
+
+    <br>     
+    </ul>
+
+    <h5 style="color: #1a7a89;">Tests réalisés :</h5>
+    <ul style="line-height: 1.6; color: #555; list-style-type: disc; padding-left: 20px;">
+      <li>Recherche par nom de restaurant partiel et par ville → résultat correct.</li>
+      <figure style="margin: 20px 0;">
+        <img src="ite2/ticket11-3.png" alt="Test recherche multi-critères" style="max-width: 100%; height: auto;">  
+        <img src="ite2/ticket11-3-2.png" alt="Test recherche multi-critères" style="max-width: 100%; height: auto;">
+      </figure>
+     
 
 
-  
+      <li>Recherche par rue et code postal → résultat correct.</li>
+       <figure style="margin: 20px 0;">
+        <img src="ite2/ticket11-4.png" alt="Test recherche multi-critères" style="max-width: 100%; height: auto;">      
+        <img src="ite2/ticket11-4-2.png" alt="Test recherche multi-critères" style="max-width: 100%; height: auto;">
+      </figure>
 
-</div>
+
+      <li>Recherche avec informations incorrectes → aucun résultat affiché.</li>
+       <figure style="margin: 20px 0;">
+        <img src="ite2/ticket11-5.png" alt="Test recherche multi-critères" style="max-width: 100%; height: auto;">   
+        <img src="ite2/ticket11-5-2.png" alt="Test recherche multi-critères" style="max-width: 100%; height: auto;">     
+      </figure>
+
+      <p style="color: #555; font-style: italic; margin-top: 10px;">
+  Voir les autres fichiers dans <a href="../CompteRendue/Ite2/2SLAM_P1_IT2_T11_recherche_multiple_G3.pdf" target="_blank">CompteRendue</a>
+</p>
+
+    </ul>
+    
+  </div>
 
 
 
 
   <!-- Boutons pour le compte rendu et le retour -->
   <div class="button-group" style="display: flex; justify-content: center; margin-top: 20px;">
-    <a href="../CompteRendue/Ite2/P1_IT2_T3_identification_G3.pdf" target="_blank" rel="noopener noreferrer"
+    <a href="../CompteRendue/Ite2/2SLAM_P1_IT2_T11_recherche_multiple_G3.pdf" target="_blank" rel="noopener noreferrer"
       style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; font-weight: bold; margin: 0 10px;">Lien compte rendu</a>
     <a href="../iterations/ite2.html" style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; font-weight: bold; margin: 0 10px;">Retour</a>
   </div>
