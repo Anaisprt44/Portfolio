@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Portefolio d'Anaïs Portolleau - Itération 1 Projet Android</title>
+  <meta name="description"
+    content="Je suis Anaïs Portolleau, étudiante en informatique. Voir le CV, Mes Projets, Contact, Mon parcours, Mes passions">
+  <link rel="icon" href="../../images/favicon.ico" type="image/x-icon">
+  <link href="../../style.css" rel="stylesheet" type="text/css" />
+  <style>
+    
+
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 25px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    h4 {
+      color: #1a7a89;
+      margin-bottom: 15px;
+    }
+
+    h5 {
+      color: #1a7a89;
+      margin-top: 25px;
+      margin-bottom: 10px;
+    }
+
+    h6 {
+      color: #333;
+      margin-top: 15px;
+      margin-bottom: 8px;
+    }
+
+    p {
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    ul {
+      list-style-type: disc;  /* for standard bullets */
+      margin-left: 25px;      /* indentation */
+      padding-left: 0;        /* reset padding si nécessaire */
+      color: #555;
+    }
+
+    ul ul {
+      list-style-type: circle; /* sous-listes */
+      margin-left: 20px;
+    }
+
+
+    img {
+      max-width: 100%;
+      height: auto;
+      margin: 10px 0;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+
+    .btn-primary
+    {
+      display: inline-block;
+      padding: 12px 25px;
+      border-radius: 100px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+      margin: 5px;
+    }
+
+    .btn-primary {
+      background-color: #1a7a89;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background-color: #166370;
+    }
+
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <div id="navbar"></div>
+  <script>
+    fetch('../../code/header-projets.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+        menuToggle.addEventListener('click', () => {
+          navLinks.classList.toggle('show');
+          menuToggle.classList.toggle('open');
+        });
+      });
+  </script>
+
+  <!-- Conteneur principal -->
+  <div class="container">
+
+    <h4>Itération 1 – Projet Android</h4>
+
+    <div style="text-align: left; margin-bottom: 25px;">
+      <a href="../CDC/2SLAM_AP_Projet2_Appli_Android_cahier_des_charges.pdf" target="_blank"
+        class="btn-primary">Cahier des charges</a>
+    </div>
+
+     <div style="text-align: left; margin-bottom: 25px;">
+    
+  </div>
+
+    <!-- Objectif -->
+    <p>« En tant qu'utilisateur, je souhaite pouvoir consulter la liste des restaurants (nom et ville) afin de pouvoir en sélectionner un ensuite. »
+      Cette première itération avait pour but de créer une application Android permettant l'affichage d'une liste des restaurants avec leurs 
+      <strong>noms et ville</strong> associé.
+    </p>
+
+ 
+    <h6>1. Configuration du projet Android</h6>
+    <ul>
+      <li>Création d'un nouveau projet dans <strong>Android Studio</strong></li>
+      <li>Configuration avec le langage <strong>Java</strong></li>
+      <li>Mise en place de l'activité principale</li>
+    </ul>
+    <img src="../iterations/images/creation.png" alt="Déploiement">
+
+    <h6>2. Interface utilisateur</h6>
+    <ul>
+      <li>Création d'un layout pour afficher la liste des restaurants</li>
+      <img src="../iterations/images/creation_layout.png" alt="Layout">
+      <li>Affichage pour chaque restaurant :
+        <ul>
+          <li>Le nom du restaurant</li>
+          <li>La ville</li>
+        </ul>
+      </li>
+      <img src="../iterations/images/nom_ville.png" alt="Nom et ville">
+    </ul>
+
+    <h6>3. Logique métier</h6>
+    <ul>
+      <li>Création d'une classe <strong>Restaurant</strong> avec les attributs : nom et ville</li>
+      <img src="../iterations/images/classeResto.png" alt="Classe Restaurant">
+      <li>Création d'un layout personnalisé pour l'affichage de la liste (voir capture plus haut ou CR)</li>
+      <li>Initialisation d'une liste de restaurants avec des données de la bdd</li>
+    </ul>
+
+    <h6>4. Fonctionnalités</h6>
+    <ul>
+      <li>Affichage d'une liste scrollable de restaurants via l'API</li>
+      <img src="../iterations/images/charger.png" alt="API">
+      <p>L'API est disponible sur GitLab : <a
+          href="https://gitlab.com/Tom_Charbonneau/p2_g7_2slam_ap_projet_android_api" target="_blank">Lien GitLab</a>.
+        Pour l'utiliser, faire un git clone dans le dossier www de Wamp.</p>
+        <img src="../iterations/images/api.png" alt="API Gitlab">
+      <li>Sélection possible d'un restaurant (préparation pour les prochaines itérations)</li>
+    </ul>
+
+    <!-- Résultats -->
+    <h5>Résultats</h5>
+    <p>L'objectif de cette itération a été atteint avec succès. L'application affiche correctement une liste de restaurants avec leurs noms et villes. L'interface est intuitive et respecte les normes de design Android. Le code est structuré et prêt pour les évolutions des prochaines itérations.</p>
+    <ul>
+      <li>Liste de restaurants affichée correctement avec le nom et la ville</li>
+    </ul>
+
+    <!-- Boutons -->
+    <div class="button-group">
+      <a href="../CompteRendue/G7_2SLAM_AP_Projet2_Appli_Android_Compte_Rendue_Itération1.pdf" target="_blank"
+        class="btn-primary">Compte rendu détaillé</a>
+      <a href="../../android.html" class="btn-primary">Retour au projet</a>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div id="footer-container"></div>
+  <script>
+    fetch('../../code/footer-projets.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-container').innerHTML = data;
+        const footer = document.getElementById('footer-container');
+        footer.querySelectorAll('img').forEach(img => {
+          let src = img.getAttribute('src');
+          if (src.startsWith('../images/')) {
+            img.setAttribute('src', src.replace('../images/', '../../images/'));
+          }
+        });
+      });
+  </script>
+
+</body>
+</html>
