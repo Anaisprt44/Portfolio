@@ -34,6 +34,7 @@
 <div class="container" style="padding: 20px; max-width: 800px; margin: 20px auto; background-color: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); text-align: left;">
 
   <h4 style="color: #1a7a89;">Ticket 3 - API avec récupération des données: </h4>
+
   <p>EN COURS DE Modification</p>
    <div class="flex justify-center items-center">
         <a class="button bg-blue-500 text-white rounded-full px-6 py-2 shadow-md hover:shadow-lg transform hover:scale-105 transition duration-300"
@@ -41,19 +42,38 @@
       </div>
       <br>
 
-  <p style="line-height: 1.6; color: #333;">
-    
-  </p>
+      <p style="line-height: 1.6; color: #333;">
+      Pour ce ticket, j’ai mis en place la récupération des données via l’API. 
+      J’ai modifié le fichier <strong>getAllResto.php</strong> afin d’obtenir une structure JSON propre : 
+      regroupement des restaurants, extraction des types de cuisine, et transformation des horaires 
+      (initialement au format HTML) en tableau JSON.  
+      J’ai également ajouté les accesseurs nécessaires côté Android et préparé l’affichage 
+      en ajoutant les TextView manquants pour les horaires et les types de cuisine.  
+      Enfin, j’ai réalisé des tests avec Postman pour vérifier la réponse JSON et la cohérence avec la base SQL.
+    </p>
 
-  <h5 style="color: #1a7a89;">Tâches réalisées :</h5>
-  <ul style="line-height: 1.6; color: #555; list-style-type: disc; padding-left: 20px;">
-    <li></li>
-    <li></li>
-    <li></li>
-    <br>
-  </ul>
-  <img src="ite2/image_ticket3.png" alt="Déploiement" >
-  <img src="ite2/image_ticket3-2.png" alt="Déploiement" >
+    <h5 style="color: #1a7a89;">Tâches réalisées :</h5>
+    <ul style="line-height: 1.6; color: #555; list-style-type: disc; padding-left: 20px;">
+      <li>Modification de <strong>getAllResto.php</strong> (requête SQL, structure JSON, gestion des erreurs)</li>
+      <li>Transformation des horaires HTML en structure JSON exploitable</li>
+      <li>Ajout des types de cuisine dans la réponse API</li>
+      <li>Ajout d’un accesseur/mutateur pour <strong>idR</strong> dans la classe Restaurant</li>
+      <li>Ajout des TextView pour afficher les horaires et les types de cuisine</li>
+
+      <li>Tests API via Postman (GET avec paramètre <code>id</code>)</li>
+      <!-- Image : test Postman -->
+      <img src="images_ite2/ticket3.png" alt="Test Postman" style="max-width:100%; margin-bottom:15px;">
+
+
+      <li>Vérification SQL pour confirmer la cohérence des données</li>
+      <img src="images_ite2/ticket3-2.png" alt="Test Postman" style="max-width:100%; margin-bottom:15px;">
+    </ul>
+
+    <br>   
+
+ 
+
+  
 
 
   
