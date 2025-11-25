@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Projet R3st0.fr - Ticket 0</title>
+  <meta name="description" content="Compte rendu Ticket 0 du projet R3st0.fr, mise en place initiale de l'équipe et du dépôt GitLab.">
+  <link rel="icon" href="../../images/favicon.ico" type="image/x-icon">
+  <link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+  <div id="navbar"></div>
+
+  <script>
+    fetch('../../code/header-projets.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+        menuToggle.addEventListener('click', () => {
+          navLinks.classList.toggle('show');
+          menuToggle.classList.toggle('open');
+        });
+      });
+  </script>
+
+ <!-- Contenu du Ticket 4 -->
+<div class="container" style="padding: 20px; max-width: 800px; margin: 20px auto; background-color: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); text-align: left;">
+
+  <h4 style="color: #1a7a89;">Ticket 4 : Logique – Affichage des données reçues</h4>
+
+  <div class="flex justify-center items-center">
+    <a class="button bg-blue-500 text-white rounded-full px-6 py-2 shadow-md hover:shadow-lg transform hover:scale-105 transition duration-300"
+      href="../CDC/2SLAM_AP_Projet2_Appli_Android_cahier_des_charges.pdf" target="_blank">Consulter la consigne</a>
+  </div>
+  <br>
+
+  <h5 style="color: #1a7a89;">Programmes :</h5>
+  <p style="line-height: 1.6; color: #333;">
+    J’ai ajouté les dépendances nécessaires pour l’affichage des horaires, puis complété la classe 
+    <strong>DetailsRestoActivity</strong>. Cette activité permet d’afficher les détails du restaurant sélectionné dans la liste.
+    <br><br>
+
+    Lors du <strong>onCreate()</strong> :
+    <ul style="line-height: 1.6; color: #555; padding-left: 20px; list-style-type: disc;">
+      <li>Chargement du layout associé.</li>
+      <li>Récupération des différentes vues : <em>TextView</em>, <em>Button</em>, <em>LinearLayout</em>, etc.</li>
+      <li>Récupération de l’objet <strong>Restaurant</strong> transmis via l’Intent (<code>getSerializableExtra("restaurant")</code>).</li>
+      <li>Si cet objet existe, appel de la méthode <strong>afficherDetails(resto)</strong>.</li>
+      <li>Sinon, affichage d’un Toast d’erreur et fermeture de l’activité.</li>
+      <li>Configuration du bouton Retour qui ferme simplement la page via <code>finish()</code>.</li>
+    </ul>
+
+    <br>
+
+    La méthode <strong>afficherDetails()</strong> :
+    <ul style="line-height: 1.6; color: #555; padding-left: 20px; list-style-type: disc;">
+      <li>Affiche le nom du restaurant, son adresse complète et sa description.</li>
+      <li>Affiche les types de cuisine, séparés par des virgules (ou un texte par défaut si aucun type n’est renseigné).</li>
+      <li>Affiche les horaires issus d’une <em>Map</em> : pour chaque créneau (midi, soir, semaine, week-end…), un <code>TextView</code> est ajouté dynamiquement dans le <em>LinearLayout</em>.</li>
+      <li>Si aucun horaire n’est disponible, affiche “Horaires non disponibles”.</li>
+      <li>En cas d’erreur, utilisation de <strong>Log.e</strong> pour faciliter le débogage + affichage d’un Toast.</li>
+    </ul>
+  </p>
+ <br>
+  <h5 style="color: #1a7a89;">Tâches réalisées :</h5>
+  <ul style="line-height: 1.6; color: #555; list-style-type: disc; padding-left: 20px;">
+    <li>Ajout des dépendances nécessaires pour la gestion des horaires.</li>
+    <li>Complétion de <strong>DetailsRestoActivity</strong> pour récupérer et afficher toutes les données du restaurant.</li>
+    <li>Mise en place de l’affichage dynamique des horaires via un <em>LinearLayout</em>.</li>
+    <li>Ajout de la gestion des erreurs (Toast + Log.e).</li>
+    <li>Configuration du bouton Retour pour revenir à la liste des restaurants.</li>
+  </ul>
+ <br>
+  <h5 style="color: #1a7a89;">Test fonctionnel :</h5>
+  <p style="line-height: 1.6; color: #333;">
+    <strong>Objectif :</strong> Vérifier l’affichage correct des données reçues depuis l’API sur l’écran « Détails du restaurant ».
+    <br><br>
+    1. Lancer l’application et cliquer sur <strong>Voir Liste des Restaurants</strong>.<br>
+    2. Sélectionner l’un des restaurants dans la liste.<br>
+    → Un Toast s’affiche brièvement (confirmation de réception de l’objet Restaurant).<br>
+    3. L’écran <strong>Détails</strong> apparaît et affiche toutes les informations du restaurant (nom, adresse, types de cuisine, horaires, description).<br>
+    4. Le bouton <strong>Retour</strong> ramène correctement vers la liste des restaurants.
+  </p>
+
+  <img src="images_ite2/ticket4.png" alt="Affichage données reçues" style="width:30%; border-radius: 6px;">
+
+</div>
+
+
+  <!-- Boutons pour le compte rendu et le retour -->
+  <div class="button-group" style="display: flex; justify-content: center; margin-top: 20px;">
+    <a href="../CompteRendue/G7_2SLAM_AP_Projet2_Appli_Android_Compte_Rendue_Itération2.pdf" target="_blank" rel="noopener noreferrer"
+      style="display: inline-block; padding: 10px 20px; border-radius: 100px; 
+      background-color: #1a7a89; color: white; text-decoration: none; font-weight: bold; margin: 0 10px;">Lien compte rendu</a>
+    <a href="ite2.html" style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; font-weight: bold; margin: 0 10px;">Retour</a>
+  </div>
+  <br>
+
+  <!-- Footer -->
+  <div id="footer-container"></div>
+  <script>
+    fetch('../../code/footer-projets.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-container').innerHTML = data;
+      });
+  </script>
+
+</body>
+</html>
