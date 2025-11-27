@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Portefolio d'Anaïs Portolleau - Itération 1 Projet Android</title>
+  <meta name="description"
+    content="Je suis Anaïs Portolleau, étudiante en informatique. Voir le CV, Mes Projets, Contact, Mon parcours, Mes passions">
+  <link rel="icon" href="../../images/favicon.ico" type="image/x-icon">
+  <link href="../../style.css" rel="stylesheet" type="text/css" />
+  <style>
+    
+
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 25px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    h4 {
+      color: #1a7a89;
+      margin-bottom: 15px;
+    }
+
+    h5 {
+      color: #1a7a89;
+      margin-top: 25px;
+      margin-bottom: 10px;
+    }
+
+    h6 {
+      color: #333;
+      margin-top: 15px;
+      margin-bottom: 8px;
+    }
+
+    p {
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    ul {
+      list-style-type: disc;  /* for standard bullets */
+      margin-left: 25px;      /* indentation */
+      padding-left: 0;        /* reset padding si nécessaire */
+      color: #555;
+    }
+
+    ul ul {
+      list-style-type: circle; /* sous-listes */
+      margin-left: 20px;
+    }
+
+
+    img {
+      max-width: 100%;
+      height: auto;
+      margin: 10px 0;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+
+    .btn-primary
+    {
+      display: inline-block;
+      padding: 12px 25px;
+      border-radius: 100px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+      margin: 5px;
+    }
+
+    .btn-primary {
+      background-color: #1a7a89;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background-color: #166370;
+    }
+
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <div id="navbar"></div>
+  <script>
+    fetch('../../code/header-projets.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+        menuToggle.addEventListener('click', () => {
+          navLinks.classList.toggle('show');
+          menuToggle.classList.toggle('open');
+        });
+      });
+  </script>
+
+  <!-- Conteneur principal -->
+  <div class="container">
+
+    <h4>Itération 3 – Projet Android</h4>
+
+    <div style="text-align: left; margin-bottom: 25px;">
+      <a href="../CDC/2SLAM_AP_Projet2_Appli_Android_cahier_des_charges.pdf" target="_blank"
+        class="btn-primary">Cahier des charges</a>
+    </div>
+
+     <div style="text-align: left; margin-bottom: 25px;">
+    
+  </div>
+
+    <!-- Objectif -->
+    <p>
+      Itération 3 - Réservation d’un restaurant
+      
+    </p>
+
+     <p> EN COURS DE CODAGE</p> 
+
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">
+      <div
+        style="flex: 1; padding: 20px; border: 1px solid #ddd; border-radius: 8px; background-color: #fff; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); margin: 0 10px;">
+        <p style="font-size: 1rem; line-height: 1.6; color: #555; text-align: justify;">
+          Dans cette itération, cela été répartie en <strong> (mettre nombre) tickets</strong> correspondant aux différentes tâches à réaliser 
+          pour la mise en place des fonctionnalités demandées : 
+        </p>
+         <div style=" margin-top: 20px;">
+          <a href="" style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; 
+            font-weight: bold; margin: 0 10px; transition: background-color 0.3s;" target="_blank">Itération 3 - Ticket 1
+          </a>
+        </div> 
+          
+      </div>
+
+      
+    </div>
+    <div style="text-align: center; margin-bottom: 25px;">
+      <a href="" target="_blank"
+        class="btn-primary">Compte Rendue</a>
+    </div>
+
+    <div style="text-align: center; margin-bottom: 25px;">
+      <a href="../../android.html" target="_blank"
+        class="btn-primary">Retour</a>
+    </div>
+
+ 
+    
+  </div>
+
+  <!-- Footer -->
+  <div id="footer-container"></div>
+  <script>
+    fetch('../../code/footer-projets.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-container').innerHTML = data;
+        const footer = document.getElementById('footer-container');
+        footer.querySelectorAll('img').forEach(img => {
+          let src = img.getAttribute('src');
+          if (src.startsWith('../images/')) {
+            img.setAttribute('src', src.replace('../images/', '../../images/'));
+          }
+        });
+      });
+  </script>
+
+</body>
+</html>
