@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Projet Android - Itération 3 - Ticket 2</title>
+  <link rel="icon" href="../../images/favicon.ico" type="image/x-icon">
+  <link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+  <div id="navbar"></div>
+
+  <script>
+    fetch('../../code/header-projets.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+        menuToggle.addEventListener('click', () => {
+          navLinks.classList.toggle('show');
+          menuToggle.classList.toggle('open');
+        });
+      });
+  </script>
+
+<!-- Contenu du Ticket 2 -->
+
+<div class="container" style="padding: 20px; max-width: 800px; margin: 20px auto; background-color: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); text-align: left;">
+
+  <h4 style="color: #1a7a89;">Ticket 2 – UI : Ajout du bouton vers l’activité de réservation</h4>
+
+  <p style="line-height: 1.6; color: #333;">
+    Dans le cadre du <strong>Projet 2 Android – Itération 3</strong>, j’ai réalisé le
+    <strong>Ticket 2</strong> dont l’objectif était d’ajouter un bouton permettant d’accéder
+    au formulaire de réservation depuis la fiche détaillée d’un restaurant.
+  </p>
+
+  <p style="line-height: 1.6; color: #333;">
+    Ce développement a été effectué sur la branche
+    <strong>iteration3_ticket2</strong>.
+    Le bouton <em>« Réserver »</em> a été intégré dans l’activité affichant les détails
+    d’un restaurant.
+  </p>
+
+  <p style="line-height: 1.6; color: #333;">
+    Lors du clic sur ce bouton, une redirection est effectuée vers la
+    <strong>ReservationActivity</strong>, correspondant à l’écran du formulaire de réservation.
+    Cette navigation permet de relier l’interface de consultation des restaurants
+    à l’interface de réservation.
+  </p>
+
+  <p style="line-height: 1.6; color: #333;">
+    L’ajout de ce bouton améliore le parcours utilisateur en rendant l’accès à la réservation
+    plus intuitif et cohérent au sein de l’application.
+  </p>
+
+  
+
+ 
+
+  <img src="images_ite3/ticket2.png" alt="Bouton réserver et navigation vers ReservationActivity" style="width:100%; border-radius: 6px; margin-top: 15px;">
+
+</div>
+
+
+  
+
+</div>
+
+
+
+  <!-- Boutons pour le compte rendu et le retour -->
+  <div class="button-group" style="display: flex; justify-content: center; margin-top: 20px;">
+    <a href="../CompteRendue/G7_2SLAM_AP_Projet2_Appli_Android_Compte_Rendue_Itération3.pdf" target="_blank" rel="noopener noreferrer"
+      style="display: inline-block; padding: 10px 20px; border-radius: 100px; 
+      background-color: #1a7a89; color: white; text-decoration: none; font-weight: bold; margin: 0 10px;">Lien compte rendu</a>
+    <a href="ite3.html" style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; font-weight: bold; margin: 0 10px;">Retour</a>
+  </div>
+  <br>
+
+  <!-- Footer -->
+  <div id="footer-container"></div>
+  <script>
+    fetch('../../code/footer-projets.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-container').innerHTML = data;
+      });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Projet Android - Itération 3 - Ticket 3</title>
+   <link rel="icon" href="../../images/favicon.ico" type="image/x-icon">
+  <link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+  <div id="navbar"></div>
+
+  <script>
+    fetch('../../code/header-projets.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+        menuToggle.addEventListener('click', () => {
+          navLinks.classList.toggle('show');
+          menuToggle.classList.toggle('open');
+        });
+      });
+  </script>
+
+ <!-- Contenu du Ticket 3 -->
+  <!-- Contenu du Ticket 3 -->
+
+<div class="container" style="padding: 20px; max-width: 900px; margin: 20px auto; background-color: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); text-align: left;">
+
+  <h4 style="color: #1a7a89;">Ticket 3 – API : Création du PHP pour l’enregistrement d’une réservation</h4>
+
+  <p style="line-height: 1.6; color: #333;">
+    Dans le cadre du <strong>Projet 2 Android – Itération 3</strong>, j’ai réalisé le
+    <strong>Ticket 3</strong> qui consistait à développer la partie <strong>API</strong>
+    permettant l’enregistrement d’une réservation en base de données.
+  </p>
+
+  <p style="line-height: 1.6; color: #333;">
+    Ce développement a été effectué sur la branche <strong>iteration3</strong> (API).
+    L’objectif était de permettre à l’application Android d’envoyer une réservation
+    via une requête HTTP et de l’enregistrer de manière sécurisée en base de données.
+  </p>
+
+  <h5 style="color: #1a7a89; margin-top: 20px;">Génération d’un code de réservation unique</h5>
+
+  <p style="line-height: 1.6; color: #333;">
+    J’ai tout d’abord développé une fonction <strong>generateCodeReservation()</strong>
+    permettant de générer un <strong>code de réservation unique</strong> pour chaque client.
+    Ce code personnalisé est utilisé comme identifiant de réservation et permettra
+    notamment la suppression ultérieure d’une réservation.
+  </p>
+
+  <p style="line-height: 1.6; color: #333;">
+    Cette fonction prend en paramètres :
+  </p>
+
+  <ul style="color: #333; line-height: 1.6;">
+    <li>La connexion à la base de données (PDO)</li>
+    <li>Un préfixe (ex : <em>RES</em>)</li>
+    <li>La longueur du suffixe alphanumérique</li>
+  </ul>
+
+  <p style="line-height: 1.6; color: #333;">
+    Le code généré est ensuite vérifié en base de données afin d’éviter tout doublon.
+    Une boucle <em>do/while</em> est utilisée pour garantir l’unicité du code.
+    Une gestion d’erreurs via <strong>try/catch</strong> permet de contrôler les éventuels
+    problèmes liés à la longueur du champ ou à la base de données.
+  </p>
+
+  <img src="images_ite3/ticket3_code.png" alt="Fonction PHP generateCodeReservation" style="width:100%; border-radius: 6px; margin-top: 15px;">
+
+  <h5 style="color: #1a7a89; margin-top: 25px;">Script d’insertion : insertReservation.php</h5>
+
+  <p style="line-height: 1.6; color: #333;">
+    J’ai ensuite développé le script <strong>insertReservation.php</strong> dont le rôle
+    est d’insérer une nouvelle réservation dans la base de données.
+    Les données sont récupérées via une requête HTTP <strong>POST</strong> (ou GET pour les tests).
+  </p>
+
+  <p style="line-height: 1.6; color: #333;">
+    Une validation est effectuée afin de vérifier que tous les champs nécessaires sont bien présents.
+    En cas de champ manquant, l’API renvoie un <strong>code HTTP 400</strong> avec un message d’erreur.
+  </p>
+
+  <p style="line-height: 1.6; color: #333;">
+    Lorsque les données sont valides, un code de réservation est généré puis la réservation
+    est insérée en base de données. En cas de succès, l’API renvoie un
+    <strong>code HTTP 201</strong> confirmant la création de la réservation.
+  </p>
+
+  <img src="images_ite3/ticket3_insert.png" alt="Script PHP insertReservation" style="width:100%; border-radius: 6px; margin-top: 15px;">
+
+  <h5 style="color: #1a7a89; margin-top: 25px;">Test fonctionnel</h5>
+
+  <p style="line-height: 1.6; color: #333;">
+    <strong>Objectif :</strong> S’assurer que l’ajout d’une réservation dans la base de données fonctionne correctement.
+  </p>
+
+  <ol style="color: #333; line-height: 1.6;">
+    <li>
+      Envoi d’une requête HTTP POST via <strong>Postman</strong> avec l’ensemble des paramètres requis.
+    </li>
+    <li>
+      Réception d’un <strong>code HTTP 201</strong> accompagné d’un message de succès et du code de réservation généré.
+    </li>
+    <li>
+      Vérification de la présence de la réservation dans la base de données via <strong>PhpMyAdmin</strong>.
+    </li>
+    <li>
+      En cas de champs manquants, l’API renvoie un <strong>code HTTP 400</strong> avec un message d’erreur approprié.
+    </li>
+  </ol>
+
+  <img src="images_ite3/ticket3_postman.png" alt="Test Postman insertReservation" style="width:100%; border-radius: 6px; margin-top: 15px;">
+  <img src="images_ite3/ticket3_bdd.png" alt="Enregistrement de la réservation en BDD" style="width:100%; border-radius: 6px; margin-top: 15px;">
+
+</div>
+
+
+
+
+
+  <!-- Boutons pour le compte rendu et le retour -->
+  <div class="button-group" style="display: flex; justify-content: center; margin-top: 20px;">
+    <a href="../CompteRendue/G7_2SLAM_AP_Projet2_Appli_Android_Compte_Rendue_Itération3.pdf" target="_blank" rel="noopener noreferrer"
+      style="display: inline-block; padding: 10px 20px; border-radius: 100px; 
+      background-color: #1a7a89; color: white; text-decoration: none; font-weight: bold; margin: 0 10px;">Lien compte rendu</a>
+    <a href="ite3.html" style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; font-weight: bold; margin: 0 10px;">Retour</a>
+  </div>
+  <br>
+
+  <!-- Footer -->
+  <div id="footer-container"></div>
+  <script>
+    fetch('../../code/footer-projets.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-container').innerHTML = data;
+      });
+  </script>
+
+</body>
+</html>

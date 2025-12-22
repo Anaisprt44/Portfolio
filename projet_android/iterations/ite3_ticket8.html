@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Projet Android - Itération 3 - Ticket 8</title>
+  <link rel="icon" href="../../images/favicon.ico" type="image/x-icon">
+  <link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+  <div id="navbar"></div>
+
+  <script>
+    fetch('../../code/header-projets.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+        menuToggle.addEventListener('click', () => {
+          navLinks.classList.toggle('show');
+          menuToggle.classList.toggle('open');
+        });
+      });
+  </script>
+<!-- Contenu du Ticket 8 -->
+
+<div class="container" style="padding: 20px; max-width: 900px; margin: 20px auto; background-color: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); text-align: left;">
+
+  <h4 style="color: #1a7a89;">Ticket 8 – Logique : Ajout des contrôles pour la réservation</h4>
+
+  <p style="line-height: 1.6; color: #333;">
+    Dans le cadre du <strong>Projet 2 Android – Itération 3</strong>, j’ai développé le
+    <strong>Ticket 8</strong> visant à renforcer les contrôles et validations sur le formulaire
+    de réservation.
+  </p>
+
+  <p style="line-height: 1.6; color: #333;">
+    Branche utilisée : <strong>iteration3_ticket8</strong>.  
+    L’objectif est de limiter les erreurs de saisie et de faciliter l’expérience utilisateur.
+  </p>
+
+  <h5 style="color: #1a7a89; margin-top: 20px;">Améliorations apportées</h5>
+
+  <ul style="color: #333; line-height: 1.6;">
+    <li>Ajout d’un <strong>DatePicker</strong> pour sélectionner la date afin d’éviter la saisie manuelle.</li>
+    <li>Ajout d’un <strong>TimePicker</strong> pour sélectionner l’heure.</li>
+    <li>Validation du numéro de téléphone : exactement 10 chiffres.</li>
+    <li>Validation du nom : uniquement lettres et espaces.</li>
+    <li>Validation du nombre de personnes : uniquement des chiffres.</li>
+    <li>Les champs sont nettoyés avec <em>trim()</em> et vérifiés avant l’envoi.</li>
+    <li>Le bouton <em>RÉSERVER</em> déclenche la méthode <strong>reserverRestaurant()</strong> uniquement si toutes les validations passent.</li>
+  </ul>
+
+  <h5 style="color: #1a7a89; margin-top: 20px;">Filtres personnalisés</h5>
+
+  <p style="line-height: 1.6; color: #333;">
+    Pour limiter automatiquement les saisies, deux classes <strong>InputFilter</strong> ont été ajoutées :
+  </p>
+
+  <ul style="color: #333; line-height: 1.6;">
+    <li><strong>InputFilterDigits</strong> : autorise uniquement les chiffres.</li>
+    <li><strong>InputFilterLetters</strong> : autorise uniquement les lettres et espaces.</li>
+  </ul>
+
+  <p style="line-height: 1.6; color: #333;">
+    Ces filtres sont appliqués aux <em>EditText</em> correspondants pour renforcer la validité des données avant même la soumission du formulaire.
+  </p>
+
+  <img src="images_ite3/ticket8_ui.png" alt="Formulaire réservation avec contrôles" style="width:50%; border-radius: 6px; margin-top: 15px;">
+
+  <h5 style="color: #1a7a89; margin-top: 25px;">Test fonctionnel</h5>
+
+  <ol style="color: #333; line-height: 1.6;">
+    <li>Se rendre sur la fiche détail d’un restaurant.</li>
+    <li>Cliquer sur le bouton <em>Réserver</em> pour ouvrir le formulaire.</li>
+    <li>Vérifier les contraintes :</li>
+    <ul style="line-height: 1.6;">
+      <li>Champ <strong>Nom</strong> : seules lettres et espaces autorisés, pas de chiffres.</li>
+      <li>Champ <strong>Téléphone</strong> : uniquement 10 chiffres acceptés.</li>
+      <li>Champ <strong>Date</strong> : sélection via calendrier (DatePicker).</li>
+      <img src="images_ite3/ticket8_timepicker.png" alt="Sélection Heure avec TimePicker" style="width:30%; border-radius: 6px; margin-top: 15px;">
+      <li>Champ <strong>Heure</strong> : sélection via horloge (TimePicker).</li>
+      <img src="images_ite3/ticket8_datepicker.png" alt="Sélection Date avec DatePicker" style="width:30%; border-radius: 6px; margin-top: 15px;">
+      <li>Champ <strong>Nombre de personnes</strong> : uniquement chiffres.</li>
+    </ul>
+    <li>Compléter tous les champs correctement et cliquer sur <em>RÉSERVER</em>.</li>
+    <li>Un <em>Toast</em> confirme l’envoi de la réservation.</li>
+    <li>Vérification en base de données : la réservation est bien ajoutée et le <strong>idR</strong> correspond au restaurant choisi (ex : Trinquet Moderne, idR : 11).</li>
+  </ol>
+  <img src="images_ite3/ticket8_remplis_formualire.png" alt="Remplissage du formualire de réservation" style="width:50%; border-radius: 6px; margin-top: 15px;">
+  <img src="images_ite3/ticket8_bdd.png" alt="Vérification réservation en BDD" style="width:100%; border-radius: 6px; margin-top: 15px;">
+
+</div>
+
+
+
+
+  <!-- Boutons pour le compte rendu et le retour -->
+  <div class="button-group" style="display: flex; justify-content: center; margin-top: 20px;">
+    <a href="../CompteRendue/G7_2SLAM_AP_Projet2_Appli_Android_Compte_Rendue_Itération3.pdf" target="_blank" rel="noopener noreferrer"
+      style="display: inline-block; padding: 10px 20px; border-radius: 100px; 
+      background-color: #1a7a89; color: white; text-decoration: none; font-weight: bold; margin: 0 10px;">Lien compte rendu</a>
+    <a href="ite3.html" style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; font-weight: bold; margin: 0 10px;">Retour</a>
+  </div>
+  <br>
+
+  <!-- Footer -->
+  <div id="footer-container"></div>
+  <script>
+    fetch('../../code/footer-projets.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-container').innerHTML = data;
+      });
+  </script>
+
+</body>
+</html>

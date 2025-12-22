@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Projet Android - Itération 3 - Ticket 4</title>
+  <link rel="icon" href="../../images/favicon.ico" type="image/x-icon">
+  <link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+  <div id="navbar"></div>
+
+  <script>
+    fetch('../../code/header-projets.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+        menuToggle.addEventListener('click', () => {
+          navLinks.classList.toggle('show');
+          menuToggle.classList.toggle('open');
+        });
+      });
+  </script>
+
+ <!-- Contenu du Ticket 3 -->
+ <!-- Contenu du Ticket 4 -->
+
+<div class="container" style="padding: 20px; max-width: 900px; margin: 20px auto; background-color: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); text-align: left;">
+
+  <h4 style="color: #1a7a89;">Ticket 4 – Android : Envoi de la réservation</h4>
+
+  <p style="line-height: 1.6; color: #333;">
+    Dans le cadre du <strong>Projet 2 Android – Itération 3</strong>, j’ai réalisé le
+    <strong>Ticket 4</strong> qui consiste à permettre l’<strong>envoi d’une réservation</strong>
+    depuis l’application Android vers l’API.
+  </p>
+
+  <p style="line-height: 1.6; color: #333;">
+    Ce développement a été effectué sur la branche
+    <strong>iteration3_ticket4</strong>.
+    L’objectif était de récupérer les informations saisies par l’utilisateur et de les transmettre
+    au serveur via une requête HTTP.
+  </p>
+
+  <h5 style="color: #1a7a89; margin-top: 20px;">Structure de la ReservationActivity</h5>
+
+  
+  <p style="line-height: 1.6; color: #333;">
+    Cette activité hérite de la classe <strong>Activity</strong> et contient plusieurs composants :
+  </p>
+
+  <ul style="color: #333; line-height: 1.6;">
+    <li>Des champs <em>EditText</em> pour le nom, le téléphone, la date, l’heure et le nombre de personnes</li>
+    <li>Un bouton <em>« Réserver »</em> pour déclencher l’envoi de la réservation</li>
+    <li>Un objet <strong>Restaurant</strong> permettant de récupérer l’identifiant du restaurant sélectionné</li>
+  </ul>
+
+  <img src="images_ite3/ticket4_activity.png" alt="ReservationActivity Android" style="width:100%; border-radius: 6px; margin-top: 15px;">
+
+  <h5 style="color: #1a7a89; margin-top: 25px;">Initialisation et récupération des données</h5>
+
+  <p style="line-height: 1.6; color: #333;">
+    Dans la méthode <strong>onCreate()</strong>, le layout
+    <em>activity_reservation.xml</em> est chargé.
+    L’objet <strong>Restaurant</strong> est récupéré depuis l’activité précédente via
+    <em>getIntent().getSerializableExtra()</em>.
+  </p>
+
+  <p style="line-height: 1.6; color: #333;">
+    Si aucun restaurant n’est transmis, un message d’erreur est affiché à l’utilisateur
+    et l’activité est fermée. Dans le cas contraire, l’identifiant du restaurant est stocké
+    afin d’être envoyé à l’API lors de la réservation.
+  </p>
+
+  <h5 style="color: #1a7a89; margin-top: 25px;">Méthode de réservation</h5>
+
+  <p style="line-height: 1.6; color: #333;">
+    La méthode <strong>reserverRestaurant()</strong> est déclenchée lorsque l’utilisateur clique
+    sur le bouton <em>« Réserver »</em>.
+    Elle récupère les valeurs saisies dans les champs et vérifie que tous les champs sont remplis.
+  </p>
+
+  <img src="images_ite3/ticket4_reserver.png" alt="méthode réservation" style="width:100%; border-radius: 6px; margin-top: 15px;">
+
+  <p style="line-height: 1.6; color: #333;">
+    Si un champ est vide, un message d’erreur est affiché via un <em>Toast</em> et la réservation
+    n’est pas envoyée. Sinon, l’heure et les minutes sont combinées au format <em>HH:mm</em>,
+    puis les données sont envoyées au serveur.
+  </p>
+
+  <h5 style="color: #1a7a89; margin-top: 25px;">Envoi asynchrone avec AsyncTask</h5>
+
+  <p style="line-height: 1.6; color: #333;">
+    L’envoi de la réservation est effectué par la classe interne
+    <strong>SendReservationTask</strong>, qui hérite de <em>AsyncTask</em>.
+    Cela permet d’exécuter la requête HTTP en arrière-plan afin de ne pas bloquer l’interface utilisateur.
+  </p>
+
+  <p style="line-height: 1.6; color: #333;">
+    Les données sont envoyées via une requête HTTP <strong>POST</strong> en utilisant
+    <em>HttpURLConnection</em>.
+    La réponse du serveur est ensuite lue et affichée à l’utilisateur grâce à un message <em>Toast</em>.
+  </p>
+
+  <img src="images_ite3/ticket4_async.png" alt="AsyncTask envoi réservation" style="width:100%; border-radius: 6px; margin-top: 15px;">
+
+  <h5 style="color: #1a7a89; margin-top: 25px;">Test fonctionnel</h5>
+
+  <p style="line-height: 1.6; color: #333;">
+    <strong>Objectif :</strong> Vérifier l’envoi d’une réservation depuis l’application Android.
+  </p>
+
+  <ol style="color: #333; line-height: 1.6;">
+    <li>
+      Depuis la fiche détail d’un restaurant, l’utilisateur clique sur le bouton
+      <em>« Réserver »</em>, remplit les champs et valide la réservation.
+    </li>
+    <li>
+      La réservation est correctement enregistrée en base de données, visible depuis
+      <strong>PhpMyAdmin</strong>.
+    </li>
+    <li>
+      L’identifiant du restaurant associé à la réservation correspond bien au restaurant sélectionné
+      (exemple : <em>Agadir</em>, idR = 5).
+    </li>
+  </ol>
+
+  <img src="images_ite3/ticket4_form.png" alt="Formulaire de réservation rempli" style="width:100%; border-radius: 6px; margin-top: 15px;">
+  <img src="images_ite3/ticket4_bdd.png" alt="Réservation ajoutée en base de données" style="width:100%; border-radius: 6px; margin-top: 15px;">
+  <img src="images_ite3/ticket4_bdd2.png" alt="Réservation ajoutée en base de données" style="width:100%; border-radius: 6px; margin-top: 15px;">
+
+</div>
+
+
+
+
+
+
+  <!-- Boutons pour le compte rendu et le retour -->
+  <div class="button-group" style="display: flex; justify-content: center; margin-top: 20px;">
+    <a href="../CompteRendue/G7_2SLAM_AP_Projet2_Appli_Android_Compte_Rendue_Itération3.pdf" target="_blank" rel="noopener noreferrer"
+      style="display: inline-block; padding: 10px 20px; border-radius: 100px; 
+      background-color: #1a7a89; color: white; text-decoration: none; font-weight: bold; margin: 0 10px;">Lien compte rendu</a>
+    <a href="ite3.html" style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; font-weight: bold; margin: 0 10px;">Retour</a>
+  </div>
+  <br>
+
+  <!-- Footer -->
+  <div id="footer-container"></div>
+  <script>
+    fetch('../../code/footer-projets.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-container').innerHTML = data;
+      });
+  </script>
+
+</body>
+</html>

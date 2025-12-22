@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Projet Android - Itération 3 - Ticket 10</title>
+  <link rel="icon" href="../../images/favicon.ico" type="image/x-icon">
+  <link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+  <div id="navbar"></div>
+
+  <script>
+    fetch('../../code/header-projets.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+        menuToggle.addEventListener('click', () => {
+          navLinks.classList.toggle('show');
+          menuToggle.classList.toggle('open');
+        });
+      });
+  </script>
+
+ <!-- Contenu du Ticket 10 -->
+
+<div class="container" style="padding: 20px; max-width: 900px; margin: 20px auto; background-color: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); text-align: left;">
+
+  <h4 style="color: #1a7a89;">Ticket 10 – Logique : Création de la classe DetailReservationActivity</h4>
+
+  <p style="line-height: 1.6; color: #333;">
+    Dans le cadre du <strong>Projet 2 Android – Itération 3</strong>, j’ai développé le
+    <strong>Ticket 10</strong> qui consiste à créer l’activité
+    <strong>DetailReservationActivity</strong> pour afficher le détail complet d’une réservation.
+    Branche utilisée : <strong>iteration3_ticket10</strong>.
+  </p>
+
+  <h5 style="color: #1a7a89; margin-top: 20px;">Fonctionnalités principales</h5>
+
+  <ul style="color: #333; line-height: 1.6;">
+    <li>Association du layout XML avec les éléments Java via <em>setContentView()</em> dans <strong>onCreate()</strong>.</li>
+    <li>Récupération de chaque champ visuel (<em>TextView</em>) via <em>findViewById()</em> : nom du client, téléphone, restaurant, date, heure, nombre de personnes et code de réservation.</li>
+    <li>Récupération de l’objet <strong>Reservation</strong> transmis via <em>Intent</em> depuis l’activité précédente pour remplir les champs.</li>
+    <li>Le bouton <em>Retour</em> ferme l’activité et revient à l’écran précédent.</li>
+    <li>Cette activité est uniquement dédiée à la consultation : aucune modification n’est possible.</li>
+  </ul>
+
+  <h5 style="color: #1a7a89; margin-top: 20px;">Écran correspondant</h5>
+
+  <p style="line-height: 1.6; color: #333;">
+    L’écran ci-dessous affiche toutes les informations d’une réservation confirmée, telles qu’elles sont enregistrées dans la base de données.
+  </p>
+
+  <img src="images_ite3/ticket10_detail_reservation.png" alt="Détail réservation Android" style="width:50%; border-radius: 6px; margin-top: 15px;">
+
+  <p>Et cela ramène à l’écran de détail de la réservation ci-dessous :</p>
+  <img src="images_ite3/ticket10_detail_reservation2.png" alt="Détail réservation UI" style="width:50%; border-radius: 6px; margin-top: 15px;">
+
+  
+
+</div>
+
+
+
+
+  <!-- Boutons pour le compte rendu et le retour -->
+  <div class="button-group" style="display: flex; justify-content: center; margin-top: 20px;">
+    <a href="../CompteRendue/G7_2SLAM_AP_Projet2_Appli_Android_Compte_Rendue_Itération3.pdf" target="_blank" rel="noopener noreferrer"
+      style="display: inline-block; padding: 10px 20px; border-radius: 100px; 
+      background-color: #1a7a89; color: white; text-decoration: none; font-weight: bold; margin: 0 10px;">Lien compte rendu</a>
+    <a href="ite3.html" style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; font-weight: bold; margin: 0 10px;">Retour</a>
+  </div>
+  <br>
+
+  <!-- Footer -->
+  <div id="footer-container"></div>
+  <script>
+    fetch('../../code/footer-projets.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-container').innerHTML = data;
+      });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Projet Android - Itération 3 - Ticket 7</title>
+  <link rel="icon" href="../../images/favicon.ico" type="image/x-icon">
+  <link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+  <div id="navbar"></div>
+
+  <script>
+    fetch('../../code/header-projets.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+        menuToggle.addEventListener('click', () => {
+          navLinks.classList.toggle('show');
+          menuToggle.classList.toggle('open');
+        });
+      });
+  </script>
+<!-- Contenu du Ticket 7 -->
+
+  <div class="container" style="padding: 20px; max-width: 900px; margin: 20px auto; background-color: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); text-align: left;">
+
+    <h4 style="color: #1a7a89;">Ticket 7 – Android : Connexion à l’API de suppression</h4>
+
+    <p style="line-height: 1.6; color: #333;">
+      Dans le cadre du <strong>Projet 2 Android – Itération 3</strong>, j’ai réalisé le
+      <strong>Ticket 7</strong> permettant de supprimer une réservation depuis l’application
+      Android en se connectant à l’API développée précédemment.
+    </p>
+
+    <p style="line-height: 1.6; color: #333;">
+      Ce développement a été effectué sur la branche <strong>iteration3_ticket7</strong>.
+      L’activité affiche les détails d’une réservation et propose à l’utilisateur deux actions :
+      <em>Retour</em> et <em>Supprimer</em>.
+    </p>
+
+    <h5 style="color: #1a7a89; margin-top: 20px;">Initialisation de l’UI</h5>
+
+    <ul style="color: #333; line-height: 1.6;">
+      <li>Dans <strong>onCreate()</strong>, l’interface graphique est initialisée avec <em>setContentView</em>.</li>
+      <li>Les boutons <em>Retour</em> et <em>Supprimer</em> sont liés via <em>findViewById</em>.</li>
+      <li>L’objet <strong>Reservation</strong> est récupéré depuis l’Intent et ses informations
+        sont affichées dans plusieurs <em>TextViews</em> (nom, téléphone, restaurant, date, heure, nombre de personnes, code de réservation).</li>
+      <li>Si l’objet Reservation est nul, un <em>Toast</em> informe l’utilisateur.</li>
+    </ul>
+   
+    <h5 style="color: #1a7a89; margin-top: 25px;">Méthode supprimerReservation()</h5>
+
+    <p style="line-height: 1.6; color: #333;">
+      Le bouton <em>Supprimer</em> appelle la méthode <strong>supprimerReservation()</strong>
+      qui envoie une requête HTTP POST à l’API <em>deleteReservation.php</em> pour supprimer
+      la réservation correspondante.
+    </p>
+
+    <ul style="color: #333; line-height: 1.6;">
+      <li>La requête est exécutée dans un thread séparé pour ne pas bloquer l’interface.</li>
+      <li>La connexion est configurée avec <em>HttpURLConnection</em> et Content-Type
+        <em>application/x-www-form-urlencoded</em>.</li>
+      <li>Le code de réservation est envoyé dans le corps de la requête sous le paramètre <em>code</em>.</li>
+      <li>La réponse du serveur est lue via un <em>BufferedReader</em> et peut être traitée.</li>
+      <li>Après exécution, <em>runOnUiThread</em> met à jour l’UI : un <em>Toast</em> confirme la suppression et <em>finish()</em> ferme l’activité.</li>
+      <li>En cas d’erreur, un <em>Toast</em> affiche l’exception.</li>
+    </ul>
+
+    <img src="images_ite3/ticket7_code.png" alt="Code Android suppression réservation" style="width:50%; border-radius: 6px; margin-top: 15px;">
+    <img src="images_ite3/ticket7_code2.png" alt="Code Android suppression réservation 2" style="width:70%; border-radius: 6px; margin-top: 15px;">
+
+    <h5 style="color: #1a7a89; margin-top: 25px;">Test fonctionnel</h5>
+
+    <ol style="color: #333; line-height: 1.6;">
+      <li>Depuis l’écran d’accueil, cliquez sur <em>Voir Liste des Réservations</em>.</li>
+      <li>Sélectionnez une réservation disponible dans la liste.</li>
+      <li>Le bouton <em>Supprimer</em> est visible. Cliquez dessus.</li>
+      <li>L’écran revient automatiquement à la liste des réservations.</li>
+      <li>Vérifications :</li>
+      <ul style="line-height: 1.6;">
+        <li>La réservation reste visible dans l’UI (problème à corriger dans un ticket futur).</li>
+        <li>Pas besoin de rentrer le code de réservation pour la supprimer.</li>
+        <li>Un <em>Toast</em> confirme la suppression.</li>
+      </ul>
+      <li>Dans la base de données, la réservation a bien été supprimée.</li>
+    </ol>
+    <p>voir image compte rendue</p>
+
+    <img src="images_ite3/ticket7_suppression.png" alt="Suppression réservation Android testée" style="width:40%; border-radius: 6px; margin-top: 15px;">
+    <img src="images_ite3/ticket7_bdd.png" alt="Vérification suppression en BDD" style="width:100%; border-radius: 6px; margin-top: 15px;">
+
+  </div>
+
+
+
+  <!-- Boutons pour le compte rendu et le retour -->
+  <div class="button-group" style="display: flex; justify-content: center; margin-top: 20px;">
+    <a href="../CompteRendue/G7_2SLAM_AP_Projet2_Appli_Android_Compte_Rendue_Itération3.pdf" target="_blank" rel="noopener noreferrer"
+      style="display: inline-block; padding: 10px 20px; border-radius: 100px; 
+      background-color: #1a7a89; color: white; text-decoration: none; font-weight: bold; margin: 0 10px;">Lien compte rendu</a>
+    <a href="ite3.html" style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; font-weight: bold; margin: 0 10px;">Retour</a>
+  </div>
+  <br>
+
+  <!-- Footer -->
+  <div id="footer-container"></div>
+  <script>
+    fetch('../../code/footer-projets.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-container').innerHTML = data;
+      });
+  </script>
+
+</body>
+</html>

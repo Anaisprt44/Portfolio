@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+ <title>Projet Android - Itération 3 - Ticket 0</title>
+  <meta name="description" content="Compte rendu Ticket 0 du projet R3st0.fr, mise en place initiale de l'équipe et du dépôt GitLab.">
+  <link rel="icon" href="../../images/favicon.ico" type="image/x-icon">
+  <link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+  <div id="navbar"></div>
+
+  <script>
+    fetch('../../code/header-projets.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+        menuToggle.addEventListener('click', () => {
+          navLinks.classList.toggle('show');
+          menuToggle.classList.toggle('open');
+        });
+      });
+  </script>
+
+ <!-- Contenu du Ticket 3 -->
+
+<!-- Contenu du Ticket 0 -->
+
+<div class="container" style="padding: 20px; max-width: 800px; margin: 20px auto; background-color: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); text-align: left;">
+
+  <h4 style="color: #1a7a89;">Ticket 0 – Création de la classe Réservation</h4>
+
+  <p style="line-height: 1.6; color: #333;">
+    Dans le cadre du <strong>Projet 2 Android – Itération 3</strong>, j’ai travaillé sur le 
+    <strong>Ticket 0</strong> qui consistait à créer la classe <strong>Reservation</strong>.
+    Cette classe permet de représenter les réservations de l’application mobile et fait le lien
+    entre la base de données et l’application Android.
+  </p>
+
+  <p style="line-height: 1.6; color: #333;">
+    J’ai développé cette classe sur la branche <strong>iteration3_ticket0</strong>.
+    Elle reprend fidèlement les champs de la table <em>reservation</em> de la base de données.
+  </p>
+
+  <p style="line-height: 1.6; color: #333;">
+    La classe <strong>Reservation</strong> contient :
+  </p>
+
+  <ul style="color: #333; line-height: 1.6;">
+    <li>Les attributs correspondant aux champs de la table <em>reservation</em></li>
+    <li>Un constructeur permettant d’initialiser tous les attributs</li>
+    <li>Les accesseurs (<em>getters</em>) et mutateurs (<em>setters</em>)</li>
+    <li>Une méthode <em>toString()</em> pour faciliter l’affichage et le débogage</li>
+  </ul>
+
+  <p style="line-height: 1.6; color: #333;">
+    Le constructeur permet de créer un objet <strong>Reservation</strong> à partir des données
+    récupérées depuis la base de données, assurant ainsi une bonne cohérence entre la couche
+    de persistance et la logique métier de l’application.
+  </p>
+
+  <p style="line-height: 1.6; color: #333;">
+    Ce travail constitue une base essentielle pour la gestion des réservations dans
+    l’application Android, notamment pour l’affichage, la création et la manipulation
+    des réservations par les utilisateurs.
+  </p>
+
+  <img src="images_ite3/ticket0.png" alt="Classe Reservation et ses attributs" style="width:100%; border-radius: 6px; margin-top: 15px;">
+  <p>Et qui permet de gérer les réservations dans l'application Android et je me suis aidé de ces attributs pour créer les objets Reservation 
+    dans l'application : 
+  </p>
+  <img src="images_ite3/ticket0_1.png" alt="Classe Reservation et ses attributs" style="width:100%; border-radius: 6px; margin-top: 15px;">
+
+
+</div>
+
+
+
+  <!-- Boutons pour le compte rendu et le retour -->
+  <div class="button-group" style="display: flex; justify-content: center; margin-top: 20px;">
+    <a href="../CompteRendue/G7_2SLAM_AP_Projet2_Appli_Android_Compte_Rendue_Itération3.pdf" target="_blank" rel="noopener noreferrer"
+      style="display: inline-block; padding: 10px 20px; border-radius: 100px; 
+      background-color: #1a7a89; color: white; text-decoration: none; font-weight: bold; margin: 0 10px;">Lien compte rendu</a>
+    <a href="ite3.html" style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; font-weight: bold; margin: 0 10px;">Retour</a>
+  </div>
+  <br>
+
+  <!-- Footer -->
+  <div id="footer-container"></div>
+  <script>
+    fetch('../../code/footer-projets.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-container').innerHTML = data;
+      });
+  </script>
+
+</body>
+</html>

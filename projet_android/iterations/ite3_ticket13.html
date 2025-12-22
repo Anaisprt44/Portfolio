@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+ <title>Projet Android - Itération 3 - Ticket 13</title>
+  <link rel="icon" href="../../images/favicon.ico" type="image/x-icon">
+  <link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+  <div id="navbar"></div>
+
+  <script>
+    fetch('../../code/header-projets.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+        menuToggle.addEventListener('click', () => {
+          navLinks.classList.toggle('show');
+          menuToggle.classList.toggle('open');
+        });
+      });
+  </script>
+
+ <!-- Contenu du Ticket 13 -->
+
+<div class="container" style="padding: 20px; max-width: 900px; margin: 20px auto; background-color: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); text-align: left;">
+
+  <h4 style="color: #1a7a89;">Ticket 13 – Ajout de la confirmation de suppression d'une réservation</h4>
+
+  <p style="line-height: 1.6; color: #333;">
+    Branche utilisée : <strong>iteration3_ticket13</strong>.  
+    Ce ticket introduit une confirmation avant suppression d’une réservation pour sécuriser l’opération.
+  </p>
+
+  <h5 style="color: #1a7a89; margin-top: 20px;">Fonctionnalité principale</h5>
+
+  <p style="line-height: 1.6; color: #333;">
+    Une méthode <strong>afficherPopupConfirmation()</strong> a été ajoutée.  
+    Cette méthode affiche une <em>AlertDialog</em> avec un champ de saisie (<em>EditText</em>), permettant de comparer le code de réservation entré par l’utilisateur avec le code réel de la réservation.  
+    La suppression via l’API n’est exécutée que si les codes correspondent.
+  </p>
+
+  <img src="images_ite3/ticket13_popup_confirmation.png" alt="Android confirmation suppression réservation" style="width:70%; border-radius: 6px; margin-top: 15px;">
+
+
+  <h5 style="color: #1a7a89; margin-top: 20px;">Test fonctionnel</h5>
+
+  <ol style="color: #333; line-height: 1.6;">
+    <li>Accéder à la liste des réservations et sélectionner une réservation.</li>
+    <li>Cliquer sur le bouton <em>Supprimer</em>.</li>
+    <li>Une popup s’ouvre, demandant de saisir le code de réservation.</li>
+    <li>Si le code saisi ne correspond pas au code réel, la suppression est bloquée.</li>
+    <li>Si le code est correct, la réservation est supprimée avec succès.</li>
+    <li>Exemple : la réservation sélectionnée est supprimée correctement après saisie du code exact.</li>
+  </ol>
+
+  <img src="images_ite3/ticket13_popup_confirmation2.png" alt="Android confirmation suppression réservation 2" style="width:50%; border-radius: 6px; margin-top: 15px;">
+
+  
+</div>
+
+
+
+
+  <!-- Boutons pour le compte rendu et le retour -->
+  <div class="button-group" style="display: flex; justify-content: center; margin-top: 20px;">
+    <a href="../CompteRendue/G7_2SLAM_AP_Projet2_Appli_Android_Compte_Rendue_Itération3.pdf" target="_blank" rel="noopener noreferrer"
+      style="display: inline-block; padding: 10px 20px; border-radius: 100px; 
+      background-color: #1a7a89; color: white; text-decoration: none; font-weight: bold; margin: 0 10px;">Lien compte rendu</a>
+    <a href="ite3.html" style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; font-weight: bold; margin: 0 10px;">Retour</a>
+  </div>
+  <br>
+
+  <!-- Footer -->
+  <div id="footer-container"></div>
+  <script>
+    fetch('../../code/footer-projets.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-container').innerHTML = data;
+      });
+  </script>
+
+</body>
+</html>

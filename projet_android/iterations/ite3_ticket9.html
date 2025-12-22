@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Projet Android - Itération 3 - Ticket 9</title>
+  <link rel="icon" href="../../images/favicon.ico" type="image/x-icon">
+  <link href="../../style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+  <div id="navbar"></div>
+
+  <script>
+    fetch('../../code/header-projets.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+        menuToggle.addEventListener('click', () => {
+          navLinks.classList.toggle('show');
+          menuToggle.classList.toggle('open');
+        });
+      });
+  </script>
+
+  <!-- Contenu du Ticket 9 -->
+
+<div class="container" style="padding: 20px; max-width: 900px; margin: 20px auto; background-color: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); text-align: left;">
+
+  <h4 style="color: #1a7a89;">Ticket 9 – UI : Amélioration du Toast</h4>
+
+  <h5 style="color: #1a7a89; margin-top: 20px;">Problématique initiale</h5>
+
+  <p style="line-height: 1.6; color: #333;">
+    Le Toast affiché après la réservation n’était pas assez clair ni personnalisé. 
+    L’utilisateur ne savait pas exactement si sa réservation avait été enregistrée correctement.
+  </p>
+
+  <img src="images_ite3/ticket9_old_toast.png" alt="Ancien Toast" style="width:100%; border-radius: 6px; margin-top: 15px;">
+
+  <h5 style="color: #1a7a89; margin-top: 20px;">Solution apportée</h5>
+
+  <p style="line-height: 1.6; color: #333;">
+    La modification a été effectuée dans <strong>onPostExecute()</strong> de la classe AsyncTask 
+    (appelée après doInBackground) :
+  </p>
+
+  <ul style="color: #333; line-height: 1.6;">
+    <li>Si <em>result</em> n’est pas nul et contient "success" ou "Réservation enregistrée", un 
+        <strong>Toast de succès personnalisé</strong> est affiché, incluant le nom du client.</li>
+    <li>Sinon, la réponse brute du serveur est affichée pour informer l’utilisateur du problème.</li>
+    <li>Si <em>result</em> est nul ou vide, un Toast convivial demande à l’utilisateur de vérifier sa 
+        connexion internet.</li>
+  </ul>
+
+  <img src="images_ite3/ticket9_new_toast.png" alt="Nouveau Toast personnalisé" style="width:100%; border-radius: 6px; margin-top: 15px;">
+  <img src="images_ite3/ticket9_new_toast2.png" alt="Nouveau Toast personnalisé" style="width:50%; border-radius: 6px; margin-top: 15px;"> 
+
+</div>
+
+
+ 
+
+
+
+  <!-- Boutons pour le compte rendu et le retour -->
+  <div class="button-group" style="display: flex; justify-content: center; margin-top: 20px;">
+    <a href="../CompteRendue/G7_2SLAM_AP_Projet2_Appli_Android_Compte_Rendue_Itération3.pdf" target="_blank" rel="noopener noreferrer"
+      style="display: inline-block; padding: 10px 20px; border-radius: 100px; 
+      background-color: #1a7a89; color: white; text-decoration: none; font-weight: bold; margin: 0 10px;">Lien compte rendu</a>
+    <a href="ite3.html" style="display: inline-block; padding: 10px 20px; border-radius: 100px; background-color: #1a7a89; color: white; text-decoration: none; font-weight: bold; margin: 0 10px;">Retour</a>
+  </div>
+  <br>
+
+  <!-- Footer -->
+  <div id="footer-container"></div>
+  <script>
+    fetch('../../code/footer-projets.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-container').innerHTML = data;
+      });
+  </script>
+
+</body>
+</html>
