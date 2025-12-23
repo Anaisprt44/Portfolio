@@ -32,139 +32,216 @@
       });
   </script>
 
-  <!-- Bannière -->
-  <div class="md:h-96 h-64 bg-cover flex flex-col justify-end"
-    style="background-image:url(images/ORCAB_BZL_BLEU_AA_CMJN.png)">
-    <h1 class="pl-5 pb-12 text-shadow text-center">
-      Stage chez <strong>Orcab</strong> - <strong>Artisans Artipole</strong>
-    </h1>
-    <svg viewBox="0 0 35.28 2.17" preserveAspectRatio="none" class="st1 margin-bottom-negative-1">
-      <path d="M35.28 1.67c-3.07-.55-9.27.41-16.15 0-6.87-.4-13.74-.58-19.13.1v.4h35.28z"></path>
-      <path d="M35.28 1.16c-3.17-.8-7.3.4-10.04.56-2.76.17-9.25-1.47-12.68-1.3-3.42.16-4.64.84-7.04.86C3.12 1.31 0 .4 0 .4v1.77h35.28z"
-        opacity=".5"></path>
-      <path d="M35.28.31c-2.57.84-7.68.3-11.8.43-4.1.12-6.85.61-9.57.28C11.18.69 8.3-.16 5.3.02 2.3.22.57.85 0 .87v1.2h35.28z"
-        opacity=".5"></path>
-    </svg>
-  </div>
+ 
 
-  <!-- Contenu principal -->
-  <div class="container mx-auto my-12 px-8 py-6 bg-white shadow-lg rounded-lg">
-    
-   <h4 style="text-align: center;">Stage chez Orcab Artisans Artipole</h4> 
+    <!-- Overlay sombre -->
+    <div class="absolute inset-0 bg-black/40"></div>
 
-    <!-- Bouton Rapport -->
-    <div class="mb-6 text-left">
-      <a href="Stage1/SLAM24_PORTOLLEAU_Anaïs_RapportStage_Stage1.pdf" target="_blank"
-        class="button-bloc bg-orangeClair text-black px-6 py-2 rounded">
-        Télécharger le Rapport de Stage
-      </a>
+    <!-- Bannière -->
+    <div class="md:h-96 h-64 bg-cover flex flex-col justify-end"
+        style="background-image:url(images/orcab.png); background-position: center 30%;">
+
+        <h1 class="pl-5 pb-12 text-shadow text-center">
+            Stage chez <strong>Orcab Artisans Artipole</strong>
+        </h1>
+
+        <svg viewBox="0 0 35.28 2.17" preserveAspectRatio="none"
+            class="st1 margin-bottom-negative-1">
+            <path d="M35.28 1.67c-3.07-.55-9.27.41-16.15 0-6.87-.4-13.74-.58-19.13.1v.4h35.28z"></path>
+            <path d="M35.28 1.16c-3.17-.8-7.3.4-10.04.56-2.76.17-9.25-1.47-12.68-1.3-3.42.16-4.64.84-7.04.86C3.12 1.31 0 .4 0 .4v1.77h35.28z"
+                opacity=".5"></path>
+            <path d="M35.28.31c-2.57.84-7.68.3-11.8.43-4.1.12-6.85.61-9.57.28C11.18.69 8.3-.16 5.3.02 2.3.22.57.85 0 .87v1.2h35.28z"
+                opacity=".5"></path>
+        </svg>
+
     </div>
 
-    <!-- Présentation de l'entreprise -->
-    <h4 class="font-semibold mb-2"><strong>Courte présentation de l'entreprise :</strong></h4>
-    <p class="text-justify mb-4">
-      À l’occasion de ma première année de <strong>BTS SIO</strong>, j’ai pu effectuer mon premier
-      <strong>stage</strong>. J’ai été accueillie par la coopérative <strong>ORCAB</strong> – <strong>Artisans
-        Artipôle</strong> à <strong>Rocheservière</strong>. Pendant cette période, j’ai été accompagnée par
-      <strong>Richard Quentin</strong>, mon <strong>tuteur</strong>. Le stage s’est déroulé sur <strong>6 semaines</strong>
-      du <strong>13 mai</strong> au <strong>21 juin 2024</strong>.
-    </p>
-    <p class="text-justify mb-4">
-      L’entreprise <strong>ORCAB</strong> a été créée en <strong>1990</strong> et est installée depuis
-      <strong>2006</strong> à <strong>Rocheservière</strong>. Elle regroupe environ 100 <strong>salariés</strong> et
-      réalise un chiffre d’affaires de plus de <strong>102 millions d’euros</strong>. Elle est spécialisée dans le
-      <strong>commerce de gros</strong> et la distribution de produits de qualité à plus de 680 <strong>fournisseurs</strong>.
-    </p>
 
-    <!-- Contexte du stage -->
-    <h4 class="font-semibold mt-6 mb-2"><strong>1 - Contexte du stage</strong></h4>
-    <p class="text-justify mb-4">
-      Le stage s'est très bien déroulé. Accueillante et bienveillante, dès mon arrivée, j'ai été présentée au projet par
-      <strong>Richard</strong>. L’objectif était de créer une <strong>application</strong> pour vérifier les
-      <strong>URLs</strong> des <strong>logos</strong> que les artisans et coopératives rentrent dans le site existant
-      <strong>GestionDataSite</strong>.
-    </p>
 
-    <!-- Tâches -->
-    <h4 class="font-semibold mt-6 mb-2"><strong>2 - Tâches réalisées</strong></h4>
-    <p class="text-justify mb-4">
-      Mon stage s’est déroulé au sein du pôle <strong>développement</strong>, principalement en <strong>C#</strong>.
-      L’application contient des informations confidentielles, c’est pourquoi le code complet n’est pas publié en ligne.
-    </p>
+  <div class="container mx-auto flex flex-col items-start md:flex-row my-12 md:my-24" data-v-28f70e01>
 
-    <ul class="list-disc list-inside mb-4">
-      <li>Comprendre le <strong>C#</strong></li>
-      <li>S’approprier la <strong>base de données</strong></li>
-    </ul>
+    <!-- CONTENU PRINCIPAL -->
+    <div class="ml-0 md:ml-12 lg:w-2/3 sticky order-last md:order-first" data-v-28f70e01>
 
-    <!-- Mode console -->
-    <h4 class="font-semibold mb-2"><strong>3 - Mode console</strong></h4>
-    <p class="text-justify mb-4">
-      J’ai commencé par le <strong>mode console</strong> : affichage des URLs et des <strong>codes erreurs</strong> des images.
-    </p>
-    <div class="mb-4">
-      <a href="Stage1/Console/modeconsole.html">
-        <button class="bg-orangeClair text-black px-4 py-2 rounded"><strong>Lien vers Mode console</strong></button>
-      </a>
-    </div>
-
-    <!-- Mode WinForms -->
-    <h4 class="font-semibold mb-2"><strong>4 - Mode WinForms</strong></h4>
-    <p class="text-justify mb-4">
-      Reproduction du même programme avec des <strong>Forms</strong> Windows.
-    </p>
-    <div class="mb-4">
-      <a href="Stage1/WinForms/modeWinForms.html">
-        <button class="bg-orangeClair text-black px-4 py-2 rounded"><strong>Lien vers Mode WinForms</strong></button>
-      </a>
-    </div>
-
-    <!-- Technologies utilisées -->
-    <h4 class="font-semibold mb-2"><strong>5 - Technologies utilisées</strong></h4>
-    <p class="text-justify mb-4">
-      Durant ce stage, j’ai utilisé <strong>.NET</strong>, <strong>C#</strong>, <strong>WebClient</strong> pour tester
-      les URLs et <strong>threads</strong> pour exécuter plusieurs tâches simultanément.
-    </p>
-    <div class="text-center mb-4">
-      <img src="images/httpclient.png" alt="HTTP Client" style="max-width: 300px; height:auto;">
-    </div>
-
-    <!-- Compétences -->
-   <div style="text-align:left">
-        <h6><strong>Compétences Tableau de Compétences :</strong></h6>
-
-        <div class="mb-4">
-          <h4 class="font-bold">Développer la présence en ligne de l’organisation</h4>
-          <ul class="list-disc list-inside">
-            
-              <li>J'ai participé à l'évolution du site en localisant les images cassées</li>
-              <strong>(Participer à l’évolution d’un site Web exploitant les données de l’organisation)</strong>
-            
-          </ul>
+        <h4 style="text-align: center;">Stage chez Orcab Artisans Artipole</h4>
+        <br>
+        <!-- Bouton Rapport -->
+        <div class="mb-6 text-left">
+            <a href="Stage1/SLAM24_PORTOLLEAU_Anaïs_RapportStage_Stage1.pdf" target="_blank"
+               class="button-bloc bg-orangeClair text-black px-6 py-2 rounded">
+                Télécharger le Rapport de Stage
+            </a>
         </div>
 
-        <div class="mb-4">
-          <h4 class="font-bold">Organiser son développement professionnel</h4>
-          <ul class="list-disc list-inside">            
-              <li>Aller sur les docs Microsoft </li>
-              <strong>(Mettre en oeuvre des outils et stratégies de veille informationnelle)</strong>
-              <li>J'ai pu changer d'avis sur ce que je voulais faire</li>
-              <strong>(Gérer son identité professionne)</strong>
-            <br> 
-          </ul>
+        <!-- Présentation entreprise -->
+        <h4>
+            Courte présentation de l'entreprise :
+        </h4>
+
+        <p class="text-justify my-4 md:leading-relaxed">
+            À l’occasion de ma première année de <strong>BTS SIO</strong>, j’ai pu effectuer mon premier
+            <strong>stage</strong>. J’ai été accueillie par la coopérative <strong>ORCAB</strong> –
+            <strong>Artisans Artipôle</strong> à <strong>Rocheservière</strong>. Pendant cette période,
+            j’ai été accompagnée par <strong>Richard Quentin</strong>, mon <strong>tuteur</strong>.
+            Le stage s’est déroulé sur <strong>6 semaines</strong> du <strong>13 mai</strong>
+            au <strong>21 juin 2024</strong>.
+        </p>
+
+        <p class="text-justify my-4 md:leading-relaxed">
+            L’entreprise ORCAB a été créée en 1990 et est installée depuis 2006 à Rocheservière. Elle regroupe environ 100 salariés et réalise 
+            un chiffre d’affaires de plus de <strong>102 millions d’euros</strong>. Elle est spécialisée dans le <strong>commerce de gros</strong> et la 
+            <strong>distribution de produits de qualité à plus de 680 fournisseurs</strong>.
+        </p>
+
+        <img src="images/orcab.png" alt="Bureau Orcab" class="my-4 w-1/2 float-left mr-6" style="width: 50%;">
+        <br>
+
+        <!-- Contexte -->
+        <h4>
+            1 - Contexte du stage
+        </h4>
+
+        <p class="text-justify my-4 md:leading-relaxed">
+            Le stage s'est très bien déroulé. Accueillante et bienveillante, dès mon arrivée,
+            j'ai été présentée au projet par <strong>Richard</strong>. L’objectif était de créer
+            une <strong>application</strong> pour vérifier les <strong>URLs</strong> des
+            <strong>logos</strong> présents sur le site <strong>GestionDataSite</strong>.
+        </p>
+
+        <br>
+
+        <!-- Tâches -->
+        <h4>
+            2 - Tâches réalisées
+        </h4>
+
+        <p class="text-justify my-4 md:leading-relaxed">
+            Mon stage s’est déroulé au sein du pôle <strong>développement</strong>, principalement
+            en <strong>C#</strong>. L’application contient des informations confidentielles.
+        </p>
+
+        <ul class="list-disc my-4 list-inside">
+            <li>Comprendre le <strong>C#</strong></li>
+            <li>S’approprier la <strong>base de données</strong></li>
+        </ul>
+
+        <br>
+
+        <!-- Mode console -->
+        <h4>
+            3 - Mode console
+        </h4>
+
+        <p class="text-justify my-4 md:leading-relaxed">
+            J’ai commencé par le <strong>mode console</strong> : affichage des URLs et des
+            <strong>codes erreurs</strong> des images.
+        </p>
+
+        <a href="Stage1/Console/modeconsole.html"
+           class="bg-orangeClair text-black px-4 py-2 rounded inline-block my-2">
+            <strong>Lien vers Mode console</strong>
+        </a>
+
+        <br>
+
+        <!-- WinForms -->
+        <h4>
+            4 - Mode WinForms
+        </h4>
+
+        <p class="text-justify my-4 md:leading-relaxed">
+            Reproduction du même programme avec des <strong>Forms</strong> Windows.
+        </p>
+
+        <a href="Stage1/WinForms/modeWinForms.html"
+           class="bg-orangeClair text-black px-4 py-2 rounded inline-block my-2">
+            <strong>Lien vers Mode WinForms</strong>
+        </a>
+
+        <br>
+
+        <!-- Technologies -->
+        <h4>
+            5 - Technologies utilisées
+        </h4>
+
+        <p class="text-justify my-4 md:leading-relaxed">
+            Durant ce stage, j’ai utilisé <strong>.NET</strong>, <strong>C#</strong>,
+            <strong>WebClient</strong> et des <strong>threads</strong>.
+        </p>
+
+        <img src="images/httpclient.png" alt="HTTP Client" class="mx-auto my-4 w-1/3">
+
+        <br>
+
+        <!-- Compétences -->
+        <div style="text-align:left">
+          <h6><strong>Compétences Tableau de Compétences :</strong></h6>
+
+          <div class="mb-4">
+            <h4 class="font-bold">Développer la présence en ligne de l’organisation</h4>
+            <ul class="list-disc list-inside">
+              
+                <li>J'ai participé à l'évolution du site en localisant les images cassées</li>
+                <strong>(Participer à l’évolution d’un site Web exploitant les données de l’organisation)</strong>
+              
+            </ul>
+          </div>
+
+          <div class="mb-4">
+            <h4 class="font-bold">Organiser son développement professionnel</h4>
+            <ul class="list-disc list-inside">            
+                <li>Aller sur les docs Microsoft </li>
+                <strong>(Mettre en oeuvre des outils et stratégies de veille informationnelle)</strong>
+                <li>J'ai pu changer d'avis sur ce que je voulais faire</li>
+                <strong>(Gérer son identité professionne)</strong>
+              <br> 
+            </ul>
+          </div>
+        </div>
+     
+
+        <!-- Conclusion -->
+        <h3 class="my-8 text-center">
+            Conclusion
+        </h3>
+
+        <p class="text-center my-4 md:leading-relaxed">
+            Ce stage m’a permis de découvrir un nouveau langage et d’élargir mes compétences
+            informatiques. J’ai appris à gérer un projet de A à Z.
+        </p>
+
+    </div>
+
+    <!-- COLONNE DROITE -->
+    <div class="flex flex-col w-full sticky md:top-36 lg:w-1/3 mt-2 md:mt-12 px-8">
+
+        <h6>
+            Autre stage
+        </h6>
+
+        <div class="flex my-3">
+            <a href="images/anais_logo.png"
+               class="blob-prj4 bg-cover w-10 h-10 rounded-full mr-3"></a>
+
+            <div>
+                <p>
+                    <a href="Stage1èreannée.html" class="font-bold">
+                        Stage 1ère année
+                    </a>
+                </p>
+                <div>
+                    BTS SIO 2023/2026
+                </div>
+            </div>
         </div>
 
+        <img src="images/stages.png" alt="mes diplômes" class="mx-auto w-1/3">
 
-    <!-- Conclusion -->
-    <h4 class="font-semibold text-center mb-2"><strong>Conclusion</strong></h4>
-    <p class="text-center mb-4">
-      Ce stage m’a permis de découvrir un nouveau langage et d’élargir mes compétences informatiques. J’ai appris à gérer
-      un projet de A à Z, de l’étude du cahier des charges aux tests.
-    </p>
-
-
+    </div>
 
 </div>
+
 
 
 
