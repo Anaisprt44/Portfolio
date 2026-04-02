@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Portfolio d'Anaïs Portolleau - Ticket 6 - Sécurisation base de données</title>
+  <meta name="description"
+    content="Je suis Anaïs Portolleau, étudiante en informatique. Voir le CV, Mes Projets, Contact, Mon parcours, Mes passions">
+  <link rel="icon" href="../../../images/favicon.ico" type="image/x-icon">  
+  <link href="../../../style.css" rel="stylesheet" type="text/css" />
+
+  <style>
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 25px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    h4 { color: #1a7a89; margin-bottom: 15px; }
+    h5 { color: #1a7a89; margin-top: 25px; margin-bottom: 10px; }
+    h6 { color: #333; margin-top: 15px; margin-bottom: 8px; }
+    p { line-height: 1.6; margin-bottom: 15px; }
+    ul { list-style-type: disc; margin-left: 25px; padding-left: 0; color: #555; }
+    ul ul { list-style-type: circle; margin-left: 20px; }
+    img { max-width: 100%; height: auto; margin: 10px 0; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
+    .btn-primary { display: inline-block; padding: 12px 25px; border-radius: 100px; text-decoration: none; font-weight: bold; transition: 0.3s; margin: 5px; background-color: #1a7a89; color: white; }
+    .btn-primary:hover { background-color: #166370; }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <div id="navbar"></div>
+  <script>
+    fetch('../../../code/header-projets.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+        menuToggle.addEventListener('click', () => {
+          navLinks.classList.toggle('show');
+          menuToggle.classList.toggle('open');
+        });
+      });
+  </script>
+
+ <!-- Conteneur principal -->
+<div class="container">
+
+  <h4>Ticket 6 : Sécurisation de l’accès à la base de données</h4>
+
+  <div style="margin-bottom:15px;">
+    <a href="https://gitlab.com/AnaisPrt/p3_g1_projet_moderation/-/tree/Iteration2_Ticket6?ref_type=heads"
+        target="_blank"
+        class="btn-primary">
+        Accéder à la branche GitLab
+    </a>
+    </div>
+
+  <h6>Programmes :</h6>
+
+  <p>
+    Mise en place d’un système de sécurisation des identifiants de connexion à la base de données.
+  </p>
+
+  <h6>Stockage des paramètres :</h6>
+
+  <p>
+    Les informations de connexion sont stockées dans le fichier <b>restoJdbc.properties</b>,
+    situé dans <b>src/main/resources</b>, dossier géré par Maven et intégré automatiquement au classpath.
+  </p>
+
+  <p>
+    Le mot de passe de la base de données est chiffré en AES afin d’éviter toute exposition en clair dans le projet.
+  </p>
+
+  <h6>Chiffrement :</h6>
+
+  <p>
+    Création de la classe utilitaire <b>CryptoUtils</b> permettant de chiffrer les mots de passe avec l’algorithme AES.
+  </p>
+
+  <p>
+    AES est un algorithme symétrique sécurisé (128, 192 ou 256 bits) utilisé en entreprise.
+    Il est choisi pour sa robustesse et son intégration native dans Java (javax.crypto).
+  </p>
+
+  <p>
+    Une clé secrète est stockée dans un fichier <b>.env</b>, chargé via la bibliothèque <b>dotenv-java</b>.
+  </p>
+
+  <h6>Déchiffrement :</h6>
+
+  <p>
+    Ajout d’une méthode privée <b>decrypt()</b> dans <b>ConnexionBDD</b>.
+  </p>
+
+  <p>
+    Cette méthode reconstruit une clé AES, décode le mot de passe en Base64,
+    puis le déchiffre pour obtenir la valeur en clair utilisée lors de la connexion.
+  </p>
+
+  <h6>Connexion à la base :</h6>
+
+  <p>
+    La méthode <b>getConnexion()</b> a été adaptée :
+  </p>
+
+  <ul>
+    <li>chargement des propriétés via ClassLoader</li>
+    <li>lecture des variables du fichier .env</li>
+    <li>décryptage du mot de passe</li>
+    <li>connexion via DriverManager</li>
+  </ul>
+
+  <p>
+    Une erreur est levée si la clé secrète est absente afin de garantir la sécurité.
+  </p>
+
+  <h6>Tests fonctionnels :</h6>
+
+  <p>
+    Un test unitaire (<b>TestConnexionBDD</b>) a été utilisé pour vérifier la connexion à la base de données.
+  </p>
+
+  <p>
+    Un test via l’interface graphique confirme également que la connexion utilisateur fonctionne correctement :
+  </p>
+
+  <ul>
+    <li>connexion avec user.moderator@test.com</li>
+    <li>mot de passe : secret</li>
+    <li>accès à la liste des avis après authentification</li>
+  </ul>
+
+  <p>
+    Le test est concluant : la connexion est sécurisée et fonctionnelle.
+  </p>
+
+  <!-- Boutons -->
+  <div class="button-group">
+    <a href="ite2_ticket5.html" class="btn-primary">Ticket précédent</a>
+    <a href="ite2_ticket7.html" class="btn-primary">Ticket suivant</a>
+    <a href="ite2.html" class="btn-primary">Retour itération</a>
+    <a href="../../../projetJava_Resto.html" class="btn-primary">Retour projet</a>
+  </div>
+
+</div>
+
+  <!-- Footer -->
+  <div id="footer-container"></div>
+  <script>
+    fetch('../../../code/footer-projets.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-container').innerHTML = data;
+        const footer = document.getElementById('footer-container');
+        footer.querySelectorAll('img').forEach(img => {
+          let src = img.getAttribute('src');
+          if (src.startsWith('../images/')) {
+            img.setAttribute('src', src.replace('../images/', '../../../images/'));
+          }
+        });
+      });
+  </script>
+
+</body>
+</html>

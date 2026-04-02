@@ -51,51 +51,101 @@
       });
   </script>
 
-  <!-- Conteneur principal -->
-  <div class="container">
+<!-- Conteneur principal -->
+<div class="container">
 
-    <h4>Itération 2 – Projet Modération</h4>
+  <h4>Itération 2 – Projet Modération</h4>
 
-    <div style="text-align: left; margin-bottom: 25px;">
-      <a href="../CDC/2SLAM_P3_Appli_Java_Resto_cahier_des_charges_v2026-02-27.pdf" target="_blank"
-        class="btn-primary">Cahier des charges</a>
-      <a href="https://gitlab.com/AnaisPrt/p2_g7_2slam_ap_projet_android/-/tree/Iteration2_finale?ref_type=heads" target="_blank" class="btn-primary">
-        Lien final de la branche itération 2</a>
-      <a href="../Compte_Rendu/2SLAM_AP_Projet_Moderation_Iteration2_Grp1.pdf" target="_blank"
-        class="btn-primary">Compte rendu</a>
-    </div>
+  <!-- Actions principales -->
+  <div style="display:flex; flex-wrap:wrap; gap:10px; margin-bottom:25px;">
+    <a href="../CDC/2SLAM_P3_Appli_Java_Resto_cahier_des_charges_v2026-02-27.pdf" target="_blank" class="btn-primary">
+      Cahier des charges
+    </a>
 
-    <!-- Objectif -->
-    <p>
-      Cette seconde itération avait pour objectif de développer les fonctionnalités de modération des avis pour 
-      <strong>R3st0.fr</strong>, en se basant sur la structure créée lors de l’itération 1.
-    </p>
+    <a href="https://gitlab.com/AnaisPrt/p2_g7_2slam_ap_projet_android/-/tree/Iteration2_finale?ref_type=heads"
+       target="_blank" class="btn-primary">
+      Branche GitLab finale
+    </a>
 
-    <h6>Lien des branches des tickets réalisés (GitLab)</h6>
-    <p>
-      On s'est organisé en utilisant GitLab pour suivre l'avancement de l'itération 1, avec des tickets spécifiques pour chaque tâche clé :
-    </p>    
-
-    <h6>Organisation des tickets GitLab</h6>
-
-    <ul>
-      <li><a href="ite2/ticket1.html">Ticket 1 - Authentification utilisateur</a></li>
-      <li><a href="ticket2.html">Ticket 2 - Affichage des avis</a></li>
-      <li><a href="ticket3.html">Ticket 3 - Filtrage des avis par date</a></li>
-      <li><a href="ticket4.html">Ticket 4 - Masquage d’un avis</a></li>
-      <li><a href="ticket5.html">Ticket 5 - Démasquage d’un avis</a></li>
-      <li><a href="ticket6.html">Ticket 6 - Sécurisation base de données</a></li>
-      <li><a href="ticket7.html">Ticket 7 - Création du JAR</a></li>
-    </ul>   
-
-    <!-- Boutons -->
-    <div class="button-group">
-      <a href="../Compte_Rendu/2SLAM_AP_Projet_Moderation_Iteration2_Grp1.pdf" target="_blank"
-        class="btn-primary">Compte rendu détaillé</a>
-      <a href="../../projetJava_Resto.html" class="btn-primary">Retour au projet</a>
-    </div>
-
+    <a href="../Compte_Rendu/2SLAM_AP_Projet_Moderation_Iteration2_Grp1.pdf" target="_blank" class="btn-primary">
+      Compte rendu
+    </a>
   </div>
+
+  <!-- Objectif -->
+  <p>
+    Cette itération a pour objectif la mise en place complète du système de modération des avis pour
+    <strong>R3st0.fr</strong>, incluant l’authentification, l’affichage, le filtrage et la gestion des avis.
+  </p>
+
+  <h6>Organisation des tickets</h6>
+
+  <p>
+    Chaque fonctionnalité a été découpée en tickets GitLab afin de structurer le développement.
+  </p>
+
+  <!-- TICKET 1 -->
+  <div class="ticket-card">
+    <h6>Ticket 1 – Authentification utilisateur</h6>
+    <p>Connexion sécurisée avec rôles (modérateur / manager), gestion de session, et hashage des mots de passe avec BCrypt.</p>
+    <a href="ite2/ite2_ticket1.html" class="btn-primary">Voir le ticket</a>
+  </div>
+
+  <!-- TICKET 2 -->
+  <div class="ticket-card">
+    <h6>Ticket 2 – Affichage des avis</h6>
+    <p>Affichage des critiques en JTable avec gestion des rôles et ajout du champ de visibilité.</p>
+    <a href="ite2/ite2_ticket2.html" class="btn-primary">Voir le ticket</a>
+  </div>
+
+  <!-- TICKET 3 -->
+  <div class="ticket-card">
+    <h6>Ticket 3 – Filtrage des avis</h6>
+    <p>Filtrage des avis par date, semaine ou année avec contrôle des incohérences et gestion des rôles.</p>
+    <a href="ite2/ite2_ticket3.html" class="btn-primary">Voir le ticket</a>
+  </div>
+
+  <!-- TICKET 4 -->
+  <div class="ticket-card">
+    <h6>Ticket 4 – Masquage d’un avis</h6>
+    <p>Ajout du masquage des avis avec motif obligatoire et gestion des droits utilisateur.</p>
+    <a href="ite2/ite2_ticket4.html" class="btn-primary">Voir le ticket</a>
+  </div>
+
+  <!-- TICKET 5 -->
+  <div class="ticket-card">
+    <h6>Ticket 5 – Démasquage d’un avis</h6>
+    <p>Réactivation des avis masqués avec mise à jour en base et contrôle des rôles.</p>
+    <a href="ite2/ite2_ticket5.html" class="btn-primary">Voir le ticket</a>
+  </div>
+
+  <!-- TICKET 6 -->
+  <div class="ticket-card">
+    <h6>Ticket 6 – Sécurisation de la base de données</h6>
+    <p>Chiffrement AES du mot de passe, utilisation de .env et sécurisation de la connexion JDBC.</p>
+    <a href="ite2/ite2_ticket6.html" class="btn-primary">Voir le ticket</a>
+  </div>
+
+  <!-- TICKET 7 -->
+  <div class="ticket-card">
+    <h6>Ticket 7 – Génération du JAR</h6>
+    <p>Création d’un Fat JAR avec Maven Assembly Plugin pour exécuter l’application hors IDE.</p>
+    <a href="ite2/ite2_ticket7.html" class="btn-primary">Voir le ticket</a>
+  </div>
+
+  <!-- Boutons fin -->
+  <div class="button-group" style="margin-top:25px;">
+    <a href="../Compte_Rendu/2SLAM_AP_Projet_Moderation_Iteration2_Grp1.pdf" target="_blank"
+       class="btn-primary">
+      Compte rendu détaillé
+    </a>
+
+    <a href="../../projetJava_Resto.html" class="btn-primary">
+      Retour au projet
+    </a>
+  </div>
+
+</div>
 
   <!-- Footer -->
   <div id="footer-container"></div>

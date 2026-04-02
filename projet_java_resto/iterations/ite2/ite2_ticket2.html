@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Portfolio d'Anaïs Portolleau - Ticket 2 - Affichage des avis</title>
+  <meta name="description"
+    content="Je suis Anaïs Portolleau, étudiante en informatique. Voir le CV, Mes Projets, Contact, Mon parcours, Mes passions">
+  <link rel="icon" href="../../../images/favicon.ico" type="image/x-icon">  
+  <link href="../../../style.css" rel="stylesheet" type="text/css" />
+
+  <style>
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 25px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    h4 { color: #1a7a89; margin-bottom: 15px; }
+    h5 { color: #1a7a89; margin-top: 25px; margin-bottom: 10px; }
+    h6 { color: #333; margin-top: 15px; margin-bottom: 8px; }
+    p { line-height: 1.6; margin-bottom: 15px; }
+    ul { list-style-type: disc; margin-left: 25px; padding-left: 0; color: #555; }
+    ul ul { list-style-type: circle; margin-left: 20px; }
+    img { max-width: 100%; height: auto; margin: 10px 0; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
+    .btn-primary { display: inline-block; padding: 12px 25px; border-radius: 100px; text-decoration: none; font-weight: bold; transition: 0.3s; margin: 5px; background-color: #1a7a89; color: white; }
+    .btn-primary:hover { background-color: #166370; }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <div id="navbar"></div>
+  <script>
+    fetch('../../../code/header-projets.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+        menuToggle.addEventListener('click', () => {
+          navLinks.classList.toggle('show');
+          menuToggle.classList.toggle('open');
+        });
+      });
+  </script>
+
+ <!-- Conteneur principal -->
+<div class="container">
+
+  <h4>Ticket 2 - Affichage de la liste des avis</h4>
+
+  <div style="margin-bottom:15px;">
+    <a href="https://gitlab.com/AnaisPrt/p3_g1_projet_moderation/-/tree/Iteration2_Ticket2?ref_type=heads"
+        target="_blank"
+        class="btn-primary">
+        Accéder à la branche GitLab
+    </a>
+    </div>
+
+  <h6>Programmes :</h6>
+
+  <p>
+    Création dans <b>CritiqueDAO</b> de plusieurs méthodes pour récupérer les avis depuis la base de données :
+  </p>
+
+  <ul>
+    <li>
+      <b>getAll()</b> : récupère toutes les critiques de la table <i>critiquer</i> et retourne une liste d’objets Critique.
+    </li>
+    <li>
+      <b>getByRestoId()</b> : récupère les avis d’un restaurant selon son identifiant, avec gestion des valeurs NULL.
+    </li>
+    <li>
+      <b>getAllWithRestaurantNom()</b> : récupère les critiques avec le nom du restaurant via jointure SQL.
+    </li>
+    <li>
+      <b>getAllWithRestoAndUser()</b> : récupère les critiques avec le nom du restaurant et le pseudo de l’utilisateur via jointures.
+    </li>
+  </ul>
+
+  <p>
+    Ces méthodes utilisent des requêtes SQL avec <b>PreparedStatement</b>, parcourent les <b>ResultSet</b> et construisent des objets <b>Critique</b>.
+  </p>
+
+  <p>
+    Ajout d’un champ <b>booléen (masqué)</b> dans la table <i>critiquer</i> permettant de gérer l’affichage des avis (par défaut : false).
+  </p>
+
+  <p>
+    Dans <b>ListeAvisPanel</b>, appel de la méthode <b>chargerAvis()</b> dans le constructeur.
+  </p>
+
+  <p>
+    La méthode <b>chargerAvis()</b> récupère les avis via le DAO puis alimente le <b>JTable</b> :
+    elle vide d’abord le tableau, puis ajoute chaque critique (date, utilisateur, restaurant, commentaire, statut affiché/masqué).
+  </p>
+
+  <h6>Test fonctionnel :</h6>
+
+  <p>
+    Objectif : vérifier l’affichage des avis après authentification.
+  </p>
+
+  <ul>
+    <li>Connexion obligatoire pour accéder à la liste des avis</li>
+    <li>Redirection vers l’écran principal après login</li>
+    <li>Affichage correct des critiques (date, auteur, restaurant, commentaire, statut)</li>
+  </ul>
+
+  <p>
+    Compte utilisé : user.moderator@test.com
+  </p>
+
+  <!-- Boutons -->
+  <div class="button-group">
+    <a href="ite2_ticket1.html" class="btn-primary">Ticket précédent</a>
+    <a href="ite2_ticket3.html" class="btn-primary">Ticket suivant</a>
+    <a href="ite2.html" class="btn-primary">Retour itération</a>
+    <a href="../../../projetJava_Resto.html" class="btn-primary">Retour projet</a>
+  </div>
+
+</div>
+
+  <!-- Footer -->
+  <div id="footer-container"></div>
+  <script>
+    fetch('../../../code/footer-projets.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-container').innerHTML = data;
+        const footer = document.getElementById('footer-container');
+        footer.querySelectorAll('img').forEach(img => {
+          let src = img.getAttribute('src');
+          if (src.startsWith('../images/')) {
+            img.setAttribute('src', src.replace('../images/', '../../../images/'));
+          }
+        });
+      });
+  </script>
+
+</body>
+</html>
